@@ -1,2 +1,40 @@
-# OUABootcamp-Unity_U49
-Oyun ve Uygulama Akademisi, 2023 Bootcamp, U-49 Unity team
+# İçindekiler
+[Takım Adı](#takım-adı)
+[Ürün ile İlgili Bilgiler](#ürün-ile-ilgili-bilgiler)
+
+## Takım Adı
+Takım Unity U-49
+
+## Ürün ile İlgili Bilgiler
+### Takım Elemanları
+* **Ali Yağmur: ** *Product Owner - Developer*
+* **Safiye İrem Turna: ** *Scrum Master - Developer*
+* **Nebi Cihan Akpınar: ** *Developer*
+* **Sidar Aygaz: ** *Developer*
+* **Yunus Kale: ** *Developer*
+
+### Ürün Adı
+
+### Product Backlog URL
+
+### Ürün Açıklaması
+
+### Ürün Özellikleri
+
+### Hedef Kitle
+
+#### Juriye Not
+
+## Sprint 1
+
+### Product Backlog URL
+
+## Sprint 2
+
+### Product Backlog URL
+
+## Sprint 3
+
+### Product Backlog URL
+
+#### Kullanılan
