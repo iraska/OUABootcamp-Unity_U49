@@ -8,10 +8,10 @@ Takım Unity U-49
 ## Ürün ile İlgili Bilgiler
 ### Takım Elemanları
 * **Ali Yağmur:** *Product Owner - Developer*
-* **Safiye İrem Turna: ** *Scrum Master - Developer*
-* **Nebi Cihan Akpınar: ** *Developer*
-* **Sidar Aygaz: ** *Developer*
-* **Yunus Kale: ** *Developer*
+* **Safiye İrem Turna:** *Scrum Master - Developer*
+* **Nebi Cihan Akpınar:** *Developer*
+* **Sidar Aygaz:** *Developer*
+* **Yunus Kale:** *Developer*
 
 ### Ürün Adı
 
