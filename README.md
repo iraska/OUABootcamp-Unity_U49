@@ -1,6 +1,7 @@
 # İçindekiler
 * [Takım Adı](#takım-adı)
 * [Ürün ile İlgili Bilgiler](#ürün-ile-ilgili-bilgiler)
+* [GDD](#gdd)
 * [Sprint 1](#sprint-1)
 * [Sprint 3](#sprint-2)
 * [Sprint 3](#sprint-3)
@@ -30,6 +31,8 @@ Takım Unity U-49
 ### Hedef Kitle
 
 #### Juriye Not
+
+## GDD
 
 ## Sprint 1
 
