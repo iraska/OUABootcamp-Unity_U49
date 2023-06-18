@@ -67,7 +67,10 @@ The Witch of Shunrald
 
 * **Daily Scrum:** Daily Scrum toplantıları Discord kanalı üzerinden gün aşırı yapılmıştır. Toplantıda alınan kararlara ve paylaşımlara ekte yer verilmiştir.
 
-*[Sprint 1 Daily Scrum Chats](https://doc.clickup.com/9009152983/d/h/8cftgyq-1760/386829abde41433)*
+   *[Sprint 1 Daily Scrum Chats](https://doc.clickup.com/9009152983/d/h/8cftgyq-1760/386829abde41433)*
+
+* **Sprint board update:** ***Sprint board screenshotı:***
+   ![first sprint](https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/b0c0c849-ef1b-4770-a213-11ff33570a38)
 
 * **Sprint Review:**
   * ***Alınan kararlar:***
