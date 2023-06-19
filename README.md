@@ -1,6 +1,6 @@
 # İçindekiler
 * [Takım Adı](#takım-adı)
-* [Ürün ile İlgili Bilgiler](#ürün-ile-ilgili-bilgiler)
+* [Oyun ile İlgili Bilgiler](#oyun-ile-ilgili-bilgiler)
 * [GDD](#gdd)
 * [Sprint 1](#sprint-1)
 * [Sprint 3](#sprint-2)
