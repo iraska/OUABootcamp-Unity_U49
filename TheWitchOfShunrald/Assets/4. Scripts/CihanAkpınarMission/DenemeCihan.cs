@@ -6,6 +6,7 @@ namespace CihanAkpınar
 {
     public class DenemeCihan : MonoBehaviour
     {
+        public float denemeCan;
         #region
         public static DenemeCihan instance;
         private void Awake()

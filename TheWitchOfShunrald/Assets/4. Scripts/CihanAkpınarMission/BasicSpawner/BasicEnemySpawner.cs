@@ -8,6 +8,7 @@ namespace CihanAkpınar
    {
        [System.Serializable]
    
+       //Dalga dizisi altına dizi ekliyebilmek için yeni class kullandım
        public class WaveContent
        {
            [SerializeField][NonReorderable] GameObject[] basicEnemySpawner;
@@ -33,7 +34,6 @@ namespace CihanAkpınar
        {
            if(currentEnemy.Count == 0)
            {
-               
                currentWave++;
                SpawnWave();
            }
