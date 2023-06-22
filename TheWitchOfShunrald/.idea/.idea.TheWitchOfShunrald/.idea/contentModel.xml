@@ -12,6 +12,11 @@
             <e p="BasicSpawnedEnemyAi.cs" t="Include" />
             <e p="DenemeCihan.cs" t="Include" />
           </e>
+          <e p="WeaponScriptsAli" t="Include">
+            <e p="CameraMovement.cs" t="Include" />
+            <e p="WeaponFollowPlayer.cs" t="Include" />
+            <e p="WeaponMovementHandler.cs" t="Include" />
+          </e>
         </e>
         <e p="6. Plugins" t="Include">
           <e p="Demigiant" t="Include">

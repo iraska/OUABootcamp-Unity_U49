@@ -2,15 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DenemeCihan : MonoBehaviour
+namespace CihanAkpınar
 {
-    #region
-    public static DenemeCihan instance;
-    private void Awake()
+    public class DenemeCihan : MonoBehaviour
     {
-        instance = this;
-    }
-    #endregion
+        #region
+        public static DenemeCihan instance;
+        private void Awake()
+        {
+            instance = this;
+        }
+        #endregion
 
-    public GameObject player;
+        public GameObject player;
+    }
 }
+
+

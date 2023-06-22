@@ -10,8 +10,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/4. Scripts/CihanAkpınarMission/DenemeCihan.cs" />
+        <option value="$PROJECT_DIR$/Assets/4. Scripts/CihanAkpınarMission/BasicSpawnedEnemyAnimator.cs" />
         <option value="$PROJECT_DIR$/Assets/4. Scripts/CihanAkpınarMission/BasicSpawnedEnemyAi.cs" />
+        <option value="$PROJECT_DIR$/Assets/4. Scripts/CihanAkpınarMission/BasicEnemySpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/4. Scripts/CihanAkpınarMission/DenemeCihan.cs" />
       </list>
     </option>
   </component>
