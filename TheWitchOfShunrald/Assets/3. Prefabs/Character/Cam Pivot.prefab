@@ -46,6 +46,9 @@ GameObject:
   - component: {fileID: 8645639842838280287}
   - component: {fileID: 8645639842838280286}
   - component: {fileID: 8645639842838280281}
+  - component: {fileID: 9018791337371232788}
+  - component: {fileID: 5490393480246770615}
+  - component: {fileID: 3746809809080174352}
   m_Layer: 0
   m_Name: Lens Distortion
   m_TagString: Untagged
@@ -170,6 +173,49 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db2c1885f69fbed4c99078eb541d132c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9018791337371232788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8645639842838280283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd066353487a83449ca4d3de4c25514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomCamera: {fileID: 8645639842838280285}
+  zoomSpeed: 1
+  minZoom: 2
+  maxZoom: 8
+--- !u!114 &5490393480246770615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8645639842838280283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 391f3d774538a6e48aec46af0e924766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensitivity: 2
+  initialYRot: 0
+  smoothSpeed: 10
+--- !u!114 &3746809809080174352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8645639842838280283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8bd614fa903f2a4d9e646c7e702c8f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   followShunrald: {fileID: 0}

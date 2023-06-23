@@ -1,31 +1,25 @@
+using Shunrald;
 using UnityEngine;
 
 namespace CameraSystem
 {
+    [RequireComponent(typeof(CameraZoom))]
+    [RequireComponent(typeof(CameraRotator))]
+    [RequireComponent(typeof(CameraFollower))]
     public class CameraController : MonoBehaviour
     {
-        [SerializeField] private Transform followShunrald;
-        [SerializeField] private Vector3 camOffset;
-        [SerializeField] private float smoothSpeed, camOffsetZ;
-
-        private Vector3 desiredPosition, smoothedPosition, targetPos;
+        public CameraFollower Follower { get; private set; }
+        public CameraZoom Zoom { get; private set; }
 
         private void Awake()
         {
             GetRequiredComponent();
         }
 
-        // for camera
-        private void LateUpdate()
-        {
-            desiredPosition = followShunrald.position + camOffset;
-            smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-            transform.position = smoothedPosition;
-        }
-
         private void GetRequiredComponent()
         {
-
+            Follower = GetComponent<CameraFollower>();
+            Zoom = GetComponent<CameraZoom>();
         }
     }
 }
