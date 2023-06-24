@@ -3,104 +3,144 @@ using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace CihanAkpınar
 {
     public class BasicSpawnedEnemyAi : MonoBehaviour
     {
-        [SerializeField] private  float lookSpawnedEnemyRadius = 10f;
         
-        Transform target;
-        NavMeshAgent agent;
+        
+        private Transform player;
+        private Transform findedTarget;
+        
         private Rigidbody rb;
-
-        [SerializeField] private GameObject basicEnemyDiePart;
+        private Animator anim;
+        
+        private bool isWalking;
+        private bool isTriggered;
         
         private float isBasicEnemyRuning;
         private float isBasicEnemyAttacking;
-        private Animator anim;
 
+        [SerializeField] private GameObject basicEnemyDiePart;
+        
+        [SerializeField] private float lookSpawnedEnemyRadius = 10f;
         [SerializeField] private float bombPower;
-
-        
-
+        [SerializeField] private float basicStopingDistance;
         [SerializeField] private float basicEnemyHealth;
+        [SerializeField] private float basicEnemyMovementSpeed;
         
+        [SerializeField] private int targetLayer;
 
 
         void Start()
         {
             rb = GetComponent<Rigidbody>();
-            agent = GetComponent<NavMeshAgent>();
             anim = GetComponentInChildren<Animator>();
-            target = DenemeCihan.instance.player.transform;
-            
-           
+            player = DenemeCihan.instance.player.transform;
+            findedTarget = player;
         }
-
-        void Update()
+        
+        void FixedUpdate()
         {
             BasicEnemyAnim();
+            if (isTriggered)
+            {
+                FindEnemyTarget(); 
+            }
+            
         }
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                TakeDamage(Vector3.up, bombPower);
+            }
+            FaceTarget();
+        }
+        
+
         void FaceTarget()
         {
-            Vector3 direction = (target.position - transform.position).normalized;
+            Vector3 direction = (findedTarget.position - transform.position).normalized;
             Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 600f);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 6f);
         }
+        
+        
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, lookSpawnedEnemyRadius);
         }
+        
 
         void BasicEnemyAnim()
         {
             
-            float distance = Vector3.Distance(target.position, transform.position);
+            float distance = Vector3.Distance(findedTarget.position, transform.position);
             if (distance<=lookSpawnedEnemyRadius)
             {
-                agent.SetDestination(target.position);
+                isTriggered = true;
+                //Vector3 targetPlayerPosition=new Vector3(target.position.x,0,target.position.z);
+                Vector3 direction = findedTarget.position - transform.position;
+                Vector3 desiredVelocity = direction.normalized * basicEnemyMovementSpeed;
+                Vector3 velocityChange = desiredVelocity - rb.velocity;
+                velocityChange=new Vector3(velocityChange.x,rb.velocity.y,velocityChange.z);
+
                 anim.SetFloat("BasicEnemyMove",1f,0.3f,Time.deltaTime);
-                if (distance<=agent.stoppingDistance+0.5f)
+                if (distance <= basicStopingDistance) 
                 {
                     anim.SetBool("BasicEnemyAttacking",true);
-                    StartCoroutine(AttackDelay());
-                    
+                    isWalking = false;
+
                 }
                 else
                 {
                     anim.SetBool("BasicEnemyAttacking",false);
+                    rb.MovePosition(rb.position+velocityChange*Time.fixedDeltaTime);
+                    isWalking = true;
                 }
             }
             else
             {
                 anim.SetFloat("BasicEnemyMove",0f,0.3f,Time.deltaTime);
+                isTriggered = false;
             }
+
+            /*if (isWalking=true)
+            {
+                anim.SetFloat("BasicEnemyMove",rb.velocity.magnitude,0.3f,Time.deltaTime);
+            }*/
             
         }
-        IEnumerator AttackDelay () {
-            //hareketi durdur
-            agent.enabled=false;
-            yield return new WaitForSeconds (2f);
-            agent.enabled = true;
-            //hareketi devam ettir
-        }
+        
 
-        IEnumerator EnemyStan()
+        private void FindEnemyTarget()
         {
-            agent.enabled=false;
-            yield return new WaitForSeconds(1f);
-            agent.enabled = true;
-
+            RaycastHit hit;
+            if (Physics.Raycast(new Vector3(transform.position.x,1f,transform.position.z), player.position - transform.position, out hit, Mathf.Infinity))
+            {
+                if (hit.collider.gameObject == player.gameObject)
+                {
+                    // If the raycast hits the player, set the player as the target
+                    findedTarget = player;
+                }
+                else if (hit.collider.gameObject.layer == targetLayer)
+                {
+                    // If the raycast hits an object in the target layer, set the hit object as the target
+                    findedTarget = hit.collider.transform;
+                }
+            }
         }
+        
+        
         public void TakeDamage(Vector3 exploLocation,float damage)
         {
-            StartCoroutine(EnemyStan());
+            
         
             Vector3 jumpDirection=((transform.position-exploLocation)+Vector3.up).normalized*bombPower;
-            rb.velocity=(jumpDirection);
+            rb.AddForce(bombPower*exploLocation,ForceMode.VelocityChange);
             basicEnemyHealth -= damage;
             if (basicEnemyHealth<=0)
             {
