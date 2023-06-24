@@ -25,6 +25,12 @@ namespace ali
         [SerializeField] private float powerMultiplier;
         private float powerMagnitude;
         private Vector3 lastStaffTopPoint;
+        private bool firstTimeClick;
+
+        [SerializeField] private Collider staffColider;
+        [SerializeField] private Collider playerCollider;
+
+        [SerializeField] bool isStaffEquipped;
 
         //WeaponUI
         [SerializeField] private Image circleImage;
@@ -35,6 +41,7 @@ namespace ali
         void Start ()
         {
             powerMagnitude = 0;
+            Physics.IgnoreCollision(staffColider, playerCollider, true);
         }
 
 
@@ -55,6 +62,7 @@ namespace ali
                 initialMousePosition = Input.mousePosition;
                 lastStaffTopPoint = staffTopPoint.position;
 
+
                 //WeaponUI
                 startDragPosition = new Vector2(initialMousePosition.x, initialMousePosition.y);
                 circleImage.rectTransform.position = startDragPosition;
@@ -66,6 +74,10 @@ namespace ali
             {
                 //Change the position of the weapon based on the input
                 mouseMovementVector = new Vector2 (Input.mousePosition.x, Input.mousePosition.y) - initialMousePosition;
+                if (mouseMovementVector == Vector2.zero)
+                {
+                    mouseMovementVector = initialMousePosition - new Vector2 (960, 540);
+                }
                 float rotationValue = cameraPivotTransform.rotation.eulerAngles.y;
                 Vector3 changedLocalPosition = new Vector3(mouseMovementVector.normalized.x * 3, 0, mouseMovementVector.normalized.y * 3);
                 Vector3 changedReverseGravityLocation = new Vector3(mouseMovementVector.normalized.x * 1, 3, mouseMovementVector.normalized.y * 1);
@@ -73,22 +85,26 @@ namespace ali
                 weaponPivot.transform.localPosition = RotateVector(changedLocalPosition, -1 * rotationValue);
 
                 //Track the movement of the wand for deciding its powerMagnitude for the ranged attack
-                if (powerMagnitude > 100f)
+                if (isStaffEquipped)
                 {
-                    powerMagnitude = 100f;
-                }
-                else if(powerMagnitude > 50)
-                {
-                    powerMagnitude += Vector3.Distance(lastStaffTopPoint, staffTopPoint.position);
-                }
-                else
-                {
-                    powerMagnitude += Vector3.Distance(lastStaffTopPoint, staffTopPoint.position) * 2;
-                }
-                lastStaffTopPoint = staffTopPoint.position;
+                    if (powerMagnitude > 100f)
+                    {
+                        powerMagnitude = 100f;
+                    }
+                    else if (powerMagnitude > 50)
+                    {
+                        powerMagnitude += Vector3.Distance(lastStaffTopPoint, staffTopPoint.position);
+                    }
+                    else
+                    {
+                        powerMagnitude += Vector3.Distance(lastStaffTopPoint, staffTopPoint.position) * 2;
+                    }
+                    lastStaffTopPoint = staffTopPoint.position;
 
-                //Resize the effects based on powerMagnitude
-                topParticleObject.transform.localScale = new Vector3(powerMagnitude / 100, powerMagnitude / 100, powerMagnitude / 100);
+                    //Resize the effects based on powerMagnitude
+                    topParticleObject.transform.localScale = new Vector3(powerMagnitude / 100, powerMagnitude / 100, powerMagnitude / 100);
+                }
+                
 
                 //WeaponUI
                 Vector2 currentMousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
@@ -103,26 +119,24 @@ namespace ali
 
             else if (Input.GetMouseButtonUp(0))
             {
-                //launch the projectile
-                GameObject spawnedPlayerProjectile = Instantiate(playerProjectilePrefab);
-                spawnedPlayerProjectile.transform.position = staffTopRB.transform.position;
-                spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().PlayerProjectileDestination = staffTopRB.velocity;
-                spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().ProjectilePowerMagnitude = powerMagnitude;
-                spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().ProjecileType = particleType;
+                //launch the projectile if staff is equipped
+                if (isStaffEquipped)
+                {
+                    GameObject spawnedPlayerProjectile = Instantiate(playerProjectilePrefab);
+                    spawnedPlayerProjectile.transform.position = staffTopRB.transform.position;
+                    spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().PlayerProjectileDestination = staffTopRB.velocity;
+                    spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().ProjectilePowerMagnitude = powerMagnitude;
+                    spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().ProjecileType = particleType;
 
-                //reset the magnitude and the VFX
-                powerMagnitude = 0;
-                topParticleObject.transform.localScale = Vector3.zero;
+                    //reset the magnitude and the VFX
+                    powerMagnitude = 0;
+                    topParticleObject.transform.localScale = Vector3.zero;
+                }
 
                 //WeaponUI
                 circleImage.gameObject.SetActive(false);
                 lineRectTransform.gameObject.SetActive(false);
             }
-        }
-
-        private void RangedAttack(float power, Vector3 aimLocation)
-        {
-
         }
 
         private Vector3 RotateVector(Vector3 vector, float angle)
