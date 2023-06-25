@@ -1,3 +1,4 @@
+using CihanAkpýnar;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Rendering;
@@ -127,10 +128,10 @@ namespace ali
                 {
                     Rigidbody objectInTrigger = collider.gameObject.GetComponent<Rigidbody>();
 
-                    float multiplierValue = (5f - ((objectInTrigger.gameObject.transform.position - transform.position).magnitude)) * 3f;
-                    if (multiplierValue < 5f)
+                    float multiplierValue = (10f - ((objectInTrigger.gameObject.transform.position - transform.position).magnitude)) * projectilePowerMagnitude/100 * 5f;
+                    if (multiplierValue < 1f)
                     {
-                        multiplierValue = 5f;
+                        multiplierValue = 1f;
                     }
 
                     objectInTrigger.AddForce((objectInTrigger.gameObject.transform.position - transform.position).normalized * multiplierValue, ForceMode.Impulse);
@@ -138,6 +139,10 @@ namespace ali
                     if (collider.gameObject.GetComponent<MoveableObjectScript>() != null)
                     {
                         collider.gameObject.GetComponent<MoveableObjectScript>().MoveableObjectTakeDamage(multiplierValue);
+                    }
+                    else if (collider.gameObject.GetComponent<BasicSpawnedEnemyAi>() != null)
+                    {
+                        collider.gameObject.GetComponent<BasicSpawnedEnemyAi>().TakeDamage((objectInTrigger.gameObject.transform.position - transform.position).normalized * multiplierValue / 5, multiplierValue);
                     }
                 }
 
@@ -151,10 +156,10 @@ namespace ali
                 {
                     Rigidbody objectInTrigger = collider.gameObject.GetComponent<Rigidbody>();
 
-                    float multiplierValue = (5f - ((objectInTrigger.gameObject.transform.position - transform.position).magnitude)) * 6f;
-                    if (multiplierValue < 5f)
+                    float multiplierValue = (10f - ((objectInTrigger.gameObject.transform.position - transform.position).magnitude)) * projectilePowerMagnitude/100 * 5f;
+                    if (multiplierValue < 1f)
                     {
-                        multiplierValue = 5f;
+                        multiplierValue = 1f;
                     }
 
                     objectInTrigger.AddForce((objectInTrigger.gameObject.transform.position - transform.position).normalized * multiplierValue, ForceMode.Impulse);

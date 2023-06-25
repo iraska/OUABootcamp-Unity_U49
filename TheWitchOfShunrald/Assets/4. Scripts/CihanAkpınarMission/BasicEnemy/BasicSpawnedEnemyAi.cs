@@ -37,7 +37,7 @@ namespace CihanAkpınar
         {
             rb = GetComponent<Rigidbody>();
             anim = GetComponentInChildren<Animator>();
-            player = DenemeCihan.instance.player.transform;
+            player = GameManager.instance.Player.transform;
             findedTarget = player;
         }
         
@@ -52,10 +52,6 @@ namespace CihanAkpınar
         }
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                TakeDamage(Vector3.up, bombPower);
-            }
             FaceTarget();
         }
         

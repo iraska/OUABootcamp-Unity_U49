@@ -45,6 +45,10 @@ namespace ali
             powerMagnitude = 0;
             Physics.IgnoreCollision(staffColider, playerCollider, true);
             Physics.IgnoreCollision(staffTopSphereColider, playerCollider, true);
+
+            QualitySettings.vSyncCount = 0;
+            Application.targetFrameRate = 60;
+
         }
 
 

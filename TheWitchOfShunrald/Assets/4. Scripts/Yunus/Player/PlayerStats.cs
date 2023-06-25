@@ -21,6 +21,11 @@ public class PlayerStats : MonoBehaviour
     public int StartingDamage { get { return startingDamage; } }
     public int StartingMana { get { return startingMana; } }
 
+    private void Awake()
+    {
+        GameManager.instance.Player = this.gameObject;
+    }
+
     private void Start()
     {
         if(PlayerPrefs.GetInt("lastGame", 0) > 0)
