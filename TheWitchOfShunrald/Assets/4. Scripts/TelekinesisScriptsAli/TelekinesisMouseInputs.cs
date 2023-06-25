@@ -1,3 +1,4 @@
+using Shunrald;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
@@ -15,21 +16,16 @@ namespace ali
 
         private Vector3 pullingPoint;
 
-        private Camera mainCamera;
+        [SerializeField] private Camera mainCamera;
         private int objectLayer = 4;
         private GameObject previousPointedObject;
-
-        private void Start()
-        {
-            mainCamera = Camera.main;
-        }
 
         private void Update()
         {
             if (Input.GetMouseButtonDown(1))
             {
                 isRightClicking = true;
-
+                GameManager.instance.Player.GetComponent<ShunraldMovementController>().IsUsingWeapon = true;
                 if (previousPointedObject != null)
                 {
                     Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -53,7 +49,7 @@ namespace ali
             else if (Input.GetMouseButtonUp(1))
             {
                 isRightClicking = false;
-
+                GameManager.instance.Player.GetComponent<ShunraldMovementController>().IsUsingWeapon = false;
                 if (createdPrefab != null)
                 {
                     connectedObstacleRB.drag = 0;

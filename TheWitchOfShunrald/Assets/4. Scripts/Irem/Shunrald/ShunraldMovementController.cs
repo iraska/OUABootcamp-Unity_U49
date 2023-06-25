@@ -14,11 +14,18 @@ namespace Shunrald
         private ShunraldController controller;
         private Animator animator;
         private Rigidbody rb;
+        private Vector3 targetPosition;
 
         private Vector3 input;
 
         private float velocityX, velocityZ;
         private bool isDashing;
+        private bool isUsingWeapon;
+        public bool IsUsingWeapon
+        {
+            get { return isUsingWeapon; }
+            set { isUsingWeapon = value; }
+        }
 
         private void Awake()
         {
@@ -36,8 +43,12 @@ namespace Shunrald
 
         private void Update()
         {
-            AimTowardMouse();
-            LookIsometric();
+            if (!isUsingWeapon) 
+            {
+                AimTowardMouse();
+            }
+            
+            //LookIsometric();
 
             controller.Animation.AnimateCharacter(input, velocityX, velocityZ, animator);
 
@@ -86,12 +97,12 @@ namespace Shunrald
             {
                 input.Normalize();
 
-                Vector3 movement = input.ToIso() * speed * Time.deltaTime;
+                Vector3 movement = RotateVector(input, -1 * lensCam.transform.parent.eulerAngles.y) * speed * Time.deltaTime;
                 //rb.MovePosition(rb.position + movement);
                 Vector3 newPosition = rb.position + movement;
 
 
-                Vector3 targetPosition = Vector3.Lerp(rb.position, newPosition, 0.9f);
+                targetPosition = Vector3.Lerp(rb.position, newPosition, 0.9f);
                 rb.MovePosition(targetPosition);
             }
             else if (!isDashing)
@@ -100,6 +111,19 @@ namespace Shunrald
                 rb.velocity = Vector3.zero;
             }
         }
+
+        private Vector3 RotateVector(Vector3 vector, float angle)
+        {
+            float angleRad = angle * Mathf.Deg2Rad; // Convert angle to radians
+            float sin = Mathf.Sin(angleRad);
+            float cos = Mathf.Cos(angleRad);
+
+            float newX = vector.x * cos - vector.z * sin;
+            float newZ = vector.x * sin + vector.z * cos;
+
+            return new Vector3(newX, vector.y, newZ);
+        }
+
 
         private void LookIsometric()
         {
@@ -122,7 +146,7 @@ namespace Shunrald
         {
             float startTime = Time.time;
 
-            Vector3 dashVelocity = transform.forward * dashSpeed;
+            Vector3 dashVelocity = (targetPosition - transform.position).normalized * dashSpeed;
 
             while (Time.time < startTime + dashTime)
             {

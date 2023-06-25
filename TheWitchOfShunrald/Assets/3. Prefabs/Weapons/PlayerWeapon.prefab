@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 174170985}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: TopParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 781669714}
   - component: {fileID: 781669713}
   - component: {fileID: 781669712}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 832522844}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ParticlePoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1496618891}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ParticleVFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3029348568488567938}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ParticlePoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4587924700620183788}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ParticleVFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 181103499096046832}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: TopParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +392,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 218863805103901286}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: EnergyParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -508,7 +508,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 526439461371564920}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: WeaponObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 1072256750810269651}
   - component: {fileID: 9044738070422629744}
   - component: {fileID: 1748596057526075165}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: WeaponTopPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,7 +632,7 @@ GameObject:
   - component: {fileID: 8272404463689362858}
   - component: {fileID: 1146678691865458526}
   - component: {fileID: 9048297461232423612}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: WeaponHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -776,7 +776,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2687143120756069961}
   - component: {fileID: 3257909504570420682}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ReverseGravityPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -823,7 +823,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4673279202888389200}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: WeaponPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -857,7 +857,7 @@ GameObject:
   - component: {fileID: 8089203482522535866}
   - component: {fileID: 1697862180134181097}
   - component: {fileID: 129609806391230565}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: WeaponHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1000,7 +1000,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9034231757379080332}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: WeaponPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1033,7 +1033,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4797427867569578256}
   - component: {fileID: 6383281048919861465}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ReverseGravityPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1080,7 +1080,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6980339129969344403}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: WeaponPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1131,7 +1131,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 9034231757379080332}
   - {fileID: 526439461371564920}
@@ -1329,7 +1329,7 @@ GameObject:
   - component: {fileID: 4553521578366867506}
   - component: {fileID: 3374946314933722642}
   - component: {fileID: 8717289626159737887}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: WeaponGrabPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1389,7 +1389,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7626081891947929922}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ParticlePoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1472,7 +1472,7 @@ GameObject:
   - component: {fileID: 1933195537227524123}
   - component: {fileID: 7883117952543581197}
   - component: {fileID: 1231312033}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Staff_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1588,7 +1588,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6650866100943430911}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: WeaponObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1621,7 +1621,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 53463527102326822}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ParticleVFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1657,7 +1657,7 @@ GameObject:
   - component: {fileID: 1260538838186741298}
   - component: {fileID: 8925327981340011977}
   - component: {fileID: 6059192137901838923}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: WeaponTopPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1745,7 +1745,7 @@ GameObject:
   - component: {fileID: 5491493238624168149}
   - component: {fileID: 616031325749171908}
   - component: {fileID: 1062364984}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: PlayerWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1761,8 +1761,8 @@ Transform:
   m_GameObject: {fileID: 5212435266442948257}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5784398211585799915}
   - {fileID: 7331739148619372529}
@@ -1797,7 +1797,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabToCreate: {fileID: 5435615847577198238, guid: d6d1500e85f6cef4591f55af5ab76cc6,
     type: 3}
-  moveSpeed: 1
 --- !u!1 &5837353784643369576
 GameObject:
   m_ObjectHideFlags: 0
@@ -1807,7 +1806,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 185400742046436512}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: WeaponPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1839,7 +1838,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4586107899196148494}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: WeaponPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1890,7 +1889,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 185400742046436512}
   - {fileID: 7419686648923732557}
@@ -1936,7 +1935,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3054030079337623122}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: TopParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1986,7 +1985,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4673279202888389200}
   - {fileID: 6650866100943430911}
@@ -2033,7 +2032,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4977388418053683007}
   - component: {fileID: 6110073497284080153}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: WeaponGrabPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2166,7 +2165,7 @@ GameObject:
   - component: {fileID: 7866718421354168169}
   - component: {fileID: 6737742424340127051}
   - component: {fileID: 7127531158015464848}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: WeaponHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2312,7 +2311,7 @@ GameObject:
   - component: {fileID: 5157249533455399956}
   - component: {fileID: 7817775989814943238}
   - component: {fileID: 5741037471789299827}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: WeaponTopPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2565,7 +2564,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6814836802567295328}
   - component: {fileID: 8989288350960496254}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ReverseGravityPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2612,7 +2611,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7419686648923732557}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: WeaponObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2645,7 +2644,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 992561586602565343}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: WeaponPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2679,7 +2678,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9079859579361617265}
   - component: {fileID: 309470743237834825}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: WeaponGrabPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2727,7 +2726,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6021828741500780070}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: BottomParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2875,7 +2874,7 @@ PrefabInstance:
     - target: {fileID: 1175087411196274800, guid: 8a1ba5d9c0892c44595d23b965e35f04,
         type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2219220151640257687, guid: 8a1ba5d9c0892c44595d23b965e35f04,
         type: 3}
@@ -2900,7 +2899,7 @@ PrefabInstance:
     - target: {fileID: 3293969999394437599, guid: 8a1ba5d9c0892c44595d23b965e35f04,
         type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5153973296581862218, guid: 8a1ba5d9c0892c44595d23b965e35f04,
         type: 3}
@@ -2985,12 +2984,12 @@ PrefabInstance:
     - target: {fileID: 5921394656106160930, guid: 8a1ba5d9c0892c44595d23b965e35f04,
         type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7359705128577541977, guid: 8a1ba5d9c0892c44595d23b965e35f04,
         type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a1ba5d9c0892c44595d23b965e35f04, type: 3}
@@ -3010,7 +3009,7 @@ PrefabInstance:
     - target: {fileID: 555813009154879528, guid: 5cb58afa36b178345b78144fffd2d47b,
         type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1299999477799337036, guid: 5cb58afa36b178345b78144fffd2d47b,
         type: 3}
@@ -3020,7 +3019,7 @@ PrefabInstance:
     - target: {fileID: 2468208129507777878, guid: 5cb58afa36b178345b78144fffd2d47b,
         type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3768797481828580670, guid: 5cb58afa36b178345b78144fffd2d47b,
         type: 3}
@@ -3085,7 +3084,7 @@ PrefabInstance:
     - target: {fileID: 5641861170687165906, guid: 5cb58afa36b178345b78144fffd2d47b,
         type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6824032867232716645, guid: 5cb58afa36b178345b78144fffd2d47b,
         type: 3}
@@ -3095,7 +3094,7 @@ PrefabInstance:
     - target: {fileID: 6824032867232716645, guid: 5cb58afa36b178345b78144fffd2d47b,
         type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6824032867232716645, guid: 5cb58afa36b178345b78144fffd2d47b,
         type: 3}
@@ -3201,7 +3200,7 @@ PrefabInstance:
     - target: {fileID: 7041988156464448301, guid: 4668ec0d8b5243d41a42224fab522601,
         type: 3}
       propertyPath: m_Layer
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4668ec0d8b5243d41a42224fab522601, type: 3}

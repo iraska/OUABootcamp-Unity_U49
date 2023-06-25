@@ -2595,6 +2595,7 @@ GameObject:
   - component: {fileID: 4560843040786076030}
   - component: {fileID: 4560843040786076000}
   - component: {fileID: 4560843040786076001}
+  - component: {fileID: 3799077968591239191}
   - component: {fileID: 4560843040786076002}
   - component: {fileID: 4560843040786076003}
   - component: {fileID: 4560843040786076028}
@@ -2678,6 +2679,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e39380b10b6a64cbfef7f101fbf24f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3799077968591239191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7124873748579111358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4aac58be0693694f99ec2ec3ed05328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+  startingDamage: 10
+  startingMana: 50
+  healthMaxValue: 150
+  damageMaxValue: 20
+  manaMaxValue: 100
 --- !u!114 &4560843040786076002
 MonoBehaviour:
   m_ObjectHideFlags: 0

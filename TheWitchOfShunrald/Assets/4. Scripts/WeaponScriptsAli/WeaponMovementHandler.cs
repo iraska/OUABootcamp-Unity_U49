@@ -1,3 +1,4 @@
+using Shunrald;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,6 +30,7 @@ namespace ali
 
         [SerializeField] private Collider staffColider;
         [SerializeField] private Collider playerCollider;
+        [SerializeField] private Collider staffTopSphereColider;
 
         [SerializeField] bool isStaffEquipped;
 
@@ -42,11 +44,25 @@ namespace ali
         {
             powerMagnitude = 0;
             Physics.IgnoreCollision(staffColider, playerCollider, true);
+            Physics.IgnoreCollision(staffTopSphereColider, playerCollider, true);
         }
 
 
         void Update()
         {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                DialogSystem.DialogStruct [] birinciDiyaloglar = new DialogSystem.DialogStruct[3];
+                for (int i = 0; i < 3; i++)
+                {
+                    birinciDiyaloglar[i].text = i + ". diyalog metni";
+                    birinciDiyaloglar[i].name = "The Witch of Shunrald";
+                    birinciDiyaloglar[i].icon = null;
+                }
+
+                UIManager.instance.DialogPanel(birinciDiyaloglar);
+            }
+
             if (Input.GetMouseButtonDown(0))
             {
                 if (particleType == 0)
@@ -72,6 +88,7 @@ namespace ali
 
             else if (Input.GetMouseButton(0))
             {
+                GameManager.instance.Player.GetComponent<ShunraldMovementController>().IsUsingWeapon = true;
                 //Change the position of the weapon based on the input
                 mouseMovementVector = new Vector2 (Input.mousePosition.x, Input.mousePosition.y) - initialMousePosition;
                 if (mouseMovementVector == Vector2.zero)
@@ -119,6 +136,7 @@ namespace ali
 
             else if (Input.GetMouseButtonUp(0))
             {
+                GameManager.instance.Player.GetComponent<ShunraldMovementController>().IsUsingWeapon = false;
                 //launch the projectile if staff is equipped
                 if (isStaffEquipped)
                 {

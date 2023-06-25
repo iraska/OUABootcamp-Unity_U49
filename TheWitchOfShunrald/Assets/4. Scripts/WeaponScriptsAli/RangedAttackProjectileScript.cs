@@ -127,7 +127,7 @@ namespace ali
                 {
                     Rigidbody objectInTrigger = collider.gameObject.GetComponent<Rigidbody>();
 
-                    float multiplierValue = (5f - ((objectInTrigger.gameObject.transform.position - transform.position).magnitude)) * 6f;
+                    float multiplierValue = (5f - ((objectInTrigger.gameObject.transform.position - transform.position).magnitude)) * 3f;
                     if (multiplierValue < 5f)
                     {
                         multiplierValue = 5f;
