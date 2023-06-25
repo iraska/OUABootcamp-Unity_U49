@@ -9,7 +9,7 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
-    [SerializeField] private GameObject gamePanel, pausePanel, upgradePanel, dialogPanel, winPanel, losePanel;
+    [SerializeField] private GameObject gamePanel, pausePanel, upgradePanel, dialogPanel, winPanel, losePanel, infoPanel;
     [SerializeField] private Image healthBar, manaBar, weaponImage;
     [SerializeField] private Text infoText;
     [SerializeField] private DialogSystem dialogSystem;
@@ -77,10 +77,15 @@ public class UIManager : MonoBehaviour
     {
         healthBar.DOFillAmount(currentMana / (float)maxMana, 1f).SetEase(Ease.Linear);
     }
-    public void InfoText(string text)
+    public void InfoEnable(string text)
     {
+        infoPanel.SetActive(true);
         infoText.text = "";
         infoText.DOText(text, text.Length / 100);
+    }
+    public void InfoDisable()
+    {
+        infoPanel.SetActive(false);
     }
 
     public void WeaponImage(Sprite weapon)
