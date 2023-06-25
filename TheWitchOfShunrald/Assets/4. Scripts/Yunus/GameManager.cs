@@ -27,7 +27,8 @@ public class GameManager : MonoBehaviour
     }
 
     private GameObject player;
-    public GameObject Player { get { return player; } }
+    public GameObject Player { get { return player; } set { player = value; } }
+    [SerializeField] private int targetFrameRate = 60;
     public static GameManager instance;
     private void Awake()
     {
@@ -43,15 +44,16 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
     }
-
     private void Start()
     {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = targetFrameRate;
         GameState = State.Menu;
     }
+
     public void GameStart()
     {
         UIManager.instance.GamePanel();
-        player = GameObject.Find("Player");
         gameState = State.Playing;
     }
     public void Win()
