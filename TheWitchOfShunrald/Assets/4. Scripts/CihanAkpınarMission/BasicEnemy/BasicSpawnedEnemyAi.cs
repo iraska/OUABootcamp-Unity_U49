@@ -96,8 +96,6 @@ namespace CihanAkpınar
             }
             anim.SetFloat("BasicEnemyMove",basicEnemyVelocitySpeed,0.3f,Time.deltaTime);
 
-                
-            Debug.Log(basicEnemyVelocitySpeed);
             float distance = Vector3.Distance(findedTarget.position, transform.position);
             if (distance<=lookSpawnedEnemyRadius)
             {

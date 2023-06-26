@@ -535,6 +535,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7124873748579111358, guid: 6850f33ebf64faa45ba6d48b71aa5443,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7754906770804753615, guid: 6850f33ebf64faa45ba6d48b71aa5443,
         type: 3}
       propertyPath: m_Layer
@@ -5518,7 +5523,7 @@ PrefabInstance:
     - target: {fileID: 8645639842838280280, guid: 0c4c5165bd0d7f64fbf962d395bb5a91,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -27.9
+      value: 3.37
       objectReference: {fileID: 0}
     - target: {fileID: 8645639842838280283, guid: 0c4c5165bd0d7f64fbf962d395bb5a91,
         type: 3}
@@ -5529,6 +5534,16 @@ PrefabInstance:
         type: 3}
       propertyPath: orthographic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645639842838280285, guid: 0c4c5165bd0d7f64fbf962d395bb5a91,
+        type: 3}
+      propertyPath: far clip plane
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645639842838280285, guid: 0c4c5165bd0d7f64fbf962d395bb5a91,
+        type: 3}
+      propertyPath: near clip plane
+      value: -37
       objectReference: {fileID: 0}
     - target: {fileID: 8645639842838280285, guid: 0c4c5165bd0d7f64fbf962d395bb5a91,
         type: 3}

@@ -11,9 +11,10 @@ namespace CihanAkpınar
         [SerializeField] int basicDamage;
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject==GameManager.instance.Player)
+            Debug.Log(other.gameObject.name);
+            if (other.gameObject.transform.parent.CompareTag("Player"))
             {
-                other.gameObject.GetComponent<PlayerStats>().TakeDamage(basicDamage);  
+                other.gameObject.transform.parent.gameObject.GetComponent<PlayerStats>().TakeDamage(basicDamage);  
             }
         }
     } 
