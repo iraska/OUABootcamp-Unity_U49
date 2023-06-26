@@ -17,7 +17,7 @@ namespace ali
         private Vector3 pullingPoint;
 
         [SerializeField] private Camera mainCamera;
-        private int objectLayer = 4;
+        private int objectLayer = 13;
         private GameObject previousPointedObject;
 
         private void Update()

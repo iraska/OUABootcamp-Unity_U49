@@ -20,6 +20,8 @@ namespace ali
 
         [SerializeField] private LayerMask tinyPartsLayerMask;
 
+        [SerializeField] private LayerMask moveableObjectsLayerMask;
+
         [SerializeField] private GameObject projectileParticle;
 
         [SerializeField] private GameObject energyParticle;
@@ -27,6 +29,8 @@ namespace ali
 
         [SerializeField] private GameObject fireParticle;
         [SerializeField] private GameObject dieFireParticlePrefab;
+
+        [SerializeField] private float projectilePowerMultiplier;
 
         private GameObject enemyToBeTracked;
 
@@ -123,45 +127,26 @@ namespace ali
 
             foreach (Collider collider in colliders)
             {
-                
-                if (((1 << collider.gameObject.layer) & canExplodeLayerMask) != 0)
+                Rigidbody objectInTrigger = collider.gameObject.GetComponent<Rigidbody>();
+
+                float multiplierValue = (10f - ((objectInTrigger.gameObject.transform.position - transform.position).magnitude)) * projectilePowerMagnitude / 100 * projectilePowerMultiplier;
+                if (multiplierValue < 1f)
                 {
-                    Rigidbody objectInTrigger = collider.gameObject.GetComponent<Rigidbody>();
-
-                    float multiplierValue = (10f - ((objectInTrigger.gameObject.transform.position - transform.position).magnitude)) * projectilePowerMagnitude/100 * 5f;
-                    if (multiplierValue < 1f)
-                    {
-                        multiplierValue = 1f;
-                    }
-
-                    objectInTrigger.AddForce((objectInTrigger.gameObject.transform.position - transform.position).normalized * multiplierValue, ForceMode.Impulse);
-
-                    if (collider.gameObject.GetComponent<MoveableObjectScript>() != null)
-                    {
-                        collider.gameObject.GetComponent<MoveableObjectScript>().MoveableObjectTakeDamage(multiplierValue);
-                    }
-                    else if (collider.gameObject.GetComponent<BasicSpawnedEnemyAi>() != null)
-                    {
-                        collider.gameObject.GetComponent<BasicSpawnedEnemyAi>().TakeDamage((objectInTrigger.gameObject.transform.position - transform.position).normalized * multiplierValue / 5, multiplierValue);
-                    }
+                    multiplierValue = 1f;
                 }
 
-            }
-            
-            Collider[] tinyColliders = Physics.OverlapSphere(transform.position, 4f, tinyPartsLayerMask);
-            foreach (Collider collider in tinyColliders)
-            {
-
-                if (((1 << collider.gameObject.layer) & tinyPartsLayerMask) != 0)
+                if (((1 << collider.gameObject.layer) & moveableObjectsLayerMask) != 0)
                 {
-                    Rigidbody objectInTrigger = collider.gameObject.GetComponent<Rigidbody>();
-
-                    float multiplierValue = (10f - ((objectInTrigger.gameObject.transform.position - transform.position).magnitude)) * projectilePowerMagnitude/100 * 5f;
-                    if (multiplierValue < 1f)
-                    {
-                        multiplierValue = 1f;
-                    }
-
+                    objectInTrigger.AddForce((objectInTrigger.gameObject.transform.position - transform.position).normalized * multiplierValue, ForceMode.Impulse);
+                    collider.gameObject.GetComponent<MoveableObjectScript>().MoveableObjectTakeDamage(multiplierValue);
+                }
+                else if (((1 << collider.gameObject.layer) & targetLayerMask) != 0)
+                {
+                    Debug.Log("Hit on enemy with direction: " + (objectInTrigger.gameObject.transform.position - transform.position).normalized * multiplierValue / 5);
+                    collider.gameObject.GetComponent<BasicSpawnedEnemyAi>().TakeDamage((objectInTrigger.gameObject.transform.position - transform.position).normalized * multiplierValue / 5, multiplierValue);
+                }
+                else if (((1 << collider.gameObject.layer) & tinyPartsLayerMask) != 0)
+                {
                     objectInTrigger.AddForce((objectInTrigger.gameObject.transform.position - transform.position).normalized * multiplierValue, ForceMode.Impulse);
                 }
 

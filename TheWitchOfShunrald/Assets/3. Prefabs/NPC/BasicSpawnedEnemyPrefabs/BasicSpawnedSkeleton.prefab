@@ -1305,7 +1305,7 @@ GameObject:
   - component: {fileID: 5361999876636898326}
   - component: {fileID: 5361999876636898327}
   - component: {fileID: 5361999876636898321}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BasicSpawnedSkeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1446,7 +1446,7 @@ MonoBehaviour:
     type: 3}
   lookSpawnedEnemyRadius: 10
   bombPower: 3
-  basicStopingDistance: 2.5
+  basicStopingDistance: 1
   basicEnemyHealth: 10
   basicEnemyMovementSpeed: 2
   targetLayer: 5

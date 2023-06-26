@@ -136,7 +136,7 @@ namespace CihanAkpınar
             
         
             Vector3 jumpDirection=((transform.position-exploLocation)+Vector3.up).normalized*bombPower;
-            rb.AddForce(bombPower*exploLocation,ForceMode.VelocityChange);
+            rb.AddForce(bombPower * jumpDirection, ForceMode.VelocityChange);
             basicEnemyHealth -= damage;
             if (basicEnemyHealth<=0)
             {
