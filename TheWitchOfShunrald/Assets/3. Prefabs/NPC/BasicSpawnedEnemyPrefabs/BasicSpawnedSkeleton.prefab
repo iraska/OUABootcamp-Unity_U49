@@ -1408,7 +1408,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7287705421693023648}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1444,12 +1444,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicEnemyDiePart: {fileID: 5130003127346239025, guid: 712fd7dc945d0b4429b07cd218760c64,
     type: 3}
+  basicManaPot: {fileID: 0}
+  basicHealthPot: {fileID: 0}
   lookSpawnedEnemyRadius: 10
   bombPower: 3
-  basicStopingDistance: 1
-  basicEnemyHealth: 10
-  basicEnemyMovementSpeed: 2
+  basicStopingDistance: 1.2
+  basicEnemyHealth: 50
+  basicEnemyMovementSpeed: 100
   targetLayer: 5
+  healthPotProbability: 10
+  manaPotProbability: 10
 --- !u!1 &8258688541923889042
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,6 +1560,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8815802628101888037}
   - component: {fileID: 8815802628101888036}
+  - component: {fileID: 2070252948620757198}
   m_Layer: 0
   m_Name: SkeletonDamageTrigger
   m_TagString: Untagged
@@ -1591,6 +1596,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.05892851, y: 0.5145947, z: 0.084566996}
   m_Center: {x: 0.0066387104, y: -0.10302915, z: -0.0022138557}
+--- !u!114 &2070252948620757198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8815802628101888038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 570db499a8465314b90b09ffc4f4dd2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basicDamage: 10
 --- !u!1 &8942965751566203830
 GameObject:
   m_ObjectHideFlags: 0

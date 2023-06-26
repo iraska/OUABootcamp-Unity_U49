@@ -4,9 +4,18 @@ using System.Collections.Generic;
 using CihanAkpınar;
 using UnityEngine;
 
-public class BasicSpawnedEnemyDealDamage : MonoBehaviour
+namespace CihanAkpınar
 {
-    //DenemeCihan.instance.player.GetComponent<>().TakeDamage(100)
-    
-    
+    public class BasicSpawnedEnemyDealDamage : MonoBehaviour
+    {
+        [SerializeField] int basicDamage;
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject==GameManager.instance.Player)
+            {
+                other.gameObject.GetComponent<PlayerStats>().TakeDamage(basicDamage);  
+            }
+        }
+    } 
 }
+

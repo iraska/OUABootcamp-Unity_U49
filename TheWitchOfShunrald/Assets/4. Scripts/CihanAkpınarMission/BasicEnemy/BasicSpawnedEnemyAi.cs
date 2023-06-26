@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Cinemachine;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace CihanAkpınar
@@ -21,8 +19,11 @@ namespace CihanAkpınar
         
         private float isBasicEnemyRuning;
         private float isBasicEnemyAttacking;
+        private float basicEnemyVelocitySpeed;
 
         [SerializeField] private GameObject basicEnemyDiePart;
+        [SerializeField] private GameObject basicManaPot;
+        [SerializeField] private GameObject basicHealthPot;
         
         [SerializeField] private float lookSpawnedEnemyRadius = 10f;
         [SerializeField] private float bombPower;
@@ -30,11 +31,17 @@ namespace CihanAkpınar
         [SerializeField] private float basicEnemyHealth;
         [SerializeField] private float basicEnemyMovementSpeed;
         
+        
         [SerializeField] private int targetLayer;
+        [SerializeField] private int healthPotProbability;
+        [SerializeField] private int manaPotProbability;
+        
+        private int mainProbability;
 
 
         void Start()
         {
+            isWalking = true;
             rb = GetComponent<Rigidbody>();
             anim = GetComponentInChildren<Animator>();
             player = GameManager.instance.Player.transform;
@@ -73,43 +80,68 @@ namespace CihanAkpınar
 
         void BasicEnemyAnim()
         {
-            
+            basicEnemyVelocitySpeed = rb.velocity.magnitude;
+            basicEnemyVelocitySpeed = basicEnemyVelocitySpeed - 1.4f;
+            if (basicEnemyVelocitySpeed<0)
+            {
+                basicEnemyVelocitySpeed = 0;
+                    
+            }
+
+            basicEnemyVelocitySpeed *= 2;
+
+            if (basicEnemyVelocitySpeed>1)
+            {
+                basicEnemyVelocitySpeed = 1;
+            }
+            anim.SetFloat("BasicEnemyMove",basicEnemyVelocitySpeed,0.3f,Time.deltaTime);
+
+                
+            Debug.Log(basicEnemyVelocitySpeed);
             float distance = Vector3.Distance(findedTarget.position, transform.position);
             if (distance<=lookSpawnedEnemyRadius)
             {
                 isTriggered = true;
                 //Vector3 targetPlayerPosition=new Vector3(target.position.x,0,target.position.z);
                 Vector3 direction = findedTarget.position - transform.position;
-                Vector3 desiredVelocity = direction.normalized * basicEnemyMovementSpeed;
-                Vector3 velocityChange = desiredVelocity - rb.velocity;
-                velocityChange=new Vector3(velocityChange.x,rb.velocity.y,velocityChange.z);
+                
+                
+                
 
-                anim.SetFloat("BasicEnemyMove",1f,0.3f,Time.deltaTime);
                 if (distance <= basicStopingDistance) 
                 {
                     anim.SetBool("BasicEnemyAttacking",true);
-                    isWalking = false;
-
+                    StartCoroutine(AttackDelay());
                 }
                 else
                 {
                     anim.SetBool("BasicEnemyAttacking",false);
-                    rb.MovePosition(rb.position+velocityChange*Time.fixedDeltaTime);
-                    isWalking = true;
+                    if (isWalking)
+                    {
+                        Vector3 newVelocityValue=new Vector3(direction.normalized.x* Time.fixedDeltaTime*basicEnemyMovementSpeed,rb.velocity.y,direction.normalized.z* Time.fixedDeltaTime*basicEnemyMovementSpeed);
+                        rb.velocity = newVelocityValue;
+                    }
+                    
                 }
             }
             else
             {
-                anim.SetFloat("BasicEnemyMove",0f,0.3f,Time.deltaTime);
+                //anim.SetFloat("BasicEnemyMove",0f,0.3f,Time.deltaTime);
                 isTriggered = false;
             }
 
-            /*if (isWalking=true)
+            IEnumerator AttackDelay()
             {
-                anim.SetFloat("BasicEnemyMove",rb.velocity.magnitude,0.3f,Time.deltaTime);
-            }*/
+                isWalking = false;
+                yield return new WaitForSeconds(1.5f);
+                isWalking = true;
+            }
+
+            
             
         }
+
+        
         
 
         private void FindEnemyTarget()
@@ -141,8 +173,24 @@ namespace CihanAkpınar
             if (basicEnemyHealth<=0)
             {
                 anim.SetTrigger("BasicEnemyDie");
-                GameObject.Destroy(gameObject);
+                DropMath();
                 Instantiate(basicEnemyDiePart, new Vector3(transform.position.x, transform.position.y, transform.position.z),Quaternion.identity);
+                GameObject.Destroy(gameObject);
+            }
+
+        }
+        
+        
+        void DropMath()
+        {
+            mainProbability = UnityEngine.Random.Range(1, 101);
+            if (mainProbability<=healthPotProbability)
+            {
+                Instantiate(basicHealthPot, transform.position, quaternion.identity);
+            }
+            else if (healthPotProbability<mainProbability && mainProbability<=healthPotProbability+manaPotProbability)
+            {
+                Instantiate(basicManaPot, transform.position, quaternion.identity);  
             }
 
         }

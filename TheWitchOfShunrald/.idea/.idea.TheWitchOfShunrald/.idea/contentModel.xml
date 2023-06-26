@@ -25,11 +25,6 @@
             <e p="BasicSpawner" t="Include">
               <e p="BasicEnemySpawner.cs" t="Include" />
             </e>
-            <e p="DenemeCihan.cs" t="Include" />
-            <e p="Drop&amp;Loot" t="Include">
-              <e p="BasicItem.cs" t="Include" />
-              <e p="BasicLootTable.cs" t="Include" />
-            </e>
           </e>
           <e p="Irem" t="Include">
             <e p="CameraSystem" t="Include">
@@ -45,16 +40,32 @@
               <e p="ShunraldMovementController.cs" t="Include" />
             </e>
           </e>
-          <e p="UI" t="Include">
-            <e p="DialogSystem.cs" t="Include" />
-            <e p="GameUI.cs" t="Include" />
-            <e p="UIManager.cs" t="Include" />
+          <e p="TelekinesisScriptsAli" t="Include">
+            <e p="MoveableObjectScript.cs" t="Include" />
+            <e p="TelekinesisMouseInputs.cs" t="Include" />
           </e>
           <e p="WeaponScriptsAli" t="Include">
-            <e p="CameraMovement.cs" t="Include" />
+            <e p="RangedAttackEnemyFinder.cs" t="Include" />
             <e p="RangedAttackProjectileScript.cs" t="Include" />
+            <e p="SwordRotatıonHandler.cs" t="Include" />
+            <e p="Temp" t="Include">
+              <e p="CameraMovement.cs" t="Include" />
+            </e>
             <e p="WeaponFollowPlayer.cs" t="Include" />
             <e p="WeaponMovementHandler.cs" t="Include" />
+            <e p="WeaponUIHandler.cs" t="Include" />
+          </e>
+          <e p="Yunus" t="Include">
+            <e p="GameManager.cs" t="Include" />
+            <e p="LevelManager.cs" t="Include" />
+            <e p="Player" t="Include">
+              <e p="PlayerStats.cs" t="Include" />
+            </e>
+            <e p="UI" t="Include">
+              <e p="DialogSystem.cs" t="Include" />
+              <e p="UIManager.cs" t="Include" />
+            </e>
+            <e p="UpgradeSystem.cs" t="Include" />
           </e>
         </e>
         <e p="5. External Packages" t="Include">
