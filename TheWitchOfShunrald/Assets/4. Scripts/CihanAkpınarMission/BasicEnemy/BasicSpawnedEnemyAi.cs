@@ -148,7 +148,7 @@ namespace CihanAkpınar
             RaycastHit hit;
             if (Physics.Raycast(new Vector3(transform.position.x,1f,transform.position.z), player.position - transform.position, out hit, Mathf.Infinity))
             {
-                if (hit.collider.gameObject == player.gameObject)
+                if (hit.collider.transform.parent.gameObject == player.gameObject)
                 {
                     // If the raycast hits the player, set the player as the target
                     findedTarget = player;

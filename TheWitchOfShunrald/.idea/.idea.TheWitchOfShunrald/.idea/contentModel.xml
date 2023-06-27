@@ -24,6 +24,7 @@
             </e>
             <e p="BasicSpawner" t="Include">
               <e p="BasicEnemySpawner.cs" t="Include" />
+              <e p="SpawnerManager.cs" t="Include" />
             </e>
           </e>
           <e p="Irem" t="Include">
@@ -59,8 +60,10 @@
             <e p="GameManager.cs" t="Include" />
             <e p="LevelManager.cs" t="Include" />
             <e p="Player" t="Include">
+              <e p="PlayerSkills.cs" t="Include" />
               <e p="PlayerStats.cs" t="Include" />
             </e>
+            <e p="SkillProjectile.cs" t="Include" />
             <e p="UI" t="Include">
               <e p="DialogSystem.cs" t="Include" />
               <e p="UIManager.cs" t="Include" />
@@ -70,6 +73,13 @@
         </e>
         <e p="5. External Packages" t="Include">
           <e p="UI" t="Include">
+            <e p="Fantasy Wooden GUI  Free" t="Include">
+              <e p="Font" t="Include">
+                <e p="EULA" t="Include">
+                  <e p="buddychampion.txt" t="Include" />
+                </e>
+              </e>
+            </e>
             <e p="HUD" t="Include">
               <e p="readme.txt" t="Include" />
             </e>

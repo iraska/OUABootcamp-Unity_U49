@@ -1446,12 +1446,13 @@ MonoBehaviour:
     type: 3}
   basicManaPot: {fileID: 0}
   basicHealthPot: {fileID: 0}
+  spawnerOfThisEnemy: {fileID: 0}
   lookSpawnedEnemyRadius: 10
   bombPower: 3
   basicStopingDistance: 1.2
   basicEnemyHealth: 10
   basicEnemyMovementSpeed: 100
-  targetLayer: 5
+  targetLayer: 13
   healthPotProbability: 10
   manaPotProbability: 10
 --- !u!1 &8258688541923889042
@@ -1594,8 +1595,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.05892851, y: 0.8534676, z: 0.084566996}
-  m_Center: {x: 0.006638714, y: 0.06640751, z: -0.0022137864}
+  m_Size: {x: 0.05892851, y: 0.45433274, z: 0.089020416}
+  m_Center: {x: 0.00663871, y: -0.13315997, z: -0.004440578}
 --- !u!114 &2070252948620757198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1609,6 +1610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicDamage: 10
+  basicMoveableObjectDamage: 50
 --- !u!1 &8942965751566203830
 GameObject:
   m_ObjectHideFlags: 0

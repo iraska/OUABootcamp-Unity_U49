@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 550597127}
   - component: {fileID: 550597126}
   - component: {fileID: 550597125}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3831,12 +3831,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicEnemyDiePart: {fileID: 0}
+  basicManaPot: {fileID: 0}
+  basicHealthPot: {fileID: 0}
+  spawnerOfThisEnemy: {fileID: 0}
   lookSpawnedEnemyRadius: 10
   bombPower: 0
   basicStopingDistance: 0
   basicEnemyHealth: 5
   basicEnemyMovementSpeed: 0
   targetLayer: 0
+  healthPotProbability: 0
+  manaPotProbability: 0
 --- !u!54 &7781336138073279719
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4356,6 +4361,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2070252948620757198, guid: a90d12218910b1840974db508fad603b,
+        type: 3}
+      propertyPath: basicMoveableObjectDamage
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361999876636898321, guid: a90d12218910b1840974db508fad603b,
+        type: 3}
+      propertyPath: targetLayer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 5361999876636898322, guid: a90d12218910b1840974db508fad603b,
         type: 3}
       propertyPath: m_RootOrder
@@ -4415,6 +4430,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BasicSpawnedSkeleton
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815802628101888036, guid: a90d12218910b1840974db508fad603b,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.46050367
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815802628101888036, guid: a90d12218910b1840974db508fad603b,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.00663871
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815802628101888036, guid: a90d12218910b1840974db508fad603b,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.13007456
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815802628101888036, guid: a90d12218910b1840974db508fad603b,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.0022138664
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a90d12218910b1840974db508fad603b, type: 3}
