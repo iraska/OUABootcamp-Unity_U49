@@ -1449,7 +1449,7 @@ MonoBehaviour:
   lookSpawnedEnemyRadius: 10
   bombPower: 3
   basicStopingDistance: 1.2
-  basicEnemyHealth: 50
+  basicEnemyHealth: 10
   basicEnemyMovementSpeed: 100
   targetLayer: 5
   healthPotProbability: 10

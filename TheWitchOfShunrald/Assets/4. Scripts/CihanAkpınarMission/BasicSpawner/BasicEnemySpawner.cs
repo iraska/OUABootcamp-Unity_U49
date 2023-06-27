@@ -45,6 +45,7 @@ namespace CihanAkpınar
            for(int i = 0; i < waves[currentWave].GetEnemySpawnList().Length; i++)
            {
                GameObject newspawn = Instantiate(waves[currentWave].GetEnemySpawnList()[i], FindSpawnLoc(),Quaternion.identity);
+               newspawn.GetComponent<BasicSpawnedEnemyAi>().spawnerOfThisEnemy = this.gameObject;
                currentEnemy.Add(newspawn);
            }
        }

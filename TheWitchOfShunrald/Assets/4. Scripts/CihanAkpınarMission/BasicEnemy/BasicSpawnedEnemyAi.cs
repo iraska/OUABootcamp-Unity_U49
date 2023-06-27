@@ -24,6 +24,7 @@ namespace CihanAkpınar
         [SerializeField] private GameObject basicEnemyDiePart;
         [SerializeField] private GameObject basicManaPot;
         [SerializeField] private GameObject basicHealthPot;
+        public GameObject spawnerOfThisEnemy;
         
         [SerializeField] private float lookSpawnedEnemyRadius = 10f;
         [SerializeField] private float bombPower;
@@ -173,6 +174,7 @@ namespace CihanAkpınar
                 anim.SetTrigger("BasicEnemyDie");
                 DropMath();
                 Instantiate(basicEnemyDiePart, new Vector3(transform.position.x, transform.position.y, transform.position.z),Quaternion.identity);
+                spawnerOfThisEnemy.GetComponent<BasicEnemySpawner>().currentEnemy.Remove(this.gameObject);
                 GameObject.Destroy(gameObject);
             }
 
