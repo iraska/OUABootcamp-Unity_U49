@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
     public void MenuClicked()
     {
         GameState = State.Menu;
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene(0);
     }
     public void ResumeClicked()
     {

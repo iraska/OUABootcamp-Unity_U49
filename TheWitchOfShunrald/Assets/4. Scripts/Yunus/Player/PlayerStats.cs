@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    private int health, damage;
+    [SerializeField] private int health, damage;
     private float mana;
     [SerializeField] private int startingHealth, startingDamage, startingMana;
     [SerializeField] private int healthMaxValue, damageMaxValue, manaMaxValue;
@@ -28,7 +28,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
-        if(PlayerPrefs.GetInt("lastGame", 0) > 0)
+        if(PlayerPrefs.GetInt("lastGame") > 1)
         {
             health = PlayerPrefs.GetInt("health");
             damage = PlayerPrefs.GetInt("damage");
@@ -39,8 +39,13 @@ public class PlayerStats : MonoBehaviour
             health = startingHealth;
             damage = startingDamage;
             mana = startingMana;
+            PlayerPrefs.SetInt("health", startingHealth);
+            PlayerPrefs.SetInt("mana", startingMana);
+            PlayerPrefs.SetInt("damage", startingDamage);
         }
         InvokeRepeating(nameof(RestoreMana), 1, 0.1f);
+        UIManager.instance.HealthBar(health, PlayerPrefs.GetInt("health"));
+        UIManager.instance.ManaBar(mana, PlayerPrefs.GetInt("mana"));
     }
     public void Upgrade(int health, int damage, int mana)
     {
@@ -55,12 +60,16 @@ public class PlayerStats : MonoBehaviour
         {
             GameManager.instance.Lose();
         }
+        UIManager.instance.HealthBar(health, PlayerPrefs.GetInt("health"));
     }
     public bool SpendMana(float mana)
     {
         this.mana -= mana;
-        if (health <= 0)
+        UIManager.instance.ManaBar(this.mana, PlayerPrefs.GetInt("mana"));
+        if (this.mana <= 0)
         {
+            CancelInvoke(nameof(RestoreMana));
+            InvokeRepeating(nameof(RestoreMana), 2, 0.1f);
             return false;
         }
         return true;
