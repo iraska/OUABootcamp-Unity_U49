@@ -10,7 +10,6 @@ namespace Shunrald
         public ShunraldMovementController Movement { get; private set; }
         public ShunraldAnimationController Animation { get; private set; }
 
-
         private void Awake()
         {
             Movement = GetComponent<ShunraldMovementController>();
