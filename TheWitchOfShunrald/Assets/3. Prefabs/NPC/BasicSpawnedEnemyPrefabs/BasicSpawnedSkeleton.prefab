@@ -1442,8 +1442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f31fd071549a31e4a82e975b66a1ab74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnerOfThisEnemy: {fileID: 7312855380587195043, guid: 0d42bfe194fb13741847eef79ed6956a,
-    type: 3}
+  spawnerOfThisEnemy: {fileID: 0}
   BasicAILayer:
     serializedVersion: 2
     m_Bits: 4

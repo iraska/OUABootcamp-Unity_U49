@@ -38,15 +38,14 @@ namespace CihanAkpınar
        {
            if(currentEnemy.Count == 0)
            {
-               currentWave++;
                SpawnWave();
            }
        }
    
        void SpawnWave()
        {
-
            StartCoroutine(SpawmDelay());
+           
        }
    
        Vector3 FindSpawnLoc()
