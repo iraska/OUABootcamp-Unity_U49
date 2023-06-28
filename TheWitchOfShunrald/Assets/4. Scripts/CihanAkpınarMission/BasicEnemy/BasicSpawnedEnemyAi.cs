@@ -21,6 +21,7 @@ namespace CihanAkpınar
         private float isBasicEnemyRuning;
         private float isBasicEnemyAttacking;
         private float basicEnemyVelocitySpeed;
+        public float lookSpawnedEnemyRadius = 10f;
         
         private int mainProbability;
         
@@ -32,7 +33,6 @@ namespace CihanAkpınar
         [SerializeField] private GameObject basicManaPot;
         [SerializeField] private GameObject basicHealthPot;
 
-        [SerializeField] private float lookSpawnedEnemyRadius = 10f;
         [SerializeField] private float bombPower;
         [SerializeField] private float basicStopingDistance;
         [SerializeField] private float basicEnemyHealth;
@@ -41,9 +41,6 @@ namespace CihanAkpınar
         [SerializeField] private int targetLayer;
         [SerializeField] private int healthPotProbability;
         [SerializeField] private int manaPotProbability;
-        
-        
-
 
         void Start()
         {

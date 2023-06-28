@@ -25,6 +25,7 @@ namespace CihanAkpınar
    
        [SerializeField][NonReorderable] WaveContent[] waves;
        int currentWave = 0;
+       [SerializeField] private float basicEnemyLookRadiusNew;
        [SerializeField] float spawnRange = 10;
        [SerializeField] float spawnSecond=3f;
        public List<GameObject> currentEnemy;
@@ -73,6 +74,7 @@ namespace CihanAkpınar
            for (int i = 0; i < waves[currentWave].GetEnemySpawnList().Length; i++)
            {
                GameObject newspawn = Instantiate(waves[currentWave].GetEnemySpawnList()[i], FindSpawnLoc(), Quaternion.identity);
+               newspawn.GetComponent<BasicSpawnedEnemyAi>().lookSpawnedEnemyRadius = basicEnemyLookRadiusNew;
                newspawn.GetComponent<BasicSpawnedEnemyAi>().spawnerOfThisEnemy = this.gameObject;
                currentEnemy.Add(newspawn);
 

@@ -24,7 +24,6 @@
             </e>
             <e p="BasicSpawner" t="Include">
               <e p="BasicEnemySpawner.cs" t="Include" />
-              <e p="SpawnerManager.cs" t="Include" />
             </e>
           </e>
           <e p="Irem" t="Include">
