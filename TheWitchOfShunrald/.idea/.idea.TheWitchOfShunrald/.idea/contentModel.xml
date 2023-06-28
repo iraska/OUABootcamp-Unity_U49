@@ -38,7 +38,14 @@
             <e p="Shunrald" t="Include">
               <e p="ShunraldAnimationController.cs" t="Include" />
               <e p="ShunraldController.cs" t="Include" />
+              <e p="ShunraldMaterialChanger.cs" t="Include" />
               <e p="ShunraldMovementController.cs" t="Include" />
+            </e>
+            <e p="WeepingAngle" t="Include">
+              <e p="WeepingAngelAnimationController.cs" t="Include" />
+              <e p="WeepingAngelMovementController.cs" t="Include" />
+              <e p="WeepingAngleController.cs" t="Include" />
+              <e p="WeepingAngleStats.cs" t="Include" />
             </e>
           </e>
           <e p="TelekinesisScriptsAli" t="Include">

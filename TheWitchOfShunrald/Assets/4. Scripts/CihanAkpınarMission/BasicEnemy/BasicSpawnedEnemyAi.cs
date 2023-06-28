@@ -16,32 +16,38 @@ namespace CihanAkpınar
         
         private bool isWalking;
         private bool isTriggered;
+        private bool isRotation;
         
         private float isBasicEnemyRuning;
         private float isBasicEnemyAttacking;
         private float basicEnemyVelocitySpeed;
+        
+        private int mainProbability;
+        
+        public GameObject spawnerOfThisEnemy;
+
+        [SerializeField] private LayerMask BasicAILayer;
 
         [SerializeField] private GameObject basicEnemyDiePart;
         [SerializeField] private GameObject basicManaPot;
         [SerializeField] private GameObject basicHealthPot;
-        public GameObject spawnerOfThisEnemy;
-        
+
         [SerializeField] private float lookSpawnedEnemyRadius = 10f;
         [SerializeField] private float bombPower;
         [SerializeField] private float basicStopingDistance;
         [SerializeField] private float basicEnemyHealth;
         [SerializeField] private float basicEnemyMovementSpeed;
-        
-        
+
         [SerializeField] private int targetLayer;
         [SerializeField] private int healthPotProbability;
         [SerializeField] private int manaPotProbability;
         
-        private int mainProbability;
+        
 
 
         void Start()
         {
+            isRotation = true;
             isWalking = true;
             rb = GetComponent<Rigidbody>();
             anim = GetComponentInChildren<Animator>();
@@ -60,7 +66,11 @@ namespace CihanAkpınar
         }
         private void Update()
         {
-            FaceTarget();
+            if (isRotation)
+            {
+                FaceTarget();  
+            }
+            
         }
         
 
@@ -131,24 +141,24 @@ namespace CihanAkpınar
 
             IEnumerator AttackDelay()
             {
+                isRotation = false;
                 isWalking = false;
                 yield return new WaitForSeconds(1.5f);
                 isWalking = true;
+                isRotation = true;
             }
 
             
             
         }
-
         
-        
-
         private void FindEnemyTarget()
         {
             RaycastHit hit;
+            BasicAILayer = 1 << targetLayer;
             if (Physics.Raycast(new Vector3(transform.position.x,1f,transform.position.z), player.position - transform.position, out hit, Mathf.Infinity))
             {
-                if (hit.collider.transform.parent.gameObject == player.gameObject)
+                if (hit.collider.transform.parent.gameObject == player.gameObject) //error
                 {
                     // If the raycast hits the player, set the player as the target
                     findedTarget = player;
@@ -194,10 +204,6 @@ namespace CihanAkpınar
             }
 
         }
-
-
-
-
     }
  
 }

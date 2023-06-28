@@ -1067,18 +1067,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f31fd071549a31e4a82e975b66a1ab74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnerOfThisEnemy: {fileID: 7312855380587195043, guid: 0d42bfe194fb13741847eef79ed6956a,
+    type: 3}
+  BasicAILayer:
+    serializedVersion: 2
+    m_Bits: 4
   basicEnemyDiePart: {fileID: 0}
-  basicManaPot: {fileID: 0}
-  basicHealthPot: {fileID: 0}
-  spawnerOfThisEnemy: {fileID: 0}
+  basicManaPot: {fileID: 1000013317980782, guid: 2cf6690298568294cb6b655c0a3aeb87,
+    type: 3}
+  basicHealthPot: {fileID: 1000012970591572, guid: 7cafb89b5a0f61f479d0a748962abbbc,
+    type: 3}
   lookSpawnedEnemyRadius: 10
   bombPower: 0
   basicStopingDistance: 1.5
   basicEnemyHealth: 100
   basicEnemyMovementSpeed: 100
   targetLayer: 13
-  healthPotProbability: 10
-  manaPotProbability: 10
+  healthPotProbability: 40
+  manaPotProbability: 40
 --- !u!1 &3560532742730666100
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ namespace CihanAkpınar
         private void OnTriggerEnter(Collider other)
         {
             Debug.Log(other.gameObject.name);
-            if (other.gameObject.transform.parent.CompareTag("Player"))
+            if (other.gameObject.transform.parent.CompareTag("Shunrald"))
             {
                 other.gameObject.transform.parent.gameObject.GetComponent<PlayerStats>().TakeDamage(basicDamage);  
             }

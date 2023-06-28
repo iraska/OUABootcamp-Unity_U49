@@ -1,13 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace CihanAkpınar
 {
    public class BasicEnemySpawner : MonoBehaviour
    {
        [System.Serializable]
-   
+       
+
        //Dalga dizisi altına dizi ekliyebilmek için yeni class kullandım
        public class WaveContent
        {
@@ -23,6 +26,7 @@ namespace CihanAkpınar
        [SerializeField][NonReorderable] WaveContent[] waves;
        int currentWave = 0;
        [SerializeField] float spawnRange = 10;
+       [SerializeField] float spawnSecond=3f;
        public List<GameObject> currentEnemy;
        
        void Start()
@@ -41,13 +45,8 @@ namespace CihanAkpınar
    
        void SpawnWave()
        {
-           
-           for(int i = 0; i < waves[currentWave].GetEnemySpawnList().Length; i++)
-           {
-               GameObject newspawn = Instantiate(waves[currentWave].GetEnemySpawnList()[i], FindSpawnLoc(),Quaternion.identity);
-               newspawn.GetComponent<BasicSpawnedEnemyAi>().spawnerOfThisEnemy = this.gameObject;
-               currentEnemy.Add(newspawn);
-           }
+
+           StartCoroutine(SpawmDelay());
        }
    
        Vector3 FindSpawnLoc()
@@ -68,6 +67,20 @@ namespace CihanAkpınar
            {
                return FindSpawnLoc();
            }
+       }
+
+       IEnumerator SpawmDelay()
+       {
+           for (int i = 0; i < waves[currentWave].GetEnemySpawnList().Length; i++)
+           {
+               GameObject newspawn = Instantiate(waves[currentWave].GetEnemySpawnList()[i], FindSpawnLoc(), Quaternion.identity);
+               newspawn.GetComponent<BasicSpawnedEnemyAi>().spawnerOfThisEnemy = this.gameObject;
+               currentEnemy.Add(newspawn);
+
+               yield return new WaitForSeconds(spawnSecond);
+           }
+
+           currentWave++;
        }
    } 
 }
