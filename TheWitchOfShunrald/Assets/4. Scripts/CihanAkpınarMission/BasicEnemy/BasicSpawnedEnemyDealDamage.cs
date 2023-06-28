@@ -22,7 +22,6 @@ namespace CihanAkpınar
             {
                 other.gameObject.GetComponent<MoveableObjectScript>().MoveableObjectTakeDamage(basicMoveableObjectDamage);  
             }
-            
         }
     } 
 }

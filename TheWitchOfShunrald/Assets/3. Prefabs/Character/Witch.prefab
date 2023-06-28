@@ -2584,6 +2584,7 @@ GameObject:
   - component: {fileID: 7383257406533379730}
   - component: {fileID: 7383257406533379731}
   - component: {fileID: 617861943064955911}
+  - component: {fileID: 1380709509521597422}
   m_Layer: 5
   m_Name: Player
   m_TagString: Shunrald
@@ -2675,6 +2676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trailRend: {fileID: 7383257406533379731}
+  lensCam: {fileID: 0}
   aimLayerMask:
     serializedVersion: 2
     m_Bits: 1024
@@ -2682,7 +2684,6 @@ MonoBehaviour:
   turnSpeed: 360
   dashSpeed: 20
   dashTime: 0.15
-  lensCam: {fileID: 0}
 --- !u!114 &7383257406533379735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2877,6 +2878,20 @@ MonoBehaviour:
   cam: {fileID: 0}
   projectile: {fileID: 3152197311611082539, guid: 6fd6f110f10414d498139c35e405043a,
     type: 3}
+--- !u!114 &1380709509521597422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7383257406533379693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef40e001f1d888d4d9fd146c790c4202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialMat: {fileID: 2100000, guid: 1b077814e61defc4cbc2cbd69d07c7fa, type: 2}
+  greyMat: {fileID: 2100000, guid: ca362ff92d3679746ad8b4792601e7b7, type: 2}
 --- !u!1 &7467050952456608427
 GameObject:
   m_ObjectHideFlags: 0

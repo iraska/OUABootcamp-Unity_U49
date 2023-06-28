@@ -7,20 +7,20 @@ namespace Shunrald
     public class ShunraldMovementController : MonoBehaviour
     {
         [SerializeField] private TrailRenderer trailRend;
-        [SerializeField] private LayerMask aimLayerMask;
-        [SerializeField] private float speed, turnSpeed = 360, dashSpeed, dashTime;
         [SerializeField] private Camera lensCam;
+
+        [SerializeField] private LayerMask aimLayerMask;
+
+        [SerializeField] private float speed, turnSpeed = 360, dashSpeed, dashTime;
 
         private ShunraldController controller;
         private Animator animator;
         private Rigidbody rb;
-        private Vector3 targetPosition;
 
-        private Vector3 input;
+        private Vector3 targetPosition, input;
 
         private float velocityX, velocityZ;
-        private bool isDashing;
-        private bool isUsingWeapon;
+        private bool isDashing, isUsingWeapon, isMovementFrozen = false;
         public bool IsUsingWeapon
         {
             get { return isUsingWeapon; }
@@ -36,7 +36,7 @@ namespace Shunrald
         private void FixedUpdate()
         {
             GatherInput();
-            CharacterMovement();
+            ShunraldMovement();
 
             if (isDashing) { StartCoroutine(Dash()); }
         }
@@ -53,6 +53,12 @@ namespace Shunrald
             controller.Animation.AnimateCharacter(input, velocityX, velocityZ, animator);
 
             if (Input.GetKeyDown(KeyCode.Space)) { isDashing = true; }
+
+
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                FreezeShunraldMovement();
+            }
         }
 
         private void GetRequiredComponent()
@@ -91,16 +97,14 @@ namespace Shunrald
         }
 
         // Moving the character
-        private void CharacterMovement()
+        private void ShunraldMovement()
         {
-            if (input.magnitude > 0f)
+            if (input.magnitude > 0f && !isMovementFrozen)
             {
                 input.Normalize();
 
                 Vector3 movement = RotateVector(input, -1 * lensCam.transform.parent.eulerAngles.y) * speed * Time.deltaTime;
-                //rb.MovePosition(rb.position + movement);
                 Vector3 newPosition = rb.position + movement;
-
 
                 targetPosition = Vector3.Lerp(rb.position, newPosition, 0.9f);
                 rb.MovePosition(targetPosition);
@@ -110,6 +114,14 @@ namespace Shunrald
                 // Stop motion only if still and not dash
                 rb.velocity = Vector3.zero;
             }
+        }
+
+        // This method must be called when the Witch is killed and petrified by the Weeping angel.
+        public void FreezeShunraldMovement()
+        {
+            // Reset the character's speed
+            isMovementFrozen = true;
+            rb.velocity = Vector3.zero; 
         }
 
         private Vector3 RotateVector(Vector3 vector, float angle)
@@ -122,24 +134,6 @@ namespace Shunrald
             float newZ = vector.x * sin + vector.z * cos;
 
             return new Vector3(newX, vector.y, newZ);
-        }
-
-
-        private void LookIsometric()
-        {
-            if (input != Vector3.zero)
-            {
-                var relative = (transform.position + input.ToIso()) - transform.position;
-                var rotation = Quaternion.LookRotation(relative, Vector3.up);
-                
-                //var rotation = Quaternion.Lerp(rb.rotation, Quaternion.LookRotation(relative, Vector3.up), .2f);
-                //rb.MoveRotation(rotation);
-
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, turnSpeed * Time.deltaTime);
-                
-                // if u wanna use DOTween, do not use in Update()
-                // DoRotate();
-            }
         }
 
         private IEnumerator Dash()
@@ -175,6 +169,23 @@ namespace Shunrald
 
             isDashing = false;
             trailRend.emitting = false;
+        }
+
+        private void LookIsometric()
+        {
+            if (input != Vector3.zero)
+            {
+                var relative = (transform.position + input.ToIso()) - transform.position;
+                var rotation = Quaternion.LookRotation(relative, Vector3.up);
+
+                //var rotation = Quaternion.Lerp(rb.rotation, Quaternion.LookRotation(relative, Vector3.up), .2f);
+                //rb.MoveRotation(rotation);
+
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, turnSpeed * Time.deltaTime);
+
+                // if u wanna use DOTween, do not use in Update()
+                // DoRotate();
+            }
         }
     }
 }
