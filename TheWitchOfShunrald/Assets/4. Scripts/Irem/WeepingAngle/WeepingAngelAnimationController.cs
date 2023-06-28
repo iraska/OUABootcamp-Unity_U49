@@ -7,8 +7,6 @@ namespace WeepingAngle
     {
         private Animator animator;
 
-        private const string shunrald = "Shunrald";
-
         private float initialAnimSpeed, freezeAnimSpeed = 0f, 
             lerpSpeed = .2f, elapsedTime = 0f;
 
@@ -27,25 +25,11 @@ namespace WeepingAngle
             animator = GetComponent<Animator>();
         }
 
-        public void AnimateAngel(float blend, Animator _animator)
+        public void AnimateAngel(float _time, Animator _animator)
         {
-            //_animator.SetFloat("Blend", blend, .1f, Time.deltaTime);
-
             float time = elapsedTime / lerpSpeed;
             animator.speed = Mathf.Lerp(freezeAnimSpeed, initialAnimSpeed, time);
-
         }
-
-        /*private void OnTriggerEnter(Collider other)
-        {
-            if (other.gameObject.CompareTag(shunrald))
-            {
-                Debug.Log("hiii");
-                Debug.Log(other.gameObject.name);
-
-                StartCoroutine(FreezeAnimation());
-            }
-        }*/
 
         public void FreezeAngel()
         {

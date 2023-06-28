@@ -1,25 +1,19 @@
 using Shunrald;
-using System;
 using UnityEngine;
 
 namespace WeepingAngle
 {
     public class WeepingAngelMovementController : MonoBehaviour
     {
-        [SerializeField] private float chaseSpeed = 5f;
-
-        [SerializeField] Transform cube;
-        [SerializeField] private float maxViewAngle = 45f;
+        [SerializeField] private Transform shunraldWitch;
+        [SerializeField] private float chaseSpeed = 3f, maxViewAngle = 45f;
 
         private WeepingAngleController wController;
-        private ShunraldController sController;
         private Animator animator;
 
         private Vector3 chaseDirection;
 
         private const string shunrald = "Shunrald";
-
-        private float wblend;
         private bool isAngelVisible;
 
         private void Awake()
@@ -29,47 +23,51 @@ namespace WeepingAngle
 
         private void Update()
         {
-            isAngelVisible = CheckAngelVisibility();
-
-            if (isAngelVisible)
-            {
-                Debug.Log("fuckin' freeze");
-                //wController.Animation.AnimateAngel(0f, animator);
-                wController.Animation.FreezeAngel();
-            }
-            else
-            {
-                /*chaseDirection = sController.transform.position - transform.position;
-                transform.Translate(chaseDirection.normalized * chaseSpeed * Time.deltaTime);*/
-
-                //wController.Animation.AnimateAngel(1f, animator);
-
-                Debug.Log("i can not seeeee");
-                wController.Animation.AnimateAngel(1f, animator);
-
-            }
-
-            //wController.Animation.AnimateAngel(1f, animator);
-
-
+            ChaseOrFreezeAngel();
         }
 
         private void GetRequiredComponenent()
         {
             wController = GetComponent<WeepingAngleController>();
-            sController = GetComponent<ShunraldController>();
             animator = GetComponent<Animator>();
+        }
+
+        private void ChaseOrFreezeAngel()
+        {
+            isAngelVisible = CheckAngelVisibility();
+
+            if (isAngelVisible)
+            {
+                wController.Animation.FreezeAngel();
+            }
+            else
+            {
+                chaseDirection = shunraldWitch.position - transform.position;
+
+                chaseDirection.y = 0f;
+                chaseDirection.Normalize();
+
+                Quaternion targetRot = Quaternion.LookRotation(chaseDirection);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, Time.deltaTime * 5f);
+
+                //float forwardDir = (transform.rotation.eulerAngles.y < 170f) ? -1f : 1f;
+                //transform.Translate(Vector3.forward * forwardDir * chaseSpeed * Time.deltaTime);
+
+                transform.Translate(Vector3.forward * chaseSpeed * Time.deltaTime);
+
+                wController.Animation.AnimateAngel(1f, animator);
+            }
         }
 
         private bool CheckAngelVisibility()
         {
             // Checking for someone in line of sight using Raycasting
             RaycastHit hit;
-            //chaseDirection = sController.transform.position - transform.position;
 
-            chaseDirection = cube.position - transform.position;
+            chaseDirection = shunraldWitch.position - transform.position;
 
-            if (Vector3.Angle(chaseDirection, transform.forward) <= maxViewAngle)
+            // Is the Witch facing the Weeping Angel?
+            if (Vector3.Angle(shunraldWitch.forward, transform.position - shunraldWitch.position) < maxViewAngle)
             {
                 if (Physics.Raycast(transform.position, chaseDirection, out hit))
                 {
@@ -80,9 +78,10 @@ namespace WeepingAngle
                     }
                 }
             }
-            
+
             // Shunrald doesn't see Angel
             return false;
         }
+
     }
 }
