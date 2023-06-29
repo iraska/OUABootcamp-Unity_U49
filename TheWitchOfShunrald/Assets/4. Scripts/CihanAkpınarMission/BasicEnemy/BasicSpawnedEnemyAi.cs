@@ -172,13 +172,15 @@ namespace CihanAkpınar
         
         public void TakeDamage(Vector3 exploLocation,float damage)
         {
-            
-        
+
             Vector3 jumpDirection=((transform.position-exploLocation)+Vector3.up).normalized*bombPower;
             rb.AddForce(bombPower * jumpDirection, ForceMode.VelocityChange);
             basicEnemyHealth -= damage;
+            //AudioManager.instance.PlaySound(AudioManager.instance.basicSpawnedEnemyTakeDamageAudio,false);
             if (basicEnemyHealth<=0)
             {
+                //dieAudio
+                //AudioManager.instance.PlaySound(AudioManager.instance.basicSpawnedEnemyDieAudio,false);
                 anim.SetTrigger("BasicEnemyDie");
                 DropMath();
                 Instantiate(basicEnemyDiePart, new Vector3(transform.position.x, transform.position.y, transform.position.z),Quaternion.identity);

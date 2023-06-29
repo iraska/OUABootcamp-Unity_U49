@@ -41,11 +41,21 @@ namespace CihanAkpınar
            {
                SpawnWave();
            }
+           
        }
    
        void SpawnWave()
        {
            StartCoroutine(SpawmDelay());
+           if (currentEnemy.Count>0)
+           {
+              //kalp sesi
+              //AudioManager.instance.PlaySound(AudioManager.instance.hearthAudio,true);
+           }
+           else
+           {
+               //AudioManager.instance.StopSound();  
+           }
            
        }
    
@@ -73,6 +83,8 @@ namespace CihanAkpınar
        {
            for (int i = 0; i < waves[currentWave].GetEnemySpawnList().Length; i++)
            {
+               //spawnAudio
+               //AudioManager.instance.PlaySound(AudioManager.instance.basicSpawnerSpawmAudio,false);
                GameObject newspawn = Instantiate(waves[currentWave].GetEnemySpawnList()[i], FindSpawnLoc(), Quaternion.identity);
                newspawn.GetComponent<BasicSpawnedEnemyAi>().lookSpawnedEnemyRadius = basicEnemyLookRadiusNew;
                newspawn.GetComponent<BasicSpawnedEnemyAi>().spawnerOfThisEnemy = this.gameObject;

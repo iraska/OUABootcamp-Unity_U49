@@ -18,6 +18,7 @@
         </e>
         <e p="4. Scripts" t="Include">
           <e p="CihanAkpınarMission" t="Include">
+            <e p="AudioManager.cs" t="Include" />
             <e p="BasicEnemy" t="Include">
               <e p="BasicSpawnedEnemyAi.cs" t="Include" />
               <e p="BasicSpawnedEnemyDealDamage.cs" t="Include" />
