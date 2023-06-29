@@ -21,7 +21,9 @@ namespace CihanAkpınar
         private float isBasicEnemyRuning;
         private float isBasicEnemyAttacking;
         private float basicEnemyVelocitySpeed;
+        
         public float lookSpawnedEnemyRadius = 10f;
+        public float basicEnemyHealth;
         
         private int mainProbability;
         
@@ -35,7 +37,6 @@ namespace CihanAkpınar
 
         [SerializeField] private float bombPower;
         [SerializeField] private float basicStopingDistance;
-        [SerializeField] private float basicEnemyHealth;
         [SerializeField] private float basicEnemyMovementSpeed;
 
         [SerializeField] private int targetLayer;
@@ -54,7 +55,7 @@ namespace CihanAkpınar
         
         void FixedUpdate()
         {
-            BasicEnemyAnim();
+            BasicEnemyMovement();
             if (isTriggered)
             {
                 FindEnemyTarget(); 
@@ -86,7 +87,7 @@ namespace CihanAkpınar
         }
         
 
-        void BasicEnemyAnim()
+        void BasicEnemyMovement()
         {
             basicEnemyVelocitySpeed = rb.velocity.magnitude;
             basicEnemyVelocitySpeed = basicEnemyVelocitySpeed - 1.4f;

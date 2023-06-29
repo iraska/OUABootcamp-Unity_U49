@@ -21,6 +21,7 @@
             <e p="BasicEnemy" t="Include">
               <e p="BasicSpawnedEnemyAi.cs" t="Include" />
               <e p="BasicSpawnedEnemyDealDamage.cs" t="Include" />
+              <e p="BasicSpawnedEnemyHealthBar.cs" t="Include" />
             </e>
             <e p="BasicSpawner" t="Include">
               <e p="BasicEnemySpawner.cs" t="Include" />

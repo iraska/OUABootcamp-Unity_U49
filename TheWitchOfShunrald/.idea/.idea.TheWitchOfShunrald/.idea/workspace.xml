@@ -25,6 +25,7 @@
         <option value="$PROJECT_DIR$/Assets/4. Scripts/CihanAkpınarMission/BasicEnemy/BasicSpawnedEnemyDealDamage.cs" />
         <option value="$PROJECT_DIR$/Assets/4. Scripts/CihanAkpınarMission/BasicSpawner/BasicEnemySpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/4. Scripts/CihanAkpınarMission/BasicEnemy/BasicSpawnedEnemyAi.cs" />
+        <option value="$PROJECT_DIR$/Assets/4. Scripts/CihanAkpınarMission/BasicEnemy/BasicSpawnedEnemyHealthBar.cs" />
       </list>
     </option>
   </component>

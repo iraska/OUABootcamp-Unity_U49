@@ -2,10 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicSpawnedEnemyHealthBar : MonoBehaviour
+namespace CihanAkpÄ±nar
 {
-    // update içerisinde rotasyonun sabit durmasýný saðlamanýn bir yolunu bulman lazým
+    public class BasicSpawnedEnemyHealthBar : MonoBehaviour
+    {
+        public GameObject basicEnemy; // Karakterin referansÄ±
+        private float startingHealth;
+        [SerializeField] private GameObject pivot; 
 
-    // Ýçerisindeki health bar objesinin altýndaki sprite renderer ýn scale.x deðerini 1 ile 0 arasýnda deðiþtirerek can göstergesini oluþturabilirsin. 1 tam can 0 hiç can.
+        void Start()
+        {
+            startingHealth = basicEnemy.GetComponent<BasicSpawnedEnemyAi>().basicEnemyHealth;
 
+        }
+
+        void Update()
+        { 
+            changHealthValue();
+            // Karakterin rotasyonunu dÃ¼zelt
+            transform.rotation = Quaternion.Euler(0f, -135f, 0f);
+
+        }
+
+        void changHealthValue()
+        {
+            // Karakterin can deÄŸerini al
+            float healthPercentage = basicEnemy.GetComponent<BasicSpawnedEnemyAi>().basicEnemyHealth;
+            // Can gÃ¶stergesinin boyutunu gÃ¼ncelle
+            pivot.transform.localScale = new Vector3(healthPercentage / startingHealth,pivot.transform.localScale.y,1);
+            
+            
+        }
+        
+    }
+ 
 }
