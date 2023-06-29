@@ -1442,17 +1442,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f31fd071549a31e4a82e975b66a1ab74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lookSpawnedEnemyRadius: 10
   spawnerOfThisEnemy: {fileID: 0}
   BasicAILayer:
     serializedVersion: 2
-    m_Bits: 4
+    m_Bits: 24576
   basicEnemyDiePart: {fileID: 5130003127346239025, guid: 712fd7dc945d0b4429b07cd218760c64,
     type: 3}
   basicManaPot: {fileID: 1000013317980782, guid: 2cf6690298568294cb6b655c0a3aeb87,
     type: 3}
   basicHealthPot: {fileID: 1000012970591572, guid: 7cafb89b5a0f61f479d0a748962abbbc,
     type: 3}
-  lookSpawnedEnemyRadius: 10
   bombPower: 3
   basicStopingDistance: 1.2
   basicEnemyHealth: 10

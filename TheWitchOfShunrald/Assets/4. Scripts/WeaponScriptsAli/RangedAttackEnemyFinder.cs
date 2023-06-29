@@ -20,7 +20,6 @@ namespace ali
         {
             if (((1 << other.gameObject.layer) & projectileScript.TargetLayerMask) != 0 && enemyFound == false)
             {
-                Debug.Log(other.gameObject.name);
                 projectileScript.ProjectileFoundEnemy(other.gameObject);
                 enemyFound = true;
             }

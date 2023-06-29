@@ -13,8 +13,7 @@ namespace CihanAkpınar
         [SerializeField] private float basicMoveableObjectDamage;
         private void OnTriggerEnter(Collider other)
         {
-            Debug.Log(other.gameObject.name);
-            if (other.gameObject.transform.parent.CompareTag("Shunrald"))
+            if (other.gameObject.CompareTag("Shunrald"))
             {
                 other.gameObject.transform.parent.gameObject.GetComponent<PlayerStats>().TakeDamage(basicDamage);  
             }

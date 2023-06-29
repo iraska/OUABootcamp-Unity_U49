@@ -142,14 +142,27 @@ namespace ali
                 }
                 else if (((1 << collider.gameObject.layer) & targetLayerMask) != 0)
                 {
-                    Debug.Log("Hit on enemy with direction: " + (objectInTrigger.gameObject.transform.position - transform.position).normalized * multiplierValue / 5);
                     collider.gameObject.GetComponent<BasicSpawnedEnemyAi>().TakeDamage((objectInTrigger.gameObject.transform.position - transform.position).normalized * multiplierValue / 5, multiplierValue);
                 }
-                else if (((1 << collider.gameObject.layer) & tinyPartsLayerMask) != 0)
+
+            }
+
+            Collider[] collidersTinyParts = Physics.OverlapSphere(transform.position, 4f, tinyPartsLayerMask);
+
+            foreach (Collider collider in collidersTinyParts)
+            {
+                Rigidbody objectInTrigger = collider.gameObject.GetComponent<Rigidbody>();
+
+                float multiplierValue = (10f - ((objectInTrigger.gameObject.transform.position - transform.position).magnitude)) * projectilePowerMagnitude / 100 * projectilePowerMultiplier;
+                if (multiplierValue < 1f)
+                {
+                    multiplierValue = 1f;
+                }
+
+                if (((1 << collider.gameObject.layer) & tinyPartsLayerMask) != 0)
                 {
                     objectInTrigger.AddForce((objectInTrigger.gameObject.transform.position - transform.position).normalized * multiplierValue, ForceMode.Impulse);
                 }
-
             }
 
 

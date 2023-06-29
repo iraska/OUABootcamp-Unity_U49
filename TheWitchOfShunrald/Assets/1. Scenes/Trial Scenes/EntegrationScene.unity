@@ -3858,8 +3858,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7312855380587195042, guid: 0d42bfe194fb13741847eef79ed6956a,
         type: 3}
+      propertyPath: spawnSecond
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312855380587195042, guid: 0d42bfe194fb13741847eef79ed6956a,
+        type: 3}
       propertyPath: waves.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312855380587195042, guid: 0d42bfe194fb13741847eef79ed6956a,
+        type: 3}
+      propertyPath: basicEnemyLookRadiusNew
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7312855380587195042, guid: 0d42bfe194fb13741847eef79ed6956a,
         type: 3}
@@ -3947,7 +3957,7 @@ PrefabInstance:
     - target: {fileID: 7312855380587195045, guid: 0d42bfe194fb13741847eef79ed6956a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.81
+      value: 24.45
       objectReference: {fileID: 0}
     - target: {fileID: 7312855380587195045, guid: 0d42bfe194fb13741847eef79ed6956a,
         type: 3}
@@ -5862,7 +5872,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1953514245
 Light:
   m_ObjectHideFlags: 0
@@ -5874,14 +5884,14 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.85230666, g: 0.8392157, b: 1, a: 1}
+  m_Intensity: 0.15
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1

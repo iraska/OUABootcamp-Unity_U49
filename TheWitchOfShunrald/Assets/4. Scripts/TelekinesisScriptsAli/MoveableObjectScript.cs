@@ -16,7 +16,6 @@ namespace ali
             set
             {
                 isObjectPointed = value;
-                Debug.Log(gameObject.name + " has been pointed at!");
             }
         }
 

@@ -152,10 +152,10 @@ namespace CihanAkpınar
         private void FindEnemyTarget()
         {
             RaycastHit hit;
-            BasicAILayer = 1 << targetLayer;
-            if (Physics.Raycast(new Vector3(transform.position.x,1f,transform.position.z), player.position - transform.position, out hit, Mathf.Infinity))
+            //BasicAILayer = 1 << targetLayer;
+            if (Physics.Raycast(new Vector3(transform.position.x,1f,transform.position.z), player.position - transform.position, out hit, Mathf.Infinity, BasicAILayer))
             {
-                if (hit.collider.transform.parent.gameObject == player.gameObject) //error
+                if (hit.collider.gameObject.CompareTag("Shunrald")) //error
                 {
                     // If the raycast hits the player, set the player as the target
                     findedTarget = player;
