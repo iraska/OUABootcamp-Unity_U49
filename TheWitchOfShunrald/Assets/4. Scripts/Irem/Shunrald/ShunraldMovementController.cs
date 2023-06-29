@@ -35,29 +35,28 @@ namespace Shunrald
         // for physics
         private void FixedUpdate()
         {
-            GatherInput();
-            ShunraldMovement();
-
-            if (isDashing) { StartCoroutine(Dash()); }
+            if (!isDashing)
+            {
+                GatherInput();
+                ShunraldMovement();
+            }
         }
 
         private void Update()
         {
-            if (!isUsingWeapon) 
+            if (!isUsingWeapon)
             {
                 AimTowardMouse();
             }
-            
-            //LookIsometric();
 
             controller.Animation.AnimateCharacter(input, velocityX, velocityZ, animator);
 
-            if (Input.GetKeyDown(KeyCode.Space)) { isDashing = true; }
-
-
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                FreezeShunraldMovement();
+                if (!isDashing && rb.velocity.magnitude <= 0.01f)
+                {
+                    StartCoroutine(Dash());
+                }
             }
         }
 
@@ -73,11 +72,10 @@ namespace Shunrald
         {
             input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
         }
-        
+
         // Character always facing mouse cursor position
         private void AimTowardMouse()
         {
-            //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             Ray ray = lensCam.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, aimLayerMask))
@@ -85,14 +83,12 @@ namespace Shunrald
                 var direction = hitInfo.point - transform.position;
                 direction.y = 0f;
                 direction.Normalize();
-                //transform.forward = direction;
 
                 // Allows the character to dash in the direction of movement
                 if (!isDashing && rb.velocity.magnitude <= 0.01f)
                 {
                     transform.forward = direction;
                 }
-                //transform.forward = rb.velocity.magnitude <= 0.01f ? direction : rb.velocity.normalized;
             }
         }
 
@@ -121,12 +117,12 @@ namespace Shunrald
         {
             // Reset the character's speed
             isMovementFrozen = true;
-            rb.velocity = Vector3.zero; 
+            rb.velocity = Vector3.zero;
         }
 
         private Vector3 RotateVector(Vector3 vector, float angle)
         {
-            float angleRad = angle * Mathf.Deg2Rad; // Convert angle to radians
+            float angleRad = angle * Mathf.Deg2Rad;         // Convert angle to radians
             float sin = Mathf.Sin(angleRad);
             float cos = Mathf.Cos(angleRad);
 
@@ -138,27 +134,30 @@ namespace Shunrald
 
         private IEnumerator Dash()
         {
-            float startTime = Time.time;
+            isDashing = true;
 
-            Vector3 dashVelocity = (targetPosition - transform.position).normalized * dashSpeed;
+            float startTime = Time.time;
+            Vector3 dashDirection = input.normalized;
+
+            // Adjust dash direction based on isometric camera angle
+            dashDirection = RotateVector(dashDirection, -lensCam.transform.parent.eulerAngles.y);
 
             while (Time.time < startTime + dashTime)
             {
-                //rb.AddForce(transform.forward * dashSpeed * Time.deltaTime, ForceMode.Impulse);
-                rb.velocity = dashVelocity;
+                rb.velocity = dashDirection * dashSpeed;
                 trailRend.emitting = true;
 
                 yield return new WaitForSeconds(.1f);
             }
 
             // Dash effect is over, slow speed to zero
-            float declerationTime = .05f;
+            float decelerationTime = .05f;
             float elapsedTime = 0f;
             Vector3 initialVelocity = rb.velocity;
 
-            while (elapsedTime < declerationTime)
+            while (elapsedTime < decelerationTime)
             {
-                float time = elapsedTime / declerationTime;
+                float time = elapsedTime / decelerationTime;
                 rb.velocity = Vector3.Lerp(initialVelocity, Vector3.zero, time);
                 elapsedTime += Time.deltaTime;
 
@@ -169,23 +168,6 @@ namespace Shunrald
 
             isDashing = false;
             trailRend.emitting = false;
-        }
-
-        private void LookIsometric()
-        {
-            if (input != Vector3.zero)
-            {
-                var relative = (transform.position + input.ToIso()) - transform.position;
-                var rotation = Quaternion.LookRotation(relative, Vector3.up);
-
-                //var rotation = Quaternion.Lerp(rb.rotation, Quaternion.LookRotation(relative, Vector3.up), .2f);
-                //rb.MoveRotation(rotation);
-
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, turnSpeed * Time.deltaTime);
-
-                // if u wanna use DOTween, do not use in Update()
-                // DoRotate();
-            }
         }
     }
 }
