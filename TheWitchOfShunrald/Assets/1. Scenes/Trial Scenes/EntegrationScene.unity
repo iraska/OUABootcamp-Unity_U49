@@ -7378,6 +7378,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3970100942328730888, guid: 8ca0e3028c4027944b95f75e34fc359c,
+        type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3970100942680311130, guid: 8ca0e3028c4027944b95f75e34fc359c,
         type: 3}
       propertyPath: m_Layer
@@ -7652,6 +7657,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7149128771468751992, guid: 8ca0e3028c4027944b95f75e34fc359c,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7178181953943620320, guid: 8ca0e3028c4027944b95f75e34fc359c,
         type: 3}
