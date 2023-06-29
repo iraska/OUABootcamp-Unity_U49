@@ -633,7 +633,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2aeb3c64f79efa840ba420502a9a3e02, type: 2}
+  - {fileID: 2100000, guid: ab3e6d72df645db4d9816b582c1b2be6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -741,10 +741,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.25213945
-  m_Height: 1.7788671
+  m_Radius: 0.35561562
+  m_Height: 1.8165078
   m_Direction: 1
-  m_Center: {x: 0.0054892227, y: 0.811843, z: -0.019198835}
+  m_Center: {x: 0.006548345, y: 0.8306633, z: 0.014023781}
 --- !u!1 &1795731786974919986
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,7 +1031,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2809038965118247156}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
