@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8778916113742357030}
-  m_Layer: 0
+  - component: {fileID: 7439012813969207391}
+  m_Layer: 10
   m_Name: pointy-rock-with-mushrooms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,6 +35,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &7439012813969207391
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5324402839838065205}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.2
+  m_Center: {x: 1.7, y: 1.8, z: 0.9}
 --- !u!1001 &1636022711077228147
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -101,7 +115,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: mushroom-magical-cluster-a
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2011634168124373301, guid: f39ed06c05cfcc94784083fa4025059d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1669616446102717543, guid: f39ed06c05cfcc94784083fa4025059d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f39ed06c05cfcc94784083fa4025059d, type: 3}
 --- !u!4 &438331092552773116 stripped
 Transform:
@@ -116,10 +136,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8778916113742357030}
     m_Modifications:
+    - target: {fileID: 1213342830452899223, guid: 59b8ae53a4686914dbecb7b9368dda45,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3246169785127732512, guid: 59b8ae53a4686914dbecb7b9368dda45,
         type: 3}
       propertyPath: m_Name
       value: pointy-rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246169785127732512, guid: 59b8ae53a4686914dbecb7b9368dda45,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3246169785127732513, guid: 59b8ae53a4686914dbecb7b9368dda45,
         type: 3}
@@ -176,7 +206,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3664947837264056447, guid: 59b8ae53a4686914dbecb7b9368dda45,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6730969744125638349, guid: 59b8ae53a4686914dbecb7b9368dda45,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7091731007840552519, guid: 59b8ae53a4686914dbecb7b9368dda45,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5252048691626137204, guid: 59b8ae53a4686914dbecb7b9368dda45, type: 3}
+    - {fileID: 7703737250599861148, guid: 59b8ae53a4686914dbecb7b9368dda45, type: 3}
+    - {fileID: 1753420955258847308, guid: 59b8ae53a4686914dbecb7b9368dda45, type: 3}
+    - {fileID: 2834648210056229062, guid: 59b8ae53a4686914dbecb7b9368dda45, type: 3}
+    - {fileID: 7596278775574390404, guid: 59b8ae53a4686914dbecb7b9368dda45, type: 3}
+    - {fileID: 5431707354409192300, guid: 59b8ae53a4686914dbecb7b9368dda45, type: 3}
+    - {fileID: 4169495600837111996, guid: 59b8ae53a4686914dbecb7b9368dda45, type: 3}
+    - {fileID: 495062526338531382, guid: 59b8ae53a4686914dbecb7b9368dda45, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 59b8ae53a4686914dbecb7b9368dda45, type: 3}
 --- !u!4 &7111115022121124259 stripped
 Transform:
@@ -251,7 +304,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: mushroom-magical-cluster-a (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2011634168124373301, guid: f39ed06c05cfcc94784083fa4025059d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1669616446102717543, guid: f39ed06c05cfcc94784083fa4025059d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f39ed06c05cfcc94784083fa4025059d, type: 3}
 --- !u!4 &4881049568781578835 stripped
 Transform:

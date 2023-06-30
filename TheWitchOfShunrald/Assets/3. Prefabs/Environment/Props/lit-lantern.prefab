@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1909015253078190267}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: lit-lantern
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634082423179568901}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.857811, y: 3.18462, z: 2.0080585}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3650387612592331575}
   - component: {fileID: 3650387612592331561}
   - component: {fileID: 3650387612592331574}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: lantern-light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,6 +235,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: lantern-street-fixed-halloween
       objectReference: {fileID: 0}
+    - target: {fileID: 6473289392299665909, guid: f24c94125f67fd1428db4b54c387fbef,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f24c94125f67fd1428db4b54c387fbef, type: 3}
 --- !u!4 &6932912270141156381 stripped
@@ -243,3 +248,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3650387611271749458}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7745477049544193703 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6473289392299665909, guid: f24c94125f67fd1428db4b54c387fbef,
+    type: 3}
+  m_PrefabInstance: {fileID: 3650387611271749458}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5221395278338962003
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7745477049544193703}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8825203, y: 3.1823537, z: 0.7806281}
+  m_Center: {x: 0.020396797, y: 1.5545157, z: 0.12255882}

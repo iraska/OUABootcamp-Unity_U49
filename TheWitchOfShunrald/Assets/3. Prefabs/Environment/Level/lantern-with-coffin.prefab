@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7704009377863265729}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: lantern-with-coffin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,21 +46,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3670595811079770739, guid: 5f7dbd80b21547d4b858ab33922e2740,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.43
-      objectReference: {fileID: 0}
-    - target: {fileID: 3670595811079770739, guid: 5f7dbd80b21547d4b858ab33922e2740,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.43
-      objectReference: {fileID: 0}
-    - target: {fileID: 3670595811079770739, guid: 5f7dbd80b21547d4b858ab33922e2740,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.43
       objectReference: {fileID: 0}
     - target: {fileID: 3670595811079770739, guid: 5f7dbd80b21547d4b858ab33922e2740,
         type: 3}
@@ -112,11 +97,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.009
       objectReference: {fileID: 0}
-    - target: {fileID: 3670595811079770739, guid: 5f7dbd80b21547d4b858ab33922e2740,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4159993300826327241, guid: 5f7dbd80b21547d4b858ab33922e2740,
         type: 3}
       propertyPath: m_Name
@@ -149,23 +129,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8789507642873204407, guid: 369456f238c2221498ccdf16df24b160,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3.0400002
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789507642873204407, guid: 369456f238c2221498ccdf16df24b160,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789507642873204407, guid: 369456f238c2221498ccdf16df24b160,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3.0400002
-      objectReference: {fileID: 0}
-    - target: {fileID: 8789507642873204407, guid: 369456f238c2221498ccdf16df24b160,
-        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.3890455
       objectReference: {fileID: 0}
     - target: {fileID: 8789507642873204407, guid: 369456f238c2221498ccdf16df24b160,
         type: 3}
@@ -212,11 +177,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8789507642873204407, guid: 369456f238c2221498ccdf16df24b160,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 369456f238c2221498ccdf16df24b160, type: 3}
 --- !u!4 &8154805076045103582 stripped
@@ -236,6 +196,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: candle-skull-lit (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264468213022692365, guid: 369456f238c2221498ccdf16df24b160,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8789507642873204407, guid: 369456f238c2221498ccdf16df24b160,
         type: 3}
@@ -260,7 +225,7 @@ PrefabInstance:
     - target: {fileID: 8789507642873204407, guid: 369456f238c2221498ccdf16df24b160,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5157747
+      value: -2.286728
       objectReference: {fileID: 0}
     - target: {fileID: 8789507642873204407, guid: 369456f238c2221498ccdf16df24b160,
         type: 3}

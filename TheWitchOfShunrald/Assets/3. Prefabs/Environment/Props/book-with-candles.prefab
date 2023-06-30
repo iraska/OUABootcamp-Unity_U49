@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7790883461165532007}
-  m_Layer: 0
+  - component: {fileID: 8197445307717892413}
+  m_Layer: 10
   m_Name: book-with-candles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,6 +39,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &8197445307717892413
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036986290826232361}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: 0.89, y: 0.67, z: 0.65}
 --- !u!1001 &20323934264986560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45,10 +59,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7790883461165532007}
     m_Modifications:
+    - target: {fileID: 7076166781606332444, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7310485500465743156, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
         type: 3}
       propertyPath: m_Name
       value: candle-stick-b-lit
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310485500465743156, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7944313978024877966, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
         type: 3}
@@ -105,7 +129,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7617106519027005542, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3, type: 3}
 --- !u!4 &7960090326819558478 stripped
 Transform:
@@ -120,10 +145,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7790883461165532007}
     m_Modifications:
+    - target: {fileID: 7076166781606332444, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7310485500465743156, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
         type: 3}
       propertyPath: m_Name
       value: candle-stick-b-lit (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310485500465743156, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7944313978024877966, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
         type: 3}
@@ -180,7 +215,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7617106519027005542, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3, type: 3}
 --- !u!4 &7823267416916495371 stripped
 Transform:
@@ -195,10 +231,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7790883461165532007}
     m_Modifications:
+    - target: {fileID: 7076166781606332444, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7310485500465743156, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
         type: 3}
       propertyPath: m_Name
       value: candle-stick-b-lit (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310485500465743156, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7944313978024877966, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
         type: 3}
@@ -255,7 +301,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7617106519027005542, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3, type: 3}
 --- !u!4 &7203470047565731027 stripped
 Transform:
@@ -270,10 +317,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7790883461165532007}
     m_Modifications:
+    - target: {fileID: 7076166781606332444, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7310485500465743156, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
         type: 3}
       propertyPath: m_Name
       value: candle-stick-b-lit (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310485500465743156, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7944313978024877966, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
         type: 3}
@@ -330,7 +387,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7617106519027005542, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3, type: 3}
 --- !u!4 &6968471027369952867 stripped
 Transform:
@@ -345,10 +403,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7790883461165532007}
     m_Modifications:
+    - target: {fileID: 7076166781606332444, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7310485500465743156, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
         type: 3}
       propertyPath: m_Name
       value: candle-stick-b-lit (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310485500465743156, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7944313978024877966, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
         type: 3}
@@ -405,7 +473,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7617106519027005542, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3, type: 3}
 --- !u!4 &5746384845048398890 stripped
 Transform:
@@ -420,10 +489,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7790883461165532007}
     m_Modifications:
+    - target: {fileID: 7076166781606332444, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7310485500465743156, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
         type: 3}
       propertyPath: m_Name
       value: candle-stick-b-lit (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310485500465743156, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7944313978024877966, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
         type: 3}
@@ -480,7 +559,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7617106519027005542, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3, type: 3}
 --- !u!4 &4241945030034431474 stripped
 Transform:
@@ -500,6 +580,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: book-evil-open
       objectReference: {fileID: 0}
+    - target: {fileID: 3878584925925799453, guid: eaa2ad421bfbf504b99420a1cfb24009,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6162562412837788622, guid: eaa2ad421bfbf504b99420a1cfb24009,
         type: 3}
       propertyPath: m_RootOrder
@@ -508,7 +593,7 @@ PrefabInstance:
     - target: {fileID: 6162562412837788622, guid: eaa2ad421bfbf504b99420a1cfb24009,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.96907425
+      value: 0.91
       objectReference: {fileID: 0}
     - target: {fileID: 6162562412837788622, guid: eaa2ad421bfbf504b99420a1cfb24009,
         type: 3}
@@ -518,7 +603,7 @@ PrefabInstance:
     - target: {fileID: 6162562412837788622, guid: eaa2ad421bfbf504b99420a1cfb24009,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.46040535
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 6162562412837788622, guid: eaa2ad421bfbf504b99420a1cfb24009,
         type: 3}
@@ -555,7 +640,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4399775920857633677, guid: eaa2ad421bfbf504b99420a1cfb24009, type: 3}
+    - {fileID: 5130498868913480993, guid: eaa2ad421bfbf504b99420a1cfb24009, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: eaa2ad421bfbf504b99420a1cfb24009, type: 3}
 --- !u!4 &736633294554924061 stripped
 Transform:

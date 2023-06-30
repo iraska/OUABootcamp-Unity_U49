@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7586093321967573247}
   - component: {fileID: 7586093321968376031}
   - component: {fileID: 7586093321969343007}
-  - component: {fileID: 1232143751471484909}
-  m_Layer: 0
+  - component: {fileID: 2007851284577502651}
+  m_Layer: 10
   m_Name: Torch_Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 7586093321967142111}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.2000003, y: 1.1999998, z: 1.2000003}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6337703770924462613}
   m_Father: {fileID: 0}
@@ -87,8 +87,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1232143751471484909
-MeshCollider:
+--- !u!136 &2007851284577502651
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -97,10 +97,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: fe2e85b4d6271d84797599c39656320c, type: 3}
+  m_Radius: 2.0776136
+  m_Height: 5.382692
+  m_Direction: 0
+  m_Center: {x: -0.24763897, y: 0.20329477, z: -0.11631328}
 --- !u!1 &9222988866110790705
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 6337703770924462613}
   - component: {fileID: 5725037847605902684}
   - component: {fileID: 8598749747895036467}
+  - component: {fileID: 4073467710240460491}
   m_Layer: 10
   m_Name: TorchLight
   m_TagString: Untagged
@@ -146,8 +147,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9529412, g: 0.81960785, b: 0.45490196, a: 1}
-  m_Intensity: 2
-  m_Range: 5
+  m_Intensity: 7.9
+  m_Range: 5.573867
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -158,7 +159,7 @@ Light:
     m_Strength: 1
     m_Bias: 0.02
     m_NormalBias: 0.4
-    m_NearPlane: 0.0945
+    m_NearPlane: 0.1
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -208,3 +209,23 @@ Halo:
     serializedVersion: 2
     rgba: 4288406783
   m_Size: 0.08
+--- !u!114 &4073467710240460491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9222988866110790705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}

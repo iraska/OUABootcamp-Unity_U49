@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4314863294038567361}
   - component: {fileID: 8687023132556472732}
   - component: {fileID: 3215832899147845868}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8422907999726907931}
-  m_Layer: 0
+  - component: {fileID: 3287377641204740501}
+  m_Layer: 10
   m_Name: Yellow-FireWood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,6 +150,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &3287377641204740501
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8422907999726907930}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.7
+  m_Center: {x: 0, y: 0.27, z: 2.5}
 --- !u!1 &8422908000152463984
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +174,7 @@ GameObject:
   - component: {fileID: 8422908000152463985}
   - component: {fileID: 8422908000152463983}
   - component: {fileID: 8422908000152463982}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fire_Yellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8422908000152463984}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.24, z: 2.52}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4993,7 +5007,7 @@ GameObject:
   - component: {fileID: 8422908000655914358}
   - component: {fileID: 8422908000655914356}
   - component: {fileID: 8422908000655914359}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5008,7 +5022,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8422908000655914361}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 1.577, y: -2, z: -0.405}
+  m_LocalPosition: {x: 1.577, y: -2, z: 2.06}
   m_LocalScale: {x: 65, y: 65, z: 65}
   m_ConstrainProportionsScale: 0
   m_Children: []
