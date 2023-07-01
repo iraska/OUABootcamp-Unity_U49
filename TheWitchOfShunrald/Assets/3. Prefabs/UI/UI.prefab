@@ -64,6 +64,8 @@ MonoBehaviour:
   lowButtonImage: {fileID: 1423904384978698341}
   highButtonImage: {fileID: 1423904384362942467}
   mediumButtonImage: {fileID: 1423904384531315298}
+  weaponUICircle: {fileID: 1856014228046987089}
+  weaponUILine: {fileID: 842147678994807031}
   selectedSprite: {fileID: 1856696364, guid: d90d5ab538f4ff6458d848a10c029ae9, type: 3}
   unselectedSprite: {fileID: 21300000, guid: 7e2d7772fc2f11a4eb5af0a33d5728cb, type: 3}
   infoText: {fileID: 1423904383814033573}
@@ -461,6 +463,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94cf6b3768bda924ab00c67ace6be3fa, type: 3}
+--- !u!114 &842147678994807031 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4634090763678899551, guid: 94cf6b3768bda924ab00c67ace6be3fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 5467493253573535144}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1423904383114917797 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6350859818881241613, guid: 94cf6b3768bda924ab00c67ace6be3fa,
@@ -563,6 +577,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5467493253573535144}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1856014228046987089 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5918173280909908729, guid: 94cf6b3768bda924ab00c67ace6be3fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 5467493253573535144}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5377426125337595678 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 90077166133275318, guid: 94cf6b3768bda924ab00c67ace6be3fa,

@@ -11,7 +11,7 @@ namespace Shunrald
 
         [SerializeField] private LayerMask aimLayerMask;
 
-        [SerializeField] private float speed, turnSpeed = 360, dashSpeed, dashTime;
+        [SerializeField] private float speed, turnSpeed = 360, dashSpeed, dashTime, dashCoolDown, dashManaburn;
 
         private ShunraldController controller;
         private Animator animator;
@@ -20,7 +20,7 @@ namespace Shunrald
         private Vector3 targetPosition, input;
 
         private float velocityX, velocityZ;
-        private bool isDashing, isUsingWeapon, isMovementFrozen = false;
+        private bool isDashing, isUsingWeapon, isMovementFrozen = false, isDashCoolDown;
         public bool IsUsingWeapon
         {
             get { return isUsingWeapon; }
@@ -53,9 +53,12 @@ namespace Shunrald
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (!isDashing && rb.velocity.magnitude <= 0.01f)
+                if (!isDashing && rb.velocity.magnitude <= 0.01f && GameManager.instance.Player.GetComponent<PlayerStats>().Mana > 0 && !isDashCoolDown)
                 {
+                    GameManager.instance.Player.GetComponent<PlayerStats>().SpendMana(dashManaburn);
+                    isDashCoolDown = true;
                     StartCoroutine(Dash());
+                    StartCoroutine(DashCooldown());
                 }
             }
         }
@@ -168,6 +171,12 @@ namespace Shunrald
 
             isDashing = false;
             trailRend.emitting = false;
+        }
+
+        private IEnumerator DashCooldown()
+        {
+            yield return new WaitForSeconds(dashCoolDown);
+            isDashCoolDown = false;
         }
     }
 }

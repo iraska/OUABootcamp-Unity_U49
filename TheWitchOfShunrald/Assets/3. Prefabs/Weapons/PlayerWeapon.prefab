@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 781669714}
   - component: {fileID: 781669713}
   - component: {fileID: 781669712}
+  - component: {fileID: 1686623357953202026}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -103,6 +104,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1686623357953202026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781669710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 426e8ecf837f94f4ca5ada1ca17b8af9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  isStaff: 1
+  throwBackForce: 1
+  rb: {fileID: 5157249533455399956}
 --- !u!1 &832522843
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,6 +186,87 @@ Transform:
   m_Father: {fileID: 174170985}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &385078123626199270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8477480684471067486}
+  - component: {fileID: 6032412407654360047}
+  - component: {fileID: 1753612734497050373}
+  - component: {fileID: 1665949619}
+  m_Layer: 0
+  m_Name: SwordTip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8477480684471067486
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385078123626199270}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8328863883783571947}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6032412407654360047
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385078123626199270}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.35478148, y: 0.1432144, z: 2.4526405}
+  m_Center: {x: -0.002689343, y: -0.0034736048, z: 1.0406529}
+--- !u!54 &1753612734497050373
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385078123626199270}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1665949619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385078123626199270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 426e8ecf837f94f4ca5ada1ca17b8af9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  isStaff: 0
+  throwBackForce: 1
+  rb: {fileID: 1072256750810269651}
 --- !u!1 &390490944914363386
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,6 +333,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 832522844}
+  - {fileID: 8477480684471067486}
   m_Father: {fileID: 4553521578366867506}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -317,8 +418,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.43061423, y: 0.08829281, z: 4.5186825}
-  m_Center: {x: -0.002499193, y: -0.007491749, z: -0.00000023841858}
+  m_Size: {x: 0.43061423, y: 0.08829281, z: 2.0136847}
+  m_Center: {x: -0.0024991855, y: -0.0074917185, z: -1.2525007}
 --- !u!1 &1066153366355334878
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,9 +709,9 @@ SpringJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: -0.5, z: 0}
+  m_ConnectedAnchor: {x: 0, y: 0.4000001, z: 0}
   serializedVersion: 2
-  m_Spring: 50
+  m_Spring: 80
   m_Damper: 0.2
   m_MinDistance: 0
   m_MaxDistance: 0
@@ -647,7 +748,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2042783887706292354}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -682,7 +783,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 0, y: -1.8, z: 0}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -791,7 +892,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2263880207131865913}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1129,9 +1230,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3351287344309047935}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9034231757379080332}
   - {fileID: 526439461371564920}
@@ -1150,11 +1251,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be43e682f458bfd4795fb2b8c28d09a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerGameObject: {fileID: 0}
   playerProjectilePrefab: {fileID: 6675487957379330923, guid: 4cf96c6b09710f94cb7bfd6146fd2a09,
     type: 3}
   weaponPivot: {fileID: 3127564542990434406}
   reverseGravityPoint: {fileID: 2263880207131865913}
   topParticleObject: {fileID: 832522843}
+  staffWeapon: {fileID: 6914697117186297415}
+  swordWeapon: {fileID: 3351287344309047935}
   particleType: 1
   energyParticleObject: {fileID: 4553287629904227512}
   fireParticleObject: {fileID: 4553287629904227512}
@@ -1162,11 +1266,12 @@ MonoBehaviour:
   staffTopPoint: {fileID: 174170985}
   staffTopRB: {fileID: 1072256750810269651}
   powerMultiplier: 1
+  manaSpendMultiplier: 1
   staffColider: {fileID: 93888873}
   playerCollider: {fileID: 0}
+  staffTopSphereColider: {fileID: 6032412407654360047}
   isStaffEquipped: 0
-  circleImage: {fileID: 0}
-  lineRectTransform: {fileID: 0}
+  weaponTopPivotPositionValue: 2
   maxLineLength: 200
 --- !u!1 &3832359692723371857
 GameObject:
@@ -1797,6 +1902,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabToCreate: {fileID: 5435615847577198238, guid: d6d1500e85f6cef4591f55af5ab76cc6,
     type: 3}
+  mainCamera: {fileID: 0}
 --- !u!1 &5837353784643369576
 GameObject:
   m_ObjectHideFlags: 0
@@ -1908,11 +2014,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be43e682f458bfd4795fb2b8c28d09a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerGameObject: {fileID: 0}
   playerProjectilePrefab: {fileID: 6675487957379330923, guid: 4cf96c6b09710f94cb7bfd6146fd2a09,
     type: 3}
   weaponPivot: {fileID: 6383814455578827884}
   reverseGravityPoint: {fileID: 8715859966182148901}
   topParticleObject: {fileID: 6659098450614573512}
+  staffWeapon: {fileID: 0}
+  swordWeapon: {fileID: 0}
   particleType: 0
   energyParticleObject: {fileID: 5220550743143302441}
   fireParticleObject: {fileID: 5220550743143302441}
@@ -1920,11 +2029,12 @@ MonoBehaviour:
   staffTopPoint: {fileID: 3054030079337623122}
   staffTopRB: {fileID: 1260538838186741298}
   powerMultiplier: 1
+  manaSpendMultiplier: 0
   staffColider: {fileID: 7390739565781939548}
   playerCollider: {fileID: 0}
+  staffTopSphereColider: {fileID: 0}
   isStaffEquipped: 0
-  circleImage: {fileID: 0}
-  lineRectTransform: {fileID: 0}
+  weaponTopPivotPositionValue: 0
   maxLineLength: 200
 --- !u!1 &6659098450614573512
 GameObject:
@@ -2004,23 +2114,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be43e682f458bfd4795fb2b8c28d09a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerGameObject: {fileID: 0}
   playerProjectilePrefab: {fileID: 6675487957379330923, guid: 4cf96c6b09710f94cb7bfd6146fd2a09,
     type: 3}
   weaponPivot: {fileID: 8831708554010473526}
   reverseGravityPoint: {fileID: 2921688811083063197}
   topParticleObject: {fileID: 5063991592899943673}
+  staffWeapon: {fileID: 6914697117186297415}
+  swordWeapon: {fileID: 3351287344309047935}
   particleType: 1
   energyParticleObject: {fileID: 1673419964264213054}
   fireParticleObject: {fileID: 5433252099408812957}
   cameraPivotTransform: {fileID: 0}
   staffTopPoint: {fileID: 181103499096046832}
   staffTopRB: {fileID: 5157249533455399956}
-  powerMultiplier: 1
+  powerMultiplier: 1.5
+  manaSpendMultiplier: 1.5
   staffColider: {fileID: 1231312033}
   playerCollider: {fileID: 0}
+  staffTopSphereColider: {fileID: 781669713}
   isStaffEquipped: 1
-  circleImage: {fileID: 0}
-  lineRectTransform: {fileID: 0}
+  weaponTopPivotPositionValue: 3
   maxLineLength: 200
 --- !u!1 &7092274925778038370
 GameObject:

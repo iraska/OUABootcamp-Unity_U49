@@ -8,6 +8,8 @@ namespace ali
 {
     public class WeaponMovementHandler : MonoBehaviour
     {
+        [SerializeField] private GameObject playerGameObject;
+
         private Vector2 initialMousePosition;
         private Vector2 mouseMovementVector;
         [SerializeField] private GameObject playerProjectilePrefab;
@@ -15,6 +17,10 @@ namespace ali
         [SerializeField] private GameObject reverseGravityPoint;
 
         [SerializeField] private GameObject topParticleObject;
+
+        [SerializeField] private GameObject staffWeapon;
+        [SerializeField] private GameObject swordWeapon;
+        private float playerDamage;
 
         [SerializeField] private int particleType;
         [SerializeField] private GameObject energyParticleObject;
@@ -24,37 +30,45 @@ namespace ali
         [SerializeField] private Transform staffTopPoint;
         [SerializeField] private Rigidbody staffTopRB;
         [SerializeField] private float powerMultiplier;
+        [SerializeField] private float manaSpendMultiplier;
         private float powerMagnitude;
+        private float manaSpend;
         private Vector3 lastStaffTopPoint;
-        private bool firstTimeClick;
 
         [SerializeField] private Collider staffColider;
         [SerializeField] private Collider playerCollider;
         [SerializeField] private Collider staffTopSphereColider;
 
-        [SerializeField] bool isStaffEquipped;
+        [SerializeField] private bool isStaffEquipped;
+        [SerializeField] private float weaponTopPivotPositionValue;
 
         //WeaponUI
-        [SerializeField] private Image circleImage;
-        [SerializeField] private RectTransform lineRectTransform;
+        private Image circleImage;
+        private RectTransform lineRectTransform;
         [SerializeField] private float maxLineLength = 200f;
         private Vector2 startDragPosition;
 
+        private ShunraldMovementController shunraldMovementController;
+        private PlayerStats playerStats;
+
         void Start ()
         {
+            playerGameObject = GameManager.instance.Player;
+            circleImage = UIManager.instance.WeaponUICircle;
+            lineRectTransform = UIManager.instance.WeaponUILine.rectTransform;
             powerMagnitude = 0;
+            manaSpend = 0;
             Physics.IgnoreCollision(staffColider, playerCollider, true);
             Physics.IgnoreCollision(staffTopSphereColider, playerCollider, true);
-
-            QualitySettings.vSyncCount = 0;
-            Application.targetFrameRate = 60;
-
+            shunraldMovementController = playerGameObject.GetComponent<ShunraldMovementController>();
+            playerStats = playerGameObject.GetComponent<PlayerStats>();
+            playerDamage = playerStats.Damage;
         }
 
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.P))
+            /*if (Input.GetKeyDown(KeyCode.P))
             {
                 DialogSystem.DialogStruct [] birinciDiyaloglar = new DialogSystem.DialogStruct[3];
                 for (int i = 0; i < 3; i++)
@@ -65,7 +79,7 @@ namespace ali
                 }
 
                 UIManager.instance.DialogPanel(birinciDiyaloglar);
-            }
+            }*/
 
             if (Input.GetMouseButtonDown(0))
             {
@@ -92,40 +106,57 @@ namespace ali
 
             else if (Input.GetMouseButton(0))
             {
-                GameManager.instance.Player.GetComponent<ShunraldMovementController>().IsUsingWeapon = true;
-                //Change the position of the weapon based on the input
-                mouseMovementVector = new Vector2 (Input.mousePosition.x, Input.mousePosition.y) - initialMousePosition;
-                if (mouseMovementVector == Vector2.zero)
-                {
-                    mouseMovementVector = initialMousePosition - new Vector2 (960, 540);
-                }
-                float rotationValue = cameraPivotTransform.rotation.eulerAngles.y;
-                Vector3 changedLocalPosition = new Vector3(mouseMovementVector.normalized.x * 3, 0, mouseMovementVector.normalized.y * 3);
-                Vector3 changedReverseGravityLocation = new Vector3(mouseMovementVector.normalized.x * 1, 3, mouseMovementVector.normalized.y * 1);
-                reverseGravityPoint.transform.localPosition = RotateVector(changedReverseGravityLocation, -1 * rotationValue);
-                weaponPivot.transform.localPosition = RotateVector(changedLocalPosition, -1 * rotationValue);
+                shunraldMovementController.IsUsingWeapon = true;
 
-                //Track the movement of the wand for deciding its powerMagnitude for the ranged attack
-                if (isStaffEquipped)
+                //check mana
+                if (playerStats.Mana > 0f)
                 {
-                    if (powerMagnitude > 100f)
+                    //Change the position of the weapon based on the input
+                    mouseMovementVector = new Vector2(Input.mousePosition.x, Input.mousePosition.y) - initialMousePosition;
+                    if (mouseMovementVector == Vector2.zero)
                     {
-                        powerMagnitude = 100f;
+                        mouseMovementVector = initialMousePosition - new Vector2(960, 540);
                     }
-                    else if (powerMagnitude > 50)
+                    float rotationValue = cameraPivotTransform.rotation.eulerAngles.y;
+                    Vector3 changedLocalPosition = new Vector3(mouseMovementVector.normalized.x * 3, 0, mouseMovementVector.normalized.y * 3);
+                    Vector3 changedReverseGravityLocation = new Vector3(mouseMovementVector.normalized.x * 1, weaponTopPivotPositionValue, mouseMovementVector.normalized.y * 1);
+                    reverseGravityPoint.transform.localPosition = RotateVector(changedReverseGravityLocation, -1 * rotationValue);
+                    weaponPivot.transform.localPosition = RotateVector(changedLocalPosition, -1 * rotationValue);
+
+                    if (manaSpend > 0.5)
                     {
-                        powerMagnitude += Vector3.Distance(lastStaffTopPoint, staffTopPoint.position);
+                        playerStats.SpendMana(manaSpend);
+                        manaSpend = 0;
                     }
                     else
                     {
-                        powerMagnitude += Vector3.Distance(lastStaffTopPoint, staffTopPoint.position) * 2;
+                        manaSpend = manaSpend + (manaSpendMultiplier / 10 * Vector3.Distance(lastStaffTopPoint, staffTopPoint.position));
+                    }
+
+
+                    //Track the movement of the wand for deciding its powerMagnitude for the ranged attack
+                    if (isStaffEquipped)
+                    {
+                        if (powerMagnitude > 100f)
+                        {
+                            powerMagnitude = 100f;
+                        }
+                        else if (powerMagnitude > 50)
+                        {
+                            powerMagnitude += Vector3.Distance(lastStaffTopPoint, staffTopPoint.position);
+                        }
+                        else
+                        {
+                            powerMagnitude += Vector3.Distance(lastStaffTopPoint, staffTopPoint.position) * 2;
+                        }
+                        
+
+                        //Resize the effects based on powerMagnitude
+                        topParticleObject.transform.localScale = new Vector3(powerMagnitude / 100, powerMagnitude / 100, powerMagnitude / 100);
                     }
                     lastStaffTopPoint = staffTopPoint.position;
 
-                    //Resize the effects based on powerMagnitude
-                    topParticleObject.transform.localScale = new Vector3(powerMagnitude / 100, powerMagnitude / 100, powerMagnitude / 100);
                 }
-                
 
                 //WeaponUI
                 Vector2 currentMousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
@@ -140,24 +171,42 @@ namespace ali
 
             else if (Input.GetMouseButtonUp(0))
             {
-                GameManager.instance.Player.GetComponent<ShunraldMovementController>().IsUsingWeapon = false;
+                shunraldMovementController.IsUsingWeapon = false;
                 //launch the projectile if staff is equipped
                 if (isStaffEquipped)
                 {
-                    GameObject spawnedPlayerProjectile = Instantiate(playerProjectilePrefab);
-                    spawnedPlayerProjectile.transform.position = staffTopRB.transform.position;
-                    spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().PlayerProjectileDestination = staffTopRB.velocity;
-                    spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().ProjectilePowerMagnitude = powerMagnitude;
-                    spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().ProjecileType = particleType;
-
+                    
+                    if (playerStats.Mana > 0f)
+                    {
+                        GameObject spawnedPlayerProjectile = Instantiate(playerProjectilePrefab);
+                        spawnedPlayerProjectile.transform.position = staffTopRB.transform.position;
+                        spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().PlayerProjectileDestination = staffTopRB.velocity;
+                        spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().ProjectilePowerMagnitude = powerMagnitude/20 * playerDamage;
+                        spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().ProjecileType = particleType;
+                        playerStats.SpendMana(5f);
+                    }
                     //reset the magnitude and the VFX
                     powerMagnitude = 0;
                     topParticleObject.transform.localScale = Vector3.zero;
+
                 }
 
                 //WeaponUI
                 circleImage.gameObject.SetActive(false);
                 lineRectTransform.gameObject.SetActive(false);
+            }
+            else if (Input.GetKeyDown(KeyCode.Q)) 
+            {
+                if (isStaffEquipped) 
+                {
+                    swordWeapon.SetActive(true);
+                    staffWeapon.SetActive(false);
+                }
+                else
+                {
+                    staffWeapon.SetActive(true);
+                    swordWeapon.SetActive(false);
+                }
             }
         }
 
@@ -172,6 +221,7 @@ namespace ali
 
             return new Vector3(newX, vector.y, newZ);
         }
+
     }
 }
 

@@ -76,6 +76,10 @@ public class PlayerStats : MonoBehaviour
     }
     public void RestoreMana()
     {
-        mana += restoreMana;
+        if (this.mana < startingMana)
+        {
+            mana += restoreMana;
+            UIManager.instance.ManaBar(this.mana, PlayerPrefs.GetInt("mana"));
+        }
     }
 }

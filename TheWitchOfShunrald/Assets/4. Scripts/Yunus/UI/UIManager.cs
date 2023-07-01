@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
     [SerializeField] private GameObject gamePanel, pausePanel, upgradePanel, dialogPanel, winPanel, losePanel, infoPanel;
-    [SerializeField] private Image healthBar, healthBar1, manaBar, weaponImage, easyButtonImage, normalButtonImage, hardButtonImage, lowButtonImage, highButtonImage, mediumButtonImage;
+    [SerializeField] private Image healthBar, healthBar1, manaBar, weaponImage, easyButtonImage, normalButtonImage, hardButtonImage, lowButtonImage, highButtonImage, mediumButtonImage, weaponUICircle, weaponUILine;
     [SerializeField] private Sprite selectedSprite, unselectedSprite;
     [SerializeField] private Text infoText;
     [SerializeField] private DialogSystem dialogSystem;
@@ -119,7 +119,7 @@ public class UIManager : MonoBehaviour
     }
     public void ManaBar(float currentMana, int maxMana)
     {
-        healthBar.DOFillAmount(currentMana / (float)maxMana, 1f).SetEase(Ease.Linear);
+        manaBar.DOFillAmount(currentMana / (float)maxMana, 1f).SetEase(Ease.Linear);
     }
     public void InfoEnable(string text)
     {
@@ -135,6 +135,16 @@ public class UIManager : MonoBehaviour
     public void WeaponImage(Sprite weapon)
     {
         weaponImage.sprite = weapon;
+    }
+
+    public Image WeaponUICircle
+    {
+        get { return weaponUICircle; }
+    }
+
+    public Image WeaponUILine
+    {
+        get { return weaponUILine; }
     }
 
     //------------------- SETTÝNGS--------------------------

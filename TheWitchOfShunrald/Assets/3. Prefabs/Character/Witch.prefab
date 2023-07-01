@@ -2684,6 +2684,8 @@ MonoBehaviour:
   turnSpeed: 360
   dashSpeed: 20
   dashTime: 0.15
+  dashCoolDown: 4
+  dashManaburn: 10
 --- !u!114 &7383257406533379735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2716,7 +2718,7 @@ MonoBehaviour:
   healthMaxValue: 150
   damageMaxValue: 20
   manaMaxValue: 100
-  restoreMana: 0
+  restoreMana: 0.2
 --- !u!114 &7383257406533379729
 MonoBehaviour:
   m_ObjectHideFlags: 0

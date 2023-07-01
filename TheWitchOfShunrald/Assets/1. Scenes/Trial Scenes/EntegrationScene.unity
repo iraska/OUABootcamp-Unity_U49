@@ -3398,7 +3398,7 @@ PrefabInstance:
     - target: {fileID: 7312855380587195045, guid: 0d42bfe194fb13741847eef79ed6956a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 24.45
+      value: 12.01
       objectReference: {fileID: 0}
     - target: {fileID: 7312855380587195045, guid: 0d42bfe194fb13741847eef79ed6956a,
         type: 3}
@@ -4426,19 +4426,9 @@ PrefabInstance:
       objectReference: {fileID: 1982138991}
     - target: {fileID: 3216983071645906062, guid: 9af1805b194e03c4aa3f273b52d3dbca,
         type: 3}
-      propertyPath: circleImage
-      value: 
-      objectReference: {fileID: 478940612}
-    - target: {fileID: 3216983071645906062, guid: 9af1805b194e03c4aa3f273b52d3dbca,
-        type: 3}
       propertyPath: playerCollider
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3216983071645906062, guid: 9af1805b194e03c4aa3f273b52d3dbca,
-        type: 3}
-      propertyPath: lineRectTransform
-      value: 
-      objectReference: {fileID: 490502148}
+      objectReference: {fileID: 1982138992}
     - target: {fileID: 3216983071645906062, guid: 9af1805b194e03c4aa3f273b52d3dbca,
         type: 3}
       propertyPath: cameraPivotTransform
@@ -4506,29 +4496,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5892759630789244771, guid: 9af1805b194e03c4aa3f273b52d3dbca,
         type: 3}
-      propertyPath: circleImage
-      value: 
-      objectReference: {fileID: 478940612}
-    - target: {fileID: 5892759630789244771, guid: 9af1805b194e03c4aa3f273b52d3dbca,
-        type: 3}
-      propertyPath: playerCollider
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5892759630789244771, guid: 9af1805b194e03c4aa3f273b52d3dbca,
-        type: 3}
-      propertyPath: lineRectTransform
-      value: 
-      objectReference: {fileID: 490502148}
-    - target: {fileID: 5892759630789244771, guid: 9af1805b194e03c4aa3f273b52d3dbca,
-        type: 3}
       propertyPath: cameraPivotTransform
       value: 
       objectReference: {fileID: 1838819670}
-    - target: {fileID: 8073178647766869980, guid: 9af1805b194e03c4aa3f273b52d3dbca,
-        type: 3}
-      propertyPath: circleImage
-      value: 
-      objectReference: {fileID: 478940612}
     - target: {fileID: 8073178647766869980, guid: 9af1805b194e03c4aa3f273b52d3dbca,
         type: 3}
       propertyPath: playerCollider
@@ -4536,19 +4506,9 @@ PrefabInstance:
       objectReference: {fileID: 1982138992}
     - target: {fileID: 8073178647766869980, guid: 9af1805b194e03c4aa3f273b52d3dbca,
         type: 3}
-      propertyPath: lineRectTransform
-      value: 
-      objectReference: {fileID: 490502148}
-    - target: {fileID: 8073178647766869980, guid: 9af1805b194e03c4aa3f273b52d3dbca,
-        type: 3}
       propertyPath: cameraPivotTransform
       value: 
       objectReference: {fileID: 1838819670}
-    - target: {fileID: 8073178647766869980, guid: 9af1805b194e03c4aa3f273b52d3dbca,
-        type: 3}
-      propertyPath: staffTopSphereColider
-      value: 
-      objectReference: {fileID: 2092182929}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9af1805b194e03c4aa3f273b52d3dbca, type: 3}
 --- !u!1001 &1813841939
@@ -5406,7 +5366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2072188575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5919,12 +5879,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5535130080960126772, guid: f52700a53f72957438c886c2b737272e,
     type: 3}
   m_PrefabInstance: {fileID: 2075036280}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &2092182929 stripped
-SphereCollider:
-  m_CorrespondingSourceObject: {fileID: 781669713, guid: 9af1805b194e03c4aa3f273b52d3dbca,
-    type: 3}
-  m_PrefabInstance: {fileID: 1665949617}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2145043686
 GameObject:
