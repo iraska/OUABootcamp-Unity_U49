@@ -39,6 +39,7 @@ namespace ali
 
         private Vector3 playerProjectileDestination;
         private float projectilePowerMagnitude;
+        private float projectilePlayerDamage;
         private int projecileType; //0 for energy, 1 for fire
         
 
@@ -52,6 +53,12 @@ namespace ali
         {
             get { return projectilePowerMagnitude; }
             set { projectilePowerMagnitude = value; }
+        }
+
+        public float ProjectilePlayerDamage
+        {
+            get { return projectilePlayerDamage; }
+            set { projectilePlayerDamage = value; }
         }
 
         public int ProjecileType
@@ -128,7 +135,7 @@ namespace ali
             foreach (Collider collider in colliders)
             {
                 Rigidbody objectInTrigger = collider.gameObject.GetComponent<Rigidbody>();
-
+                Debug.Log(projectilePowerMagnitude);
                 float multiplierValue = (10f - ((objectInTrigger.gameObject.transform.position - transform.position).magnitude)) * projectilePowerMagnitude / 100 * projectilePowerMultiplier;
                 if (multiplierValue < 1f)
                 {

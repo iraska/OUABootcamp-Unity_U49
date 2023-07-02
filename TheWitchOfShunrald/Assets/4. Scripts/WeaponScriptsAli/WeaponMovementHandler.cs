@@ -181,7 +181,8 @@ namespace ali
                         GameObject spawnedPlayerProjectile = Instantiate(playerProjectilePrefab);
                         spawnedPlayerProjectile.transform.position = staffTopRB.transform.position;
                         spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().PlayerProjectileDestination = staffTopRB.velocity;
-                        spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().ProjectilePowerMagnitude = powerMagnitude/20 * playerDamage;
+                        spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().ProjectilePowerMagnitude = powerMagnitude;
+                        spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().ProjectilePlayerDamage = playerDamage;
                         spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().ProjecileType = particleType;
                         playerStats.SpendMana(5f);
                     }
