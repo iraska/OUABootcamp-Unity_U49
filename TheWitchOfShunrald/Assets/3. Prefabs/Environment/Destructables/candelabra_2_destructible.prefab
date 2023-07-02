@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 1044810534878270918}
   - component: {fileID: 4393270588015721292}
   - component: {fileID: 2019565648764343896}
-  m_Layer: 0
+  - component: {fileID: 7463962642115296758}
+  - component: {fileID: 4536218667480135466}
+  m_Layer: 12
   m_Name: candelabra_2_part3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,6 +85,35 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7463962642115296758
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191177032234207396}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.21760245, y: 0.30481568, z: 0.21847588}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &4536218667480135466
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191177032234207396}
+  serializedVersion: 2
+  m_Mass: 0.4
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1619606271430558098
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +125,9 @@ GameObject:
   - component: {fileID: 3472654069918876398}
   - component: {fileID: 4501221553279325826}
   - component: {fileID: 3439591477439859399}
-  m_Layer: 0
+  - component: {fileID: 8612419045637412557}
+  - component: {fileID: 5738901310404656948}
+  m_Layer: 12
   m_Name: candelabra_2_part2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,6 +199,35 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8612419045637412557
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619606271430558098}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.62441, y: 0.5423002, z: 0.62441}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &5738901310404656948
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619606271430558098}
+  serializedVersion: 2
+  m_Mass: 0.4
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2340174635613864509
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +239,9 @@ GameObject:
   - component: {fileID: 847389630234908108}
   - component: {fileID: 7016903305248771397}
   - component: {fileID: 6689775119120282760}
-  m_Layer: 0
+  - component: {fileID: 1275875548000386194}
+  - component: {fileID: 3589114447318862623}
+  m_Layer: 12
   m_Name: candelabra_2_part1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,6 +313,35 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1275875548000386194
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2340174635613864509}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0280956, y: 0.63935566, z: 0.36605823}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &3589114447318862623
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2340174635613864509}
+  serializedVersion: 2
+  m_Mass: 0.4
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5850963223333112835
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +353,9 @@ GameObject:
   - component: {fileID: 698609785696203791}
   - component: {fileID: 8238460759368905089}
   - component: {fileID: 3769477548939202192}
-  m_Layer: 0
+  - component: {fileID: 8098540393977990123}
+  - component: {fileID: 8073535963944349637}
+  m_Layer: 12
   m_Name: candelabra_2_part4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,6 +427,35 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8098540393977990123
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5850963223333112835}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.22649172, y: 0.42680222, z: 0.22649164}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &8073535963944349637
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5850963223333112835}
+  serializedVersion: 2
+  m_Mass: 0.4
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7891011471654370676
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,7 +467,9 @@ GameObject:
   - component: {fileID: 6995139288031022513}
   - component: {fileID: 399324213032023678}
   - component: {fileID: 2693440306698230034}
-  m_Layer: 0
+  - component: {fileID: 6628838875184194961}
+  - component: {fileID: 3313147083737715786}
+  m_Layer: 12
   m_Name: candelabra_2_part5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -415,6 +541,35 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6628838875184194961
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7891011471654370676}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.22933836, y: 0.25131348, z: 0.22933824}
+  m_Center: {x: -0.00000047683716, y: 0, z: 0}
+--- !u!54 &3313147083737715786
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7891011471654370676}
+  serializedVersion: 2
+  m_Mass: 0.4
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7959619869653341897
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,8 +579,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6119803665647090850}
-  - component: {fileID: 8483862991116690815}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: candelabra_2_destructible
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -452,16 +606,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!135 &8483862991116690815
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7959619869653341897}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.8
-  m_Center: {x: 0, y: 0.72, z: 0}
