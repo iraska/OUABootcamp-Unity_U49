@@ -23,7 +23,6 @@ namespace CihanAkpınar
         private float basicEnemyVelocitySpeed;
         
         public float lookSpawnedEnemyRadius = 10f;
-        public float basicEnemyHealth;
         
         private int mainProbability;
         
@@ -38,6 +37,8 @@ namespace CihanAkpınar
         [SerializeField] private float bombPower;
         [SerializeField] private float basicStopingDistance;
         [SerializeField] private float basicEnemyMovementSpeed;
+        [SerializeField] private float health;
+
 
         [SerializeField] private int targetLayer;
         [SerializeField] private int healthPotProbability;
@@ -175,9 +176,9 @@ namespace CihanAkpınar
 
             Vector3 jumpDirection=((transform.position-exploLocation)+Vector3.up).normalized*bombPower;
             rb.AddForce(bombPower * jumpDirection, ForceMode.VelocityChange);
-            basicEnemyHealth -= damage;
+            health -= damage;
             AudioManager.Instance.PlaySfx(AudioManager.Instance.basicSpawnedEnemyTakeDamageAudio);
-            if (basicEnemyHealth<=0)
+            if (health<=0)
             {
                 //dieAudio
                 AudioManager.Instance.PlaySfx(AudioManager.Instance.basicSpawnedEnemyDieAudio);
@@ -203,6 +204,11 @@ namespace CihanAkpınar
                 Instantiate(basicManaPot, transform.position, quaternion.identity);  
             }
 
+        }
+
+        float Enemy.Health()
+        {
+            return health;
         }
     }
  

@@ -5,4 +5,5 @@ using UnityEngine;
 public interface Enemy
 {
     void TakeDamage(Vector3 exploLocation, float damage);
+    float Health();
 }

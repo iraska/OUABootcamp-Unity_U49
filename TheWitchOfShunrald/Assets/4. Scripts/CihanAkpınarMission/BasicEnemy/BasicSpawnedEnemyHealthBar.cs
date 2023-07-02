@@ -6,14 +6,13 @@ namespace CihanAkpınar
 {
     public class BasicSpawnedEnemyHealthBar : MonoBehaviour
     {
-        public GameObject basicEnemy; // Karakterin referansı
+        public GameObject enemy; // Karakterin referansı
         private float startingHealth;
         [SerializeField] private GameObject pivot; 
 
         void Start()
         {
-            startingHealth = basicEnemy.GetComponent<BasicSpawnedEnemyAi>().basicEnemyHealth;
-
+            startingHealth = enemy.GetComponent<Enemy>().Health();
         }
 
         void Update()
@@ -21,19 +20,14 @@ namespace CihanAkpınar
             changHealthValue();
             // Karakterin rotasyonunu düzelt
             transform.rotation = Quaternion.Euler(0f, -135f, 0f);
-
         }
 
         void changHealthValue()
         {
             // Karakterin can değerini al
-            float healthPercentage = basicEnemy.GetComponent<BasicSpawnedEnemyAi>().basicEnemyHealth;
+            float healthPercentage = enemy.GetComponent<Enemy>().Health();
             // Can göstergesinin boyutunu güncelle
-            pivot.transform.localScale = new Vector3(healthPercentage / startingHealth,pivot.transform.localScale.y,1);
-            
-            
-        }
-        
-    }
- 
+            pivot.transform.localScale = new Vector3(healthPercentage / startingHealth,pivot.transform.localScale.y,1);                  
+        }        
+    } 
 }

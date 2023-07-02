@@ -1069,7 +1069,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookSpawnedEnemyRadius: 10
-  basicEnemyHealth: 70
   spawnerOfThisEnemy: {fileID: 7312855380587195043, guid: 0d42bfe194fb13741847eef79ed6956a,
     type: 3}
   BasicAILayer:
@@ -1084,6 +1083,7 @@ MonoBehaviour:
   bombPower: 0
   basicStopingDistance: 1.5
   basicEnemyMovementSpeed: 100
+  health: 0
   targetLayer: 13
   healthPotProbability: 40
   manaPotProbability: 40
@@ -2963,6 +2963,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8121477120447669204}
     m_Modifications:
+    - target: {fileID: 2207755562979332693, guid: fa73332c5d34d5143865897764898be7,
+        type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 3408963803195167137}
     - target: {fileID: 2207755562979332693, guid: fa73332c5d34d5143865897764898be7,
         type: 3}
       propertyPath: basicEnemy

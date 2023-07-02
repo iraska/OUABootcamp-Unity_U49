@@ -2606,7 +2606,7 @@ PrefabInstance:
         type: 3}
       propertyPath: playerCollider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 184889386}
     - target: {fileID: 3216983071645906062, guid: 9af1805b194e03c4aa3f273b52d3dbca,
         type: 3}
       propertyPath: lineRectTransform

@@ -153,4 +153,9 @@ public class WizardEnemy : MonoBehaviour, Enemy
             Destroy(gameObject);
         }
     }
+
+    float Enemy.Health()
+    {
+        return health;
+    }
 }

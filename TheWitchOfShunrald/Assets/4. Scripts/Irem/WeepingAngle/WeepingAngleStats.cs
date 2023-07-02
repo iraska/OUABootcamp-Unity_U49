@@ -9,6 +9,11 @@ namespace WeepingAngle
         public float AngelHealth { get { return angelHealth; } }
         public float AngelDamage { get { return angelDamage; } }
 
+        float Enemy.Health()
+        {
+            return angelHealth;
+        }
+
         void Enemy.TakeDamage(Vector3 exploLocation, float damage)
         {
             angelHealth -= damage;
@@ -17,13 +22,6 @@ namespace WeepingAngle
             {
                 Destroy(gameObject);
             }
-
-            Debug.Log("CALISIYORUM");
-        }
-
-        private void Update()
-        {
-            //Debug.Log("AAAAAAAAAAAAAAAAAAAAAAA" + angelHealth);
         }
     }
 }
