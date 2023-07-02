@@ -590,7 +590,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7422045434658512587}
   - component: {fileID: 5394100929240238724}
-  - component: {fileID: 1761865080628961491}
   m_Layer: 0
   m_Name: Ch34
   m_TagString: Untagged
@@ -731,20 +730,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00017550588, y: -0.15621862, z: -0.019828632}
     m_Extent: {x: 0.79467046, y: 0.8891647, z: 0.17832361}
   m_DirtyAABB: 0
---- !u!136 &1761865080628961491
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1761865080628961492}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.35561562
-  m_Height: 1.8165078
-  m_Direction: 1
-  m_Center: {x: 0.006548345, y: 0.8306633, z: 0.014023781}
 --- !u!1 &1795731786974919986
 GameObject:
   m_ObjectHideFlags: 0
@@ -1011,6 +996,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3292244177180097102}
   - component: {fileID: 8885683936875192372}
+  - component: {fileID: 3322653626164892235}
   - component: {fileID: 2809038965118247151}
   - component: {fileID: 2809038965118247152}
   - component: {fileID: 2809038965118247153}
@@ -1060,6 +1046,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &3322653626164892235
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2809038965118247156}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.35561562
+  m_Height: 1.8165078
+  m_Direction: 1
+  m_Center: {x: 0.006548345, y: 0.8306633, z: 0.014023781}
 --- !u!54 &2809038965118247151
 Rigidbody:
   m_ObjectHideFlags: 0
