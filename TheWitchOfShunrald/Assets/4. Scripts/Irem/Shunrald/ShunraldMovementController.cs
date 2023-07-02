@@ -20,11 +20,16 @@ namespace Shunrald
         private Vector3 targetPosition, input;
 
         private float velocityX, velocityZ;
-        private bool isDashing, isUsingWeapon, isMovementFrozen = false, isDashCoolDown;
+        private bool isDashing, isUsingWeapon, isMovementFrozen = false, isDashCoolDown, isDeath;
         public bool IsUsingWeapon
         {
             get { return isUsingWeapon; }
             set { isUsingWeapon = value; }
+        }
+        public bool IsDeath
+        {
+            get { return isDeath; }
+            set { isDeath = value; }
         }
 
         private void Awake()
@@ -44,7 +49,7 @@ namespace Shunrald
 
         private void Update()
         {
-            if (!isUsingWeapon)
+            if (!isUsingWeapon && !IsDeath)
             {
                 AimTowardMouse();
             }
@@ -79,18 +84,21 @@ namespace Shunrald
         // Character always facing mouse cursor position
         private void AimTowardMouse()
         {
-            Ray ray = lensCam.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, aimLayerMask))
+            if (!IsDeath)
             {
-                var direction = hitInfo.point - transform.position;
-                direction.y = 0f;
-                direction.Normalize();
+                Ray ray = lensCam.ScreenPointToRay(Input.mousePosition);
 
-                // Allows the character to dash in the direction of movement
-                if (!isDashing && rb.velocity.magnitude <= 0.01f)
+                if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, aimLayerMask))
                 {
-                    transform.forward = direction;
+                    var direction = hitInfo.point - transform.position;
+                    direction.y = 0f;
+                    direction.Normalize();
+
+                    // Allows the character to dash in the direction of movement
+                    if (!isDashing && rb.velocity.magnitude <= 0.01f)
+                    {
+                        transform.forward = direction;
+                    }
                 }
             }
         }

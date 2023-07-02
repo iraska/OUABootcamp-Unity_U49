@@ -23,7 +23,7 @@ namespace WeepingAngle
 
         private void Update()
         {
-            ChaseOrFreezeAngel();
+            if (!GameManager.instance.Player.GetComponent<ShunraldController>().Movement.IsDeath) { ChaseOrFreezeAngel(); }
         }
 
         private void GetRequiredComponenent()
