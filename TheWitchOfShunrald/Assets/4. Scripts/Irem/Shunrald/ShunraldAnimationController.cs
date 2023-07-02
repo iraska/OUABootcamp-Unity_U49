@@ -7,6 +7,7 @@ namespace Shunrald
         //private ShunraldController controller;
         private Animator shunraldAnimator;
 
+        private const string isDeath = "isDeath";
         private float initialAnimSpeed, freezeAnimSpeed = 0f,
             lerpSpeed = .2f, elapsedTime = 0f;
 
@@ -42,6 +43,11 @@ namespace Shunrald
             }
 
             shunraldAnimator.speed = freezeAnimSpeed;
+        }
+
+        public void PlayDeathAnim()
+        {
+            shunraldAnimator.SetBool(isDeath, true);
         }
     }
 }
