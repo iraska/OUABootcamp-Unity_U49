@@ -132,6 +132,7 @@ The Witch of Shunrald
 
   * *Mekanikler ve oynanışın daha geniş bir perspektiften sunulabilmesi adına (10 mb sınırından ötürü) videoların görüntü kalitesi düşürülmüştür.*
 
+
    https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/e9350758-b85f-4832-8134-7da282cdcce5
 
    https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/fad2f925-ee4a-4931-9dd5-5fba28dafbe1
@@ -139,7 +140,7 @@ The Witch of Shunrald
    https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/0a4db472-a6f3-4c9c-8f6c-9d2698fd8662
 
 * **Sprint Review:**
-  * ***Alınan kararlar:***
+
     * İlk Sprint'te hazırlanan asset havuzundan assetler seçilmiş ve oyuna implement edilmişitir.
     * GameManager, LevelManager, UIManager ve AudioManager gibi Singleton'lar hazırlanmıştır.
     * Level1 ve Level2 sahneleri oluşturulmutur ve oynanabilir hale getirilmiştir.
@@ -148,6 +149,7 @@ The Witch of Shunrald
     * Ortak task'lardaki entegrasyon işlemleri tamamlanmış olup, 3.sprint'te polish kısmına geçmek hedeflenmiştir.
 
 * **Sprint Retrospective:**
+
   * İkinci Sprint üzerine "neleri iyi yaptık, neleri daha iyi yapabilirdik" şeklinde sohbet havasında bir ekip tartışması yapıldı.
   * Ekibin her üyesi üzerine düşen görevi hakkıyla yapmış olup en büyük kazancın; ekip çalışması, ekip içi uyum ve iletişim, soru sorma-cevap alma rahatlığı ve yardımlaşmayı sağlayan güven ortamı olduğu üzerine ortak bir kanıyta varıldı.
   * Üçüncü Sprint'te ilk hafta kalan task'lerin üzerine düşülmesi, son haftanın ise daha çok gameplay, bug-fix, oynanabilirlik ve oyun dengesi üzerine geçmesi hedeflendi.
