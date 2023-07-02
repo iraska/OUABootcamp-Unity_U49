@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CihanAkpınar
 {
-    public class BasicSpawnedEnemyAi : MonoBehaviour
+    public class BasicSpawnedEnemyAi : MonoBehaviour, Enemy
     {
         
         
@@ -170,7 +170,7 @@ namespace CihanAkpınar
         }
         
         
-        public void TakeDamage(Vector3 exploLocation,float damage)
+        void Enemy.TakeDamage(Vector3 exploLocation,float damage)
         {
 
             Vector3 jumpDirection=((transform.position-exploLocation)+Vector3.up).normalized*bombPower;

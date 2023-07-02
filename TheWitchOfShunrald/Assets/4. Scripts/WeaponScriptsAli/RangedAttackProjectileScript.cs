@@ -142,7 +142,7 @@ namespace ali
                 }
                 else if (((1 << collider.gameObject.layer) & targetLayerMask) != 0)
                 {
-                    collider.gameObject.GetComponent<BasicSpawnedEnemyAi>().TakeDamage((objectInTrigger.gameObject.transform.position - transform.position).normalized * multiplierValue / 5, multiplierValue);
+                    collider.gameObject.GetComponent<Enemy>().TakeDamage((objectInTrigger.gameObject.transform.position - transform.position).normalized * multiplierValue / 5, multiplierValue);
                 }
 
             }

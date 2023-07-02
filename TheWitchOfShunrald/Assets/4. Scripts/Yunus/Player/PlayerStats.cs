@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    [SerializeField] private int health, damage;
+    private int health, damage;
     private float mana;
+
     [SerializeField] private int startingHealth, startingDamage, startingMana;
     [SerializeField] private int healthMaxValue, damageMaxValue, manaMaxValue;
     [SerializeField] private float restoreMana;

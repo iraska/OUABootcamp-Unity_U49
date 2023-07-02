@@ -201,11 +201,13 @@ namespace ali
                 {
                     swordWeapon.SetActive(true);
                     staffWeapon.SetActive(false);
+                    UIManager.instance.WeaponImage(1);
                 }
                 else
                 {
                     staffWeapon.SetActive(true);
                     swordWeapon.SetActive(false);
+                    UIManager.instance.WeaponImage(0);
                 }
             }
         }

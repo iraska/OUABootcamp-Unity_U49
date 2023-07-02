@@ -10,7 +10,8 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
     [SerializeField] private GameObject gamePanel, pausePanel, upgradePanel, dialogPanel, winPanel, losePanel, infoPanel;
-    [SerializeField] private Image healthBar, healthBar1, manaBar, weaponImage, easyButtonImage, normalButtonImage, hardButtonImage, lowButtonImage, highButtonImage, mediumButtonImage, weaponUICircle, weaponUILine;
+    [SerializeField] private GameObject[] weaponImages;
+    [SerializeField] private Image healthBar, healthBar1, manaBar, easyButtonImage, normalButtonImage, hardButtonImage, lowButtonImage, highButtonImage, mediumButtonImage, weaponUICircle, weaponUILine;
     [SerializeField] private Sprite selectedSprite, unselectedSprite;
     [SerializeField] private Text infoText;
     [SerializeField] private DialogSystem dialogSystem;
@@ -132,9 +133,13 @@ public class UIManager : MonoBehaviour
         infoPanel.SetActive(false);
     }
 
-    public void WeaponImage(Sprite weapon)
+    public void WeaponImage(int index)
     {
-        weaponImage.sprite = weapon;
+        for(int i = 0; i < weaponImages.Length; i++)
+        {
+            weaponImages[i].SetActive(false);
+        }
+        weaponImages[index].SetActive(true);
     }
 
     public Image WeaponUICircle
