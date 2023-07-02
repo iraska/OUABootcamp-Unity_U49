@@ -107,8 +107,10 @@ public class UIManager : MonoBehaviour
         winPanel.SetActive(true);
         currentPanel = winPanel;
     }
-    public void LosePanel()
+    public IEnumerator LosePanel()
     {
+        yield return new WaitForSeconds(5);
+
         currentPanel.SetActive(false);
         losePanel.SetActive(true);
         currentPanel = losePanel;

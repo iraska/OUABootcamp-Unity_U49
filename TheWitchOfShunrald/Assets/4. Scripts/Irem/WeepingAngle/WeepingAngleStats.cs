@@ -2,16 +2,28 @@ using UnityEngine;
 
 namespace WeepingAngle
 {
-    public class WeepingAngleStats : MonoBehaviour
+    public class WeepingAngleStats : MonoBehaviour, Enemy
     {
-        [SerializeField] private int angelHealth, angelDamage;
+        [SerializeField] private float angelHealth, angelDamage;
 
-        public int AngelHealth { get { return angelHealth; } }
-        public int AngelDamage { get { return angelDamage; } }
+        public float AngelHealth { get { return angelHealth; } }
+        public float AngelDamage { get { return angelDamage; } }
 
-        public void TakeDamageFromWitch(int damage)
+        void Enemy.TakeDamage(Vector3 exploLocation, float damage)
         {
             angelHealth -= damage;
+
+            if (angelHealth < 0)
+            {
+                Destroy(gameObject);
+            }
+
+            Debug.Log("CALISIYORUM");
+        }
+
+        private void Update()
+        {
+            //Debug.Log("AAAAAAAAAAAAAAAAAAAAAAA" + angelHealth);
         }
     }
 }

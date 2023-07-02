@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
     public void Lose()
     {
         GameState = State.Lose;
-        UIManager.instance.LosePanel();
+        StartCoroutine(UIManager.instance.LosePanel());
     }
     public void Upgrade(int balance)
     {

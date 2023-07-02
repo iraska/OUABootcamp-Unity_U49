@@ -1,3 +1,4 @@
+using Shunrald;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,8 @@ public class PlayerStats : MonoBehaviour
     public int StartingHealth { get { return startingHealth; } }
     public int StartingDamage { get { return startingDamage; } }
     public int StartingMana { get { return startingMana; } }
+
+    private ShunraldController shunraldController;
 
     private void Awake()
     {
@@ -47,6 +50,8 @@ public class PlayerStats : MonoBehaviour
         InvokeRepeating(nameof(RestoreMana), 1, 0.1f);
         UIManager.instance.HealthBar(health, PlayerPrefs.GetInt("health"));
         UIManager.instance.ManaBar(mana, PlayerPrefs.GetInt("mana"));
+
+        shunraldController = GetComponent<ShunraldController>();
     }
     public void Upgrade(int health, int damage, int mana)
     {
@@ -57,12 +62,14 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        if(health <= 0)
+        if (health <= 0)
         {
             GameManager.instance.Lose();
+            shunraldController.Animation.PlayDeathAnim();
         }
         UIManager.instance.HealthBar(health, PlayerPrefs.GetInt("health"));
     }
+
     public bool SpendMana(float mana)
     {
         this.mana -= mana;
