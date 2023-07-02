@@ -34,13 +34,36 @@ namespace CihanAkpınar
         #endregion
 
         #region Field
-
+        //Sources
         private AudioSource musicSource;
         private AudioSource musicSource2;
         private AudioSource sfxSource;
-
+        //Transation
         private bool firstMusicSourcePlayin;
+        //AtmosphereAudios
+        public AudioClip dungeonAtmosphereAudios;
+        public AudioClip cemeteryAtmosphereAudios;
+        //UIMainMenu
+        public AudioClip mainMenuAudio;
+        public AudioClip buttonClickAudio;
+        //BasicSpawnedEnemy
+        public AudioClip basicSpawnedEnemyHitAudio;
+        public AudioClip basicSpawnedEnemyDieAudio;
+        public AudioClip basicSpawnedEnemyTakeDamageAudio;
+        //WitchIrem
+        //---------------
+        //StaffAli
+        //---------------
+        //NecroMancerSidar
+        //---------------
+        //RangedEnemyYunus
+        //---------------
+        //ObjectAli
+        //---------------
         
+
+
+
         #endregion
 
         private void Awake()

@@ -16,8 +16,8 @@ namespace CihanAkpınar
             if (other.gameObject.CompareTag("Shunrald"))
             {
                 other.gameObject.transform.parent.gameObject.GetComponent<PlayerStats>().TakeDamage(basicDamage); 
-                //hitAudio
-                //AudioManager.instance.PlaySound(AudioManager.instance.basicSpawnedEnemyHitAudio,true);
+                //Audio
+                AudioManager.Instance.PlaySfx(AudioManager.Instance.basicSpawnedEnemyHitAudio);
             }
             else if (other.gameObject.layer==13)
             {
