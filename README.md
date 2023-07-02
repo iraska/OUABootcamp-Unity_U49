@@ -70,7 +70,7 @@ The Witch of Shunrald
 
    *[Sprint 1 Daily Scrum Chats](https://doc.clickup.com/9009152983/d/h/8cftgyq-1760/386829abde41433)*
 
-* **Sprint board update:** ***Sprint board screenshotı:***
+* **Sprint board update:** ***Sprint board screenshotları:***
 
    ![FirstSprint_1](https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/ea78319c-6f12-4ebe-a22e-86d8f2a2c678)
    ![FirstSprint_2](https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/b0cd5960-3e5a-4987-af2f-e62141fc3665)
@@ -112,17 +112,31 @@ The Witch of Shunrald
 
 * **Puan tamamlama mantığı:** Toplamda proje boyunca tamamlanması gereken 300 puanlık backlog bulunmaktadır. Bunun 41 puanlık kısmı İlk Sprint'te tamamlanmıştır. İkinci Sprint'te daha çok production kısmına yer verildiği için 148 puanlık bir hedef koymaya karar kılınmıştır. Production kısmında ana ve yan (side) mekanikler, level sistemleri, prefablemeler ve hatta post-production'dan AudioManager kısmı da başarılı bir şekilde tamamlanmıştır. 300 puanın 148'ine hedeflenen şekilde ulaşılmış olup, geriye Üçüncü Sprint'te tamamlanmak üzere 111 puan kalmıştır.
 
-* **Backlog düzeni:** Backlog'da yer alan task'lar daha çok production ve post-production'ı barındıracak şekilde oluşturuldu ve düzenlendi. Production'a ait task'lar ikinci sprinte atandı ve puanlamalar düzenlendi.
+* **Backlog düzeni:** Backlog'da yer alan task'lar daha çok production ve post-production'ı barındıracak şekilde oluşturuldu ve düzenlendi. Production'a ait task'lar ikinci sprinte atandı ve puanlamalar düzenlendi. Product Backlog task'ları sprintlere atandığından, gerekli detaylara eklerde sunulan sprint linkleri ve backlog url üzerinden ulaşılabilir.
 
 * **Daily Scrum:** Daily Scrum toplantıları "Daily Scrum - text" adlı Discord kanalımız üzerinden günlük olarak yapılmış, ekip üyelerinin gidişatı ve koordinasyonu sağlanmıştır. Conflict yaşamamak adına pull-push esnasında haberleşme sağlanmış olup, proje sorunsuz bir şekilde ilerletilmiştir. Scrum kapsamında herkes "dün ne yaptım ve bugün ne yapacağım" şeklinde bilgilendirme yapmış olup, diğer ekip üyelerini güncel bir şekilde haberdar etmişlerdir. Bu sayede birbirine bağlı task'lere zamanında ve sorunsuz başlanmıştır. Daily Scrum yazışmalarına ekte yer verilmiştir.
 
    *[Sprint 2 Daily Scrum Chats](https://doc.clickup.com/9009152983/d/h/8cftgyq-2080/4640c02854d7f5a)*
 
-* **Sprint board update:** ***Sprint board screenshotı:***
+* **Sprint board update:** ***Sprint board screenshotları:***
 
-   ![second sprint]() //GÜNCELLE
+  ![SecondSprint_1](https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/75ba49c1-1dca-47eb-9940-9f55d19bec46)
+
+  ![SecondSprint_2](https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/a9368c9f-f9cb-4250-90b4-4fa4313e0ced)
+
+  ![SecondSprint_3](https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/00877467-7ce9-44b1-aaa5-f9efad4d2052)
+
+  ![SecondSprint_4](https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/563988a1-3f31-46dc-8de7-69ae8aaad73c)
 
 * **Oyun Durumu:** Video:
+
+  * *Mekanikler ve oynanışın daha geniş bir perspektiften sunulabilmesi adına (10 mb sınırından ötürü) videoların görüntü kalitesi düşürülmüştür.*
+
+   https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/e9350758-b85f-4832-8134-7da282cdcce5
+
+   https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/fad2f925-ee4a-4931-9dd5-5fba28dafbe1
+
+   https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/0a4db472-a6f3-4c9c-8f6c-9d2698fd8662
 
 * **Sprint Review:**
   * ***Alınan kararlar:***
@@ -134,7 +148,11 @@ The Witch of Shunrald
     * Ortak task'lardaki entegrasyon işlemleri tamamlanmış olup, 3.sprint'te polish kısmına geçmek hedeflenmiştir.
 
 * **Sprint Retrospective:**
-  * 
+  * İkinci Sprint üzerine "neleri iyi yaptık, neleri daha iyi yapabilirdik" şeklinde sohbet havasında bir ekip tartışması yapıldı.
+  * Ekibin her üyesi üzerine düşen görevi hakkıyla yapmış olup en büyük kazancın; ekip çalışması, ekip içi uyum ve iletişim, soru sorma-cevap alma rahatlığı ve yardımlaşmayı sağlayan güven ortamı olduğu üzerine ortak bir kanıyta varıldı.
+  * Üçüncü Sprint'te ilk hafta kalan task'lerin üzerine düşülmesi, son haftanın ise daha çok gameplay, bug-fix, oynanabilirlik ve oyun dengesi üzerine geçmesi hedeflendi.
+  * Üçüncü Sprint için Backlog üzerinden task ataması her ekip üyesine eşit koşullarda olacak şekilde yapıldı ve herkesin fikri alındı.
+  * Görev dağılımında herhangi bir değişikliğe gidilmemesi şeklinde ortak kanıya varıldı.
 
 ### Product Backlog URL
 [Second Sprint board](https://sharing.clickup.com/9009152983/b/h/6-900901695292-2/2dfa8afc30d6b3c)
