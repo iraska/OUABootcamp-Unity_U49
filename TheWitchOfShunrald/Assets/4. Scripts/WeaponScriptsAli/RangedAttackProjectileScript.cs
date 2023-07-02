@@ -115,12 +115,12 @@ namespace ali
             if (projecileType == 0)
             {
                 GameObject spawnedEffect = Instantiate(dieEnergyParticlePrefab);
-                spawnedEffect.transform.position = transform.position;
+                spawnedEffect.transform.position = transform.position + Vector3.up;
             }
             else
             {
                 GameObject spawnedEffect = Instantiate(dieFireParticlePrefab);
-                spawnedEffect.transform.position = transform.position;
+                spawnedEffect.transform.position = transform.position + Vector3.up;
             }
 
             Collider[] colliders = Physics.OverlapSphere(transform.position, 4f, canExplodeLayerMask);
