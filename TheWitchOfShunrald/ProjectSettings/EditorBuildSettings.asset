@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/1. Scenes/Trial Scenes/YUNUS Scene.unity
     guid: 1e22cd6edbefb504c8c100e2cf913d7b
-  - enabled: 1
+  - enabled: 0
     path: Assets/1. Scenes/Trial Scenes/EntegrationScene.unity
     guid: 02d6bac08da083c408538247b0982d5a
+  - enabled: 1
+    path: Assets/1. Scenes/Trial Scenes/Level2.unity
+    guid: 06b27c53d47f83b46a13a45ccee7138f
   m_configObjects: {}

@@ -2691,12 +2691,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aac58be0693694f99ec2ec3ed05328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  damage: 0
   startingHealth: 100
   startingDamage: 10
   startingMana: 50
   healthMaxValue: 150
   damageMaxValue: 20
   manaMaxValue: 100
+  restoreMana: 0
 --- !u!114 &4560843040786076002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2710,6 +2713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trailRend: {fileID: 2685836108918622943}
+  lensCam: {fileID: 0}
   aimLayerMask:
     serializedVersion: 2
     m_Bits: 5
@@ -2717,7 +2721,8 @@ MonoBehaviour:
   turnSpeed: 360
   dashSpeed: 20
   dashTime: 0.15
-  lensCam: {fileID: 0}
+  dashCoolDown: 0
+  dashManaburn: 0
 --- !u!114 &4560843040786076003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2788,7 +2793,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
