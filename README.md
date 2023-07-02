@@ -50,6 +50,7 @@ The Witch of Shunrald
 #### Juriye Not
 * *Ekibimiz beş developerdan oluşmaktadır ve aramızda herhangi bir designer/artist bulunmamaktadır. Bu nedenle 3D modellerde ücretsiz asset'lerden faydalandık. Kullanılan assetlere [Kullanılan Assetler/Eklentiler](#kullanılan-assetlereklentiler)'den ulaşılabilir.*
 * *İlk Sprint'te sınav haftasından dolayı daha çok pre-production kısmına yer verdik.*
+* *Sprint puanlamalarında belli bir yerden sonra Click-Up para talep ettiği için puanlamaları backlog'daki task'ların önünde belirtmek durumunda kaldık.*
 
 ## GDD
 [Game Design Documantation](https://doc.clickup.com/9009152983/d/h/8cftgyq-1720/77fc25bd1accf24)
@@ -57,9 +58,9 @@ The Witch of Shunrald
 ## Sprint 1
 * **Sprint Notları:** User Story'ler (description alanında) ve Kabul Kriterleri (subtask olarak) Product Backlog'ların içine yazılmıştır. Product backlog item'lara tıklandığında hikayelerin detayları ve kabul kriterleri okunabilir.
 
-* **Sprint içinde tamamlanması tahmin edilen puan:** 34 Puan
+* **Sprint içinde tamamlanması tahmin edilen puan:** 41 Puan
 
-* **Puan tamamlama mantığı:** Toplamda proje boyunca tamamlanması gereken 180 puanlık backlog bulunmaktadır. İlk Sprint'te daha çok pre-production kısmına yer verildiği için 34 puanlık bir hedef koymaya karar kıldık. 34 puana başarılı bir şekilde ulaştık ve geriye 146 puanımız kaldı.
+* **Puan tamamlama mantığı:** Toplamda proje boyunca tamamlanması gereken 300 puanlık backlog bulunmaktadır. İlk Sprint'te daha çok pre-production kısmına yer verildiği için 41 puanlık bir hedef koymaya karar kıldık. 41 puana başarılı bir şekilde ulaştık ve geriye 259 puanımız kaldı.
 
 * **Backlog düzeni ve Story seçimleri:** Backlog'umuz *"must have, should have, could have, would have"* şeklinde düzenlenmiştir. Sprint başına tahmin edilen puan sayısını geçmeyecek şekilde sıradan seçimler yapılmaktadır. Seçimlerimiz, ekip arasında alınan kararlar doğrultusunda pre-pruduction'u kapsayacak şekilde ayarlanmıştır.
 
@@ -71,8 +72,15 @@ The Witch of Shunrald
 
 * **Sprint board update:** ***Sprint board screenshotı:***
 
-   ![first sprint](https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/b0c0c849-ef1b-4770-a213-11ff33570a38)
+   ![FirstSprint_1](https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/ea78319c-6f12-4ebe-a22e-86d8f2a2c678)
+   ![FirstSprint_2](https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/b0cd5960-3e5a-4987-af2f-e62141fc3665)
 
+* **Oyun Durumu:** Video:
+
+   https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/445f15fc-9b4c-436b-80ce-ce9372442f85
+
+   https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/013e57ca-76ab-493c-af99-b89d2a07ef89
+  
 * **Sprint Review:**
   * ***Alınan kararlar:***
     * *Projemiz için herkes Unity ortak sürümünü ve WebGL'i indirmiş olmalıdır.*
@@ -98,6 +106,38 @@ The Witch of Shunrald
 [First Sprint board](https://sharing.clickup.com/9009152983/b/h/6-900901695256-2/c0293ef8cd93852)
 
 ## Sprint 2
+* **Sprint Notları:** Ekip üyelerinin uyumlu ve efektif çalışması sonucu başarılı bir sprint geçirildi. Daily scrum'lar günlük olarak Discor kanalımızdaki'daki "Daily Scrum - text" bölümünden yapıldı (ekran görüntüleri ekte sunulmaktadır).
+  
+* **Sprint içinde tamamlanması tahmin edilen puan:** 148 Puan
+
+* **Puan tamamlama mantığı:** Toplamda proje boyunca tamamlanması gereken 300 puanlık backlog bulunmaktadır. Bunun 41 puanlık kısmı İlk Sprint'te tamamlanmıştır. İkinci Sprint'te daha çok production kısmına yer verildiği için 148 puanlık bir hedef koymaya karar kılınmıştır. Production kısmında ana ve yan (side) mekanikler, level sistemleri, prefablemeler ve hatta post-production'dan AudioManager kısmı da başarılı bir şekilde tamamlanmıştır. 300 puanın 148'ine hedeflenen şekilde ulaşılmış olup, geriye Üçüncü Sprint'te tamamlanmak üzere 111 puan kalmıştır.
+
+* **Backlog düzeni:** Backlog'da yer alan task'lar daha çok production ve post-production'ı barındıracak şekilde oluşturuldu ve düzenlendi. Production'a ait task'lar ikinci sprinte atandı ve puanlamalar düzenlendi.
+
+* **Daily Scrum:** Daily Scrum toplantıları "Daily Scrum - text" adlı Discord kanalımız üzerinden günlük olarak yapılmış, ekip üyelerinin gidişatı ve koordinasyonu sağlanmıştır. Conflict yaşamamak adına pull-push esnasında haberleşme sağlanmış olup, proje sorunsuz bir şekilde ilerletilmiştir. Scrum kapsamında herkes "dün ne yaptım ve bugün ne yapacağım" şeklinde bilgilendirme yapmış olup, diğer ekip üyelerini güncel bir şekilde haberdar etmişlerdir. Bu sayede birbirine bağlı task'lere zamanında ve sorunsuz başlanmıştır. Daily Scrum yazışmalarına ekte yer verilmiştir.
+
+   *[Sprint 2 Daily Scrum Chats](https://doc.clickup.com/9009152983/d/h/8cftgyq-2080/4640c02854d7f5a)*
+
+* **Sprint board update:** ***Sprint board screenshotı:***
+
+   ![second sprint]() //GÜNCELLE
+
+* **Oyun Durumu:** Video:
+
+* **Sprint Review:**
+  * ***Alınan kararlar:***
+    * İlk Sprint'te hazırlanan asset havuzundan assetler seçilmiş ve oyuna implement edilmişitir.
+    * GameManager, LevelManager, UIManager ve AudioManager gibi Singleton'lar hazırlanmıştır.
+    * Level1 ve Level2 sahneleri oluşturulmutur ve oynanabilir hale getirilmiştir.
+    * Hedeflediğimiz şekilde karakter hareketi, asa kullanımı, boss mekanikleri ve enemyler gibi ana mekaniklerin yanı sıra dash, mana ve health bar gibi side mekanikler de tamamlanmıştır.
+    * İkinci Sprint daha çok production task'ları ile ilerlemiş olup, post-production'a atanan AudioManager'da bu sprint'te tamamlanmıştır.
+    * Ortak task'lardaki entegrasyon işlemleri tamamlanmış olup, 3.sprint'te polish kısmına geçmek hedeflenmiştir.
+
+* **Sprint Retrospective:**
+  * 
+
+### Product Backlog URL
+[Second Sprint board](https://sharing.clickup.com/9009152983/b/h/6-900901695292-2/2dfa8afc30d6b3c)
 
 ### Product Backlog URL
 
