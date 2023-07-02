@@ -39,10 +39,8 @@ public class WizardEnemy : MonoBehaviour, Enemy
         {
             if(Physics.Raycast(new Vector3(transform.position.x, 0.3f, transform.position.z), playerTransform.position - transform.position, out RaycastHit hitInfo, 200f))
             {
-                Debug.Log(1);
                 if(hitInfo.transform.CompareTag("Shunrald"))
                 {
-                    Debug.Log(2);
                     if ((transform.position - playerTransform.position).magnitude < attackRange)
                     {
                         if(isAttackActivate)
@@ -52,12 +50,10 @@ public class WizardEnemy : MonoBehaviour, Enemy
                             transform.LookAt(playerTransform);
                             anim.SetBool("walk", false);
                             anim.SetTrigger("attack");                            
-                            Debug.Log(3);
                         }
                     }
                     else
                     {
-                        Debug.Log(4);
                         anim.SetBool("walk", true);
                         Vector3 direction = playerTransform.position - transform.position;
                         transform.LookAt(playerTransform);
@@ -67,7 +63,6 @@ public class WizardEnemy : MonoBehaviour, Enemy
                 }
                 else
                 {
-                    Debug.Log(5);
                     Vector3 randomPos;
                     Vector3 direction;
                     while (true)
@@ -76,13 +71,9 @@ public class WizardEnemy : MonoBehaviour, Enemy
                         direction = randomPos - transform.position;
                         if (Physics.Raycast(randomPos + Vector3.up, Vector3.down, 10f, groundLayer))
                         {
-                            Debug.Log(6);
                             break;
                         }
-                        else
-                        {
-                            Debug.Log(7);
-                        }
+
                         yield return null;
                     }
                     anim.SetBool("walk", true);
@@ -94,23 +85,19 @@ public class WizardEnemy : MonoBehaviour, Enemy
                         {
                             if (hit.transform.CompareTag("Shunrald"))
                             {
-                                Debug.Log(8);
                                 break;
                             }
                         }
                         if (Physics.Raycast(new Vector3(transform.position.x, 0.3f, transform.position.z), direction, 0.5f))
                         {
-                            Debug.Log(9);
                             break;
                         }
                         else if (direction.magnitude > 0.5f)
                         {
-                            Debug.Log(10);
                             transform.position += direction * speed * Time.deltaTime;
                         }
                         else
                         {
-                            Debug.Log(11);
                             break;
                         }
                         yield return null;

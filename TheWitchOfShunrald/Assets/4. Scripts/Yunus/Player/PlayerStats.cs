@@ -83,4 +83,22 @@ public class PlayerStats : MonoBehaviour
             UIManager.instance.ManaBar(this.mana, PlayerPrefs.GetInt("mana"));
         }
     }
+    public void ManaPot(float mana)
+    {
+        this.mana += mana;
+        if (this.mana > PlayerPrefs.GetInt("mana"))
+        {
+            this.mana = PlayerPrefs.GetInt("mana");
+        }
+        UIManager.instance.ManaBar(this.mana, PlayerPrefs.GetInt("mana"));
+    }
+    public void HealthPot(int health)
+    {
+        this.health += health;
+        if (this.mana > PlayerPrefs.GetInt("health"))
+        {
+            this.mana = PlayerPrefs.GetInt("health");
+        }
+        UIManager.instance.HealthBar(this.health, PlayerPrefs.GetInt("health"));
+    }
 }
