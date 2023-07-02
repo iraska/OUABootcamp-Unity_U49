@@ -3,7 +3,7 @@
 * [Oyun ile İlgili Bilgiler](#oyun-ile-ilgili-bilgiler)
 * [GDD](#gdd)
 * [Sprint 1](#sprint-1)
-* [Sprint 3](#sprint-2)
+* [Sprint 2](#sprint-2)
 * [Sprint 3](#sprint-3)
 * [Kullanılan Assetler/Eklentiler](#kullanılan-assetlereklentiler)
 
