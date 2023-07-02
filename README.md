@@ -106,7 +106,7 @@ The Witch of Shunrald
 [First Sprint board](https://sharing.clickup.com/9009152983/b/h/6-900901695256-2/c0293ef8cd93852)
 
 ## Sprint 2
-* **Sprint Notları:** Ekip üyelerinin uyumlu ve efektif çalışması sonucu başarılı bir sprint geçirildi. Daily scrum'lar günlük olarak Discor kanalımızdaki'daki "Daily Scrum - text" bölümünden yapıldı (ekran görüntüleri ekte sunulmaktadır).
+* **Sprint Notları:** Ekip üyelerinin uyumlu ve efektif çalışması sonucu başarılı bir sprint geçirildi. Daily scrum'lar günlük olarak Discord kanalımızdaki'daki "Daily Scrum - text" bölümünden yapıldı (ekran görüntüleri ekte sunulmaktadır).
   
 * **Sprint içinde tamamlanması tahmin edilen puan:** 148 Puan
 
