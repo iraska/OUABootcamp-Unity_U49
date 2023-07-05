@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEngine.ParticleSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -89,6 +91,19 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    // It should only be called at the start of the first scene (build index 1)
+    public void InitialTutorial()
+    {
+        StartCoroutine(UIManager.instance.InitialTutorialPanel(3f));
+    }
+
+    // In the first two scenes, it should be called at the trigger points, the gif should change depending on where it is called(video player . video clip)
+    public void GifTutorial()
+    {
+        //UIManager.instance.GifTutorialPanel();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && GameState == State.Playing)

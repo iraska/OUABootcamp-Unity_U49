@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Shunrald
+  - GIF
+  - IMG
+  - Verge
+  - Dash
+  - Skill
+  - Destructible
   layers:
   - Default
   - TransparentFX

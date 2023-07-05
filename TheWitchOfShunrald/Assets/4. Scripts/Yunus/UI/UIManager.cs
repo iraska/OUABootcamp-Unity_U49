@@ -5,17 +5,20 @@ using DG.Tweening;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Video;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
-    [SerializeField] private GameObject gamePanel, pausePanel, upgradePanel, dialogPanel, winPanel, losePanel, infoPanel;
+    [SerializeField] private GameObject gamePanel, pausePanel, upgradePanel, dialogPanel, winPanel, losePanel, infoPanel, tutorialPanel, wasdImg, gif, tutorialText;
     [SerializeField] private GameObject[] weaponImages;
     [SerializeField] private Image healthBar, healthBar1, manaBar, easyButtonImage, normalButtonImage, hardButtonImage, lowButtonImage, highButtonImage, mediumButtonImage, weaponUICircle, weaponUILine;
     [SerializeField] private Sprite selectedSprite, unselectedSprite;
     [SerializeField] private Text infoText;
     [SerializeField] private DialogSystem dialogSystem;
+
     private GameObject currentPanel;
+
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -115,6 +118,34 @@ public class UIManager : MonoBehaviour
         losePanel.SetActive(true);
         currentPanel = losePanel;
     }
+
+    public IEnumerator InitialTutorialPanel(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+
+        if (gif.activeSelf) { gif.SetActive(false); }
+
+        tutorialText.GetComponent<TextMeshProUGUI>().text = "Please use \"W A S D\" keys to move.";
+
+        currentPanel.SetActive(false);
+        wasdImg.SetActive(true);
+        tutorialPanel.SetActive(true);
+        currentPanel = tutorialPanel;
+    }
+
+    public void GifTutorialPanel(VideoClip gifClip)
+    {
+        if (wasdImg.activeSelf) { wasdImg.SetActive(false); }
+
+        gif.GetComponent<VideoPlayer>().clip = gifClip;
+        gif.GetComponent<VideoPlayer>().Play();
+
+        currentPanel.SetActive(false);
+        gif.SetActive(true);
+        tutorialPanel.SetActive(true);
+        currentPanel = tutorialPanel;
+    }
+
     public void HealthBar(int currentHealth, int maxHealth)
     {
         healthBar.fillAmount = currentHealth / (float)maxHealth;
