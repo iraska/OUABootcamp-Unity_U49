@@ -22,19 +22,19 @@ public class TriggerController : MonoBehaviour
         {
             if (gameObject.CompareTag(verge)) 
             {
-                currentInfoText = "You can attack the enemy by turning your wand around, as in the figure.";
+                currentInfoText = "You can attack the enemy by turning your wand around, as in the gif.";
             }
             else if (gameObject.CompareTag(dash))
             {
-                currentInfoText = "You can dash by pressing the space key as in the figure.";
+                currentInfoText = "You can dash by pressing the space key as in the gif.";
             }
             else if (gameObject.CompareTag(skill)) 
             {
-                currentInfoText = "By pressing the 3 key, you can throw a skill as in the figure.";
+                currentInfoText = "By pressing the 3 key, you can throw a skill as in the gif.";
             }
             else if (gameObject.CompareTag(destructible))
             {
-                currentInfoText = "You can distract them by placing objects in front of the enemies as in the figure.";
+                currentInfoText = "You can distract them by placing objects in front of the enemies as in the gif.";
             }
             
             ChangeText(currentInfoText);

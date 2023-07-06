@@ -1,23 +1,25 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Video;
+using Unity.VisualScripting;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
-    [SerializeField] private GameObject gamePanel, pausePanel, upgradePanel, dialogPanel, winPanel, losePanel, infoPanel, tutorialPanel, wasdImg, gif, tutorialText;
+    [SerializeField] private GameObject gamePanel, pausePanel, upgradePanel, dialogPanel, winPanel, losePanel, infoPanel, tutorialCanvas, wasdImg, gif, tutorialText;
     [SerializeField] private GameObject[] weaponImages;
     [SerializeField] private Image healthBar, healthBar1, manaBar, easyButtonImage, normalButtonImage, hardButtonImage, lowButtonImage, highButtonImage, mediumButtonImage, weaponUICircle, weaponUILine;
     [SerializeField] private Sprite selectedSprite, unselectedSprite;
     [SerializeField] private Text infoText;
     [SerializeField] private DialogSystem dialogSystem;
+    [SerializeField] private RectTransform tutorialPanel, hiddenTutorialPanel, okButton, hiddenTextPanel, textPanel;
 
     private GameObject currentPanel;
+    private Vector3 initialOkButtonScale;
 
     private void Awake()
     {
@@ -129,8 +131,10 @@ public class UIManager : MonoBehaviour
 
         currentPanel.SetActive(false);
         wasdImg.SetActive(true);
-        tutorialPanel.SetActive(true);
-        currentPanel = tutorialPanel;
+        tutorialCanvas.SetActive(true);
+        currentPanel = tutorialCanvas;
+
+        TutorialTween();
     }
 
     public void GifTutorialPanel(VideoClip gifClip)
@@ -142,9 +146,11 @@ public class UIManager : MonoBehaviour
 
         currentPanel.SetActive(false);
         gif.SetActive(true);
-        tutorialPanel.SetActive(true);
-        currentPanel = tutorialPanel;
-    }
+        tutorialCanvas.SetActive(true);
+        currentPanel = tutorialCanvas;
+
+        TutorialTween();
+}
 
     public void HealthBar(int currentHealth, int maxHealth)
     {
@@ -183,6 +189,25 @@ public class UIManager : MonoBehaviour
     public Image WeaponUILine
     {
         get { return weaponUILine; }
+    }
+
+    private void TutorialTween()
+    {
+        DGMove(hiddenTutorialPanel, tutorialPanel, 1f);
+        DGMove(hiddenTextPanel, textPanel, 1.25f);
+
+        DGScale(initialOkButtonScale, okButton, 1.1f, 1.3f);
+    }
+
+    private void DGMove(Transform _hiddenTransform, Transform _transform, float _duration)
+    {
+        _transform.transform.DOMove(_hiddenTransform.transform.position, _duration).SetEase(Ease.InOutBack);
+    }
+
+    private void DGScale(Vector3 _initialScale, RectTransform _transform, float _scaleFact, float _duration)
+    {
+        _initialScale = _transform.localScale;
+        _transform.DOScale(_initialScale * _scaleFact, _duration).SetEase(Ease.InOutFlash).SetLoops(-1, LoopType.Yoyo);
     }
 
     //------------------- SETTÝNGS--------------------------

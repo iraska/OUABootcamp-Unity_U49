@@ -98,12 +98,6 @@ public class GameManager : MonoBehaviour
         StartCoroutine(UIManager.instance.InitialTutorialPanel(3f));
     }
 
-    // In the first two scenes, it should be called at the trigger points, the gif should change depending on where it is called(video player . video clip)
-    public void GifTutorial()
-    {
-        //UIManager.instance.GifTutorialPanel();
-    }
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && GameState == State.Playing)
