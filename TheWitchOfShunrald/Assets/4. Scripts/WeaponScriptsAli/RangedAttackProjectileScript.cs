@@ -123,6 +123,7 @@ namespace ali
             {
                 GameObject spawnedEffect = Instantiate(dieEnergyParticlePrefab);
                 spawnedEffect.transform.position = transform.position + Vector3.up;
+                spawnedEffect.transform.localScale = new Vector3(projectilePowerMagnitude / 100, projectilePowerMagnitude / 100, projectilePowerMagnitude / 100);
             }
             else
             {

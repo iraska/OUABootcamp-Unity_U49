@@ -9,6 +9,9 @@ namespace ali
     public class TelekinesisMouseInputs : MonoBehaviour
     {
         [SerializeField] private GameObject prefabToCreate;
+        [SerializeField] private Material highlightMaterial;
+        [SerializeField] private Material defaultMaterial;
+        private Material[] highlightMaterials;
         private GameObject createdPrefab;
         private SpringJoint connectedSpringJoint;
         private Rigidbody connectedObstacleRB;
@@ -19,6 +22,13 @@ namespace ali
         [SerializeField] private Camera mainCamera;
         private int objectLayer = 13;
         private GameObject previousPointedObject;
+
+        private void Start()
+        {
+            highlightMaterials = new Material[2];
+            highlightMaterials[0] = defaultMaterial;
+            highlightMaterials[1] = highlightMaterial;
+        }
 
         private void Update()
         {
@@ -55,8 +65,11 @@ namespace ali
                     connectedObstacleRB.drag = 0;
                     connectedObstacleRB.angularDrag = 0.05f;
                     connectedSpringJoint.spring = 0f;
+                    connectedObstacleRB.gameObject.GetComponent<Renderer>().materials = new Material[] { defaultMaterial };
                     connectedObstacleRB = null;
                     connectedSpringJoint = null;
+
+                    
                     // Destroy the created prefab
                     Destroy(createdPrefab);
                 }
@@ -82,10 +95,16 @@ namespace ali
                             {
                                 MoveableObjectScript previousMoveableObjectScript = previousPointedObject.GetComponent<MoveableObjectScript>();
                                 previousMoveableObjectScript.IsObjectPointed = false;
+                                previousPointedObject.GetComponent<Renderer>().materials = new Material[] { defaultMaterial };
                             }
 
-                            moveableObjectScript.IsObjectPointed = true;
-                            previousPointedObject = hit.collider.gameObject;
+                            if (isRightClicking == false)
+                            {
+                                moveableObjectScript.IsObjectPointed = true;
+                                previousPointedObject = hit.collider.gameObject;
+                                previousPointedObject.GetComponent<Renderer>().materials = highlightMaterials;
+                            }
+                            
                         }
                     }
                 }
@@ -95,11 +114,20 @@ namespace ali
                     {
                         MoveableObjectScript previousMoveableObjectScript = previousPointedObject.GetComponent<MoveableObjectScript>();
                         previousMoveableObjectScript.IsObjectPointed = false;
+                        if (isRightClicking == false)
+                        {
+                            previousPointedObject.GetComponent<Renderer>().materials = new Material[] { defaultMaterial };
+                        }
+                        
                         previousPointedObject = null;
                     }
                 }
                 if (isRightClicking && createdPrefab != null)
                 {
+                    if (previousPointedObject != null)
+                    {
+                        previousPointedObject.GetComponent<Renderer>().materials = highlightMaterials;
+                    }
                     Vector3 newPosition = new Vector3(hit.point.x, 3, hit.point.z);
                     createdPrefab.transform.position = newPosition;
                 }
