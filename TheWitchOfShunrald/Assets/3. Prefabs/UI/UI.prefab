@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1423904383818870708
 Transform:
   m_ObjectHideFlags: 0
@@ -311,6 +311,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923129086115443321, guid: 6bda3e86428c4fc40bdcf4458502221f,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.08627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923129086115443321, guid: 6bda3e86428c4fc40bdcf4458502221f,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.28248486
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923129086115443321, guid: 6bda3e86428c4fc40bdcf4458502221f,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.8679245
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923129086115443321, guid: 6bda3e86428c4fc40bdcf4458502221f,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.4085323
+      objectReference: {fileID: 0}
+    - target: {fileID: 7320410845438627131, guid: 6bda3e86428c4fc40bdcf4458502221f,
+        type: 3}
+      propertyPath: m_VideoClip
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bda3e86428c4fc40bdcf4458502221f, type: 3}

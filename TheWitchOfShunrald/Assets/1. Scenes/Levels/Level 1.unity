@@ -344,6 +344,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f645e8a7b8072c74a8fe45deae1a7e0d, type: 3}
+--- !u!1001 &855891580
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2809038965118247153, guid: f8f9d8a199af34847bb2b2052a187ba3,
+        type: 3}
+      propertyPath: shunraldWitch
+      value: 
+      objectReference: {fileID: 1982138991}
+    - target: {fileID: 7787270347696545717, guid: f8f9d8a199af34847bb2b2052a187ba3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787270347696545717, guid: f8f9d8a199af34847bb2b2052a187ba3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787270347696545717, guid: f8f9d8a199af34847bb2b2052a187ba3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787270347696545717, guid: f8f9d8a199af34847bb2b2052a187ba3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787270347696545717, guid: f8f9d8a199af34847bb2b2052a187ba3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787270347696545717, guid: f8f9d8a199af34847bb2b2052a187ba3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787270347696545717, guid: f8f9d8a199af34847bb2b2052a187ba3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787270347696545717, guid: f8f9d8a199af34847bb2b2052a187ba3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787270347696545717, guid: f8f9d8a199af34847bb2b2052a187ba3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787270347696545717, guid: f8f9d8a199af34847bb2b2052a187ba3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787270347696545717, guid: f8f9d8a199af34847bb2b2052a187ba3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7787270347696545718, guid: f8f9d8a199af34847bb2b2052a187ba3,
+        type: 3}
+      propertyPath: m_Name
+      value: Weeping Angel
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f8f9d8a199af34847bb2b2052a187ba3, type: 3}
 --- !u!1001 &1044600216
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -645,6 +719,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423904383818870697, guid: 636a8b6aebc30f84f81ca9ffa5acd592,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1423904383818870708, guid: 636a8b6aebc30f84f81ca9ffa5acd592,
         type: 3}
@@ -1373,6 +1452,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lv1_Dash Trigger
       objectReference: {fileID: 0}
+    - target: {fileID: 1251900247361778833, guid: b21dba507f4395246bbbe4cd2e5b6550,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1251900247361778837, guid: b21dba507f4395246bbbe4cd2e5b6550,
         type: 3}
       propertyPath: m_RootOrder
@@ -1447,6 +1531,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Verge Trigger
       objectReference: {fileID: 0}
+    - target: {fileID: 5764523838371347190, guid: 0b9e35242850689478498c911a9fe4d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5764523838371347191, guid: 0b9e35242850689478498c911a9fe4d7,
         type: 3}
       propertyPath: m_RootOrder
@@ -1515,6 +1604,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lv1_Skill Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495827844140656803, guid: 9356026e787ed4446a8f2b437215309d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5495827844140656807, guid: 9356026e787ed4446a8f2b437215309d,
         type: 3}

@@ -67,5 +67,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: febfe4cba05e7444dbcf83dc23e0dba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gif: {fileID: 0}
-  tutorialInfoText: {fileID: 0}
+  gif: {fileID: 32900000, guid: a242514c6af048e428098b9add000eb9, type: 3}

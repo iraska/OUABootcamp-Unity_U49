@@ -56,6 +56,8 @@ namespace WeepingAngle
                 transform.Translate(Vector3.forward * chaseSpeed * Time.deltaTime);
 
                 wController.Animation.AnimateAngel(1f, animator);
+
+                // CIHAN ANGEL YURUME SESÝ
             }
         }
 

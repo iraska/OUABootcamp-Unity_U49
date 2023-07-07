@@ -66,6 +66,8 @@ public class PlayerStats : MonoBehaviour
         {
             GameManager.instance.Lose();
             shunraldController.Animation.PlayDeathAnim();
+
+            // CÝHAN CADI ÖLME SESÝ
         }
         UIManager.instance.HealthBar(health, PlayerPrefs.GetInt("health"));
     }

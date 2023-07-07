@@ -34,7 +34,7 @@ public class TriggerController : MonoBehaviour
             }
             else if (gameObject.CompareTag(destructible))
             {
-                currentInfoText = "You can distract them by placing objects in front of the enemies as in the gif.";
+                currentInfoText = "Just like in the gif, you can put objects in front of the enemies by clicking the right button of your mouse and distract them.";
             }
             
             ChangeText(currentInfoText);

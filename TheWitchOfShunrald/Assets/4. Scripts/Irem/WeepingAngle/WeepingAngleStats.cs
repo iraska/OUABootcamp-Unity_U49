@@ -1,3 +1,4 @@
+using Shunrald;
 using UnityEngine;
 
 namespace WeepingAngle
@@ -8,6 +9,15 @@ namespace WeepingAngle
 
         public float AngelHealth { get { return angelHealth; } }
         public float AngelDamage { get { return angelDamage; } }
+
+        private Animator _animator;
+
+        private const string shunrald = "Shunrald";
+
+        private void Start()
+        {
+            _animator = GetComponent<Animator>();
+        }
 
         float Enemy.Health()
         {
@@ -20,7 +30,32 @@ namespace WeepingAngle
 
             if (angelHealth < 0)
             {
+                // CÝHAN MELEK ÖLÜM TAÞ PARÇALANMA SESÝ 
+
                 Destroy(gameObject);
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            TouchTheWitch(other);
+        }
+
+        private void TouchTheWitch(Collider collider)
+        {
+            // When the angel touches the witch
+            if (collider.gameObject.CompareTag(shunrald))
+            {
+                _animator.speed = 0f;
+
+                //The witch petrifies
+                GameManager.instance.Player.GetComponent<ShunraldController>().Animation.PetrificationByAngel();
+
+                // The witch turns gray
+                GameManager.instance.Player.GetComponent<ShunraldController>().Material.ChangeShunraldMaterial();
+
+                GameManager.instance.Player.GetComponent<ShunraldController>().Movement.IsDeath = true;
+                GameManager.instance.Lose();
             }
         }
     }

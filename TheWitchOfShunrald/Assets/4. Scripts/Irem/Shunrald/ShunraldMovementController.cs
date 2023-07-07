@@ -40,7 +40,7 @@ namespace Shunrald
         // for physics
         private void FixedUpdate()
         {
-            if (!isDashing)
+            if (!isDashing && !IsDeath)
             {
                 GatherInput();
                 ShunraldMovement();
