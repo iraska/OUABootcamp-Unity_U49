@@ -1,6 +1,7 @@
 using Shunrald;
 using System.Collections;
 using System.Collections.Generic;
+using CihanAkpÄ±nar;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -67,7 +68,7 @@ public class PlayerStats : MonoBehaviour
             GameManager.instance.Lose();
             shunraldController.Animation.PlayDeathAnim();
 
-            // CÝHAN CADI ÖLME SESÝ
+            AudioManager.Instance.PlaySfx(AudioManager.Instance.witchDieAudio);
         }
         UIManager.instance.HealthBar(health, PlayerPrefs.GetInt("health"));
     }

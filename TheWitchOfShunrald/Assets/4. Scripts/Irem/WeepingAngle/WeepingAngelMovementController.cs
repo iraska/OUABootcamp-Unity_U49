@@ -1,3 +1,4 @@
+using CihanAkpÄ±nar;
 using Shunrald;
 using UnityEngine;
 
@@ -57,7 +58,7 @@ namespace WeepingAngle
 
                 wController.Animation.AnimateAngel(1f, animator);
 
-                // CIHAN ANGEL YURUME SESÝ
+                AudioManager.Instance.PlaySfx(AudioManager.Instance.weepingAngleWalkAudio);
             }
         }
 

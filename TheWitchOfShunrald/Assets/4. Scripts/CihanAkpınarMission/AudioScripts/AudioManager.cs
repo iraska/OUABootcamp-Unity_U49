@@ -36,6 +36,7 @@ namespace CihanAkpınar
         #endregion
 
         #region Field
+        
         //Sliders
         [SerializeField] private Slider musicSlider;
         [SerializeField] private Slider sfxSlider;
@@ -60,10 +61,11 @@ namespace CihanAkpınar
         public AudioClip basicSpawnedEnemyDieAudio;
         public AudioClip basicSpawnedEnemyTakeDamageAudio;
         //WitchIrem
-        public AudioClip witchNormalAudio;
         public AudioClip witchDieAudio;
-        public AudioClip witchTakeDamageAudio;
         public AudioClip witchAttackScreamAudio;
+        //WeepingAngleIrem
+        public AudioClip weepingAngleWalkAudio;
+        public AudioClip weepingAngleDieAudio;
         //Staff
         public AudioClip staffProjectileExplosionAudio;
         //NecroMancerSidar
@@ -74,11 +76,7 @@ namespace CihanAkpınar
         public AudioClip rangedEnemyTakeDamageAudio;
         //Object
         public AudioClip moveableObjectDestructionAudio;
-
         
-
-
-
         #endregion
 
         private void Start()

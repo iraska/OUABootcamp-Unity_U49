@@ -1,3 +1,4 @@
+using CihanAkpÄ±nar;
 using Shunrald;
 using UnityEngine;
 
@@ -30,7 +31,7 @@ namespace WeepingAngle
 
             if (angelHealth < 0)
             {
-                // CÝHAN MELEK ÖLÜM TAÞ PARÇALANMA SESÝ 
+                AudioManager.Instance.PlaySfx(AudioManager.Instance.weepingAngleDieAudio); 
 
                 Destroy(gameObject);
             }
