@@ -68,7 +68,7 @@ public class PlayerStats : MonoBehaviour
             GameManager.instance.Lose();
             shunraldController.Animation.PlayDeathAnim();
 
-            AudioManager.Instance.PlaySfx(AudioManager.Instance.witchDieAudio);
+            AudioManager.Instance.PlaySfx(AudioManager.Instance.witchDieAudio,transform.position);
         }
         UIManager.instance.HealthBar(health, PlayerPrefs.GetInt("health"));
     }

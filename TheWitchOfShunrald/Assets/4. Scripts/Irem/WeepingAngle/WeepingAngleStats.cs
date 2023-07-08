@@ -31,7 +31,7 @@ namespace WeepingAngle
 
             if (angelHealth < 0)
             {
-                AudioManager.Instance.PlaySfx(AudioManager.Instance.weepingAngleDieAudio); 
+                AudioManager.Instance.PlaySfx(AudioManager.Instance.weepingAngleDieAudio,transform.position); 
 
                 Destroy(gameObject);
             }

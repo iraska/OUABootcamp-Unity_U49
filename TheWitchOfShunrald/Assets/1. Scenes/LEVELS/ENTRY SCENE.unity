@@ -454,6 +454,41 @@ PrefabInstance:
       objectReference: {fileID: 1733129346}
     - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
         type: 3}
+      propertyPath: witchDieAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 4894aed94b957cc46a9bb55c1aede9b2, type: 3}
+    - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
+        type: 3}
+      propertyPath: buttonClickAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: ddf0169a406841b4a9de46a4a0e7bf08, type: 3}
+    - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
+        type: 3}
+      propertyPath: rangedEnemyDieAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 6cec3052b7b94aa4a84019bc1402e784, type: 3}
+    - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
+        type: 3}
+      propertyPath: weepingAngleDieAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 0aea18d3ef95ba0468a08eec77fa97cc, type: 3}
+    - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
+        type: 3}
+      propertyPath: weepingAngleWalkAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: e890faa637e3d9f4cbf2a03e8dd5059f, type: 3}
+    - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
+        type: 3}
+      propertyPath: witchAttackScreamAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 84b055afb801c934786a0ae8eaf312ef, type: 3}
+    - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
+        type: 3}
+      propertyPath: rangedEnemyExploseAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 8074796a7716e25498ef4fa74b5308ff, type: 3}
+    - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
+        type: 3}
       propertyPath: basicSpawnedEnemyDieAudio
       value: 
       objectReference: {fileID: 8300000, guid: f4b17a746bff5a24a9d8f2a71b7c4e65, type: 3}
@@ -462,6 +497,21 @@ PrefabInstance:
       propertyPath: basicSpawnedEnemyHitAudio
       value: 
       objectReference: {fileID: 8300000, guid: 99d7ac9f2b1e5fe47bb99e606030862b, type: 3}
+    - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
+        type: 3}
+      propertyPath: rangedEnemyRangeAttackAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c27a99e3268f294891d4547410819d5, type: 3}
+    - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
+        type: 3}
+      propertyPath: staffProjectileExplosionAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: a56e51209ffc653478a48374db0f7896, type: 3}
+    - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
+        type: 3}
+      propertyPath: moveableObjectDestructionAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: b37ab75f808baa044828d3b65960d359, type: 3}
     - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
         type: 3}
       propertyPath: basicSpawnedEnemyTakeDamageAudio
@@ -475,17 +525,17 @@ PrefabInstance:
     - target: {fileID: 3049475838542401413, guid: a4d2234813093a64aa0b7952181e1eef,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -50.27139
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3049475838542401413, guid: a4d2234813093a64aa0b7952181e1eef,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.149082
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3049475838542401413, guid: a4d2234813093a64aa0b7952181e1eef,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 74.02375
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3049475838542401413, guid: a4d2234813093a64aa0b7952181e1eef,
         type: 3}

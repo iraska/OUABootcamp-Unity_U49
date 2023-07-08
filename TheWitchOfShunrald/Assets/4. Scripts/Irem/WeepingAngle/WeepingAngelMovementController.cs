@@ -58,7 +58,7 @@ namespace WeepingAngle
 
                 wController.Animation.AnimateAngel(1f, animator);
 
-                AudioManager.Instance.PlaySfx(AudioManager.Instance.weepingAngleWalkAudio);
+                //AudioManager.Instance.PlaySfx(AudioManager.Instance.weepingAngleWalkAudio,transform.position);
             }
         }
 

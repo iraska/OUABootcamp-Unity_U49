@@ -36,7 +36,8 @@ namespace CihanAkpınar
         #endregion
 
         #region Field
-        
+        //Arrays
+        [SerializeField] private AudioSource[] audioSfxPool;
         //Sliders
         [SerializeField] private Slider musicSlider;
         [SerializeField] private Slider sfxSlider;
@@ -69,14 +70,22 @@ namespace CihanAkpınar
         //Staff
         public AudioClip staffProjectileExplosionAudio;
         //NecroMancerSidar
-        //---------------
+        public AudioClip necroWhisperAudio;
+        public AudioClip necroStanCackleAudio;
+        public AudioClip necroFollowBombAudio;
+        public AudioClip necroHealthRejStartAudio;
+        public AudioClip necroHealthRejDamageAudio;
+        public AudioClip necroHealthRejFinishAudio;
+        public AudioClip necroHalfHealthAudio;
         //RangedEnemyYunus
         public AudioClip rangedEnemyRangeAttackAudio;
         public AudioClip rangedEnemyDieAudio;
-        public AudioClip rangedEnemyTakeDamageAudio;
+        public AudioClip rangedEnemyExploseAudio;
         //Object
         public AudioClip moveableObjectDestructionAudio;
-        
+        //Spawner
+        public AudioClip bossSpawnerAudio;
+
         #endregion
 
         private void Start()
@@ -137,11 +146,27 @@ namespace CihanAkpınar
             activeSource.Play();
         }
 
-        public void PlaySfx(AudioClip clip)
+        private int index=0;
+        public void PlaySfx(AudioClip clip,Vector3 position)
         {
-          sfxSource.PlayOneShot(clip);    
+            while (audioSfxPool[index].isPlaying)
+            {
+                index++;
+                if (index>audioSfxPool.Length)
+                {
+                    index = 0;
+                }
+            }
+
+            audioSfxPool[index].transform.position = position;
+            audioSfxPool[index].PlayOneShot(clip);
+          index++;
+          if (index>audioSfxPool.Length)
+          {
+              index = 0;
+          }
         }
-        public void PlaySfx(AudioClip clip, float volume)
+        public void PlaySfxUI(AudioClip clip, float volume)
         {
           sfxSource.PlayOneShot(clip,volume);  
         }

@@ -1,4 +1,5 @@
 using System.Collections;
+using CihanAkpınar;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -24,6 +25,7 @@ public class LevelManager : MonoBehaviour
     }
     private void Start()
     {
+        AudioManager.Instance.PlayMusic(AudioManager.Instance.mainMenuAudio);
         if (PlayerPrefs.GetInt("lastGame", 1) > 1)
         {
             continueGameButton.interactable = true;
@@ -41,6 +43,16 @@ public class LevelManager : MonoBehaviour
         loadingCanvas.SetActive(false);
         gameCanvas.SetActive(true);
         GameManager.instance.GameStart();
+        if (sceneIndex!=5)
+        {
+            AudioManager.Instance.PlayMusicWithFade(AudioManager.Instance.dungeonAtmosphereAudios);
+        }
+
+        else
+        {
+            AudioManager.Instance.PlayMusicWithFade(AudioManager.Instance.cemeteryAtmosphereAudios);
+        }
+        
     }
     public void LoadNextLevel()
     {

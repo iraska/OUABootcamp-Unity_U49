@@ -17,7 +17,7 @@ namespace CihanAkpınar
             {
                 other.gameObject.transform.parent.gameObject.GetComponent<PlayerStats>().TakeDamage(basicDamage); 
                 //Audio
-                AudioManager.Instance.PlaySfx(AudioManager.Instance.basicSpawnedEnemyHitAudio);
+                AudioManager.Instance.PlaySfx(AudioManager.Instance.basicSpawnedEnemyHitAudio,transform.position);
             }
             else if (other.gameObject.layer==13)
             {

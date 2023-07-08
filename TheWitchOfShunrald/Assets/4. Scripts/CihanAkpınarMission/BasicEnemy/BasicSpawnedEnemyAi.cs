@@ -177,11 +177,11 @@ namespace CihanAkpınar
             Vector3 jumpDirection=((transform.position-exploLocation)+Vector3.up).normalized*bombPower;
             rb.AddForce(bombPower * jumpDirection, ForceMode.VelocityChange);
             health -= damage;
-            AudioManager.Instance.PlaySfx(AudioManager.Instance.basicSpawnedEnemyTakeDamageAudio);
+            AudioManager.Instance.PlaySfx(AudioManager.Instance.basicSpawnedEnemyTakeDamageAudio,transform.position);
             if (health<=0)
             {
                 //dieAudio
-                AudioManager.Instance.PlaySfx(AudioManager.Instance.basicSpawnedEnemyDieAudio);
+                AudioManager.Instance.PlaySfx(AudioManager.Instance.basicSpawnedEnemyDieAudio,transform.position);
                 anim.SetTrigger("BasicEnemyDie");
                 DropMath();
                 Instantiate(basicEnemyDiePart, new Vector3(transform.position.x, transform.position.y, transform.position.z),Quaternion.identity);
