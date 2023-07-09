@@ -15,7 +15,7 @@ namespace WeepingAngle
         private Vector3 chaseDirection;
 
         private const string shunrald = "Shunrald";
-        private bool isAngelVisible;
+        private bool isAngelVisible, isWalking, isWalkingAudioPlaying;
 
         private void Awake()
         {
@@ -39,26 +39,32 @@ namespace WeepingAngle
 
             if (isAngelVisible)
             {
+                isWalking = false;
+                isWalkingAudioPlaying = false;
+
                 wController.Animation.FreezeAngel();
             }
             else
             {
-                chaseDirection = shunraldWitch.position - transform.position;
+                isWalking = true;
 
+                chaseDirection = shunraldWitch.position - transform.position;
                 chaseDirection.y = 0f;
                 chaseDirection.Normalize();
 
                 Quaternion targetRot = Quaternion.LookRotation(chaseDirection);
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, Time.deltaTime * 5f);
 
-                //float forwardDir = (transform.rotation.eulerAngles.y < 170f) ? -1f : 1f;
-                //transform.Translate(Vector3.forward * forwardDir * chaseSpeed * Time.deltaTime);
-
                 transform.Translate(Vector3.forward * chaseSpeed * Time.deltaTime);
 
                 wController.Animation.AnimateAngel(1f, animator);
 
-                //AudioManager.Instance.PlaySfx(AudioManager.Instance.weepingAngleWalkAudio,transform.position);
+                if (!isWalkingAudioPlaying)
+                {
+                    isWalkingAudioPlaying = true;
+                    
+                    PlayWalkSFX();
+                }
             }
         }
 
@@ -86,5 +92,9 @@ namespace WeepingAngle
             return false;
         }
 
+        private void PlayWalkSFX()
+        {
+            AudioManager.Instance.PlaySfx(AudioManager.Instance.weepingAngleWalkAudio, transform.position);
+        }
     }
 }
