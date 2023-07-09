@@ -152,7 +152,7 @@ namespace CihanAkpınar
             while (audioSfxPool[index].isPlaying)
             {
                 index++;
-                if (index>audioSfxPool.Length)
+                if (index>=audioSfxPool.Length)
                 {
                     index = 0;
                 }
@@ -161,7 +161,7 @@ namespace CihanAkpınar
             audioSfxPool[index].transform.position = position;
             audioSfxPool[index].PlayOneShot(clip);
           index++;
-          if (index>audioSfxPool.Length)
+          if (index>=audioSfxPool.Length)
           {
               index = 0;
           }
