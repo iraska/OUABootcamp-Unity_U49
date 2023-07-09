@@ -2467,6 +2467,12 @@ MonoBehaviour:
   electric: {fileID: 6395818037354966817}
   explosion: {fileID: 6413332830307306735}
   staff: {fileID: 5269614535370309728}
+  basicManaPot: {fileID: 1000013317980782, guid: 2cf6690298568294cb6b655c0a3aeb87,
+    type: 3}
+  basicHealthPot: {fileID: 1000012970591572, guid: 7cafb89b5a0f61f479d0a748962abbbc,
+    type: 3}
+  healthPotProbability: 10
+  manaPotProbability: 10
 --- !u!1 &1956949540428108
 GameObject:
   m_ObjectHideFlags: 0

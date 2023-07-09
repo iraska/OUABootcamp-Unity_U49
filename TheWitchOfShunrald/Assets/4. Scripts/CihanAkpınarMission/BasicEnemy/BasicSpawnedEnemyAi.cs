@@ -180,13 +180,13 @@ namespace CihanAkpınar
             AudioManager.Instance.PlaySfx(AudioManager.Instance.basicSpawnedEnemyTakeDamageAudio,transform.position);
             if (health<=0)
             {
-                //dieAudio
                 AudioManager.Instance.PlaySfx(AudioManager.Instance.basicSpawnedEnemyDieAudio,transform.position);
                 anim.SetTrigger("BasicEnemyDie");
                 DropMath();
                 Instantiate(basicEnemyDiePart, new Vector3(transform.position.x, transform.position.y, transform.position.z),Quaternion.identity);
                 spawnerOfThisEnemy.GetComponent<BasicEnemySpawner>().currentEnemy.Remove(this.gameObject);
-                GameObject.Destroy(gameObject);
+                GameManager.instance.EnemyDestoyEvent();
+                Destroy(gameObject);
             }
 
         }
@@ -209,6 +209,11 @@ namespace CihanAkpınar
         float Enemy.Health()
         {
             return health;
+        }
+        void Enemy.SetEnemyStats(float health, float damage)
+        {
+            this.health = health;
+            GetComponent<BasicSpawnedEnemyDealDamage>().Damage = damage;
         }
     }
  

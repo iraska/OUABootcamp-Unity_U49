@@ -37,7 +37,7 @@ public class UpgradeSystem : MonoBehaviour
         {
             health++;
             PlayerPrefs.SetInt("balance", PlayerPrefs.GetInt("balance") - 1);
-            healthBar.DOFillAmount((playerStats.Health + health) / playerStats.HealthMaxValue, 0.5f);
+            healthBar.DOFillAmount((PlayerPrefs.GetFloat("health") + playerStats.StartingHealth / 10f * health) / playerStats.HealthMaxValue, 0.5f);
             balanceText.text = PlayerPrefs.GetInt("balance").ToString();
         }
     }
@@ -47,7 +47,7 @@ public class UpgradeSystem : MonoBehaviour
         {
             damage++;
             PlayerPrefs.SetInt("balance", PlayerPrefs.GetInt("balance") - 1);
-            damageBar.DOFillAmount((playerStats.Damage + damage) / playerStats.DamageMaxValue, 0.5f);
+            damageBar.DOFillAmount((PlayerPrefs.GetFloat("damage") + playerStats.StartingDamage / 10f * damage) / playerStats.DamageMaxValue, 0.5f);
             balanceText.text = PlayerPrefs.GetInt("balance").ToString();
         }
     }
@@ -57,7 +57,7 @@ public class UpgradeSystem : MonoBehaviour
         {
             mana++;
             PlayerPrefs.SetInt("balance", PlayerPrefs.GetInt("balance") - 1);
-            manaBar.DOFillAmount((playerStats.Mana + mana) / playerStats.ManaMaxValue, 0.5f);
+            manaBar.DOFillAmount((PlayerPrefs.GetFloat("mana") + playerStats.StartingMana / 10f * mana) / playerStats.ManaMaxValue, 0.5f);
             balanceText.text = PlayerPrefs.GetInt("balance").ToString();
         }
     }
@@ -67,7 +67,7 @@ public class UpgradeSystem : MonoBehaviour
         {
             health--;
             PlayerPrefs.SetInt("balance", PlayerPrefs.GetInt("balance") + 1);
-            healthBar.DOFillAmount((playerStats.Health + health) / playerStats.HealthMaxValue, 0.5f);
+            healthBar.DOFillAmount((PlayerPrefs.GetFloat("health") + playerStats.StartingHealth / 10f * health) / playerStats.HealthMaxValue, 0.5f);
             balanceText.text = PlayerPrefs.GetInt("balance").ToString();
         }
     }
@@ -77,7 +77,7 @@ public class UpgradeSystem : MonoBehaviour
         {
             damage--;
             PlayerPrefs.SetInt("balance", PlayerPrefs.GetInt("balance") + 1);
-            damageBar.DOFillAmount((playerStats.Damage + damage) / playerStats.DamageMaxValue, 0.5f);
+            damageBar.DOFillAmount((PlayerPrefs.GetFloat("damage") + playerStats.StartingDamage / 10f * damage) / playerStats.DamageMaxValue, 0.5f);
             balanceText.text = PlayerPrefs.GetInt("balance").ToString();
         }
     }
@@ -87,7 +87,7 @@ public class UpgradeSystem : MonoBehaviour
         {
             mana--;
             PlayerPrefs.SetInt("balance", PlayerPrefs.GetInt("balance") + 1);
-            manaBar.DOFillAmount((playerStats.Mana + mana) / playerStats.ManaMaxValue, 0.5f);
+            manaBar.DOFillAmount((PlayerPrefs.GetFloat("mana") + playerStats.StartingMana / 10f * mana) / playerStats.ManaMaxValue, 0.5f);
             balanceText.text = PlayerPrefs.GetInt("balance").ToString();
         }
     }

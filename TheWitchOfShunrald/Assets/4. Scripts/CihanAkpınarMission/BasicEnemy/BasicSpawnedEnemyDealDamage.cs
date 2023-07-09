@@ -9,13 +9,15 @@ namespace CihanAkpınar
 {
     public class BasicSpawnedEnemyDealDamage : MonoBehaviour
     {
-        [SerializeField] int basicDamage;
+        [SerializeField] private float damage;
         [SerializeField] private float basicMoveableObjectDamage;
+
+        public float Damage { set { damage = value; } }
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("Shunrald"))
             {
-                other.gameObject.transform.parent.gameObject.GetComponent<PlayerStats>().TakeDamage(basicDamage); 
+                other.gameObject.transform.parent.gameObject.GetComponent<PlayerStats>().TakeDamage(damage); 
                 //Audio
                 AudioManager.Instance.PlaySfx(AudioManager.Instance.basicSpawnedEnemyHitAudio,transform.position);
             }

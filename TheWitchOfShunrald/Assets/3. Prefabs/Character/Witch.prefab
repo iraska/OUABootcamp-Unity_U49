@@ -2711,12 +2711,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aac58be0693694f99ec2ec3ed05328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  damage: 0
+  mana: 0
   startingHealth: 100
   startingDamage: 10
   startingMana: 50
-  healthMaxValue: 150
-  damageMaxValue: 20
-  manaMaxValue: 100
+  healthMaxValue: 1000
+  damageMaxValue: 100
+  manaMaxValue: 500
   restoreMana: 0.2
 --- !u!114 &7383257406533379729
 MonoBehaviour:

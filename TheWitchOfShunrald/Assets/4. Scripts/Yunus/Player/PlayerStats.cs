@@ -6,23 +6,21 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    private int health, damage;
-    private float mana;
+    public float health, damage, mana;
 
-    [SerializeField] private int startingHealth, startingDamage, startingMana;
-    [SerializeField] private int healthMaxValue, damageMaxValue, manaMaxValue;
+    [SerializeField] private float startingHealth, startingDamage, startingMana;
+    [SerializeField] private float healthMaxValue, damageMaxValue, manaMaxValue;
     [SerializeField] private float restoreMana;
-    public int Health { get { return health; } }
-    public int Damage { get { return damage; } }
+    public float Health { get { return health; } }
+    public float Damage { get { return damage; } }
     public float Mana { get { return mana; } }
+    public float HealthMaxValue { get { return healthMaxValue;} }
+    public float DamageMaxValue { get { return damageMaxValue; } }
+    public float ManaMaxValue { get { return manaMaxValue; } }
 
-    public int HealthMaxValue { get { return healthMaxValue;} }
-    public int DamageMaxValue { get { return damageMaxValue; } }
-    public int ManaMaxValue { get { return manaMaxValue; } }
-
-    public int StartingHealth { get { return startingHealth; } }
-    public int StartingDamage { get { return startingDamage; } }
-    public int StartingMana { get { return startingMana; } }
+    public float StartingHealth { get { return startingHealth; } }
+    public float StartingDamage { get { return startingDamage; } }
+    public float StartingMana { get { return startingMana; } }
 
     private ShunraldController shunraldController;
 
@@ -35,32 +33,32 @@ public class PlayerStats : MonoBehaviour
     {
         if(PlayerPrefs.GetInt("lastGame") > 1)
         {
-            health = PlayerPrefs.GetInt("health");
-            damage = PlayerPrefs.GetInt("damage");
-            mana = PlayerPrefs.GetInt("mana");
+            health = PlayerPrefs.GetFloat("health");
+            damage = PlayerPrefs.GetFloat("damage");
+            mana = PlayerPrefs.GetFloat("mana");
         }
         else
         {
             health = startingHealth;
             damage = startingDamage;
             mana = startingMana;
-            PlayerPrefs.SetInt("health", startingHealth);
-            PlayerPrefs.SetInt("mana", startingMana);
-            PlayerPrefs.SetInt("damage", startingDamage);
+            PlayerPrefs.SetFloat("health", startingHealth);
+            PlayerPrefs.SetFloat("mana", startingMana);
+            PlayerPrefs.SetFloat("damage", startingDamage);
         }
         InvokeRepeating(nameof(RestoreMana), 1, 0.1f);
-        UIManager.instance.HealthBar(health, PlayerPrefs.GetInt("health"));
-        UIManager.instance.ManaBar(mana, PlayerPrefs.GetInt("mana"));
+        UIManager.instance.HealthBar(health, PlayerPrefs.GetFloat("health"));
+        UIManager.instance.ManaBar(mana, PlayerPrefs.GetFloat("mana"));
 
         shunraldController = GetComponent<ShunraldController>();
     }
     public void Upgrade(int health, int damage, int mana)
     {
-        PlayerPrefs.SetInt("health", PlayerPrefs.GetInt("health") + startingHealth / 10 * health);
-        PlayerPrefs.SetInt("mana", PlayerPrefs.GetInt("mana") + startingMana / 10 * mana);
-        PlayerPrefs.SetInt("damage", PlayerPrefs.GetInt("damage") + startingDamage / 10 * damage);
+        PlayerPrefs.SetFloat("health", PlayerPrefs.GetFloat("health") + startingHealth / 10 * health);
+        PlayerPrefs.SetFloat("mana", PlayerPrefs.GetFloat("mana") + startingMana / 10 * mana);
+        PlayerPrefs.SetFloat("damage", PlayerPrefs.GetFloat("damage") + startingDamage / 10 * damage);
     }
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         health -= damage;
         if (health <= 0)
@@ -70,13 +68,19 @@ public class PlayerStats : MonoBehaviour
 
             AudioManager.Instance.PlaySfx(AudioManager.Instance.witchDieAudio,transform.position);
         }
-        UIManager.instance.HealthBar(health, PlayerPrefs.GetInt("health"));
+        if(!GameManager.instance.IsArena)
+            UIManager.instance.HealthBar(health, PlayerPrefs.GetFloat("health"));
+        else
+            UIManager.instance.HealthBar(health, arenaStartingHealth);
     }
 
     public bool SpendMana(float mana)
     {
         this.mana -= mana;
-        UIManager.instance.ManaBar(this.mana, PlayerPrefs.GetInt("mana"));
+        if (!GameManager.instance.IsArena)
+            UIManager.instance.ManaBar(this.mana, PlayerPrefs.GetFloat("mana"));
+        else
+            UIManager.instance.ManaBar(this.mana, arenaStartingMana);
         if (this.mana <= 0)
         {
             CancelInvoke(nameof(RestoreMana));
@@ -87,28 +91,54 @@ public class PlayerStats : MonoBehaviour
     }
     public void RestoreMana()
     {
-        if (this.mana < startingMana)
+        if (!GameManager.instance.IsArena)
         {
-            mana += restoreMana;
-            UIManager.instance.ManaBar(this.mana, PlayerPrefs.GetInt("mana"));
+            if (this.mana < PlayerPrefs.GetFloat("mana"))
+            {
+                mana += restoreMana;
+                UIManager.instance.ManaBar(this.mana, PlayerPrefs.GetFloat("mana"));
+            }
+        }
+        else
+        {
+            if (this.mana < arenaStartingMana)
+            {
+                mana += restoreMana;
+                UIManager.instance.ManaBar(this.mana, arenaStartingMana);
+            }
         }
     }
     public void ManaPot(float mana)
     {
         this.mana += mana;
-        if (this.mana > PlayerPrefs.GetInt("mana"))
+        if (this.mana > PlayerPrefs.GetFloat("mana"))
         {
-            this.mana = PlayerPrefs.GetInt("mana");
+            this.mana = PlayerPrefs.GetFloat("mana");
         }
-        UIManager.instance.ManaBar(this.mana, PlayerPrefs.GetInt("mana"));
+        if (!GameManager.instance.IsArena)
+            UIManager.instance.ManaBar(this.mana, PlayerPrefs.GetFloat("mana"));
+        else
+            UIManager.instance.ManaBar(this.mana, arenaStartingMana);
     }
-    public void HealthPot(int health)
+    public void HealthPot(float health)
     {
         this.health += health;
-        if (this.mana > PlayerPrefs.GetInt("health"))
+        if (this.mana > PlayerPrefs.GetFloat("health"))
         {
-            this.mana = PlayerPrefs.GetInt("health");
+            this.mana = PlayerPrefs.GetFloat("health");
         }
-        UIManager.instance.HealthBar(this.health, PlayerPrefs.GetInt("health"));
+        if (!GameManager.instance.IsArena)
+            UIManager.instance.HealthBar(this.health, PlayerPrefs.GetFloat("health"));
+        else
+            UIManager.instance.HealthBar(this.health, arenaStartingHealth);
+    }
+    float arenaStartingHealth, arenaStartingMana;
+    public void SetPlayerStats(float health, float damage, float mana)
+    {
+        this.damage = damage;
+        this.mana = mana;
+        this.health = health;
+        arenaStartingHealth = health;
+        arenaStartingMana = mana;
     }
 }

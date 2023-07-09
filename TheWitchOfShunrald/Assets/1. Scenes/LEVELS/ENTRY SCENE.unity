@@ -818,11 +818,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
-    - target: {fileID: 1423904383818870697, guid: 636a8b6aebc30f84f81ca9ffa5acd592,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1423904383818870708, guid: 636a8b6aebc30f84f81ca9ffa5acd592,
         type: 3}
       propertyPath: m_RootOrder
@@ -880,39 +875,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423904383988707124, guid: 636a8b6aebc30f84f81ca9ffa5acd592,
         type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423904383988707124, guid: 636a8b6aebc30f84f81ca9ffa5acd592,
-        type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423904383988707124, guid: 636a8b6aebc30f84f81ca9ffa5acd592,
-        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2101930757}
-    - target: {fileID: 1423904383988707124, guid: 636a8b6aebc30f84f81ca9ffa5acd592,
-        type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423904383988707124, guid: 636a8b6aebc30f84f81ca9ffa5acd592,
-        type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetMusicVolume
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423904383988707124, guid: 636a8b6aebc30f84f81ca9ffa5acd592,
-        type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: "CihanAkp\u0131nar.AudioManager, Assembly-CSharp"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423904383988707124, guid: 636a8b6aebc30f84f81ca9ffa5acd592,
-        type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 1423904384036614672, guid: 636a8b6aebc30f84f81ca9ffa5acd592,
         type: 3}
       propertyPath: m_Camera
@@ -925,39 +890,9 @@ PrefabInstance:
       objectReference: {fileID: 330585545}
     - target: {fileID: 1423904384488994582, guid: 636a8b6aebc30f84f81ca9ffa5acd592,
         type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423904384488994582, guid: 636a8b6aebc30f84f81ca9ffa5acd592,
-        type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423904384488994582, guid: 636a8b6aebc30f84f81ca9ffa5acd592,
-        type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2101930757}
-    - target: {fileID: 1423904384488994582, guid: 636a8b6aebc30f84f81ca9ffa5acd592,
-        type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423904384488994582, guid: 636a8b6aebc30f84f81ca9ffa5acd592,
-        type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetSfxVolume
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423904384488994582, guid: 636a8b6aebc30f84f81ca9ffa5acd592,
-        type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: "CihanAkp\u0131nar.AudioManager, Assembly-CSharp"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1423904384488994582, guid: 636a8b6aebc30f84f81ca9ffa5acd592,
-        type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 1423904384856880128, guid: 636a8b6aebc30f84f81ca9ffa5acd592,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
@@ -968,6 +903,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1473547602}
+    - target: {fileID: 5780964098778505455, guid: 636a8b6aebc30f84f81ca9ffa5acd592,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2041006047}
     - target: {fileID: 5780964099066125087, guid: 636a8b6aebc30f84f81ca9ffa5acd592,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1004,6 +944,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1473547602}
     - target: {fileID: 5780964099983225483, guid: 636a8b6aebc30f84f81ca9ffa5acd592,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1473547602}
+    - target: {fileID: 5780964100144995821, guid: 636a8b6aebc30f84f81ca9ffa5acd592,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

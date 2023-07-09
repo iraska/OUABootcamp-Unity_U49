@@ -6,10 +6,10 @@ namespace WeepingAngle
 {
     public class WeepingAngleStats : MonoBehaviour, Enemy
     {
-        [SerializeField] private float angelHealth, angelDamage;
+        [SerializeField] private float health, damage;
 
-        public float AngelHealth { get { return angelHealth; } }
-        public float AngelDamage { get { return angelDamage; } }
+        public float Health { get { return health; } }
+        public float Damage { get { return damage; } }
 
         private Animator _animator;
 
@@ -22,19 +22,24 @@ namespace WeepingAngle
 
         float Enemy.Health()
         {
-            return angelHealth;
+            return health;
         }
 
         void Enemy.TakeDamage(Vector3 exploLocation, float damage)
         {
-            angelHealth -= damage;
+            health -= damage;
 
-            if (angelHealth < 0)
+            if (health < 0)
             {
-                AudioManager.Instance.PlaySfx(AudioManager.Instance.weepingAngleDieAudio,transform.position); 
-
+                AudioManager.Instance.PlaySfx(AudioManager.Instance.weepingAngleDieAudio,transform.position);
+                GameManager.instance.EnemyDestoyEvent();
                 Destroy(gameObject);
             }
+        }
+        void Enemy.SetEnemyStats(float health, float damage)
+        {
+            this.health = health;
+            this.damage = damage;
         }
 
         private void OnTriggerEnter(Collider other)
@@ -59,5 +64,6 @@ namespace WeepingAngle
                 GameManager.instance.Lose();
             }
         }
+
     }
 }

@@ -11,13 +11,14 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
 
-    [SerializeField] private GameObject gamePanel, pausePanel, upgradePanel, dialogPanel, winPanel, losePanel, infoPanel;
+    [SerializeField] private GameObject gamePanel, pausePanel, upgradePanel, dialogPanel, winPanel, losePanel, infoPanel, arenaWinPanel;
     [SerializeField] private GameObject[] weaponImages;
     [SerializeField] private Image healthBar, healthBar1, manaBar, easyButtonImage, normalButtonImage, hardButtonImage, lowButtonImage, highButtonImage, mediumButtonImage, weaponUICircle, weaponUILine;
     [SerializeField] private Sprite selectedSprite, unselectedSprite;
     [SerializeField] private Text infoText;
     [SerializeField] private DialogSystem dialogSystem;
-
+    [SerializeField] private TextMeshProUGUI badgeText;
+    [SerializeField] private ArenaRewardPanel arenaRewardPanel;
     private GameObject currentPanel;
 
     private void Awake()
@@ -111,6 +112,14 @@ public class UIManager : MonoBehaviour
         winPanel.SetActive(true);
         currentPanel = winPanel;
     }
+    public void ArenaWinPanel(string name)
+    {
+        currentPanel.SetActive(false);
+        arenaWinPanel.SetActive(true);
+        currentPanel = arenaWinPanel;
+        badgeText.text = name;
+        StartCoroutine(arenaRewardPanel.Start());
+    }
     public IEnumerator LosePanel()
     {
         yield return new WaitForSeconds(5);
@@ -120,12 +129,12 @@ public class UIManager : MonoBehaviour
         currentPanel = losePanel;
     }
 
-    public void HealthBar(int currentHealth, int maxHealth)
+    public void HealthBar(float currentHealth, float maxHealth)
     {
         healthBar.fillAmount = currentHealth / (float)maxHealth;
         healthBar1.DOFillAmount(currentHealth / (float)maxHealth, 1f).SetEase(Ease.Linear);
     }
-    public void ManaBar(float currentMana, int maxMana)
+    public void ManaBar(float currentMana, float maxMana)
     {
         manaBar.DOFillAmount(currentMana / (float)maxMana, 1f).SetEase(Ease.Linear);
     }

@@ -1,7 +1,8 @@
+using CihanAkpýnar;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 public class WizardEnemy : MonoBehaviour, Enemy
 {
     private Animator anim;
@@ -11,20 +12,20 @@ public class WizardEnemy : MonoBehaviour, Enemy
     [SerializeField] private float attackSpeed;
     [SerializeField] private float coolDown;
     [SerializeField] private float health;
-    [SerializeField] private int damage;
-    public int Damage { get { return damage; } }
+    [SerializeField] private float damage;
+    public float Damage { get { return damage; } }
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private ParticleSystem electric, explosion;
     [SerializeField] private Transform staff;
     private Transform playerTransform;
     private bool isAttackActivate = true;
-    public enum EnemyState
-    {
-        attack,
-        walk,
-        injured
-    }
-    private EnemyState enemyState = EnemyState.walk;
+
+    [SerializeField] private GameObject basicManaPot;
+    [SerializeField] private GameObject basicHealthPot;
+    [SerializeField] private int healthPotProbability;
+    [SerializeField] private int manaPotProbability;
+    private int mainProbability;
+
     private IEnumerator Start()
     {
         electric.Stop();
@@ -34,29 +35,30 @@ public class WizardEnemy : MonoBehaviour, Enemy
         rb = GetComponent<Rigidbody>();
         playerTransform = GameManager.instance.Player.transform;
 
-
-        while(true)
+        while (true)
         {
-            if(Physics.Raycast(new Vector3(transform.position.x, 0.3f, transform.position.z), playerTransform.position - transform.position, out RaycastHit hitInfo, 200f))
+            if (Physics.Raycast(new Vector3(transform.position.x, 0.3f, transform.position.z), playerTransform.position - transform.position, out RaycastHit hitInfo, 200f))
             {
-                if(hitInfo.transform.CompareTag("Shunrald"))
+                if (hitInfo.transform.CompareTag("Shunrald"))
                 {
                     if ((transform.position - playerTransform.position).magnitude < attackRange)
                     {
-                        if(isAttackActivate)
+                        if (isAttackActivate)
                         {
                             isAttackActivate = false;
                             Invoke(nameof(AttackActivate), coolDown);
-                            transform.LookAt(playerTransform);
+                            transform.DOLookAt(playerTransform.position,1f);
                             anim.SetBool("walk", false);
-                            anim.SetTrigger("attack");                            
+                            anim.SetTrigger("attack");
                         }
+                        else
+                            anim.SetBool("walk", false);
                     }
                     else
                     {
                         anim.SetBool("walk", true);
                         Vector3 direction = playerTransform.position - transform.position;
-                        transform.LookAt(playerTransform);
+                        transform.DOLookAt(playerTransform.position, 1f);
                         direction.Normalize();
                         transform.position += direction * speed * Time.deltaTime;
                     }
@@ -73,13 +75,12 @@ public class WizardEnemy : MonoBehaviour, Enemy
                         {
                             break;
                         }
-
                         yield return null;
                     }
                     anim.SetBool("walk", true);
-                    transform.LookAt(randomPos);
+                    transform.DOLookAt(randomPos,1f);
                     direction.Normalize();
-                    while(true)
+                    while (true)
                     {
                         if (Physics.Raycast(new Vector3(transform.position.x, 0.3f, transform.position.z), playerTransform.position - transform.position, out RaycastHit hit, 200f))
                         {
@@ -107,6 +108,7 @@ public class WizardEnemy : MonoBehaviour, Enemy
             yield return null;
         }
     }
+
     private void AttackActivate()
     {
         isAttackActivate = true;
@@ -120,6 +122,7 @@ public class WizardEnemy : MonoBehaviour, Enemy
         electric.transform.position = staff.position;
         electric.gameObject.SetActive(true);
         electric.Play();
+        AudioManager.Instance.PlaySfx(AudioManager.Instance.rangedEnemyRangeAttackAudio, transform.position);
         Vector3 targetPos = playerTransform.position + Vector3.up * 0.5f;
         while (true)
         {
@@ -132,11 +135,24 @@ public class WizardEnemy : MonoBehaviour, Enemy
                 explosion.transform.position = targetPos;
                 explosion.gameObject.SetActive(true);
                 explosion.Play();
+                AudioManager.Instance.PlaySfx(AudioManager.Instance.rangedEnemyExploseAudio,explosion.transform.position);
                 yield return new WaitForSeconds(0.3f);
                 explosion.gameObject.SetActive(false);
                 break;
             }
             yield return null;
+        }
+    }
+    void DropMath()
+    {
+        mainProbability = UnityEngine.Random.Range(1, 101);
+        if (mainProbability <= healthPotProbability)
+        {
+            Instantiate(basicHealthPot, transform.position, Quaternion.identity);
+        }
+        else if (healthPotProbability < mainProbability && mainProbability <= healthPotProbability + manaPotProbability)
+        {
+            Instantiate(basicManaPot, transform.position, Quaternion.identity);
         }
     }
     void Enemy.TakeDamage(Vector3 exploLocation, float damage)
@@ -147,15 +163,23 @@ public class WizardEnemy : MonoBehaviour, Enemy
         health -= damage;
         if (health <= 0)
         {
-            //DropMath();
-            Destroy(electric);
-            Destroy(explosion);
+            AudioManager.Instance.PlaySfx(AudioManager.Instance.rangedEnemyDieAudio, transform.position);
+            DropMath();
             Destroy(gameObject);
+            Destroy(electric.gameObject);
+            Destroy(explosion.gameObject);
+            GameManager.instance.EnemyDestoyEvent();
         }
     }
 
     float Enemy.Health()
     {
         return health;
+    }
+
+    void Enemy.SetEnemyStats(float health, float damage)
+    {
+        this.health = health;
+        this.damage = damage;
     }
 }

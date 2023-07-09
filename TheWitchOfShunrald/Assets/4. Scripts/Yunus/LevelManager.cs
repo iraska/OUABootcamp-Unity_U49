@@ -23,9 +23,9 @@ public class LevelManager : MonoBehaviour
             return;
         }
     }
-    private void Start()
+    public void Start()
     {
-        AudioManager.Instance.PlayMusic(AudioManager.Instance.mainMenuAudio);
+        AudioManager.Instance.PlayMusicWithFade(AudioManager.Instance.mainMenuAudio);
         if (PlayerPrefs.GetInt("lastGame", 1) > 1)
         {
             continueGameButton.interactable = true;
@@ -76,10 +76,35 @@ public class LevelManager : MonoBehaviour
     public void NewGame()
     {
         PlayerPrefs.SetInt("lastGame", 1);
-        StartCoroutine(LoadingGame(1));
+        StartCoroutine(LoadingGame(2));
     }
     public void ContinueGame()
     {
-        StartCoroutine(LoadingGame(PlayerPrefs.GetInt("lastGame")));
+        StartCoroutine(LoadingGame(PlayerPrefs.GetInt("lastGame")+1));
+    }
+    public void LoadArena()
+    {
+        StartCoroutine(LoadArenaa());
+    }
+    private IEnumerator LoadArenaa()
+    {
+        using (var www = new UnityEngine.Networking.UnityWebRequest("http://www.google.com"))
+        {
+            // İsteği başlatırız
+            yield return www.SendWebRequest();
+
+            // İsteğin sonucunu kontrol ederiz
+            if (www.result == UnityEngine.Networking.UnityWebRequest.Result.ConnectionError ||
+                www.result == UnityEngine.Networking.UnityWebRequest.Result.ProtocolError)
+            {
+                // İnternet bağlantısı yok
+                Debug.Log("İnternet bağlantısı yok");
+            }
+            else
+            {
+                // İnternet bağlantısı var
+                StartCoroutine(LoadingGame(1));
+            }
+        }
     }
 }

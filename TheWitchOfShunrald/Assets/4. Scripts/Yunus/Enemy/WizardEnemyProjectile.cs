@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WizardEnemyProjectile : MonoBehaviour
 {
-    private int damage;
+    private float damage;
     private PlayerStats playerStats;
     private void Awake()
     {
