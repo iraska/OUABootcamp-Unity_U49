@@ -24,6 +24,8 @@ namespace Shunrald
         private void Update()
         {
             CheckMaterialChanging();
+
+            //if (Input.GetKeyDown(KeyCode.K)) { ChangeShunraldMaterial(); }
         }
 
         private void CheckMaterialChanging()

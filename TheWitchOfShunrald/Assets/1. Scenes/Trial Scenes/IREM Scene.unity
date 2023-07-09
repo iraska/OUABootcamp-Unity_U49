@@ -767,6 +767,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 698692226}
+    - target: {fileID: 1380709509521597422, guid: 4c4b1d536b1f78a4084f035a58c2cab1,
+        type: 3}
+      propertyPath: greyMat
+      value: 
+      objectReference: {fileID: 2100000, guid: ca362ff92d3679746ad8b4792601e7b7, type: 2}
     - target: {fileID: 5632074086535317330, guid: 4c4b1d536b1f78a4084f035a58c2cab1,
         type: 3}
       propertyPath: m_RootOrder
@@ -826,6 +831,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Witch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632074086535317331, guid: 4c4b1d536b1f78a4084f035a58c2cab1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7383257406533379734, guid: 4c4b1d536b1f78a4084f035a58c2cab1,
         type: 3}
@@ -1347,7 +1357,7 @@ PrefabInstance:
     - target: {fileID: 7376321212590918543, guid: afdf7fc1056f2fe4b8b0f15c81d6f7d5,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afdf7fc1056f2fe4b8b0f15c81d6f7d5, type: 3}
@@ -2224,6 +2234,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TutorialCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923129085637448711, guid: 6bda3e86428c4fc40bdcf4458502221f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4923129085637448715, guid: 6bda3e86428c4fc40bdcf4458502221f,
         type: 3}
