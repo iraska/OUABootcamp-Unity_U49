@@ -11,7 +11,7 @@ namespace Sidar
         [SerializeField] private float objectDamage = 20f;
         [SerializeField] private float splashRadius = 5f;
         [SerializeField] private GameObject splashEffect;
-
+		[SerializeField] private ParticleSystem blood, hit;
         [SerializeField] private float destroyDelay = 3f;
         private Transform player;
         private bool isSingle = false;
@@ -19,6 +19,8 @@ namespace Sidar
 
         public void Shoot(Vector3 direction)
         {
+			
+			blood.Play();
             GetComponent<Rigidbody>().velocity = direction * speed;
         }
 
@@ -31,7 +33,6 @@ namespace Sidar
 
         private void Update()
         {
-            
             destroyTimer += Time.deltaTime;
             if (destroyTimer >= destroyDelay)
             {
@@ -40,8 +41,10 @@ namespace Sidar
 
             if (isSingle)
             {
-                Vector3 direction = (player.position - transform.position).normalized;
-                transform.Translate(direction * speed * Time.deltaTime);
+                Vector3 targetPosition = new Vector3(player.position.x, transform.position.y, player.position.z);
+                Vector3 direction = (targetPosition - transform.position).normalized;
+                transform.position += direction * (speed * Time.deltaTime);
+
             }
         }
 
@@ -56,9 +59,9 @@ namespace Sidar
         {
             if(collision.gameObject.tag != "Enemy"){
                 destroyTimer = 0f;
-
+				blood.Stop();
                 Destroy(gameObject);
-
+	
                 Instantiate(splashEffect, collision.contacts[0].point, Quaternion.identity);
 
                 Collider[] colliders = Physics.OverlapSphere(collision.contacts[0].point, splashRadius);
@@ -66,7 +69,7 @@ namespace Sidar
                 {
                     if (collider.gameObject.tag == "Shunrald")
                     {
-                        collider.GetComponent<PlayerStats>().TakeDamage(playerDamage);
+                        player.GetComponent<PlayerStats>().TakeDamage(playerDamage);
                     }
                     /*else if (collider.gameObject.tag == "CanBeMoved")
                     {

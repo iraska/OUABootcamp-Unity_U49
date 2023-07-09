@@ -22,11 +22,13 @@ namespace Sidar
         private bool canCrStunPLayer = true;
         private bool canCrHealthRegen = true;
         private bool canCrSingleProjectile = true;
-        private bool isAttacking = false;
+        private bool isAttacking;
+        private bool canMultiProjectile = true;
         public Transform projectilePointParent;
         public GameObject projectilePrefab;
         private Transform[] projectilePoints;
-        [SerializeField] private float projectileAnimDelay = 4.9f;
+        [SerializeField] private float projectileAnimDelay = 1f;
+        [SerializeField] private float multiProjectileTimeBetween = 1f;
         [SerializeField] private float stunAnimDelay = 6f;
         [SerializeField] private float spawnAnimDelay = 3.9f;
         [SerializeField] private float healthAnimDelay = 6.25f;  
@@ -36,16 +38,29 @@ namespace Sidar
         [SerializeField] private float spawnCooldown = 20f;
         [SerializeField] private int maxHealth = 100;
         [SerializeField] private float rotationSpeed = 3f;
-        [SerializeField] private float regenSpeedMin = 5f;
-        [SerializeField] private float regenSpeedMax = 20f;
+        [SerializeField] private float regenSpeedMin = 1f;
+        [SerializeField] private float regenSpeedMax = 5f;
         private float regenSpeed;
-
+        [SerializeField] private ParticleSystem healthRegenParticle;
         
-
         
+        
+        [SerializeField] private GameObject enemyClonePrefab; // The prefab for the enemy clone
+        [SerializeField] private int numClones = 8; // Number of clones to spawn
+        [SerializeField] private float radius = 5f; // Radius of the circle
+        [SerializeField] private float spawnDelay = 1f; // Delay between each clone spawn
+
+        private float angleIncrement; // Angle increment between clones
+        private float spawnTimer; // Timer to control spawn timing
+        private bool isRegenDone = false;
+        private bool isRegenInterrupt = false;
+        private int explosionsCount;
+        private int maxExplosions = 4;
+        private float explosionAttackDelay = 4f;
+
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             currentHealth = maxHealth;
             player = GameObject.FindWithTag("Shunrald");
@@ -57,10 +72,12 @@ namespace Sidar
             {
                 projectilePoints[i] = projectilePointParent.GetChild(i);
             }
+            angleIncrement = 360f / numClones;
+            spawnTimer = spawnDelay;
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
            
             distance = Vector3.Distance(transform.position, player.transform.position);
@@ -82,13 +99,10 @@ namespace Sidar
                                     StartCoroutine(SpawnMinions());
                                     StartCoroutine(HealthRegen());
                                 }
-                                else if(currentHealth < 80){
+                                else if(currentHealth < 50){
                                     StartCoroutine(HealthRegen());
                                 }
-                                RegenerateHealth();
                             }
-                            break;
-                        default:
                             break;
                     }
                 }
@@ -121,8 +135,9 @@ namespace Sidar
                             break;
                         case 5:
                             if(canCrHealthRegen){
-                                if(currentHealth < 20){
-                                    StartCoroutine(SpawnMinions());
+                                if(currentHealth < 20)
+                                {
+                                    SpawnClone();
                                     StartCoroutine(HealthRegen());
                                 }
                                 else if(currentHealth < 50){
@@ -146,36 +161,57 @@ namespace Sidar
             transform.LookAt(player.transform);
         }
 
-        void ChasePlayer(){
+        private void ChasePlayer(){
              if(!isAttacking){
                 agent.SetDestination(player.transform.position);
                 animator.SetBool("isChasing", true);
-            }
+             }
         }
 
 
-        IEnumerator StayIdle(){
+        private IEnumerator StayIdle(){
             canCrIdle = false;
             agent.SetDestination(transform.position);
             animator.SetBool("isIdle", true);
             yield return new WaitForSeconds(3f);
         }
 
-        IEnumerator MutliProjectileAttack(){
+        private IEnumerator MutliProjectileAttack()
+        {
+            int count = 0;
             LookAtPlayer();
             agent.SetDestination(transform.position);
             canCrMultiProjectile = false;
             isAttacking = true;
             animator.SetBool("isMutliProjectileAttack",true);
             yield return new WaitForSeconds(projectileAnimDelay);
-            isAttacking = false;
             animator.SetBool("isMutliProjectileAttack", false);
-            circleProjectile();
+            while (true)
+            {
+                transform.LookAt(player.transform);
+                if (canMultiProjectile)
+                {
+                    canMultiProjectile = false;
+                    CircleProjectile();
+                    Invoke(nameof(ResetMultiProjectile), multiProjectileTimeBetween);
+                    count++;
+                }
+                if(count == 10)
+                    break;
+                yield return null;
+            }
+            isAttacking = false;
             yield return new WaitForSeconds(projectileCooldown);
             canCrMultiProjectile = true;
         }
 
-        IEnumerator SingleProjectileAttack(){
+
+        private void ResetMultiProjectile()
+        {
+            canMultiProjectile = true;
+        }
+
+        private IEnumerator SingleProjectileAttack(){
             LookAtPlayer();
             agent.SetDestination(transform.position);
             canCrSingleProjectile = false;
@@ -184,28 +220,28 @@ namespace Sidar
             yield return new WaitForSeconds(2f);
             isAttacking = false;
             animator.SetBool("isSingleProjectileAttack", false);
-            singleProjectile();
+            SingleProjectile();
             yield return new WaitForSeconds(projectileCooldown);
             canCrSingleProjectile = true;
         }
 
-        void singleProjectile(){
-            Vector3 direction = (projectilePointParent.GetChild(4).position - transform.position).normalized;
+        private void SingleProjectile(){
             GameObject projectile = Instantiate(projectilePrefab, projectilePointParent.GetChild(4).position, Quaternion.identity);
             projectile.GetComponent<NecroProjectile>().SetIsSingle(true);
         }
 
-        void circleProjectile(){
-              for (int i = 0; i < projectilePoints.Length; i++)
+        private void CircleProjectile()
+        {
+            foreach (var pj in projectilePoints)
             {
-                Vector3 direction = (projectilePoints[i].position - transform.position).normalized;
-                GameObject projectile = Instantiate(projectilePrefab, projectilePoints[i].position, Quaternion.identity);
+                Vector3 direction = (pj.position - transform.position).normalized;
+                GameObject projectile = Instantiate(projectilePrefab, pj.position, Quaternion.identity);
                 projectile.GetComponent<NecroProjectile>().Shoot(direction);
             }
         }
 
 
-        IEnumerator SpawnMinions(){
+        private IEnumerator SpawnMinions(){
             LookAtPlayer();
             agent.SetDestination(transform.position);
             animator.SetBool("isChasing", false);
@@ -213,13 +249,34 @@ namespace Sidar
             animator.SetBool("isSpawningMinions",true);
             isAttacking = true;
             yield return new WaitForSeconds(spawnAnimDelay);
+            SpawnClone();
             isAttacking = false;
             animator.SetBool("isSpawningMinions", false);
             yield return new WaitForSeconds(spawnCooldown);
             canCrSpawnMinions = true;
         }
+        private void SpawnClone()
+        {
+            Vector3 bossPosition = transform.position;
 
-        IEnumerator StunPlayer(){
+            for (int i = 0; i < numClones; i++)
+            {
+                float angle = angleIncrement * i;
+                float xPos = radius * Mathf.Cos(Mathf.Deg2Rad * angle) + bossPosition.x;
+                float zPos = radius * Mathf.Sin(Mathf.Deg2Rad * angle) + bossPosition.z;
+
+                Vector3 clonePosition = new Vector3(xPos, bossPosition.y, zPos);
+
+                // Instantiate the clone GameObject at the calculated position
+                GameObject clone = Instantiate(enemyClonePrefab, clonePosition, Quaternion.identity);
+
+                // Set the forward direction of the clone to face outward
+                Vector3 direction = bossPosition - clonePosition;
+                clone.transform.forward = direction.normalized;
+            }
+        }
+
+        private IEnumerator StunPlayer(){
             LookAtPlayer();
             agent.SetDestination(transform.position);
             animator.SetBool("isChasing", false);
@@ -234,24 +291,45 @@ namespace Sidar
         }
 
 
-        IEnumerator HealthRegen(){
+        private IEnumerator HealthRegen(){
             LookAtPlayer();
             agent.SetDestination(transform.position);
             animator.SetBool("isChasing", false);
             canCrHealthRegen = false;
             animator.SetBool("isHealthRegen",true);
             isAttacking = true;
-            yield return new WaitForSeconds(healthAnimDelay);
+            if (!healthRegenParticle.isPlaying)
+            {
+                healthRegenParticle.Play();
+            }
+            while (true)
+            {
+                RegenerateHealth();
+                if (isRegenDone || isRegenInterrupt)
+                {
+                    if (healthRegenParticle.isPlaying)
+                    {
+                        healthRegenParticle.Stop();
+                    }
+                    animator.SetBool("isHealthRegen", false);
+                    isRegenDone = false;
+                    isRegenInterrupt = false;
+                    break;
+                }
+                yield return null;
+            }
+            //yield return new WaitForSeconds(healthAnimDelay);
             isAttacking = false;
-            animator.SetBool("isHealthRegen", false);
             yield return new WaitForSeconds(healthCooldown);
             canCrHealthRegen = true;
         }
-        
+
         private void RegenerateHealth()
         {
             if (currentHealth >= maxHealth)
             {
+                currentHealth = 100;
+                isRegenDone = true;
                 return;
             }
 
@@ -265,12 +343,13 @@ namespace Sidar
         private void UpdateRegenSpeed()
         {
             // Adjust the regeneration speed based on the current health percentage
-            float healthPercentage = currentHealth / maxHealth;
+            var healthPercentage = currentHealth / maxHealth;
             regenSpeed = Mathf.Lerp(regenSpeedMin, regenSpeedMax, healthPercentage);
         }
 
         public void TakeDamage(int damage)
         {
+            isRegenInterrupt = true;
             currentHealth -= damage;
 
             if (currentHealth <= 0)
