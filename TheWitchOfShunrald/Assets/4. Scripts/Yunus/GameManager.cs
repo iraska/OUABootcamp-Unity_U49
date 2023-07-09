@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TutorialSystem;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,7 +16,8 @@ public class GameManager : MonoBehaviour
         Upgrade,
         Dialog,
         Lose,
-        Win
+        Win,
+        Tutorial
     }
     private State gameState;
     public State GameState 
@@ -95,7 +97,7 @@ public class GameManager : MonoBehaviour
     // It should only be called at the start of the first scene (build index 1)
     public void InitialTutorial()
     {
-        StartCoroutine(UIManager.instance.InitialTutorialPanel(3f));
+        StartCoroutine(TutorialManager.instance.InitialTutorialPanel(3f));
     }
 
     private void Update()
