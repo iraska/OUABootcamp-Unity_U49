@@ -11,6 +11,7 @@ namespace ali
         [SerializeField] private GameObject prefabToCreate;
         [SerializeField] private Material highlightMaterial;
         [SerializeField] private Material defaultMaterial;
+        [SerializeField] private LayerMask groundAndMoveable;
         private Material[] highlightMaterials;
         private GameObject createdPrefab;
         private SpringJoint connectedSpringJoint;
@@ -40,7 +41,7 @@ namespace ali
                 {
                     Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
                     RaycastHit hitForInstantiation;
-                    if (Physics.Raycast(ray, out hitForInstantiation))
+                    if (Physics.Raycast(ray, out hitForInstantiation, Mathf.Infinity, groundAndMoveable))
                     {
                         pullingPoint = hitForInstantiation.point;
                         createdPrefab = Instantiate(prefabToCreate, hitForInstantiation.point, Quaternion.identity);
@@ -81,7 +82,7 @@ namespace ali
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundAndMoveable))
             {
                 if (hit.collider.gameObject.layer == objectLayer)
                 {

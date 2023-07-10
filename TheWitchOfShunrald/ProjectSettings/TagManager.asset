@@ -11,6 +11,8 @@ TagManager:
   - Dash
   - Skill
   - Destructible
+  - FxTemporaire
+  - Sword
   layers:
   - Default
   - TransparentFX

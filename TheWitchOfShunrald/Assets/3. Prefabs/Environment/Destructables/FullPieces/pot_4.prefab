@@ -169,6 +169,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: pot_4_destructible
       objectReference: {fileID: 0}
+    - target: {fileID: 8106512562076418484, guid: b2b0e0ca9cf96403b905f97429583c86,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8920450626408602382, guid: b2b0e0ca9cf96403b905f97429583c86,
         type: 3}
       propertyPath: m_RootOrder

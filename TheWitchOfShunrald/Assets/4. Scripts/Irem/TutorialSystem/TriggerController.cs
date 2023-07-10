@@ -11,7 +11,7 @@ namespace TutorialSystem
         private GameObject tutorialInfoText;
 
         private const string shunrald = "Shunrald", 
-            verge = "Verge", dash = "Dash", skill = "Skill", destructible = "Destructible";
+            verge = "Verge", dash = "Dash", skill = "Skill", destructible = "Destructible", sword = "Sword";
 
         private string currentInfoText;
 
@@ -41,7 +41,11 @@ namespace TutorialSystem
                 {
                     currentInfoText = "Just like in the gif, you can put objects in front of the enemies by clicking the right button of your mouse and distract them.";
                 }
-            
+                else if (gameObject.CompareTag(sword))
+                {
+                    currentInfoText = "Press Q for changing the weapon. You can use sword when you lack the mana for using the staff.";
+                }
+
                 ChangeText(currentInfoText);
                 Destroy(gameObject);
             }

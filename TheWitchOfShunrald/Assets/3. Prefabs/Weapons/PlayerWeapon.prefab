@@ -1470,6 +1470,9 @@ MonoBehaviour:
     type: 3}
   highlightMaterial: {fileID: 2100000, guid: 32a76832b79e84347ad9df08b12709c3, type: 2}
   defaultMaterial: {fileID: 2100000, guid: 54aa6c940ff0d4a918227fe42f05c47e, type: 2}
+  groundAndMoveable:
+    serializedVersion: 2
+    m_Bits: 9216
   mainCamera: {fileID: 0}
 --- !u!1 &6914697117186297415
 GameObject:
