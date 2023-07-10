@@ -37,71 +37,74 @@ public class WizardEnemy : MonoBehaviour, Enemy
 
         while (true)
         {
-            if (Physics.Raycast(new Vector3(transform.position.x, 0.3f, transform.position.z), playerTransform.position - transform.position, out RaycastHit hitInfo, 200f))
+            if (GameManager.instance.GameState == GameManager.State.Playing)
             {
-                if (hitInfo.transform.CompareTag("Shunrald"))
+                if (Physics.Raycast(new Vector3(transform.position.x, 0.3f, transform.position.z), playerTransform.position - transform.position, out RaycastHit hitInfo, 200f))
                 {
-                    if ((transform.position - playerTransform.position).magnitude < attackRange)
+                    if (hitInfo.transform.CompareTag("Shunrald"))
                     {
-                        if (isAttackActivate)
+                        if ((transform.position - playerTransform.position).magnitude < attackRange)
                         {
-                            isAttackActivate = false;
-                            Invoke(nameof(AttackActivate), coolDown);
-                            transform.DOLookAt(playerTransform.position,1f);
-                            anim.SetBool("walk", false);
-                            anim.SetTrigger("attack");
+                            if (isAttackActivate)
+                            {
+                                isAttackActivate = false;
+                                Invoke(nameof(AttackActivate), coolDown);
+                                transform.DOLookAt(playerTransform.position, 1f);
+                                anim.SetBool("walk", false);
+                                anim.SetTrigger("attack");
+                            }
+                            else
+                                anim.SetBool("walk", false);
                         }
                         else
-                            anim.SetBool("walk", false);
+                        {
+                            anim.SetBool("walk", true);
+                            Vector3 direction = playerTransform.position - transform.position;
+                            transform.DOLookAt(playerTransform.position, 1f);
+                            direction.Normalize();
+                            transform.position += direction * speed * Time.deltaTime;
+                        }
                     }
                     else
                     {
-                        anim.SetBool("walk", true);
-                        Vector3 direction = playerTransform.position - transform.position;
-                        transform.DOLookAt(playerTransform.position, 1f);
-                        direction.Normalize();
-                        transform.position += direction * speed * Time.deltaTime;
-                    }
-                }
-                else
-                {
-                    Vector3 randomPos;
-                    Vector3 direction;
-                    while (true)
-                    {
-                        randomPos = transform.position + 2 * transform.right + transform.forward;
-                        direction = randomPos - transform.position;
-                        if (Physics.Raycast(randomPos + Vector3.up, Vector3.down, 10f, groundLayer))
+                        Vector3 randomPos;
+                        Vector3 direction;
+                        while (true)
                         {
-                            break;
-                        }
-                        yield return null;
-                    }
-                    anim.SetBool("walk", true);
-                    transform.DOLookAt(randomPos,1f);
-                    direction.Normalize();
-                    while (true)
-                    {
-                        if (Physics.Raycast(new Vector3(transform.position.x, 0.3f, transform.position.z), playerTransform.position - transform.position, out RaycastHit hit, 200f))
-                        {
-                            if (hit.transform.CompareTag("Shunrald"))
+                            randomPos = transform.position + 2 * transform.right + transform.forward;
+                            direction = randomPos - transform.position;
+                            if (Physics.Raycast(randomPos + Vector3.up, Vector3.down, 10f, groundLayer))
                             {
                                 break;
                             }
+                            yield return null;
                         }
-                        if (Physics.Raycast(new Vector3(transform.position.x, 0.3f, transform.position.z), direction, 0.5f))
+                        anim.SetBool("walk", true);
+                        transform.DOLookAt(randomPos, 1f);
+                        direction.Normalize();
+                        while (true)
                         {
-                            break;
+                            if (Physics.Raycast(new Vector3(transform.position.x, 0.3f, transform.position.z), playerTransform.position - transform.position, out RaycastHit hit, 200f))
+                            {
+                                if (hit.transform.CompareTag("Shunrald"))
+                                {
+                                    break;
+                                }
+                            }
+                            if (Physics.Raycast(new Vector3(transform.position.x, 0.3f, transform.position.z), direction, 0.5f))
+                            {
+                                break;
+                            }
+                            else if (direction.magnitude > 0.5f)
+                            {
+                                transform.position += direction * speed * Time.deltaTime;
+                            }
+                            else
+                            {
+                                break;
+                            }
+                            yield return null;
                         }
-                        else if (direction.magnitude > 0.5f)
-                        {
-                            transform.position += direction * speed * Time.deltaTime;
-                        }
-                        else
-                        {
-                            break;
-                        }
-                        yield return null;
                     }
                 }
             }

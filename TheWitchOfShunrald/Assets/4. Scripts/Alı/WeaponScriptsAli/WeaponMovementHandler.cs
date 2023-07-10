@@ -68,138 +68,140 @@ namespace ali
 
         void Update()
         {
-            
-
-            if (Input.GetMouseButtonDown(0))
+            if(GameManager.instance.GameState == GameManager.State.Playing)
             {
-                if (particleType == 0)
+                if (Input.GetMouseButtonDown(0))
                 {
-                    energyParticleObject.SetActive(true);
-                    fireParticleObject.SetActive(false);
-                }
-                else
-                {
-                    energyParticleObject.SetActive(false);
-                    fireParticleObject.SetActive(true);
-                }
-                initialMousePosition = Input.mousePosition;
-                lastStaffTopPoint = staffTopPoint.position;
-
-
-                //WeaponUI
-                startDragPosition = new Vector2(initialMousePosition.x, initialMousePosition.y);
-                circleImage.rectTransform.position = startDragPosition;
-                circleImage.gameObject.SetActive(true);
-                lineRectTransform.gameObject.SetActive(true);
-            }
-
-            else if (Input.GetMouseButton(0))
-            {
-                shunraldMovementController.IsUsingWeapon = true;
-
-                //check mana
-                if (playerStats.Mana > 0f)
-                {
-                    //Change the position of the weapon based on the input
-                    mouseMovementVector = new Vector2(Input.mousePosition.x, Input.mousePosition.y) - initialMousePosition;
-                    if (mouseMovementVector == Vector2.zero)
+                    if (particleType == 0)
                     {
-                        mouseMovementVector = initialMousePosition - new Vector2(960, 540);
-                    }
-                    float rotationValue = cameraPivotTransform.rotation.eulerAngles.y;
-                    Vector3 changedLocalPosition = new Vector3(mouseMovementVector.normalized.x * 3, 0, mouseMovementVector.normalized.y * 3);
-                    Vector3 changedReverseGravityLocation = new Vector3(mouseMovementVector.normalized.x * 1, weaponTopPivotPositionValue, mouseMovementVector.normalized.y * 1);
-                    reverseGravityPoint.transform.localPosition = RotateVector(changedReverseGravityLocation, -1 * rotationValue);
-                    weaponPivot.transform.localPosition = RotateVector(changedLocalPosition, -1 * rotationValue);
-
-                    if (manaSpend > 0.5)
-                    {
-                        playerStats.SpendMana(manaSpend);
-                        manaSpend = 0;
+                        energyParticleObject.SetActive(true);
+                        fireParticleObject.SetActive(false);
                     }
                     else
                     {
-                        manaSpend = manaSpend + (manaSpendMultiplier / 10 * Vector3.Distance(lastStaffTopPoint, staffTopPoint.position));
+                        energyParticleObject.SetActive(false);
+                        fireParticleObject.SetActive(true);
                     }
+                    initialMousePosition = Input.mousePosition;
+                    lastStaffTopPoint = staffTopPoint.position;
 
 
-                    //Track the movement of the wand for deciding its powerMagnitude for the ranged attack
-                    if (isStaffEquipped)
+                    //WeaponUI
+                    startDragPosition = new Vector2(initialMousePosition.x, initialMousePosition.y);
+                    circleImage.rectTransform.position = startDragPosition;
+                    circleImage.gameObject.SetActive(true);
+                    lineRectTransform.gameObject.SetActive(true);
+                }
+
+                else if (Input.GetMouseButton(0))
+                {
+                    shunraldMovementController.IsUsingWeapon = true;
+
+                    //check mana
+                    if (playerStats.Mana > 0f)
                     {
-                        if (powerMagnitude > 100f)
+                        //Change the position of the weapon based on the input
+                        mouseMovementVector = new Vector2(Input.mousePosition.x, Input.mousePosition.y) - initialMousePosition;
+                        if (mouseMovementVector == Vector2.zero)
                         {
-                            powerMagnitude = 100f;
+                            mouseMovementVector = initialMousePosition - new Vector2(960, 540);
                         }
-                        else if (powerMagnitude > 50)
+                        float rotationValue = cameraPivotTransform.rotation.eulerAngles.y;
+                        Vector3 changedLocalPosition = new Vector3(mouseMovementVector.normalized.x * 3, 0, mouseMovementVector.normalized.y * 3);
+                        Vector3 changedReverseGravityLocation = new Vector3(mouseMovementVector.normalized.x * 1, weaponTopPivotPositionValue, mouseMovementVector.normalized.y * 1);
+                        reverseGravityPoint.transform.localPosition = RotateVector(changedReverseGravityLocation, -1 * rotationValue);
+                        weaponPivot.transform.localPosition = RotateVector(changedLocalPosition, -1 * rotationValue);
+
+                        if (manaSpend > 0.5)
                         {
-                            powerMagnitude += Vector3.Distance(lastStaffTopPoint, staffTopPoint.position);
+                            playerStats.SpendMana(manaSpend);
+                            manaSpend = 0;
                         }
                         else
                         {
-                            powerMagnitude += Vector3.Distance(lastStaffTopPoint, staffTopPoint.position) * 2;
+                            manaSpend = manaSpend + (manaSpendMultiplier / 10 * Vector3.Distance(lastStaffTopPoint, staffTopPoint.position));
                         }
-                        
 
-                        //Resize the effects based on powerMagnitude
-                        topParticleObject.transform.localScale = new Vector3(powerMagnitude / 100, powerMagnitude / 100, powerMagnitude / 100);
+
+                        //Track the movement of the wand for deciding its powerMagnitude for the ranged attack
+                        if (isStaffEquipped)
+                        {
+                            if (powerMagnitude > 100f)
+                            {
+                                powerMagnitude = 100f;
+                            }
+                            else if (powerMagnitude > 50)
+                            {
+                                powerMagnitude += Vector3.Distance(lastStaffTopPoint, staffTopPoint.position);
+                            }
+                            else
+                            {
+                                powerMagnitude += Vector3.Distance(lastStaffTopPoint, staffTopPoint.position) * 2;
+                            }
+
+
+                            //Resize the effects based on powerMagnitude
+                            topParticleObject.transform.localScale = new Vector3(powerMagnitude / 100, powerMagnitude / 100, powerMagnitude / 100);
+                        }
+                        lastStaffTopPoint = staffTopPoint.position;
+
                     }
-                    lastStaffTopPoint = staffTopPoint.position;
+
+                    //WeaponUI
+                    Vector2 currentMousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+                    Vector2 lineVector = currentMousePosition - startDragPosition;
+                    float lineLength = Mathf.Min(lineVector.magnitude, maxLineLength);
+                    lineVector = lineVector.normalized * lineLength;
+                    lineRectTransform.position = startDragPosition + lineVector / 2f;
+                    lineRectTransform.sizeDelta = new Vector2(lineLength, 2f);
+                    lineRectTransform.rotation = Quaternion.Euler(0f, 0f, Mathf.Atan2(lineVector.y, lineVector.x) * Mathf.Rad2Deg);
 
                 }
 
-                //WeaponUI
-                Vector2 currentMousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-                Vector2 lineVector = currentMousePosition - startDragPosition;
-                float lineLength = Mathf.Min(lineVector.magnitude, maxLineLength);
-                lineVector = lineVector.normalized * lineLength;
-                lineRectTransform.position = startDragPosition + lineVector / 2f;
-                lineRectTransform.sizeDelta = new Vector2(lineLength, 2f);
-                lineRectTransform.rotation = Quaternion.Euler(0f, 0f, Mathf.Atan2(lineVector.y, lineVector.x) * Mathf.Rad2Deg);
-
-            }
-
-            else if (Input.GetMouseButtonUp(0))
-            {
-                shunraldMovementController.IsUsingWeapon = false;
-                //launch the projectile if staff is equipped
-                if (isStaffEquipped)
+                else if (Input.GetMouseButtonUp(0))
                 {
-                    
-                    if (playerStats.Mana > 0f && GameManager.instance.Player.GetComponent<ShunraldMovementController>().IsUsingSkill == false)
+                    shunraldMovementController.IsUsingWeapon = false;
+                    //launch the projectile if staff is equipped
+                    if (isStaffEquipped)
                     {
-                        GameObject spawnedPlayerProjectile = Instantiate(playerProjectilePrefab);
-                        spawnedPlayerProjectile.transform.position = staffTopRB.transform.position;
-                        spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().PlayerProjectileDestination = staffTopRB.velocity;
-                        spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().ProjectilePowerMagnitude = powerMagnitude;
-                        spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().ProjectilePlayerDamage = playerDamage;
-                        spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().ProjecileType = particleType;
-                        playerStats.SpendMana(5f);
+
+                        if (playerStats.Mana > 0f && GameManager.instance.Player.GetComponent<ShunraldMovementController>().IsUsingSkill == false)
+                        {
+                            GameObject spawnedPlayerProjectile = Instantiate(playerProjectilePrefab);
+                            spawnedPlayerProjectile.transform.position = staffTopRB.transform.position;
+                            spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().PlayerProjectileDestination = staffTopRB.velocity;
+                            spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().ProjectilePowerMagnitude = powerMagnitude;
+                            spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().ProjectilePlayerDamage = playerDamage;
+                            spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().ProjecileType = particleType;
+                            playerStats.SpendMana(5f);
+                        }
+                        //reset the magnitude and the VFX
+                        powerMagnitude = 0;
+                        topParticleObject.transform.localScale = Vector3.zero;
+
                     }
-                    //reset the magnitude and the VFX
-                    powerMagnitude = 0;
-                    topParticleObject.transform.localScale = Vector3.zero;
 
+                    //WeaponUI
+                    circleImage.gameObject.SetActive(false);
+                    lineRectTransform.gameObject.SetActive(false);
                 }
-
-                //WeaponUI
-                circleImage.gameObject.SetActive(false);
-                lineRectTransform.gameObject.SetActive(false);
-            }
-            else if (Input.GetKeyDown(KeyCode.Q)) 
-            {
-                if (isStaffEquipped) 
+                else if (Input.GetKeyDown(KeyCode.Q))
                 {
-                    swordWeapon.SetActive(true);
-                    staffWeapon.SetActive(false);
-                    UIManager.instance.WeaponImage(1);
-                }
-                else
-                {
-                    staffWeapon.SetActive(true);
-                    swordWeapon.SetActive(false);
-                    UIManager.instance.WeaponImage(0);
+                    if (isStaffEquipped)
+                    {
+                        swordWeapon.SetActive(true);
+                        staffWeapon.SetActive(false);
+                        UIManager.instance.WeaponImage(1);
+                    }
+                    else
+                    {
+                        staffWeapon.SetActive(true);
+                        swordWeapon.SetActive(false);
+                        UIManager.instance.WeaponImage(0);
+                    }
                 }
             }
+
         }
 
         private Vector3 RotateVector(Vector3 vector, float angle)

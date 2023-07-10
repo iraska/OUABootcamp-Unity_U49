@@ -1083,7 +1083,7 @@ MonoBehaviour:
   bombPower: 0
   basicStopingDistance: 1.5
   basicEnemyMovementSpeed: 100
-  health: 0
+  health: 50
   targetLayer: 13
   healthPotProbability: 40
   manaPotProbability: 40
@@ -1587,7 +1587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 570db499a8465314b90b09ffc4f4dd2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basicDamage: 20
+  damage: 0
   basicMoveableObjectDamage: 50
 --- !u!1 &5361355013855838087
 GameObject:

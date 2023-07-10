@@ -57,20 +57,21 @@ namespace CihanAkpınar
         
         void FixedUpdate()
         {
-            BasicEnemyMovement();
-            if (isTriggered)
+            if (GameManager.instance.GameState == GameManager.State.Playing)
             {
-                FindEnemyTarget(); 
+                BasicEnemyMovement();
+                if (isTriggered)
+                {
+                    FindEnemyTarget();
+                }
             }
-            
         }
         private void Update()
         {
-            if (isRotation)
+            if (isRotation && GameManager.instance.GameState == GameManager.State.Playing)
             {
                 FaceTarget();  
-            }
-            
+            }          
         }
         
 

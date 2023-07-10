@@ -80,7 +80,7 @@ public class LevelManager : MonoBehaviour
     }
     public void ContinueGame()
     {
-        StartCoroutine(LoadingGame(PlayerPrefs.GetInt("lastGame")+1));
+        StartCoroutine(LoadingGame(PlayerPrefs.GetInt("lastGame")));
     }
     public void LoadArena()
     {

@@ -68,25 +68,34 @@ public class GameManager : MonoBehaviour
     }
     public void Win()
     {
-        GameState = State.Win;
-        UIManager.instance.WinPanel();
+        if (GameState == State.Playing)
+        {
+            GameState = State.Win;
+            UIManager.instance.WinPanel();
+        }
     }
     public void ArenaWin(string name)
     {
-        GameState = State.Win;
-        if(PlayerPrefs.GetString("arena" + (PlayerPrefs.GetInt("arena", 0)).ToString(), "null") != name)
+        if (GameState == State.Playing)
         {
-            PlayerPrefs.SetString("arena" + PlayerPrefs.GetInt("arena").ToString(), name);
-            PlayerPrefs.SetInt("arena", PlayerPrefs.GetInt("arena", 0) + 1);
+            GameState = State.Win;
+            if (PlayerPrefs.GetString("arena" + (PlayerPrefs.GetInt("arena", 0)).ToString(), "null") != name)
+            {
+                PlayerPrefs.SetString("arena" + PlayerPrefs.GetInt("arena").ToString(), name);
+                PlayerPrefs.SetInt("arena", PlayerPrefs.GetInt("arena", 0) + 1);
+            }
+            UIManager.instance.ArenaWinPanel(name);
+            IsArena = false;
         }
-        UIManager.instance.ArenaWinPanel(name);
-        IsArena = false;
     }
     public void Lose()
     {
-        GameState = State.Lose;
-        StartCoroutine(UIManager.instance.LosePanel());
-        IsArena = false;
+        if(GameState == State.Playing)
+        {
+            GameState = State.Lose;
+            StartCoroutine(UIManager.instance.LosePanel());
+            IsArena = false;
+        }
     }
     public void Upgrade(int balance)
     {
@@ -98,16 +107,19 @@ public class GameManager : MonoBehaviour
     {
         GameState = State.Paused;
         UIManager.instance.PausePanel();
+        Time.timeScale = 0;
     }
     public void MenuClicked()
     {
         GameState = State.Menu;
         SceneManager.LoadScene(0);
         LevelManager.instance.Start();
+        Time.timeScale = 1;
     }
     public void ResumeClicked()
     {
         GameState = State.Playing;
+        Time.timeScale = 1;
     }
     public void Quit()
     {

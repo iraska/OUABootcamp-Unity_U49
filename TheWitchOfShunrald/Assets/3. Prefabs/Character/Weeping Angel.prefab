@@ -1117,8 +1117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae624df6cca74341be41628c172ce68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angelHealth: 100
-  angelDamage: 40
+  health: 200
+  damage: 10
 --- !u!114 &2809038965118247155
 MonoBehaviour:
   m_ObjectHideFlags: 0

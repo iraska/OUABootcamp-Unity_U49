@@ -61,7 +61,7 @@ namespace Shunrald
 
             controller.Animation.AnimateCharacter(input, velocityX, velocityZ, animator);
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && GameManager.instance.GameState == GameManager.State.Playing)
             {
                 if (!isDashing && rb.velocity.magnitude <= 0.01f && GameManager.instance.Player.GetComponent<PlayerStats>().Mana > 0 && !isDashCoolDown)
                 {
@@ -111,21 +111,24 @@ namespace Shunrald
         // Moving the character
         private void ShunraldMovement()
         {
-            if (input.magnitude > 0f && !isMovementFrozen)
+            if (GameManager.instance.GameState == GameManager.State.Playing)
             {
-                input.Normalize();
+                if (input.magnitude > 0f && !isMovementFrozen)
+                {
+                    input.Normalize();
 
-                Vector3 movement = RotateVector(input, -1 * lensCam.transform.parent.eulerAngles.y) * speed * Time.deltaTime;
-                Vector3 newPosition = rb.position + movement;
+                    Vector3 movement = RotateVector(input, -1 * lensCam.transform.parent.eulerAngles.y) * speed * Time.deltaTime;
+                    Vector3 newPosition = rb.position + movement;
 
-                targetPosition = Vector3.Lerp(rb.position, newPosition, 0.9f);
-                rb.MovePosition(targetPosition);
-            }
-            else if (!isDashing)
-            {
-                // Stop motion only if still and not dash
-                rb.velocity = Vector3.zero;
-            }
+                    targetPosition = Vector3.Lerp(rb.position, newPosition, 0.9f);
+                    rb.MovePosition(targetPosition);
+                }
+                else if (!isDashing)
+                {
+                    // Stop motion only if still and not dash
+                    rb.velocity = Vector3.zero;
+                }
+            }    
         }
 
         // This method must be called when the Witch is killed and petrified by the Weeping angel.

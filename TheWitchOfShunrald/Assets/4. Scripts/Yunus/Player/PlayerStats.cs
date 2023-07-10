@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public float health, damage, mana;
+    private float health, damage, mana;
 
     [SerializeField] private float startingHealth, startingDamage, startingMana;
     [SerializeField] private float healthMaxValue, damageMaxValue, manaMaxValue;

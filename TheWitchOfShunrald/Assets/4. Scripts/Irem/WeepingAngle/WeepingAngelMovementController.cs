@@ -24,7 +24,10 @@ namespace WeepingAngle
 
         private void Update()
         {
-            if (!GameManager.instance.Player.GetComponent<ShunraldController>().Movement.IsDeath) { ChaseOrFreezeAngel(); }
+            if (!GameManager.instance.Player.GetComponent<ShunraldController>().Movement.IsDeath && GameManager.instance.GameState == GameManager.State.Playing) 
+            { 
+                ChaseOrFreezeAngel(); 
+            }
         }
 
         private void GetRequiredComponenent()
