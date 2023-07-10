@@ -1,5 +1,6 @@
 using System.Collections;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace CihanAkpınar
@@ -184,11 +185,14 @@ namespace CihanAkpınar
                 anim.SetTrigger("BasicEnemyDie");
                 DropMath();
                 Instantiate(basicEnemyDiePart, new Vector3(transform.position.x, transform.position.y, transform.position.z),Quaternion.identity);
-                spawnerOfThisEnemy.GetComponent<BasicEnemySpawner>().currentEnemy.Remove(this.gameObject);
+                if (spawnerOfThisEnemy != null)
+                {
+                    spawnerOfThisEnemy.GetComponent<BasicEnemySpawner>().currentEnemy.Remove(this.gameObject);
+                }
                 GameManager.instance.EnemyDestoyEvent();
                 Destroy(gameObject);
             }
-
+            lookSpawnedEnemyRadius = 50;
         }
         
         

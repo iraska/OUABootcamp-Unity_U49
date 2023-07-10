@@ -2884,6 +2884,9 @@ MonoBehaviour:
     type: 3}
   coolDown: 10
   mana: 0
+  aimLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!114 &1380709509521597422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3673,6 +3676,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4781885825837492494, guid: 7ad0bcaa09dcfa7478f705f014cdd825,
         type: 3}
+      propertyPath: m_Size.x
+      value: 14.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781885825837492494, guid: 7ad0bcaa09dcfa7478f705f014cdd825,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 15.215192
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781885825837492494, guid: 7ad0bcaa09dcfa7478f705f014cdd825,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fd4be65210c20294fb606c5a159364c3,
+        type: 3}
+    - target: {fileID: 4781885825837492494, guid: 7ad0bcaa09dcfa7478f705f014cdd825,
+        type: 3}
       propertyPath: m_Color.a
       value: 0.6313726
       objectReference: {fileID: 0}
@@ -3689,6 +3708,11 @@ PrefabInstance:
     - target: {fileID: 4781885825837492494, guid: 7ad0bcaa09dcfa7478f705f014cdd825,
         type: 3}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4781885825837492494, guid: 7ad0bcaa09dcfa7478f705f014cdd825,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

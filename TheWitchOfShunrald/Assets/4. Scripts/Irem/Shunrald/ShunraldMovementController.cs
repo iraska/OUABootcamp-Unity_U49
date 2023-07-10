@@ -20,7 +20,7 @@ namespace Shunrald
         private Vector3 targetPosition, input;
 
         private float velocityX, velocityZ;
-        private bool isDashing, isUsingWeapon, isMovementFrozen = false, isDashCoolDown, isDeath;
+        private bool isDashing, isUsingWeapon, isMovementFrozen = false, isDashCoolDown, isDeath, isUsingSkill;
         public bool IsUsingWeapon
         {
             get { return isUsingWeapon; }
@@ -30,6 +30,11 @@ namespace Shunrald
         {
             get { return isDeath; }
             set { isDeath = value; }
+        }
+        public bool IsUsingSkill
+        {
+            get { return isUsingSkill; }
+            set { isUsingSkill = value; }
         }
 
         private void Awake()
@@ -186,5 +191,16 @@ namespace Shunrald
             yield return new WaitForSeconds(dashCoolDown);
             isDashCoolDown = false;
         }
-    }
+
+        public void StopedUsingSkill()
+        {
+            StartCoroutine(NotUsingSkill());
+        }
+
+        private IEnumerator NotUsingSkill()
+        {
+            yield return new WaitForSeconds(0.5f);
+            isUsingSkill = false;
+        }
+    } 
 }

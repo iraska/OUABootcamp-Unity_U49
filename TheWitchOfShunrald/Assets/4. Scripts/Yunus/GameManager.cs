@@ -9,7 +9,7 @@ using static UnityEngine.ParticleSystem;
 
 public class GameManager : MonoBehaviour
 {
-    public event Action enemyDestroyed;
+    public event Action enemyDestroyed = delegate { };
     public enum State
     {
         Menu,
@@ -32,6 +32,10 @@ public class GameManager : MonoBehaviour
     }
     private bool isArena;
     public bool IsArena { get { return isArena; } set { isArena = value; } }
+
+    private bool canGoTheNextLevel;
+    public bool CanGoTheNextLevel { get { return canGoTheNextLevel; } set { canGoTheNextLevel = value; } }
+
     private GameObject player;
     public GameObject Player { get { return player; } set { player = value; } }
     [SerializeField] private int targetFrameRate = 60;

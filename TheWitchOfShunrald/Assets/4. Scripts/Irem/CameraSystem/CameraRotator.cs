@@ -18,10 +18,10 @@ namespace CameraSystem
             GetRequiredComponents();
         }
 
-        private void LateUpdate()
+        /*private void LateUpdate()
         {
             RotateCamera();
-        }
+        }*/
 
         private void GetRequiredComponents()
         {

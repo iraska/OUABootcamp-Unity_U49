@@ -5,13 +5,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
+using CihanAkpýnar;
+
 public class DialogSystem: MonoBehaviour
 {
+    
     public struct DialogStruct
     {
         public string name;
         public string text;
         public Sprite icon;
+        public AudioClip audioClip;
+        public GameObject dialogCaller;
     }
     private int dialogIndex = 0;
     private DialogSystem.DialogStruct[] currentDialog;
@@ -31,11 +36,13 @@ public class DialogSystem: MonoBehaviour
             dialogText.DOText(currentDialog[dialogIndex].text, currentDialog[dialogIndex].text.Length / 40f);
             dialogNameText.text = currentDialog[dialogIndex].name;
             dialogImage.sprite = currentDialog[dialogIndex].icon;
+            AudioManager.Instance.PlayDialogue(currentDialog[dialogIndex].audioClip, 100f);
             dialogIndex++;
         }
         else
         {
             dialogIndex = 0;
+            currentDialog[0].dialogCaller.GetComponent<NecroDialogue>().StartWalkingTowards();
             UIManager.instance.GamePanel();
             GameManager.instance.GameState = GameManager.State.Playing;
         }

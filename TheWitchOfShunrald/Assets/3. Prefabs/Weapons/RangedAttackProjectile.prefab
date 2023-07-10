@@ -116,7 +116,7 @@ MonoBehaviour:
     m_Bits: 2048
   explodeOnContactLayerMask:
     serializedVersion: 2
-    m_Bits: 15360
+    m_Bits: 48128
   canExplodeLayerMask:
     serializedVersion: 2
     m_Bits: 14336

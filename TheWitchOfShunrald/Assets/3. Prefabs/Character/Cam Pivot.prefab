@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 5490393480246770615}
   - component: {fileID: 3746809809080174352}
   m_Layer: 0
-  m_Name: Lens Distortion
+  m_Name: Main Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8645639842838280283}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 3.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -94,11 +94,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.01
-  far clip plane: 1000
+  near clip plane: -41
+  far clip plane: 38.3
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -190,7 +190,7 @@ MonoBehaviour:
   zoomCamera: {fileID: 8645639842838280285}
   zoomSpeed: 1
   minZoom: 2
-  maxZoom: 8
+  maxZoom: 10
 --- !u!114 &5490393480246770615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,6 +219,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followShunrald: {fileID: 0}
-  camOffset: {x: -10, y: 10, z: -10}
   smoothSpeed: 1
   camOffsetZ: 1

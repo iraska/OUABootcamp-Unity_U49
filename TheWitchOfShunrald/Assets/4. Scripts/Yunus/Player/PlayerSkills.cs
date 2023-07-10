@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Shunrald;
+
 public class PlayerSkills : MonoBehaviour
 {
     [SerializeField] private Transform hexagon;
@@ -9,6 +11,7 @@ public class PlayerSkills : MonoBehaviour
     [SerializeField] private GameObject projectile;
     [SerializeField] private float coolDown;
     [SerializeField] private float mana;
+    [SerializeField] private LayerMask aimLayerMask;
     private SpriteRenderer hexagonSprite;
 
     private bool isActiveHexagon, isActiveSkill = true;
@@ -20,11 +23,12 @@ public class PlayerSkills : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha3) && isActiveSkill)
+        if (Input.GetKeyDown(KeyCode.E) && isActiveSkill)
         {
             isActiveHexagon = !isActiveHexagon;
             hexagonSprite.color = Color.gray;
             hexagon.gameObject.SetActive(true);
+            GameManager.instance.Player.GetComponent<ShunraldMovementController>().IsUsingSkill = true;
         }
         if (isActiveHexagon)
         {
@@ -36,6 +40,7 @@ public class PlayerSkills : MonoBehaviour
                 GameManager.instance.Player.GetComponent<PlayerStats>().SpendMana(mana);
                 isActiveHexagon = false;
                 isActiveSkill = false;
+                GameManager.instance.Player.GetComponent<ShunraldMovementController>().StopedUsingSkill();
                 Invoke(nameof(ActivateSkill), coolDown);
                 hexagonSprite.DOColor(hexagonColor, 3f).OnComplete(() =>
                 {
@@ -53,7 +58,7 @@ public class PlayerSkills : MonoBehaviour
     private Vector3 GetMouseWorldPosition()
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit))
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, aimLayerMask))
         {
             return hit.point;
         }

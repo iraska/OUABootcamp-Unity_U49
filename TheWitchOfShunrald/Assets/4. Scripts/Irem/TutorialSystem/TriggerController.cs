@@ -17,12 +17,14 @@ namespace TutorialSystem
 
         private void OnTriggerEnter(Collider other)
         {
-            TutorialManager.instance.GifTutorialPanel(gif);
 
-            tutorialInfoText = FindObjectOfType<TutorialInfo>().gameObject;
 
             if (other.gameObject.CompareTag(shunrald))
             {
+                TutorialManager.instance.GifTutorialPanel(gif);
+
+                tutorialInfoText = FindObjectOfType<TutorialInfo>().gameObject;
+
                 if (gameObject.CompareTag(verge)) 
                 {
                     currentInfoText = "You can attack the enemy by turning your wand around, as in the gif.";
@@ -33,7 +35,7 @@ namespace TutorialSystem
                 }
                 else if (gameObject.CompareTag(skill)) 
                 {
-                    currentInfoText = "By pressing the 3 key, you can throw a skill as in the gif.";
+                    currentInfoText = "By pressing the E key, you can throw a skill as in the gif.";
                 }
                 else if (gameObject.CompareTag(destructible))
                 {

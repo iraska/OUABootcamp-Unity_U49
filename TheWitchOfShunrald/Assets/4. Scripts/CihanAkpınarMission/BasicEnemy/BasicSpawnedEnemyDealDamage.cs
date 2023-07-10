@@ -11,13 +11,19 @@ namespace CihanAkpınar
     {
         [SerializeField] private float damage;
         [SerializeField] private float basicMoveableObjectDamage;
+        private PlayerStats playerStats;
+
+        private void Start()
+        {
+            playerStats = GameManager.instance.Player.GetComponent<PlayerStats>();
+        }
 
         public float Damage { set { damage = value; } }
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("Shunrald"))
             {
-                other.gameObject.transform.parent.gameObject.GetComponent<PlayerStats>().TakeDamage(damage); 
+                playerStats.TakeDamage(damage); 
                 //Audio
                 AudioManager.Instance.PlaySfx(AudioManager.Instance.basicSpawnedEnemyHitAudio,transform.position);
             }

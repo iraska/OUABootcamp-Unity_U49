@@ -9,11 +9,17 @@ namespace TutorialSystem
         private void Start()
         {
             StartCoroutine(TutorialManager.instance.InitialTutorialPanel(2f));
+            StartCoroutine(destroyAfterLoad());
         }
 
         // Tutorial Canvas Ok button call this function
         public void DestroyThisObject()
         {
+            
+        }
+        private IEnumerator destroyAfterLoad()
+        {
+            yield return new WaitForSeconds(3f);
             Destroy(gameObject);
         }
     }

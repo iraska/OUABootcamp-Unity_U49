@@ -27,7 +27,7 @@ TagManager:
   - CanExplode
   - CanBeMoved
   - Player
-  - 
+  - FixedObjects
   - 
   - 
   - 

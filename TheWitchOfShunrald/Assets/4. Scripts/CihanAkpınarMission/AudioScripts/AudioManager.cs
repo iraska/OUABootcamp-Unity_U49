@@ -49,6 +49,7 @@ namespace CihanAkpınar
         private AudioSource musicSource;
         private AudioSource musicSource2;
         private AudioSource sfxSource;
+        private AudioSource dialogueSource;
         //Transation
         private bool firstMusicSourcePlayin;
         //AtmosphereAudios
@@ -103,11 +104,13 @@ namespace CihanAkpınar
             musicSource = this.gameObject.AddComponent<AudioSource>();
             musicSource2 = this.gameObject.AddComponent<AudioSource>();
             sfxSource = this.gameObject.AddComponent<AudioSource>();
-            
-            
+            dialogueSource = this.gameObject.AddComponent<AudioSource>();
+
+
             musicSource.outputAudioMixerGroup = musicGroups[0];
             musicSource2.outputAudioMixerGroup = musicGroups[0];
             sfxSource.outputAudioMixerGroup = sfxGroups[0];
+            dialogueSource.outputAudioMixerGroup = sfxGroups[0];
 
             musicSource.loop = true;
             musicSource2.loop = true;
@@ -159,6 +162,7 @@ namespace CihanAkpınar
             }
 
             audioSfxPool[index].transform.position = position;
+            Debug.Log(clip.name);
             audioSfxPool[index].PlayOneShot(clip);
           index++;
           if (index>=audioSfxPool.Length)
@@ -169,6 +173,14 @@ namespace CihanAkpınar
         public void PlaySfxUI(AudioClip clip, float volume)
         {
           sfxSource.PlayOneShot(clip,volume);  
+        }
+
+        public void PlayDialogue(AudioClip clip, float volume)
+        {
+            dialogueSource.Stop();
+            dialogueSource.clip = clip;
+            dialogueSource.volume = volume;
+            dialogueSource.Play();
         }
 
         public void SetMusicVolume()
