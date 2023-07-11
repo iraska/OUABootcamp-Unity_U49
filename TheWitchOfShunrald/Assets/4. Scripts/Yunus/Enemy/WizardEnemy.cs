@@ -51,6 +51,7 @@ public class WizardEnemy : MonoBehaviour, Enemy
                                 Invoke(nameof(AttackActivate), coolDown);
                                 transform.DOLookAt(playerTransform.position, 1f);
                                 anim.SetBool("walk", false);
+                                yield return new WaitForSeconds(0.2f);
                                 anim.SetTrigger("attack");
                             }
                             else

@@ -23,8 +23,10 @@ public class DialogSystem: MonoBehaviour
     [SerializeField] private Text dialogText;
     [SerializeField] private TextMeshProUGUI dialogNameText;
     [SerializeField] private Image dialogImage;
+    private Tween tween;
     public void DialogNext()
     {
+        tween.Kill();
         DialogText(currentDialog);
     }
     public void DialogText(DialogSystem.DialogStruct[] dialog)
@@ -33,7 +35,7 @@ public class DialogSystem: MonoBehaviour
         if (dialogIndex < currentDialog.Length)
         {
             dialogText.text = "";
-            dialogText.DOText(currentDialog[dialogIndex].text, currentDialog[dialogIndex].text.Length / 40f);
+            tween = dialogText.DOText(currentDialog[dialogIndex].text, currentDialog[dialogIndex].text.Length / 40f);
             dialogNameText.text = currentDialog[dialogIndex].name;
             dialogImage.sprite = currentDialog[dialogIndex].icon;
             AudioManager.Instance.PlayDialogue(currentDialog[dialogIndex].audioClip, 100f);

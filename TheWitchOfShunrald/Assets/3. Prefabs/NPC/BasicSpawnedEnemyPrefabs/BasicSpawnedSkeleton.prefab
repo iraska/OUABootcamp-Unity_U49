@@ -1459,8 +1459,8 @@ MonoBehaviour:
   basicEnemyMovementSpeed: 100
   health: 30
   targetLayer: 13
-  healthPotProbability: 40
-  manaPotProbability: 40
+  healthPotProbability: 5
+  manaPotProbability: 5
 --- !u!1 &8258688541923889042
 GameObject:
   m_ObjectHideFlags: 0

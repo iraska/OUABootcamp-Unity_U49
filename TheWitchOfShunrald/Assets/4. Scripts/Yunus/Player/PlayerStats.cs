@@ -52,7 +52,7 @@ public class PlayerStats : MonoBehaviour
 
         shunraldController = GetComponent<ShunraldController>();
     }
-    public void Upgrade(int health, int damage, int mana)
+    public void Upgrade(float health, float damage, float mana)
     {
         PlayerPrefs.SetFloat("health", PlayerPrefs.GetFloat("health") + startingHealth / 10 * health);
         PlayerPrefs.SetFloat("mana", PlayerPrefs.GetFloat("mana") + startingMana / 10 * mana);
@@ -123,9 +123,9 @@ public class PlayerStats : MonoBehaviour
     public void HealthPot(float health)
     {
         this.health += health;
-        if (this.mana > PlayerPrefs.GetFloat("health"))
+        if (this.health > PlayerPrefs.GetFloat("health"))
         {
-            this.mana = PlayerPrefs.GetFloat("health");
+            this.health = PlayerPrefs.GetFloat("health");
         }
         if (!GameManager.instance.IsArena)
             UIManager.instance.HealthBar(this.health, PlayerPrefs.GetFloat("health"));

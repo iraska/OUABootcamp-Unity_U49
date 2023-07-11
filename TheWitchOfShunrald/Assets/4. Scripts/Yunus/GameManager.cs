@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
         if (GameState == State.Playing)
         {
             GameState = State.Win;
-            if (PlayerPrefs.GetString("arena" + (PlayerPrefs.GetInt("arena", 0)).ToString(), "null") != name)
+            if (PlayerPrefs.GetString("arena" + (PlayerPrefs.GetInt("arena", 0) -1 ).ToString(), "null") != name)
             {
                 PlayerPrefs.SetString("arena" + PlayerPrefs.GetInt("arena").ToString(), name);
                 PlayerPrefs.SetInt("arena", PlayerPrefs.GetInt("arena", 0) + 1);

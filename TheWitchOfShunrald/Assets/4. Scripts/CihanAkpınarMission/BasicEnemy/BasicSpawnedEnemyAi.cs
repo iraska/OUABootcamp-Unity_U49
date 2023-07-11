@@ -218,7 +218,7 @@ namespace CihanAkpınar
         void Enemy.SetEnemyStats(float health, float damage)
         {
             this.health = health;
-            GetComponent<BasicSpawnedEnemyDealDamage>().Damage = damage;
+            GetComponentInChildren<BasicSpawnedEnemyDealDamage>().Damage = damage;
         }
     }
  
