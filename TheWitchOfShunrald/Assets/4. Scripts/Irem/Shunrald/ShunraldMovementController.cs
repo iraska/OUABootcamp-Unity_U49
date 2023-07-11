@@ -128,7 +128,7 @@ namespace Shunrald
                     // Stop motion only if still and not dash
                     rb.velocity = Vector3.zero;
                 }
-            }    
+            }
         }
 
         // This method must be called when the Witch is killed and petrified by the Weeping angel.

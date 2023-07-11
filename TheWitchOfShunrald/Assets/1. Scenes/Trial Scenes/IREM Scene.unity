@@ -767,11 +767,6 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 698692226}
-    - target: {fileID: 1380709509521597422, guid: 4c4b1d536b1f78a4084f035a58c2cab1,
-        type: 3}
-      propertyPath: greyMat
-      value: 
-      objectReference: {fileID: 2100000, guid: ca362ff92d3679746ad8b4792601e7b7, type: 2}
     - target: {fileID: 5632074086535317330, guid: 4c4b1d536b1f78a4084f035a58c2cab1,
         type: 3}
       propertyPath: m_RootOrder
@@ -831,11 +826,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Witch
-      objectReference: {fileID: 0}
-    - target: {fileID: 5632074086535317331, guid: 4c4b1d536b1f78a4084f035a58c2cab1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7383257406533379734, guid: 4c4b1d536b1f78a4084f035a58c2cab1,
         type: 3}
@@ -2195,41 +2185,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1081485483938315403, guid: 6bda3e86428c4fc40bdcf4458502221f,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1081485483938315403, guid: 6bda3e86428c4fc40bdcf4458502221f,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1081485483938315403, guid: 6bda3e86428c4fc40bdcf4458502221f,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 3367850234511436323}
-    - target: {fileID: 1081485483938315403, guid: 6bda3e86428c4fc40bdcf4458502221f,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1081485483938315403, guid: 6bda3e86428c4fc40bdcf4458502221f,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: ToggleUIPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 1081485483938315403, guid: 6bda3e86428c4fc40bdcf4458502221f,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: TutorialSystem.TutorialManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1081485483938315403, guid: 6bda3e86428c4fc40bdcf4458502221f,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 4923129085637448711, guid: 6bda3e86428c4fc40bdcf4458502221f,
         type: 3}
       propertyPath: m_Name
@@ -2345,25 +2300,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4923129086115443323, guid: 6bda3e86428c4fc40bdcf4458502221f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bda3e86428c4fc40bdcf4458502221f, type: 3}
---- !u!114 &3367850234511436323 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9222594267665693207, guid: 6bda3e86428c4fc40bdcf4458502221f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3367850234511436322}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7a33bf1970ae8d40853102f098b5a66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3489842375520766538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2930,8 +2868,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae624df6cca74341be41628c172ce68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angelHealth: 0
-  angelDamage: 0
+  health: 0
+  damage: 0
 --- !u!114 &5398205243794034766
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -38,10 +38,10 @@ namespace TutorialSystem
 
         public IEnumerator InitialTutorialPanel(float waitTime)
         {
-            GameManager.instance.GameState = GameManager.State.Tutorial;
             ToggleUIPanel(false);
-
             yield return new WaitForSeconds(waitTime);
+
+            GameManager.instance.GameState = GameManager.State.Tutorial;
 
             if (gif.activeSelf) { gif.SetActive(false); }
 

@@ -129,10 +129,6 @@ public class GameManager : MonoBehaviour
     {
         enemyDestroyed.Invoke();
     }
-    public void InitialTutorial()
-    {
-        StartCoroutine(TutorialManager.instance.InitialTutorialPanel(3f));
-    }
 
     private void Update()
     {

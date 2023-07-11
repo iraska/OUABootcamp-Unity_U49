@@ -24,19 +24,26 @@ namespace Shunrald
         // The Necromancer grabs the Witch and lifts her from her arms.
         public IEnumerator HangInTheAir()
         {
+            GameManager.instance.Player.GetComponent<ShunraldController>().Particle.TriggerCircleParticle();
+            yield return new WaitForSeconds(.1f);
+
             rb.constraints = RigidbodyConstraints.FreezePositionY;
 
             DGMove(rightHandPivot, 4f, .1f);
             DGMove(leftHandPivot, 4f, .1f);
 
+            GameManager.instance.Player.GetComponent<ShunraldController>().Particle.TriggerPortalParticle();
             yield return new WaitForSeconds(.3f);
 
-            DGMove(gameObject, 2f, .3f);
+            DGMove(gameObject, 1.5f, .3f);
         }
 
         // The Necromancer releases the Witch.
-        public void ReleasesTheWitch()
+        public IEnumerator ReleasesTheWitch()
         {
+            GameManager.instance.Player.GetComponent<ShunraldController>().Particle.StopAllParticles();
+            yield return new WaitForSeconds(.5f);
+
             rb.constraints = RigidbodyConstraints.None;
 
             DGMove(rightHandPivot, initialRightHandYPos, .1f);
