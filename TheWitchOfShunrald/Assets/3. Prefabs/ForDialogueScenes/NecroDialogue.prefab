@@ -2275,7 +2275,7 @@ Transform:
   m_LocalRotation: {x: -0, y: 0.9988445, z: -0, w: 0.04805995}
   m_LocalPosition: {x: 10.56, y: 0, z: 12.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2756778524562060989}
   - {fileID: 4667891489852275898}
@@ -2426,9 +2426,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  levelNo: 0
   dissapearParticle: {fileID: 6421608400251265972, guid: b13532728b979954489774b381c92dde,
     type: 3}
+  somethingToBeEnebled: {fileID: 0}
   destination: {fileID: 4667891489852275898}
+  witchSprite: {fileID: 0}
+  oldManSprite: {fileID: 0}
+  henricSprite: {fileID: 0}
+  necromancerSprite: {fileID: 0}
+  dialogues: []
 --- !u!1 &5662075434378754028
 GameObject:
   m_ObjectHideFlags: 0
