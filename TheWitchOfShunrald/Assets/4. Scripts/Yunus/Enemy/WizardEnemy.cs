@@ -26,6 +26,9 @@ public class WizardEnemy : MonoBehaviour, Enemy
     [SerializeField] private int manaPotProbability;
     private int mainProbability;
 
+    //Spawner entegration
+    public GameObject spawnerOfThisEnemy;
+
     private IEnumerator Start()
     {
         electric.Stop();
@@ -167,6 +170,10 @@ public class WizardEnemy : MonoBehaviour, Enemy
         health -= damage;
         if (health <= 0)
         {
+            if (spawnerOfThisEnemy != null)
+            {
+                spawnerOfThisEnemy.GetComponent<BasicEnemySpawner>().currentEnemy.Remove(this.gameObject);
+            }
             AudioManager.Instance.PlaySfx(AudioManager.Instance.rangedEnemyDieAudio, transform.position);
             DropMath();
             Destroy(gameObject);

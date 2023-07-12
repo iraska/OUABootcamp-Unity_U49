@@ -13,6 +13,7 @@ public class GeneralUseTrigger : MonoBehaviour
         if (other.gameObject.CompareTag("Shunrald"))
         {
             generalUseTriggerEvent.Invoke();
+            GetComponent<SphereCollider>().radius += 3;
         }
     }
 }

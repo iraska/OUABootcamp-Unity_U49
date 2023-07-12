@@ -82,8 +82,16 @@ namespace CihanAkpınar
                
                
                GameObject newspawn = Instantiate(waves[currentWave].GetEnemySpawnList()[i], FindSpawnLoc(), Quaternion.identity);
-               newspawn.GetComponent<BasicSpawnedEnemyAi>().lookSpawnedEnemyRadius = basicEnemyLookRadiusNew;
-               newspawn.GetComponent<BasicSpawnedEnemyAi>().spawnerOfThisEnemy = this.gameObject;
+               if (newspawn.GetComponent<BasicSpawnedEnemyAi>() != null)
+                {
+                    newspawn.GetComponent<BasicSpawnedEnemyAi>().lookSpawnedEnemyRadius = basicEnemyLookRadiusNew;
+                    newspawn.GetComponent<BasicSpawnedEnemyAi>().spawnerOfThisEnemy = this.gameObject;
+                }
+               else if (newspawn.GetComponent<WizardEnemy>() != null)
+                {
+                    newspawn.GetComponent<WizardEnemy>().spawnerOfThisEnemy = this.gameObject;
+                }
+               
                currentEnemy.Add(newspawn);
 
                yield return new WaitForSeconds(spawnSecond);

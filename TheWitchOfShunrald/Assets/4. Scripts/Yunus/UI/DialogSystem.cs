@@ -44,7 +44,7 @@ public class DialogSystem: MonoBehaviour
         else
         {
             dialogIndex = 0;
-            currentDialog[0].dialogCaller.GetComponent<NecroDialogue>().StartWalkingTowards();
+            currentDialog[0].dialogCaller.GetComponent<DialogueSetter>().TakeAction();
             UIManager.instance.GamePanel();
             GameManager.instance.GameState = GameManager.State.Playing;
         }
