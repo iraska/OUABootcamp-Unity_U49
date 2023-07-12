@@ -571,6 +571,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 870982375307901181, guid: 36a145bb93624c94eb430ef608b41f2f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 908470894918661917, guid: 36a145bb93624c94eb430ef608b41f2f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 24.256721
+      objectReference: {fileID: 0}
+    - target: {fileID: 908470894918661917, guid: 36a145bb93624c94eb430ef608b41f2f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 24.256721
+      objectReference: {fileID: 0}
+    - target: {fileID: 908470894918661917, guid: 36a145bb93624c94eb430ef608b41f2f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 46.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578707412081361087, guid: 36a145bb93624c94eb430ef608b41f2f,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3012797379994430977, guid: 36a145bb93624c94eb430ef608b41f2f,
         type: 3}
       propertyPath: m_RootOrder
@@ -630,6 +655,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LVL4VAR1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011903277282805486, guid: 36a145bb93624c94eb430ef608b41f2f,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36a145bb93624c94eb430ef608b41f2f, type: 3}

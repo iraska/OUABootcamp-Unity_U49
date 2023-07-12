@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -57,6 +56,7 @@ namespace Sidar
         private int explosionsCount;
         private int maxExplosions = 4;
         private float explosionAttackDelay = 4f;
+        private bool isMultiProjectile;
 
 
         // Start is called before the first frame update
@@ -107,48 +107,50 @@ namespace Sidar
                     }
                 }
                 else{
-                    agent.SetDestination(transform.position);
-                    animator.SetBool("isChasing", false);
-                    random = Random.Range(1,6);
-                    switch(random){
-                        case 1:
-                            if(canCrMultiProjectile){
+                        if (isMultiProjectile)
+                        {
+                            ChasePlayer();
+                        }
+                        agent.SetDestination(transform.position);
+                        animator.SetBool("isChasing", false);
+                        random = Random.Range(1,6);
+                        switch(random){
+                            case 1:
+                                if(canCrMultiProjectile){
                                 
-                                StartCoroutine(MutliProjectileAttack());
-                            }
-                            break;
-                        case 2:
-                            if(canCrSingleProjectile){
-                                
-                                StartCoroutine(SingleProjectileAttack());
-                            }
-                            break;
-                        case 3:
-                            if(canCrStunPLayer){
-                                StartCoroutine(StunPlayer());
-                            }
-                            break;
-                        case 4:
-                            if(canCrSpawnMinions){
-                                StartCoroutine(SpawnMinions());
-                            }
-                            break;
-                        case 5:
-                            if(canCrHealthRegen){
-                                if(currentHealth < 20)
-                                {
-                                    SpawnClone();
-                                    StartCoroutine(HealthRegen());
+                                    StartCoroutine(MutliProjectileAttack());
                                 }
-                                else if(currentHealth < 50){
-                                    StartCoroutine(HealthRegen());
-                                }
+                                break;
+                            case 2:
+                                if(canCrSingleProjectile){
                                 
-                            }
-                            break;
-                        default:
-                            break;
-                    }
+                                    StartCoroutine(SingleProjectileAttack());
+                                }
+                                break;
+                            case 3:
+                                if(canCrStunPLayer){
+                                    StartCoroutine(StunPlayer());
+                                }
+                                break;
+                            case 4:
+                                if(canCrSpawnMinions){
+                                    StartCoroutine(SpawnMinions());
+                                }
+                                break;
+                            case 5:
+                                if(canCrHealthRegen){
+                                    if(currentHealth < 20)
+                                    {
+                                        SpawnClone();
+                                        StartCoroutine(HealthRegen());
+                                    }
+                                    else if(currentHealth < 50){
+                                        StartCoroutine(HealthRegen());
+                                    }
+                                }
+
+                                break;
+                        }
                 }
             }
             
@@ -162,10 +164,8 @@ namespace Sidar
         }
 
         private void ChasePlayer(){
-             if(!isAttacking){
                 agent.SetDestination(player.transform.position);
                 animator.SetBool("isChasing", true);
-             }
         }
 
 
@@ -178,6 +178,7 @@ namespace Sidar
 
         private IEnumerator MutliProjectileAttack()
         {
+            isMultiProjectile = true;
             int count = 0;
             LookAtPlayer();
             agent.SetDestination(transform.position);
@@ -188,7 +189,15 @@ namespace Sidar
             animator.SetBool("isMutliProjectileAttack", false);
             while (true)
             {
-                transform.LookAt(player.transform);
+                if(distance>attackRange)
+                    ChasePlayer();
+                else
+                {
+                    transform.LookAt(player.transform);
+                    agent.SetDestination(transform.position);
+                    animator.SetBool("isChasing", false);
+                }
+                    
                 if (canMultiProjectile)
                 {
                     canMultiProjectile = false;
@@ -239,6 +248,44 @@ namespace Sidar
                 projectile.GetComponent<NecroProjectile>().Shoot(direction);
             }
         }
+
+        /*
+        private IEnumerator areaAttack()
+        {
+            isMultiProjectile = true;
+            int count = 0;
+            canCrAreaAttack = false;
+            isAttacking = true;
+            animator.SetBool("isMutliProjectileAttack",true);
+            yield return new WaitForSeconds(projectileAnimDelay);
+            animator.SetBool("isMutliProjectileAttack", false);
+            while (true)
+            {
+                if(distance>attackRange)
+                    ChasePlayer();
+                else
+                {
+                    transform.LookAt(player.transform);
+                    agent.SetDestination(transform.position);
+                    animator.SetBool("isChasing", false);
+                }
+                    
+                if (canMultiProjectile)
+                {
+                    canMultiProjectile = false;
+                    CircleProjectile();
+                    Invoke(nameof(ResetMultiProjectile), multiProjectileTimeBetween);
+                    count++;
+                }
+                if(count == 10)
+                    break;
+                yield return null;
+            }
+            isAttacking = false;
+            yield return new WaitForSeconds(projectileCooldown);
+            canCrMultiProjectile = true;
+        }
+        */
 
 
         private IEnumerator SpawnMinions(){
