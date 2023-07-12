@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
-using CihanAkpýnar;
+using CihanAkpÄ±nar;
 
 public class DialogSystem: MonoBehaviour
 {
