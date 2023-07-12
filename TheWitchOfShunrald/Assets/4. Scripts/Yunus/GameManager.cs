@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
 
     public void GameStart()
     {
+        Time.timeScale = 1;
         UIManager.instance.GamePanel();
         gameState = State.Playing;
     }

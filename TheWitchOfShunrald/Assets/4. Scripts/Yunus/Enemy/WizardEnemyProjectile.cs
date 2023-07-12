@@ -1,3 +1,4 @@
+using ali;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,10 @@ public class WizardEnemyProjectile : MonoBehaviour
         if(other.gameObject.CompareTag("Shunrald"))
         {
             playerStats.TakeDamage(damage);
+        }
+        if(other.gameObject.layer == 13)
+        {
+            other.GetComponent<MoveableObjectScript>().MoveableObjectTakeDamage(damage * 3);
         }
     }
 }

@@ -333,7 +333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4113376185143854
 Transform:
   m_ObjectHideFlags: 0
@@ -345,8 +345,7 @@ Transform:
   m_LocalPosition: {x: 0.9774399, y: -0.068750516, z: -1.0184432}
   m_LocalScale: {x: 100, y: 100.000046, z: 100.00007}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5269614535370309728}
+  m_Children: []
   m_Father: {fileID: 4994864222783348}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -2188,7 +2187,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4469941914965320
 Transform:
   m_ObjectHideFlags: 0
@@ -2200,7 +2199,8 @@ Transform:
   m_LocalPosition: {x: -0.02256012, y: 0.031254053, z: -0.018443234}
   m_LocalScale: {x: 100.000046, y: 100, z: 100.000015}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5269614535370309728}
   m_Father: {fileID: 4994864222783348}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -180, y: -90, z: 89.99999}
@@ -2463,7 +2463,7 @@ MonoBehaviour:
   damage: 10
   groundLayer:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 9216
   electric: {fileID: 6395818037354966817}
   explosion: {fileID: 6413332830307306735}
   staff: {fileID: 5269614535370309728}
@@ -2473,6 +2473,7 @@ MonoBehaviour:
     type: 3}
   healthPotProbability: 10
   manaPotProbability: 10
+  spawnerOfThisEnemy: {fileID: 0}
 --- !u!1 &1956949540428108
 GameObject:
   m_ObjectHideFlags: 0
@@ -2679,7 +2680,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 2.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2424020186747501869
 MonoBehaviour:
@@ -2716,12 +2717,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4466183018549476013}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.151, z: 0}
+  m_LocalRotation: {x: 0.0000001490116, y: -0.7071068, z: 0.0000001490116, w: 0.7071068}
+  m_LocalPosition: {x: 0.010000258, y: -1.1520007, z: 0.010000076}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4113376185143854}
+  m_Father: {fileID: 4469941914965320}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &529296204681001863

@@ -18,9 +18,10 @@ public class UpgradeSystem : MonoBehaviour
     private void OnEnable()
     {
         playerStats = GameManager.instance.Player.GetComponent<PlayerStats>();
-        healthBar.fillAmount = playerStats.Health / playerStats.HealthMaxValue;
-        damageBar.fillAmount = playerStats.Damage / playerStats.DamageMaxValue;
-        manaBar.fillAmount = playerStats.Mana / playerStats.ManaMaxValue;
+        healthBar.fillAmount = PlayerPrefs.GetFloat("health") / playerStats.HealthMaxValue;
+        damageBar.fillAmount = PlayerPrefs.GetFloat("damage") / playerStats.DamageMaxValue;
+        manaBar.fillAmount = PlayerPrefs.GetFloat("mana") / playerStats.ManaMaxValue;
+
         balanceText.text = PlayerPrefs.GetInt("balance").ToString();
     }
     public void UpgradeContinueClicked()
