@@ -59,9 +59,9 @@ namespace Sidar
         private float explosionAttackDelay = 4f;
         private bool isMultiProjectile;
 
-        [SerializeField] private float damage;
         [SerializeField] private float playerDamage;
         [SerializeField] private float objectDamage;
+        [SerializeField] private float speed;
 
         // Start is called before the first frame update
         private void Start()
@@ -133,6 +133,7 @@ namespace Sidar
                                 break;
                             case 3:
                                 if(canCrStunPLayer){
+                                    break;
                                     StartCoroutine(StunPlayer());
                                 }
                                 break;
@@ -242,9 +243,11 @@ namespace Sidar
         {
             GameObject projectile = Instantiate(projectilePrefab, projectilePointParent.GetChild(4).position, Quaternion.identity);
             NecroProjectile projectileComponent = projectile.GetComponent<NecroProjectile>();
-            projectileComponent.SetIsSingle(true);
             projectileComponent.PlayerDamage = playerDamage;
             projectileComponent.ObjectDamage = objectDamage;
+            projectileComponent.Speed = speed;
+            projectileComponent.SetIsSingle(true);
+            
         }
 
         private void CircleProjectile()
@@ -255,9 +258,12 @@ namespace Sidar
                 Vector3 direction = (pj.position - transform.position).normalized;
                 GameObject projectile = Instantiate(projectilePrefab, pj.position, Quaternion.identity);
                 NecroProjectile projectileComponent = projectile.GetComponent<NecroProjectile>();
-                projectileComponent.Shoot(direction);
+                speed = 10f;
                 projectileComponent.PlayerDamage = playerDamage;
                 projectileComponent.ObjectDamage = objectDamage;
+                projectileComponent.Speed = speed;
+                projectileComponent.Shoot(direction);
+                
             }
         }
 
@@ -406,17 +412,6 @@ namespace Sidar
             // Adjust the regeneration speed based on the current health percentage
             var healthPercentage = currentHealth / maxHealth;
             regenSpeed = Mathf.Lerp(regenSpeedMin, regenSpeedMax, healthPercentage);
-        }
-
-        public void TakeDamage(int damage)
-        {
-            isRegenInterrupt = true;
-            currentHealth -= damage;
-
-            if (currentHealth <= 0)
-            {
-                Die();
-            }
         }
 
         private void Die()

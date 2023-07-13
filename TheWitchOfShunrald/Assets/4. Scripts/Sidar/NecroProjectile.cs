@@ -7,9 +7,9 @@ namespace Sidar
 {
     public class NecroProjectile : MonoBehaviour
     {
-        [SerializeField] private float speed = 3f;
-        [SerializeField] private float playerDamage;
-        [SerializeField] private float objectDamage;
+        private float speed;
+        private float playerDamage;
+        private float objectDamage;
         [SerializeField] private float splashRadius = 5f;
         [SerializeField] private GameObject splashEffect;
 		[SerializeField] private ParticleSystem blood, hit;
@@ -27,6 +27,12 @@ namespace Sidar
         {
             get => objectDamage;
             set => objectDamage = value;
+        }
+
+        public float Speed
+        {
+            get => speed;
+            set => speed = value;
         }
 
         public void Shoot(Vector3 direction)

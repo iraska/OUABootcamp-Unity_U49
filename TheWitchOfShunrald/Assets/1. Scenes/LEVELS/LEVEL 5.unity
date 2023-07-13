@@ -195,6 +195,21 @@ PrefabInstance:
       propertyPath: lengthInSec
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5033465211736786945, guid: 0bac83c0923de4d4b89947b124646b6a,
+        type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033465211736786945, guid: 0bac83c0923de4d4b89947b124646b6a,
+        type: 3}
+      propertyPath: objectDamage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033465211736786945, guid: 0bac83c0923de4d4b89947b124646b6a,
+        type: 3}
+      propertyPath: playerDamage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8315765431805393881, guid: 0bac83c0923de4d4b89947b124646b6a,
         type: 3}
       propertyPath: m_RootOrder
