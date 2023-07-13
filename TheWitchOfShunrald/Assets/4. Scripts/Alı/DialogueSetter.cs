@@ -14,6 +14,15 @@ public class DialogueSetter : MonoBehaviour
     [SerializeField] Sprite henricSprite;
     [SerializeField] Sprite necromancerSprite;
 
+    [Header("Level 4 Objects")]
+    [SerializeField] GameObject bridgeToBeDestroyed;
+    [SerializeField] GameObject doorToBeSlammed;
+    [SerializeField] GameObject fakeAngels;
+    [SerializeField] GameObject realAngels;
+    private Quaternion startRotation;
+    private Quaternion targetRotation;
+    private float timeElapsed = 0f;
+
     [SerializeField] private List<AudioClip> dialogues = new List<AudioClip>();
 
     public void StartLevel1Dialogue()
@@ -114,6 +123,40 @@ public class DialogueSetter : MonoBehaviour
         UIManager.instance.DialogPanel(level3Dialogue);
     }
 
+    public void StartLevel4Dialogue()
+    {
+        DialogSystem.DialogStruct[] level4Dialogue = new DialogSystem.DialogStruct[5];
+
+        //Dialogues
+        level4Dialogue[0].text = "Are you enjoying your stay my lady witch?";
+        level4Dialogue[0].name = "The Necromancer";
+        level4Dialogue[0].icon = necromancerSprite;
+        level4Dialogue[0].audioClip = dialogues[0];
+        level4Dialogue[0].dialogCaller = this.gameObject;
+
+        level4Dialogue[1].text = "Justify yourself, do you truly think you'll slay me? With your limited knowledge, you seek the power of undead labour. I have seen such greater than you, rise and fall, far beyond your imagination.";
+        level4Dialogue[1].name = "The Witch of Shunrald";
+        level4Dialogue[1].icon = witchSprite;
+        level4Dialogue[1].audioClip = dialogues[1];
+        
+        level4Dialogue[2].text = "Oh I know the limitations of my power and the extend of yours. You have quiet a name for yourself, a brand even. The Witch of Shunrald. You see, knowledge is on my side even tough you know so much more than me.";
+        level4Dialogue[2].name = "The Necromancer";
+        level4Dialogue[2].icon = necromancerSprite;
+        level4Dialogue[2].audioClip = dialogues[2];
+        
+        level4Dialogue[3].text = "How typical. A young boy thinks he knows everything there is to know about me after hearing a bunch of stories.";
+        level4Dialogue[3].name = "The Witch of Shunrald";
+        level4Dialogue[3].icon = witchSprite;
+        level4Dialogue[3].audioClip = dialogues[3];
+        
+        level4Dialogue[4].text = "Be at ease my lady witch. The time for realization is nigh. Rise my children. Rise!";
+        level4Dialogue[4].name = "The Necromancer";
+        level4Dialogue[4].icon = necromancerSprite;
+        level4Dialogue[4].audioClip = dialogues[4];
+
+        UIManager.instance.DialogPanel(level4Dialogue);
+    }
+
     public void TakeAction()
     {
         if (levelNo == 1)
@@ -135,13 +178,60 @@ public class DialogueSetter : MonoBehaviour
         }
         else if (levelNo == 4)
         {
-            //bridge falls and fight begins, necromancer leaves
+            //bridge falls and fight begins, necromancer leaves and the door gets closed
+            bridgeToBeDestroyed.SetActive(false);
+
+            //necromancer goes out from the level
+            gameObject.GetComponent<Animator>().SetBool("isWalking", true);
+            transform.LookAt(destination.position);
+            StartCoroutine(WalkTowardsDestination());
+
+            // angels start living
+            fakeAngels.SetActive(false);
+            realAngels.SetActive(true);
+
+            //door gets slammed
+            startRotation = Quaternion.Euler(-90f, 0f, -125f);
+            targetRotation = Quaternion.Euler(-90f, 0f, 0f);
+            StartCoroutine(RotateDoor());
+
+            //spawner gets activated
+            somethingToBeEnebled.SetActive(true);
         }
         else if (levelNo == 5)
         {
             //necromancer holds witch up, minions spawn and attack
         }
 
+    }
+
+    private IEnumerator RotateDoor()
+    {
+        yield return new WaitForSeconds(2f);
+        while (true)
+        {
+            // Increment the time elapsed
+            timeElapsed += Time.deltaTime;
+
+            // Calculate the interpolation factor based on the current time elapsed and rotation duration
+            float t = Mathf.Clamp01(timeElapsed / 0.95f);
+
+            // Use Lerp to interpolate between the start rotation and target rotation
+            Quaternion newRotation = Quaternion.Lerp(startRotation, targetRotation, t);
+
+            // Apply the new rotation to the object
+            doorToBeSlammed.transform.rotation = newRotation;
+
+            // Complete rotation
+            if (timeElapsed >= 2f)
+            {
+                Debug.Log(timeElapsed);
+                yield break;
+            }
+
+            // Wait for the next frame
+            yield return null;
+        }
     }
 
     private IEnumerator WalkTowardsDestination()
