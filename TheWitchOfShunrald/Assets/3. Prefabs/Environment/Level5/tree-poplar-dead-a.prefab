@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 231599325682483475}
   - component: {fileID: 3790084515910209206}
   - component: {fileID: 1404527701374122620}
-  - component: {fileID: 7283889177546531619}
   m_Layer: 0
   m_Name: tree-poplar-dead-a
   m_TagString: Untagged
@@ -84,17 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &7283889177546531619
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 611679142868818857}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 1.1844975
-  m_Height: 10.013642
-  m_Direction: 1
-  m_Center: {x: 0.042015497, y: 4.864387, z: -0.05313552}

@@ -235,7 +235,7 @@ MonoBehaviour:
   projectilePointParent: {fileID: 6634935431970558367}
   projectilePrefab: {fileID: 1494565964756349961, guid: e908bbf3301e4d54a8feb8261c7acf79,
     type: 3}
-  projectileAnimDelay: 4.9
+  projectileAnimDelay: 2
   multiProjectileTimeBetween: 1
   stunAnimDelay: 6
   spawnAnimDelay: 3.9
@@ -243,12 +243,14 @@ MonoBehaviour:
   projectileCooldown: 5
   stunCooldown: 30
   healthCooldown: 40
-  spawnCooldown: 20
+  spawnCooldown: 120
   maxHealth: 100
   rotationSpeed: 3
-  regenSpeedMin: 5
-  regenSpeedMax: 20
-  enemyClonePrefab: {fileID: 0}
+  regenSpeedMin: 1
+  regenSpeedMax: 5
+  healthRegenParticle: {fileID: 3938486998730418736}
+  enemyClonePrefab: {fileID: 7287705421693023648, guid: a90d12218910b1840974db508fad603b,
+    type: 3}
   numClones: 8
   radius: 5
   spawnDelay: 1
@@ -370,7 +372,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 772853710615141497}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.0000004768371}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 9.070601, y: 0.1419425, z: -16.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4285,11 +4287,87 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2865516447241596343, guid: e03ea8c70f500d944aad19080d7ee88e,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2865553701135928653, guid: e03ea8c70f500d944aad19080d7ee88e,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2865553701135928653, guid: e03ea8c70f500d944aad19080d7ee88e,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2865553701135928653, guid: e03ea8c70f500d944aad19080d7ee88e,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866175935400849189, guid: e03ea8c70f500d944aad19080d7ee88e,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866175935400849189, guid: e03ea8c70f500d944aad19080d7ee88e,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866175935400849189, guid: e03ea8c70f500d944aad19080d7ee88e,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866207667411775605, guid: e03ea8c70f500d944aad19080d7ee88e,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866462836601934331, guid: e03ea8c70f500d944aad19080d7ee88e,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866462836601934331, guid: e03ea8c70f500d944aad19080d7ee88e,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866462836601934331, guid: e03ea8c70f500d944aad19080d7ee88e,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866476205030731619, guid: e03ea8c70f500d944aad19080d7ee88e,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866476205030731619, guid: e03ea8c70f500d944aad19080d7ee88e,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866476205030731619, guid: e03ea8c70f500d944aad19080d7ee88e,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e03ea8c70f500d944aad19080d7ee88e, type: 3}
 --- !u!4 &3775374360467941826 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2668662176085855935, guid: e03ea8c70f500d944aad19080d7ee88e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1255427763671754621}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &3938486998730418736 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2865553701135928653, guid: e03ea8c70f500d944aad19080d7ee88e,
     type: 3}
   m_PrefabInstance: {fileID: 1255427763671754621}
   m_PrefabAsset: {fileID: 0}

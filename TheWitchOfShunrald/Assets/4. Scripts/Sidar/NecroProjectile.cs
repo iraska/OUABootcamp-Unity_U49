@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ali;
 
 namespace Sidar
 {
     public class NecroProjectile : MonoBehaviour
     {
         [SerializeField] private float speed = 3f;
-        [SerializeField] private int playerDamage = 10;
-        [SerializeField] private float objectDamage = 20f;
+        [SerializeField] private float playerDamage;
+        [SerializeField] private float objectDamage;
         [SerializeField] private float splashRadius = 5f;
         [SerializeField] private GameObject splashEffect;
 		[SerializeField] private ParticleSystem blood, hit;
@@ -16,6 +17,17 @@ namespace Sidar
         private Transform player;
         private bool isSingle = false;
         private float destroyTimer;
+
+        public float PlayerDamage
+        {
+            get => playerDamage;
+            set => playerDamage = value;
+        }
+        public float ObjectDamage
+        {
+            get => objectDamage;
+            set => objectDamage = value;
+        }
 
         public void Shoot(Vector3 direction)
         {
@@ -57,7 +69,7 @@ namespace Sidar
 
         private void OnCollisionEnter(Collision collision)
         {
-            if(collision.gameObject.tag != "Enemy"){
+            if(collision.gameObject.layer != 11){
                 destroyTimer = 0f;
 				blood.Stop();
                 Destroy(gameObject);
@@ -67,14 +79,14 @@ namespace Sidar
                 Collider[] colliders = Physics.OverlapSphere(collision.contacts[0].point, splashRadius);
                 foreach (Collider collider in colliders)
                 {
-                    if (collider.gameObject.tag == "Shunrald")
+                    if (collider.gameObject.CompareTag("Shunrald"))
                     {
                         player.GetComponent<PlayerStats>().TakeDamage(playerDamage);
                     }
-                    /*else if (collider.gameObject.tag == "CanBeMoved")
+                    else if (collider.gameObject.layer == 13)
                     {
                         collider.GetComponent<MoveableObjectScript>().MoveableObjectTakeDamage(objectDamage);
-                    }*/
+                    }
                 }
             }
         }

@@ -1,10 +1,11 @@
 using System.Collections;
+using Shunrald;
 using UnityEngine;
 using UnityEngine.AI;
 
 namespace Sidar
 {
-    public class NecroAI : MonoBehaviour
+    public class NecroAI : MonoBehaviour, Enemy
     {
         private GameObject player;
         private Animator animator;
@@ -58,6 +59,9 @@ namespace Sidar
         private float explosionAttackDelay = 4f;
         private bool isMultiProjectile;
 
+        [SerializeField] private float damage;
+        [SerializeField] private float playerDamage;
+        [SerializeField] private float objectDamage;
 
         // Start is called before the first frame update
         private void Start()
@@ -234,18 +238,26 @@ namespace Sidar
             canCrSingleProjectile = true;
         }
 
-        private void SingleProjectile(){
+        private void SingleProjectile()
+        {
             GameObject projectile = Instantiate(projectilePrefab, projectilePointParent.GetChild(4).position, Quaternion.identity);
-            projectile.GetComponent<NecroProjectile>().SetIsSingle(true);
+            NecroProjectile projectileComponent = projectile.GetComponent<NecroProjectile>();
+            projectileComponent.SetIsSingle(true);
+            projectileComponent.PlayerDamage = playerDamage;
+            projectileComponent.ObjectDamage = objectDamage;
         }
 
         private void CircleProjectile()
         {
+            
             foreach (var pj in projectilePoints)
             {
                 Vector3 direction = (pj.position - transform.position).normalized;
                 GameObject projectile = Instantiate(projectilePrefab, pj.position, Quaternion.identity);
-                projectile.GetComponent<NecroProjectile>().Shoot(direction);
+                NecroProjectile projectileComponent = projectile.GetComponent<NecroProjectile>();
+                projectileComponent.Shoot(direction);
+                projectileComponent.PlayerDamage = playerDamage;
+                projectileComponent.ObjectDamage = objectDamage;
             }
         }
 
@@ -330,9 +342,11 @@ namespace Sidar
             canCrStunPLayer = false;
             animator.SetBool("isStunPlayer",true);
             isAttacking = true;
+            StartCoroutine(player.GetComponent<ShunraldHangInTheAir>().HangInTheAir());
             yield return new WaitForSeconds(stunAnimDelay);
             isAttacking = false;
             animator.SetBool("isStunPlayer", false);
+            StartCoroutine(player.GetComponent<ShunraldHangInTheAir>().ReleasesTheWitch());
             yield return new WaitForSeconds(stunCooldown);
             canCrStunPLayer = true;
         }
@@ -408,6 +422,27 @@ namespace Sidar
         private void Die()
         {
             Debug.Log("Boss defeated!");
+        }
+
+        public void TakeDamage(Vector3 exploLocation, float damage)
+        {
+            isRegenInterrupt = true;
+            currentHealth -= damage;
+
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
+        }
+
+        public float Health()
+        {
+            return currentHealth;
+        }
+
+        public void SetEnemyStats(float health, float damage)
+        {
+            currentHealth = health;
         }
     }
 }
