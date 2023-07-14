@@ -1427,7 +1427,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.17210037
+  m_Radius: 0.48
   m_Height: 1.1989176
   m_Direction: 1
   m_Center: {x: -0.01097095, y: 0.59680665, z: 0.0024293065}
@@ -1457,7 +1457,7 @@ MonoBehaviour:
   bombPower: 3
   basicStopingDistance: 1.2
   basicEnemyMovementSpeed: 100
-  health: 30
+  health: 3
   targetLayer: 13
   healthPotProbability: 5
   manaPotProbability: 5

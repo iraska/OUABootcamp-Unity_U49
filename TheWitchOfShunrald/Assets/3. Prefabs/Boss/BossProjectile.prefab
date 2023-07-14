@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4721520182802442694}
   - component: {fileID: -2237137432514466575}
   - component: {fileID: -9001701483627691289}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: BossProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,9 +129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89c007d19d197d145b1643ffaf1008e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  playerDamage: 10
-  objectDamage: 20
   splashRadius: 5
   splashEffect: {fileID: 4553287630450876385, guid: 15483e51212e3d74886ea57291f4639a,
     type: 3}

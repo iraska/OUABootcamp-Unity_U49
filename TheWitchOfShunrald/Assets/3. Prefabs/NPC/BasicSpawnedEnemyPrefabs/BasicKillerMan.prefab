@@ -1083,7 +1083,7 @@ MonoBehaviour:
   bombPower: 0
   basicStopingDistance: 1.5
   basicEnemyMovementSpeed: 100
-  health: 50
+  health: 15
   targetLayer: 13
   healthPotProbability: 5
   manaPotProbability: 5

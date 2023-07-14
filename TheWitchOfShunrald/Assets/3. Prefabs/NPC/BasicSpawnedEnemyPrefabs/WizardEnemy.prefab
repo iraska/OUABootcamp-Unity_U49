@@ -2459,7 +2459,7 @@ MonoBehaviour:
   speed: 1.2
   attackSpeed: 3
   coolDown: 3
-  health: 80
+  health: 20
   damage: 10
   groundLayer:
     serializedVersion: 2

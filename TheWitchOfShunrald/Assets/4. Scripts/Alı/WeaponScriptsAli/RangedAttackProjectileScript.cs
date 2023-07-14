@@ -131,7 +131,7 @@ namespace ali
                 spawnedEffect.transform.position = transform.position + Vector3.up;
             }
 
-            Collider[] colliders = Physics.OverlapSphere(transform.position, 4f, canExplodeLayerMask);
+            Collider[] colliders = Physics.OverlapSphere(transform.position, 2f, canExplodeLayerMask);
 
             foreach (Collider collider in colliders)
             {
