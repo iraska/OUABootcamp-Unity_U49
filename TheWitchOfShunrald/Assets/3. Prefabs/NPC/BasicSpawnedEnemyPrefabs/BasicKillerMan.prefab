@@ -1068,7 +1068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f31fd071549a31e4a82e975b66a1ab74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookSpawnedEnemyRadius: 10
+  lookSpawnedEnemyRadius: 200
   spawnerOfThisEnemy: {fileID: 7312855380587195043, guid: 0d42bfe194fb13741847eef79ed6956a,
     type: 3}
   BasicAILayer:
@@ -1587,8 +1587,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 570db499a8465314b90b09ffc4f4dd2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  basicMoveableObjectDamage: 50
+  damage: 5
+  basicMoveableObjectDamage: 10
 --- !u!1 &5361355013855838087
 GameObject:
   m_ObjectHideFlags: 0

@@ -1152,6 +1152,11 @@ MonoBehaviour:
   doorToBeSlammed: {fileID: 0}
   fakeAngels: {fileID: 0}
   realAngels: {fileID: 0}
+  fakeEnemies: {fileID: 0}
+  realEnemies: {fileID: 0}
+  fakeNecromancer: {fileID: 0}
+  realNecromancer: {fileID: 0}
+  necroHealthUI: {fileID: 0}
   dialogues:
   - {fileID: 8300000, guid: 0f11fd8daa412924c9e420f9012c4f72, type: 3}
   - {fileID: 8300000, guid: 347b8debcded41c4eb539371a9224d0d, type: 3}
@@ -1636,17 +1641,17 @@ PrefabInstance:
     - target: {fileID: 5163697799463066674, guid: 9f5c1878c62555c429cab8d9c352b81a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.18
+      value: -20.65
       objectReference: {fileID: 0}
     - target: {fileID: 5163697799463066674, guid: 9f5c1878c62555c429cab8d9c352b81a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.9
+      value: -1.31
       objectReference: {fileID: 0}
     - target: {fileID: 5163697799463066674, guid: 9f5c1878c62555c429cab8d9c352b81a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14.83
+      value: 10.8
       objectReference: {fileID: 0}
     - target: {fileID: 5163697799463066674, guid: 9f5c1878c62555c429cab8d9c352b81a,
         type: 3}
@@ -1683,6 +1688,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5163697799463066675, guid: 9f5c1878c62555c429cab8d9c352b81a,
+        type: 3}
+      propertyPath: levelNumber
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5163697799463066675, guid: 9f5c1878c62555c429cab8d9c352b81a,
+        type: 3}
+      propertyPath: firstSpawnerToCheck
+      value: 
+      objectReference: {fileID: 1295942179}
     - target: {fileID: 5163697799463066684, guid: 9f5c1878c62555c429cab8d9c352b81a,
         type: 3}
       propertyPath: m_Name

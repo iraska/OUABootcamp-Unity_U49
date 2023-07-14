@@ -23,6 +23,14 @@ public class DialogueSetter : MonoBehaviour
     private Quaternion targetRotation;
     private float timeElapsed = 0f;
 
+    [Header("Level 5 Objects")]
+    [SerializeField] GameObject fakeEnemies;
+    [SerializeField] GameObject realEnemies;
+    [SerializeField] GameObject fakeNecromancer;
+    [SerializeField] GameObject realNecromancer;
+    [SerializeField] GameObject necroHealthUI;
+
+
     [SerializeField] private List<AudioClip> dialogues = new List<AudioClip>();
 
     public void StartLevel1Dialogue()
@@ -157,6 +165,111 @@ public class DialogueSetter : MonoBehaviour
         UIManager.instance.DialogPanel(level4Dialogue);
     }
 
+    public void StartLevel5Dialogue()
+    {
+        DialogSystem.DialogStruct[] level5Dialogue = new DialogSystem.DialogStruct[6];
+
+        //Dialogues
+        level5Dialogue[0].text = "Many souls you have poured upon me Necromancer. The statues were not a boy’s toy. Unveil your name? Who tought you such spells that should have been forgotten many ages ago.";
+        level5Dialogue[0].name = "The Witch of Shunrald";
+        level5Dialogue[0].icon = witchSprite;
+        level5Dialogue[0].audioClip = dialogues[0];
+        level5Dialogue[0].dialogCaller = this.gameObject;
+        
+        level5Dialogue[1].text = "I am flattered my lady witch, but I won’t speak my name if it is all the same for you. Names are known to have powers. As for my arcane source of instructions, let’s say I have met with a ghost.";
+        level5Dialogue[1].name = "The Necromancer";
+        level5Dialogue[1].icon = necromancerSprite;
+        level5Dialogue[1].audioClip = dialogues[1];
+        
+        level5Dialogue[2].text = "That would explain things. I cannot let you live with that kind of knowledge.";
+        level5Dialogue[2].name = "The Witch of Shunrald";
+        level5Dialogue[2].icon = witchSprite;
+        level5Dialogue[2].audioClip = dialogues[2];
+        
+        level5Dialogue[3].text = "Obviously. I too cannot let you live. You are to be my greatest warrior. It is time for one of us to succeed.";
+        level5Dialogue[3].name = "The Necromancer";
+        level5Dialogue[3].icon = necromancerSprite;
+        level5Dialogue[3].audioClip = dialogues[3];
+        
+        level5Dialogue[4].text = "You have already tried. You cannot kill me.";
+        level5Dialogue[4].name = "The Witch of Shunrald";
+        level5Dialogue[4].icon = witchSprite;
+        level5Dialogue[4].audioClip = dialogues[4];
+
+        level5Dialogue[5].text = "Well, you are already dead my lady witch. At least your hands are.";
+        level5Dialogue[5].name = "The Necromancer";
+        level5Dialogue[5].icon = necromancerSprite;
+        level5Dialogue[5].audioClip = dialogues[5];
+
+
+        UIManager.instance.DialogPanel(level5Dialogue);
+    }
+
+    public void StartLevel6Dialogue()
+    {
+        DialogSystem.DialogStruct[] level6Dialogue = new DialogSystem.DialogStruct[11];
+
+        //Dialogues
+        level6Dialogue[0].text = "That was clever of you. But you were not ready. Immpatience. The curse of young.";
+        level6Dialogue[0].name = "The Witch of Shunrald";
+        level6Dialogue[0].icon = witchSprite;
+        level6Dialogue[0].audioClip = dialogues[0];
+        level6Dialogue[0].dialogCaller = this.gameObject;
+        
+        level6Dialogue[1].text = "Henric! Help me!";
+        level6Dialogue[1].name = "The Necromancer";
+        level6Dialogue[1].icon = necromancerSprite;
+        level6Dialogue[1].audioClip = dialogues[1];
+        
+        level6Dialogue[2].text = "Henric? You mean Henric the Inquisitor?";
+        level6Dialogue[2].name = "The Witch of Shunrald";
+        level6Dialogue[2].icon = witchSprite;
+        level6Dialogue[2].audioClip = dialogues[2];
+        
+        level6Dialogue[3].text = "It is Henric the Ghost now.";
+        level6Dialogue[3].name = "Henric";
+        level6Dialogue[3].icon = henricSprite;
+        level6Dialogue[3].audioClip = dialogues[3];
+        
+        level6Dialogue[4].text = "Bloody Moons! You are still chasing me!";
+        level6Dialogue[4].name = "The Witch of Shunrald";
+        level6Dialogue[4].icon = witchSprite;
+        level6Dialogue[4].audioClip = dialogues[4];
+        
+        level6Dialogue[5].text = "I do, and I am not alone.";
+        level6Dialogue[5].name = "Henric";
+        level6Dialogue[5].icon = henricSprite;
+        level6Dialogue[5].audioClip = dialogues[5];
+        
+        level6Dialogue[6].text = "You have killed innocent people to find me. You have damned their souls.";
+        level6Dialogue[6].name = "The Witch of Shunrald";
+        level6Dialogue[6].icon = witchSprite;
+        level6Dialogue[6].audioClip = dialogues[6];
+        
+        level6Dialogue[7].text = "They have died for a greater good.";
+        level6Dialogue[7].name = "Henric";
+        level6Dialogue[7].icon = henricSprite;
+        level6Dialogue[7].audioClip = dialogues[7];
+        
+        level6Dialogue[8].text = "Damn you and your greater good. The soil belove is my bed and the night above is my cushion. I am the child of this earth, and this country is my creation. You don’t belong here Henric the bloody inquisitor. I banish you from this world. Go back to your damnation.";
+        level6Dialogue[8].name = "The Witch of Shunrald";
+        level6Dialogue[8].icon = witchSprite;
+        level6Dialogue[8].audioClip = dialogues[8];
+        
+        level6Dialogue[9].text = "I will abide by your craft. Yet I am not alone, witch. Expect trouble!";
+        level6Dialogue[9].name = "Henric";
+        level6Dialogue[9].icon = henricSprite;
+        level6Dialogue[9].audioClip = dialogues[9];
+        
+        level6Dialogue[10].text = "Bloody fool, can’t even manage to die properly. As if a witch would be troubled by a dense ghost.";
+        level6Dialogue[10].name = "The Witch of Shunrald";
+        level6Dialogue[10].icon = witchSprite;
+        level6Dialogue[10].audioClip = dialogues[10];
+
+
+        UIManager.instance.DialogPanel(level6Dialogue);
+    }
+
     public void TakeAction()
     {
         if (levelNo == 1)
@@ -200,9 +313,30 @@ public class DialogueSetter : MonoBehaviour
         }
         else if (levelNo == 5)
         {
-            //necromancer holds witch up, minions spawn and attack
+            fakeEnemies.SetActive(false);
+            realEnemies.SetActive(true);
+
+            realNecromancer.SetActive(true);
+            necroHealthUI.SetActive(true);
+            fakeNecromancer.SetActive(false);
         }
 
+        else if (levelNo == 6)
+        {
+            //Win
+        }
+
+    }
+
+    public void LetFakeEnemiesWalk() 
+    {
+        StartCoroutine(WalkTheFakeEnemies());
+    }
+
+    private IEnumerator WalkTheFakeEnemies()
+    {
+        yield return new WaitForSeconds(2f);
+        fakeEnemies.SetActive(true);
     }
 
     private IEnumerator RotateDoor()
