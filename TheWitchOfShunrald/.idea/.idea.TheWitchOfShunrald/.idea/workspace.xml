@@ -5,16 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f9f027d-656a-44fe-9e27-4ace5e0b49b5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Audio/Sfx/NecromancerSxf/circleattack.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Audio/Sfx/NecromancerSxf/circleattack.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Audio/Sfx/NecromancerSxf/follow.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Audio/Sfx/NecromancerSxf/follow.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Audio/Sfx/NecromancerSxf/necoHalfHealth.flac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Audio/Sfx/NecromancerSxf/necoHalfHealth.flac.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Audio/Sfx/NecromancerSxf/necroCackle.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Audio/Sfx/NecromancerSxf/necroCackle.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Audio/Sfx/NecromancerSxf/necroDie.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Audio/Sfx/NecromancerSxf/necroDie.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Audio/Sfx/NecromancerSxf/necroRej.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Audio/Sfx/NecromancerSxf/necroRej.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Audio/Sfx/NecromancerSxf/rejenerasyonBitis.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Audio/Sfx/NecromancerSxf/rejenerasyonBitis.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Audio/Sfx/NecromancerSxf/takeDamageNecromancer1.0.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Audio/Sfx/NecromancerSxf/takeDamageNecromancer1.0.mp3.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/4. Scripts/Sidar/NecroUIHealthBarManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/4. Scripts/Sidar/NecroUIHealthBarManager.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TheWitchOfShunrald/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TheWitchOfShunrald/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1. Scenes/LEVELS/ENTRY SCENE.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. Scenes/LEVELS/ENTRY SCENE.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/1. Scenes/LEVELS/LEVEL 5.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. Scenes/LEVELS/LEVEL 5.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1. Scenes/Trial Scenes/SIDAR Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. Scenes/Trial Scenes/SIDAR Scene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/3. Prefabs/Boss/Necromancer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Boss/Necromancer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. Prefabs/Environment/Level5/New Terrain 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Environment/Level5/New Terrain 2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. Prefabs/Environment/Level5/TerrainData_aefd73f1-bc2f-46f3-919a-75af58aaa632.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Environment/Level5/TerrainData_aefd73f1-bc2f-46f3-919a-75af58aaa632.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. Prefabs/Environment/Level5/tree-poplar-dead-a.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Environment/Level5/tree-poplar-dead-a.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/4. Scripts/Sidar/NecroAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Scripts/Sidar/NecroAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Scripts/Sidar/NecroProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Scripts/Sidar/NecroProjectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-HighFidelity.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/URP-HighFidelity.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +40,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/4. Scripts/Irem/Shunrald/ShunraldParticleController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/4. Scripts/Irem/Shunrald/ShunraldParticleController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/4. Scripts/Sidar/NecroUIHealthBarManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -49,15 +67,19 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="Toolset" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2RTwwBcKYAuABNXCqNueqaqP7fn" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -120,6 +142,8 @@
       <updated>1689004176047</updated>
       <workItem from="1689004178263" duration="869000" />
       <workItem from="1689176608982" duration="8057000" />
+      <workItem from="1689251505670" duration="8090000" />
+      <workItem from="1689270786881" duration="10202000" />
     </task>
     <servers />
   </component>
@@ -140,6 +164,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
 </project>

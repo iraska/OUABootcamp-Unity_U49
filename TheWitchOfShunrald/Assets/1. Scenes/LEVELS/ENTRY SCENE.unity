@@ -464,9 +464,29 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: ddf0169a406841b4a9de46a4a0e7bf08, type: 3}
     - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
         type: 3}
+      propertyPath: necroWhisperAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 643e2a7a435397545b0d694a9bca3fff, type: 3}
+    - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
+        type: 3}
       propertyPath: rangedEnemyDieAudio
       value: 
       objectReference: {fileID: 8300000, guid: 6cec3052b7b94aa4a84019bc1402e784, type: 3}
+    - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
+        type: 3}
+      propertyPath: necroFollowBombAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: e3f95f33fbed6bf4fad5b9663b28a26c, type: 3}
+    - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
+        type: 3}
+      propertyPath: necroHalfHealthAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 3fc900af63cfe114c859ca9c37b3092e, type: 3}
+    - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
+        type: 3}
+      propertyPath: necroStanCackleAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 3d5cdccd5cdafa34fb17128b77a2f769, type: 3}
     - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
         type: 3}
       propertyPath: weepingAngleDieAudio
@@ -489,6 +509,11 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 8074796a7716e25498ef4fa74b5308ff, type: 3}
     - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
         type: 3}
+      propertyPath: necroHealthRejStartAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: d16e2170a3f04564480d31d0fa02d80b, type: 3}
+    - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
+        type: 3}
       propertyPath: basicSpawnedEnemyDieAudio
       value: 
       objectReference: {fileID: 8300000, guid: f4b17a746bff5a24a9d8f2a71b7c4e65, type: 3}
@@ -497,6 +522,16 @@ PrefabInstance:
       propertyPath: basicSpawnedEnemyHitAudio
       value: 
       objectReference: {fileID: 8300000, guid: 99d7ac9f2b1e5fe47bb99e606030862b, type: 3}
+    - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
+        type: 3}
+      propertyPath: necroHealthRejDamageAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 6e4309370e0bedc44accddfdcc7ac41b, type: 3}
+    - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
+        type: 3}
+      propertyPath: necroHealthRejFinishAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: e89bd040ac4eeb94698bfd1f653d091d, type: 3}
     - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
         type: 3}
       propertyPath: rangedEnemyRangeAttackAudio

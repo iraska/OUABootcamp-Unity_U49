@@ -254,9 +254,9 @@ MonoBehaviour:
   numClones: 8
   radius: 5
   spawnDelay: 1
-  damage: 0
   playerDamage: 0
   objectDamage: 0
+  speed: 0
 --- !u!1 &625816260573410990
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,8 +377,8 @@ Transform:
   m_GameObject: {fileID: 772853710615141497}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 9.070601, y: 0.1419425, z: -16.68}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6953250508061161471}
   m_Father: {fileID: 0}

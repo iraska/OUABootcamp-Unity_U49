@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
+using CihanAkpınar;
 using Shunrald;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 namespace Sidar
 {
@@ -9,7 +12,6 @@ namespace Sidar
     {
         private GameObject player;
         private Animator animator;
-        private int[] repeat;
         [SerializeField] private float attackRange = 10f;
         [SerializeField] private int random;
         [SerializeField] private float distance;
@@ -62,15 +64,20 @@ namespace Sidar
         [SerializeField] private float playerDamage;
         [SerializeField] private float objectDamage;
         [SerializeField] private float speed;
+        
+        
+        private NecroUIHealthBarManager necroHealthBar;
 
-        // Start is called before the first frame update
+
+ 
+
         private void Start()
         {
+            
             currentHealth = maxHealth;
             player = GameObject.FindWithTag("Shunrald");
             agent = GetComponent<NavMeshAgent>();
             animator = GetComponent<Animator>();
-            repeat = new int[7];
             projectilePoints = new Transform[projectilePointParent.childCount];
             for (int i = 0; i < projectilePointParent.childCount; i++)
             {
@@ -78,12 +85,15 @@ namespace Sidar
             }
             angleIncrement = 360f / numClones;
             spawnTimer = spawnDelay;
+            necroHealthBar = FindObjectOfType<NecroUIHealthBarManager>();
+            necroHealthBar.SetBossMaxHeatlh(maxHealth);
+            necroHealthBar.SetUIHealthBartToActive();
+            
         }
 
-        // Update is called once per frame
         private void Update()
         {
-           
+
             distance = Vector3.Distance(transform.position, player.transform.position);
                 if(!isAttacking){
                     if(distance > attackRange){
@@ -174,12 +184,12 @@ namespace Sidar
         }
 
 
-        private IEnumerator StayIdle(){
+        /*private IEnumerator StayIdle(){
             canCrIdle = false;
             agent.SetDestination(transform.position);
             animator.SetBool("isIdle", true);
             yield return new WaitForSeconds(3f);
-        }
+        }*/
 
         private IEnumerator MutliProjectileAttack()
         {
@@ -206,6 +216,7 @@ namespace Sidar
                 if (canMultiProjectile)
                 {
                     canMultiProjectile = false;
+                    AudioManager.Instance.PlaySfx(AudioManager.Instance.necroWhisperAudio, transform.position);
                     CircleProjectile();
                     Invoke(nameof(ResetMultiProjectile), multiProjectileTimeBetween);
                     count++;
@@ -231,6 +242,7 @@ namespace Sidar
             canCrSingleProjectile = false;
             isAttacking = true;
             animator.SetBool("isSingleProjectileAttack",true);
+            AudioManager.Instance.PlaySfx(AudioManager.Instance.necroWhisperAudio, transform.position);
             yield return new WaitForSeconds(2f);
             isAttacking = false;
             animator.SetBool("isSingleProjectileAttack", false);
@@ -348,6 +360,7 @@ namespace Sidar
             canCrStunPLayer = false;
             animator.SetBool("isStunPlayer",true);
             isAttacking = true;
+            AudioManager.Instance.PlaySfx(AudioManager.Instance.necroStanCackleAudio, transform.position);
             StartCoroutine(player.GetComponent<ShunraldHangInTheAir>().HangInTheAir());
             yield return new WaitForSeconds(stunAnimDelay);
             isAttacking = false;
@@ -365,6 +378,7 @@ namespace Sidar
             canCrHealthRegen = false;
             animator.SetBool("isHealthRegen",true);
             isAttacking = true;
+            AudioManager.Instance.PlaySfx(AudioManager.Instance.necroHealthRejStartAudio, transform.position);
             if (!healthRegenParticle.isPlaying)
             {
                 healthRegenParticle.Play();
@@ -379,6 +393,10 @@ namespace Sidar
                         healthRegenParticle.Stop();
                     }
                     animator.SetBool("isHealthRegen", false);
+                    AudioManager.Instance.PlaySfx(
+                        isRegenDone
+                            ? AudioManager.Instance.necroHealthRejFinishAudio
+                            : AudioManager.Instance.necroHealthRejDamageAudio, transform.position);
                     isRegenDone = false;
                     isRegenInterrupt = false;
                     break;
@@ -423,7 +441,8 @@ namespace Sidar
         {
             isRegenInterrupt = true;
             currentHealth -= damage;
-
+            
+            necroHealthBar.SetBossCurrentHealth(currentHealth);
             if (currentHealth <= 0)
             {
                 Die();
