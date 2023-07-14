@@ -76,6 +76,7 @@ public class LevelManager : MonoBehaviour
     public void NewGame()
     {
         PlayerPrefs.SetInt("lastGame", 1);
+        PlayerPrefs.SetInt("balance", 0);
         StartCoroutine(LoadingGame(2));
     }
     public void ContinueGame()

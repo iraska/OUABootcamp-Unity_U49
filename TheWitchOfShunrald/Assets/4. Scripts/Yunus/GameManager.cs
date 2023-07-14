@@ -5,7 +5,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
-using static UnityEngine.ParticleSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -100,9 +99,12 @@ public class GameManager : MonoBehaviour
     }
     public void Upgrade(int balance)
     {
-        GameState = State.Upgrade;
-        PlayerPrefs.SetInt("balance", PlayerPrefs.GetInt("balance") + balance);
-        UIManager.instance.UpgradePanel();
+        if(GameState == State.Playing)
+        {
+            GameState = State.Upgrade;
+            PlayerPrefs.SetInt("balance", PlayerPrefs.GetInt("balance") + balance);
+            UIManager.instance.UpgradePanel();
+        }
     }
     public void Paused()
     {

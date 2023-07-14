@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
 
-    [SerializeField] private GameObject gamePanel, pausePanel, upgradePanel, dialogPanel, winPanel, losePanel, infoPanel, arenaWinPanel;
+    [SerializeField] private GameObject gamePanel, pausePanel, upgradePanel, upgradeParticlePanel, dialogPanel, winPanel, losePanel, infoPanel, arenaWinPanel;
     [SerializeField] private GameObject[] weaponImages;
     [SerializeField] private Image healthBar, healthBar1, manaBar, easyButtonImage, normalButtonImage, hardButtonImage, lowButtonImage, highButtonImage, mediumButtonImage, weaponUICircle, weaponUILine;
     [SerializeField] private Sprite selectedSprite, unselectedSprite;
@@ -82,12 +82,14 @@ public class UIManager : MonoBehaviour
     }
     public void GamePanel()
     {
+        upgradeParticlePanel.SetActive(false);
         currentPanel.SetActive(false);
         gamePanel.SetActive(true);
         currentPanel = gamePanel;
     }
     public void UpgradePanel()
     {
+        upgradeParticlePanel.SetActive(true);
         currentPanel.SetActive(false);
         upgradePanel.SetActive(true);
         currentPanel = upgradePanel;
