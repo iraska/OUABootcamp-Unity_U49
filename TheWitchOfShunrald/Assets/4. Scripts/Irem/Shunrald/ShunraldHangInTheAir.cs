@@ -59,13 +59,5 @@ namespace Shunrald
         {
             gObject.transform.DOMoveY(endVal, duration).SetEase(Ease.Linear);
         }
-
-
-        private void Update()
-        {
-            if(Input.GetKeyDown(KeyCode.N)) { StartCoroutine(HangInTheAir()); }
-            if (Input.GetKeyDown(KeyCode.M)) { StartCoroutine(ReleasesTheWitch()); }
-
-        }
     }
 }
