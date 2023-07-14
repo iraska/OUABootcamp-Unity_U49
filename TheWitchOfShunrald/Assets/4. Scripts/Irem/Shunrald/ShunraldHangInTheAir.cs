@@ -27,7 +27,9 @@ namespace Shunrald
             GameManager.instance.Player.GetComponent<ShunraldController>().Particle.TriggerCircleParticle();
             yield return new WaitForSeconds(.1f);
 
-            rb.constraints = RigidbodyConstraints.FreezePositionY;
+            GameManager.instance.GameState = GameManager.State.Hang;
+
+            rb.isKinematic = true;
 
             DGMove(rightHandPivot, 4f, .1f);
             DGMove(leftHandPivot, 4f, .1f);
@@ -44,7 +46,9 @@ namespace Shunrald
             GameManager.instance.Player.GetComponent<ShunraldController>().Particle.StopAllParticles();
             yield return new WaitForSeconds(.5f);
 
-            rb.constraints = RigidbodyConstraints.None;
+            GameManager.instance.GameState = GameManager.State.Playing;
+
+            rb.isKinematic = false;
 
             DGMove(rightHandPivot, initialRightHandYPos, .1f);
             DGMove(leftHandPivot, initialLeftHandYPos, .1f);
@@ -54,6 +58,14 @@ namespace Shunrald
         private void DGMove(GameObject gObject, float endVal, float duration)
         {
             gObject.transform.DOMoveY(endVal, duration).SetEase(Ease.Linear);
+        }
+
+
+        private void Update()
+        {
+            if(Input.GetKeyDown(KeyCode.N)) { StartCoroutine(HangInTheAir()); }
+            if (Input.GetKeyDown(KeyCode.M)) { StartCoroutine(ReleasesTheWitch()); }
+
         }
     }
 }

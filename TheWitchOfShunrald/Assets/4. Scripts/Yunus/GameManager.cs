@@ -18,7 +18,8 @@ public class GameManager : MonoBehaviour
         Dialog,
         Lose,
         Win,
-        Tutorial
+        Tutorial,
+        Hang
     }
     private State gameState;
     public State GameState 
