@@ -2702,6 +2702,7 @@ GameObject:
   - component: {fileID: 1380709509521597422}
   - component: {fileID: 7286836015432076170}
   - component: {fileID: 6049290727873206134}
+  - component: {fileID: 2231322284516281233}
   m_Layer: 14
   m_Name: Player
   m_TagString: Shunrald
@@ -3046,6 +3047,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portalParticle: {fileID: 6016458180558957078}
   circleParticle: {fileID: 699826063186826768}
+--- !u!81 &2231322284516281233
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7383257406533379693}
+  m_Enabled: 1
 --- !u!1 &7467050952456608427
 GameObject:
   m_ObjectHideFlags: 0

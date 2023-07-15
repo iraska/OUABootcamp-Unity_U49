@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: f8261eb5a9efedf4ea1f6c58b873b6b3, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.109590344, g: 0.03937988, b: 0.09961596, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 860d3a68f9a957e4fafa8331ac0b5656,
+    type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -875,13 +876,13 @@ MonoBehaviour:
   realNecromancer: {fileID: 0}
   necroHealthUI: {fileID: 0}
   dialogues:
-  - {fileID: 8300000, guid: 0f11fd8daa412924c9e420f9012c4f72, type: 3}
+  - {fileID: 8300000, guid: 9d91ecfd31c64444697fff31c22eb985, type: 3}
   - {fileID: 8300000, guid: 347b8debcded41c4eb539371a9224d0d, type: 3}
-  - {fileID: 8300000, guid: 15249753ebd7fb74f8afd874edf89bbc, type: 3}
+  - {fileID: 8300000, guid: 72b9cc815188a104fa4a6c72dbba649c, type: 3}
   - {fileID: 8300000, guid: 2b924c1fd20ab3145b7be16c6ed828e1, type: 3}
-  - {fileID: 8300000, guid: 973c7c460468e7e4f8a94f17fa8b7e4a, type: 3}
+  - {fileID: 8300000, guid: 272bde9f7110bd94abc3f6121911aae4, type: 3}
   - {fileID: 8300000, guid: 2b78e4280e52922478ff8bf9d9f5e614, type: 3}
-  - {fileID: 8300000, guid: 6f62e302f12b79246850ab0bb9e29732, type: 3}
+  - {fileID: 8300000, guid: 22ef6aea369cb7f4991857082b171773, type: 3}
   - {fileID: 8300000, guid: 4e537cd7bb8667f46975ffaeaacbd8da, type: 3}
   - {fileID: 8300000, guid: 43151cd9fb92090408e8f381c2d831c4, type: 3}
 --- !u!95 &419662129
@@ -2532,7 +2533,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967039
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -2753,7 +2754,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -3235,7 +3236,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967039
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -13719,7 +13720,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -15805,6 +15806,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4027376600884704207, guid: 06b9d15b7d33e854cb23fe58a33238aa,
         type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027376600884704207, guid: 06b9d15b7d33e854cb23fe58a33238aa,
+        type: 3}
       propertyPath: m_BounceIntensity
       value: 3.8
       objectReference: {fileID: 0}
@@ -15827,6 +15833,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 0.6367924
+      objectReference: {fileID: 0}
+    - target: {fileID: 8021562540970052646, guid: 06b9d15b7d33e854cb23fe58a33238aa,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06b9d15b7d33e854cb23fe58a33238aa, type: 3}
@@ -19354,7 +19365,7 @@ PrefabInstance:
     - target: {fileID: 6577200684745148699, guid: 7b2bcf75f1177af4aa11d4e2aecd473d,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.4511
+      value: 1.3685324
       objectReference: {fileID: 0}
     - target: {fileID: 6577200684745148699, guid: 7b2bcf75f1177af4aa11d4e2aecd473d,
         type: 3}
@@ -19369,7 +19380,7 @@ PrefabInstance:
     - target: {fileID: 6577200684745148699, guid: 7b2bcf75f1177af4aa11d4e2aecd473d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.809999
+      value: -10.223
       objectReference: {fileID: 0}
     - target: {fileID: 6577200684745148699, guid: 7b2bcf75f1177af4aa11d4e2aecd473d,
         type: 3}
@@ -21783,8 +21794,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6577200684745148699, guid: 7b2bcf75f1177af4aa11d4e2aecd473d,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9569
+      objectReference: {fileID: 0}
+    - target: {fileID: 6577200684745148699, guid: 7b2bcf75f1177af4aa11d4e2aecd473d,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 39.6
+      value: 39.3846
       objectReference: {fileID: 0}
     - target: {fileID: 6577200684745148699, guid: 7b2bcf75f1177af4aa11d4e2aecd473d,
         type: 3}
@@ -25191,7 +25207,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -27219,6 +27235,11 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5320922623850960148, guid: e3723d0a7df8dc34c8428fc8ad9a9a53,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6839884615955203525, guid: e3723d0a7df8dc34c8428fc8ad9a9a53,
         type: 3}
       propertyPath: m_Layer
@@ -28748,7 +28769,7 @@ PrefabInstance:
     - target: {fileID: 6577200684745148699, guid: 7b2bcf75f1177af4aa11d4e2aecd473d,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.866145
+      value: 0.62735564
       objectReference: {fileID: 0}
     - target: {fileID: 6577200684745148699, guid: 7b2bcf75f1177af4aa11d4e2aecd473d,
         type: 3}
@@ -28763,7 +28784,7 @@ PrefabInstance:
     - target: {fileID: 6577200684745148699, guid: 7b2bcf75f1177af4aa11d4e2aecd473d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.3654
+      value: -7.5591
       objectReference: {fileID: 0}
     - target: {fileID: 6577200684745148699, guid: 7b2bcf75f1177af4aa11d4e2aecd473d,
         type: 3}
@@ -31016,8 +31037,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.03516, y: 1, z: 17.269255}
-  m_Center: {x: 8.428686, y: 0, z: -1.4664774}
+  m_Size: {x: 9.03516, y: 1, z: 6.859623}
+  m_Center: {x: 8.428686, y: 0, z: -6.6712933}
 --- !u!65 &4642053663101823217
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31029,8 +31050,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.320629, y: 1, z: 16.35631}
-  m_Center: {x: 0.38220978, y: 0, z: -11.31813}
+  m_Size: {x: 6.3630295, y: 1, z: 16.35631}
+  m_Center: {x: 0.8610096, y: 0, z: -11.31813}
 --- !u!65 &4642053663101823218
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31042,8 +31063,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 34.561665, y: 1, z: 21.320297}
-  m_Center: {x: 29.938726, y: 0, z: -8.829182}
+  m_Size: {x: 31.300842, y: 1, z: 16.606531}
+  m_Center: {x: 28.308315, y: 0, z: -11.186065}
 --- !u!1001 &4642053663105635196
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32228,7 +32249,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -32718,6 +32739,11 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1114773739493970588, guid: 34534f9a2d6df1c4f8dee201f8d50aaa,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2149857149831209931, guid: 34534f9a2d6df1c4f8dee201f8d50aaa,
         type: 3}
       propertyPath: m_Color.b
@@ -32731,6 +32757,11 @@ PrefabInstance:
     - target: {fileID: 2149857149831209931, guid: 34534f9a2d6df1c4f8dee201f8d50aaa,
         type: 3}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2149857149831209931, guid: 34534f9a2d6df1c4f8dee201f8d50aaa,
+        type: 3}
+      propertyPath: m_Lightmapping
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2992976193325264541, guid: 34534f9a2d6df1c4f8dee201f8d50aaa,
@@ -32752,6 +32783,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Intensity
       value: 5.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992976193325264541, guid: 34534f9a2d6df1c4f8dee201f8d50aaa,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8266949716707160795, guid: 34534f9a2d6df1c4f8dee201f8d50aaa,
         type: 3}
@@ -36131,13 +36167,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6577200684745148699, guid: 7b2bcf75f1177af4aa11d4e2aecd473d,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9455
+      objectReference: {fileID: 0}
+    - target: {fileID: 6577200684745148699, guid: 7b2bcf75f1177af4aa11d4e2aecd473d,
+        type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.4082
+      value: 1.309626
       objectReference: {fileID: 0}
     - target: {fileID: 6577200684745148699, guid: 7b2bcf75f1177af4aa11d4e2aecd473d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 39.6
+      value: 39.3275
       objectReference: {fileID: 0}
     - target: {fileID: 6577200684745148699, guid: 7b2bcf75f1177af4aa11d4e2aecd473d,
         type: 3}
@@ -36147,7 +36188,7 @@ PrefabInstance:
     - target: {fileID: 6577200684745148699, guid: 7b2bcf75f1177af4aa11d4e2aecd473d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.809999
+      value: -10.303
       objectReference: {fileID: 0}
     - target: {fileID: 6577200684745148699, guid: 7b2bcf75f1177af4aa11d4e2aecd473d,
         type: 3}
@@ -43903,7 +43944,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -44392,7 +44433,7 @@ PrefabInstance:
     - target: {fileID: 6577200684745148699, guid: 7b2bcf75f1177af4aa11d4e2aecd473d,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.9951179
+      value: 1.7655716
       objectReference: {fileID: 0}
     - target: {fileID: 6577200684745148699, guid: 7b2bcf75f1177af4aa11d4e2aecd473d,
         type: 3}
@@ -44402,12 +44443,12 @@ PrefabInstance:
     - target: {fileID: 6577200684745148699, guid: 7b2bcf75f1177af4aa11d4e2aecd473d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6577200684745148699, guid: 7b2bcf75f1177af4aa11d4e2aecd473d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.809999
+      value: -10.9579
       objectReference: {fileID: 0}
     - target: {fileID: 6577200684745148699, guid: 7b2bcf75f1177af4aa11d4e2aecd473d,
         type: 3}
@@ -45239,6 +45280,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 0.9960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 8561612998583760826, guid: 23e2a639ca3c8bb43ba7ae9988ecc0e4,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e2a639ca3c8bb43ba7ae9988ecc0e4, type: 3}
@@ -56354,7 +56400,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
