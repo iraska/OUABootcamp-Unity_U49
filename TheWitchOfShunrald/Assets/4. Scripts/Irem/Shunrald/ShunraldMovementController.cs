@@ -89,7 +89,7 @@ namespace Shunrald
         // Character always facing mouse cursor position
         private void AimTowardMouse()
         {
-            if (!IsDeath)
+            if (!IsDeath && GameManager.instance.GameState == GameManager.State.Playing)
             {
                 Ray ray = lensCam.ScreenPointToRay(Input.mousePosition);
 
