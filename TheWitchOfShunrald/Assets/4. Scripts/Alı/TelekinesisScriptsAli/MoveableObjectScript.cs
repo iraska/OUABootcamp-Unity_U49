@@ -1,3 +1,4 @@
+using CihanAkpýnar;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,6 +33,7 @@ namespace ali
 
         private void DestroyObject()
         {
+            AudioManager.Instance.PlaySfx(AudioManager.Instance.moveableObjectDestructionAudio, transform.position);
             gameObject.GetComponent<Rigidbody>().isKinematic = true;
             wholeCrate.enabled = false;
             boxCollider.enabled = false;

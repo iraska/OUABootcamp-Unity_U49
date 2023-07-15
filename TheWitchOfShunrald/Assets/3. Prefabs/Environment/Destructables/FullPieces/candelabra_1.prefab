@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958e2def397b5bb4bb34263020c868ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleHealth: 100
+  obstacleHealth: 40
   wholeCrate: {fileID: 676282738861256594}
   boxCollider: {fileID: 8622406674829555113}
   fracturedCrate: {fileID: 4543302193645621425}

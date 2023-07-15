@@ -131,6 +131,8 @@ namespace ali
                 spawnedEffect.transform.position = transform.position + Vector3.up;
             }
 
+            AudioManager.Instance.PlaySfx(AudioManager.Instance.staffProjectileExplosionAudio, transform.position);
+
             Collider[] colliders = Physics.OverlapSphere(transform.position, 2f, canExplodeLayerMask);
 
             foreach (Collider collider in colliders)
