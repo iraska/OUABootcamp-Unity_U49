@@ -6,7 +6,7 @@ namespace WeepingAngle
 {
     public class WeepingAngelMovementController : MonoBehaviour
     {
-        [SerializeField] private Transform shunraldWitch;
+        private Transform shunraldWitch;
         [SerializeField] private float chaseSpeed = 3f, maxViewAngle = 45f;
 
         private WeepingAngleController wController;
@@ -21,7 +21,10 @@ namespace WeepingAngle
         {
             GetRequiredComponenent();
         }
-
+        private void Start()
+        {
+            shunraldWitch = GameManager.instance.Player.transform;
+        }
         private void Update()
         {
             if (!GameManager.instance.Player.GetComponent<ShunraldController>().Movement.IsDeath && GameManager.instance.GameState == GameManager.State.Playing) 

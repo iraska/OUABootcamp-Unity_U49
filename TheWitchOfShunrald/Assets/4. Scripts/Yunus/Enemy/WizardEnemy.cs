@@ -34,10 +34,13 @@ public class WizardEnemy : MonoBehaviour, Enemy
         electric.Stop();
         electric.transform.SetParent(null);
         explosion.transform.SetParent(null);
+
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         playerTransform = GameManager.instance.Player.transform;
-
+        yield return null;
+        electric.gameObject.SetActive(false);
+        explosion.gameObject.SetActive(false);
         while (true)
         {
             if (GameManager.instance.GameState == GameManager.State.Playing)
@@ -85,9 +88,10 @@ public class WizardEnemy : MonoBehaviour, Enemy
                         }
                         anim.SetBool("walk", true);
                         transform.DOLookAt(randomPos, 1f);
-                        direction.Normalize();
                         while (true)
                         {
+                            direction = randomPos - transform.position;
+                            direction.Normalize();
                             if (Physics.Raycast(new Vector3(transform.position.x, 0.3f, transform.position.z), playerTransform.position - transform.position, out RaycastHit hit, 200f))
                             {
                                 if (hit.transform.CompareTag("Shunrald"))

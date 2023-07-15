@@ -183,7 +183,6 @@ namespace CihanAkpınar
             if (health<=0)
             {
                 AudioManager.Instance.PlaySfx(AudioManager.Instance.basicSpawnedEnemyDieAudio,transform.position);
-                anim.SetTrigger("BasicEnemyDie");
                 DropMath();
                 Instantiate(basicEnemyDiePart, new Vector3(transform.position.x, transform.position.y, transform.position.z),Quaternion.identity);
                 if (spawnerOfThisEnemy != null)

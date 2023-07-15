@@ -50,12 +50,12 @@ MonoBehaviour:
   gamePanel: {fileID: 1423904384501111531}
   pausePanel: {fileID: 1423904384876772166}
   upgradePanel: {fileID: 1423904384506544271}
-  upgradeParticlePanel: {fileID: 0}
   dialogPanel: {fileID: 1423904383114917797}
   winPanel: {fileID: 1423904383888677662}
   losePanel: {fileID: 1423904383170183484}
   infoPanel: {fileID: 1423904384249298035}
   arenaWinPanel: {fileID: 5467493253454525637}
+  gameLoadingPanel: {fileID: 4337780158713033121}
   weaponImages:
   - {fileID: 3323329501046906035}
   - {fileID: 6027934009265921161}
@@ -448,6 +448,12 @@ MonoBehaviour:
 --- !u!1 &3323329501046906035 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7349494949683034395, guid: 94cf6b3768bda924ab00c67ace6be3fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 5467493253573535144}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4337780158713033121 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8634126399680779273, guid: 94cf6b3768bda924ab00c67ace6be3fa,
     type: 3}
   m_PrefabInstance: {fileID: 5467493253573535144}
   m_PrefabAsset: {fileID: 0}

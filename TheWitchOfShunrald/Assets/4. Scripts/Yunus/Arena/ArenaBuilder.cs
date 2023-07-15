@@ -54,8 +54,8 @@ public class ArenaBuilder : MonoBehaviour
     IEnumerator GetData()
     {
         UnityWebRequest request = UnityWebRequest.Get(url);
-        yield return request.Send();
-        if (request.isNetworkError)
+        yield return request.SendWebRequest();
+        if (request.result == UnityWebRequest.Result.ConnectionError)
         {
             Debug.Log("Error");
         }
@@ -65,6 +65,7 @@ public class ArenaBuilder : MonoBehaviour
             enemiesData = data.enemyData;
             playerData = data.playerData;
             gameData = data.gameData;
+            GameManager.instance.GameState = GameManager.State.Paused;
             LoadPlayer();
             LoadEnemies();
         }
@@ -81,7 +82,7 @@ public class ArenaBuilder : MonoBehaviour
 
         for (int j = 0; j < gameData.alignment[alignmentIndex]; j++)
         {
-            Enemy enemy = Instantiate(enemies[enemiesData[enemyIndex].id], new Vector3(enemiesData[enemyIndex].position_x, enemiesData[enemyIndex].position_y, enemiesData[enemyIndex].position_z), Quaternion.identity).GetComponent<Enemy>();
+            Enemy enemy = Instantiate(enemies[enemiesData[enemyIndex].id], new Vector3(enemiesData[enemyIndex].position_x, enemiesData[enemyIndex].position_y, enemiesData[enemyIndex].position_z), Quaternion.identity).GetComponentInChildren<Enemy>();
             enemy.SetEnemyStats(enemiesData[enemyIndex].health, enemiesData[enemyIndex].damage);
             ++enemyIndex;
         }

@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
 
-    [SerializeField] private GameObject gamePanel, pausePanel, upgradePanel, dialogPanel, winPanel, losePanel, infoPanel, arenaWinPanel;
+    [SerializeField] private GameObject gamePanel, pausePanel, upgradePanel, dialogPanel, winPanel, losePanel, infoPanel, arenaWinPanel, gameLoadingPanel;
     [SerializeField] private GameObject[] weaponImages;
     [SerializeField] private Image healthBar, healthBar1, manaBar, easyButtonImage, normalButtonImage, hardButtonImage, lowButtonImage, highButtonImage, mediumButtonImage, weaponUICircle, weaponUILine;
     [SerializeField] private Sprite selectedSprite, unselectedSprite;
@@ -83,6 +83,8 @@ public class UIManager : MonoBehaviour
     }
     public void GamePanel()
     {
+        if(GameManager.instance.isArena)
+            StartCoroutine(GameLoadingPanel());
         currentPanel.SetActive(false);
         gamePanel.SetActive(true);
         currentPanel = gamePanel;
@@ -167,6 +169,15 @@ public class UIManager : MonoBehaviour
     public Image WeaponUILine
     {
         get { return weaponUILine; }
+    }
+    private IEnumerator GameLoadingPanel()
+    {
+        gameLoadingPanel.transform.GetChild(0).GetComponent<Image>().fillAmount = 0;
+        gameLoadingPanel.SetActive(true);
+        gameLoadingPanel.transform.GetChild(0).GetComponent<Image>().DOFillAmount(1, 5f);
+        yield return new WaitForSeconds(5);
+        gameLoadingPanel.SetActive(false);
+        GameManager.instance.GameState = GameManager.State.Playing;
     }
 
     //------------------- SETTÝNGS--------------------------

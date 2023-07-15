@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
             gameState = value;
         } 
     }
-    private bool isArena;
+    public bool isArena;
     public bool IsArena { get { return isArena; } set { isArena = value; } }
 
     private bool canGoTheNextLevel;
