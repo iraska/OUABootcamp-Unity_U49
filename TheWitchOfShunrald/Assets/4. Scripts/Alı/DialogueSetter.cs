@@ -323,9 +323,16 @@ public class DialogueSetter : MonoBehaviour
 
         else if (levelNo == 6)
         {
-            //Win
+            StartCoroutine(WinTheGame());
         }
 
+    }
+
+    private IEnumerator WinTheGame()
+    {
+        //let the ghost dissappear
+        yield return new WaitForSeconds(2f);
+        GameManager.instance.Win();
     }
 
     public void LetFakeEnemiesWalk() 
