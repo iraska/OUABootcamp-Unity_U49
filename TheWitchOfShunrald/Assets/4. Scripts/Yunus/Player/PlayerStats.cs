@@ -61,7 +61,7 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
-        if (health <= 0)
+        if (health <= 0 && GameManager.instance.GameState == GameManager.State.Playing)
         {
             GameManager.instance.Lose();
             shunraldController.Animation.PlayDeathAnim();

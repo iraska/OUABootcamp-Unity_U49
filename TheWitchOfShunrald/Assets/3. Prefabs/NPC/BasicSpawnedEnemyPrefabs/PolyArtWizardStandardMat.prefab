@@ -750,7 +750,7 @@ MonoBehaviour:
   speed: 1.2
   attackSpeed: 3
   coolDown: 3
-  health: 80
+  health: 30
   damage: 10
   groundLayer:
     serializedVersion: 2
@@ -2680,7 +2680,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.5
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6002761060226267650
 MonoBehaviour:

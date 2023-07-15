@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         UIManager.instance.GamePanel();
         gameState = State.Playing;
+        GameAnalyticsManager.instance.LevelStarted(PlayerPrefs.GetInt("lastGame"));
     }
     public void Win()
     {
@@ -95,6 +96,7 @@ public class GameManager : MonoBehaviour
         {
             GameState = State.Lose;
             StartCoroutine(UIManager.instance.LosePanel());
+            GameAnalyticsManager.instance.LevelFailed(PlayerPrefs.GetInt("lastGame"));
             IsArena = false;
         }
     }
@@ -103,8 +105,14 @@ public class GameManager : MonoBehaviour
         if(GameState == State.Playing)
         {
             GameState = State.Upgrade;
+            PlayerPrefs.SetInt("lastGame", SceneManager.GetActiveScene().buildIndex);
             PlayerPrefs.SetInt("balance", PlayerPrefs.GetInt("balance") + balance);
-            UIManager.instance.UpgradePanel();
+            GameAnalyticsManager.instance.LevelCompleted(PlayerPrefs.GetInt("lastGame"));
+
+            if (PlayerPrefs.GetInt("lastGame") + 1 < SceneManager.sceneCountInBuildSettings)
+                UIManager.instance.UpgradePanel();
+            else
+                Win();
         }
     }
     public void Paused()

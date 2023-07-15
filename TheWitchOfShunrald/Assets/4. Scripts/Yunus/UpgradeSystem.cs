@@ -30,7 +30,7 @@ public class UpgradeSystem : MonoBehaviour
         health = 0;
         damage = 0;
         mana = 0;
-        LevelManager.instance.LoadNextLevel();
+        LevelManager.instance.ContinueGame();
     }
     public void HealthIncrease()
     {

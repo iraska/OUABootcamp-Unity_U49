@@ -11,13 +11,13 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
 
-    [SerializeField] private GameObject gamePanel, pausePanel, upgradePanel, upgradeParticlePanel, dialogPanel, winPanel, losePanel, infoPanel, arenaWinPanel;
+    [SerializeField] private GameObject gamePanel, pausePanel, upgradePanel, dialogPanel, winPanel, losePanel, infoPanel, arenaWinPanel;
     [SerializeField] private GameObject[] weaponImages;
     [SerializeField] private Image healthBar, healthBar1, manaBar, easyButtonImage, normalButtonImage, hardButtonImage, lowButtonImage, highButtonImage, mediumButtonImage, weaponUICircle, weaponUILine;
     [SerializeField] private Sprite selectedSprite, unselectedSprite;
     [SerializeField] private Text infoText;
     [SerializeField] private DialogSystem dialogSystem;
-    [SerializeField] private TextMeshProUGUI badgeText;
+    [SerializeField] private TextMeshProUGUI badgeText, versionText;
     [SerializeField] private ArenaRewardPanel arenaRewardPanel;
     private GameObject currentPanel;
 
@@ -36,6 +36,7 @@ public class UIManager : MonoBehaviour
     }
     private void Start()
     {
+        versionText.text = 'v' + Application.version;
         currentPanel = gamePanel;
         if(!PlayerPrefs.HasKey("difficulty"))
         {
@@ -82,14 +83,12 @@ public class UIManager : MonoBehaviour
     }
     public void GamePanel()
     {
-        upgradeParticlePanel.SetActive(false);
         currentPanel.SetActive(false);
         gamePanel.SetActive(true);
         currentPanel = gamePanel;
     }
     public void UpgradePanel()
     {
-        upgradeParticlePanel.SetActive(true);
         currentPanel.SetActive(false);
         upgradePanel.SetActive(true);
         currentPanel = upgradePanel;

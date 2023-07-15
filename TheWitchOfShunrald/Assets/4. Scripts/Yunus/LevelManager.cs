@@ -54,21 +54,6 @@ public class LevelManager : MonoBehaviour
         }
         
     }
-    public void LoadNextLevel()
-    {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        int nextSceneIndex = currentSceneIndex + 1;
-
-        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
-        {
-            StartCoroutine(LoadingGame(nextSceneIndex));
-            PlayerPrefs.SetInt("lastGame", nextSceneIndex);
-        }
-        else
-        {
-            GameManager.instance.Win();
-        }
-    }
     public void RestartLevel()
     {
         StartCoroutine(LoadingGame(SceneManager.GetActiveScene().buildIndex));
@@ -81,7 +66,10 @@ public class LevelManager : MonoBehaviour
     }
     public void ContinueGame()
     {
-        StartCoroutine(LoadingGame(PlayerPrefs.GetInt("lastGame")));
+        if(PlayerPrefs.GetInt("lastGame") + 1 < SceneManager.sceneCountInBuildSettings)
+            StartCoroutine(LoadingGame(PlayerPrefs.GetInt("lastGame")+1));
+        else
+            StartCoroutine(LoadingGame(PlayerPrefs.GetInt("lastGame")));
     }
     public void LoadArena()
     {
