@@ -27,9 +27,12 @@ namespace WeepingAngle
 
         public void AnimateAngel(float _time, Animator _animator)
         {
+            elapsedTime += Time.deltaTime;
             float time = elapsedTime / lerpSpeed;
+
             angelAnimator.speed = Mathf.Lerp(freezeAnimSpeed, initialAnimSpeed, time);
         }
+
 
         public void FreezeAngel()
         {
@@ -38,6 +41,8 @@ namespace WeepingAngle
 
         public IEnumerator FreezeAnimation()
         {
+            elapsedTime = 0f;
+
             while (elapsedTime < lerpSpeed)
             {
                 elapsedTime += Time.deltaTime;
