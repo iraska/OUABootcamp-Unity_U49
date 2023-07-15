@@ -91,7 +91,8 @@ namespace CihanAkpınar
 
         private void Start()
         {
-          SetMusicVolume();  
+            LoadVolume();
+          LoadSfxVolume();
         }
 
         private void Awake()
@@ -162,7 +163,6 @@ namespace CihanAkpınar
             }
 
             audioSfxPool[index].transform.position = position;
-            Debug.Log(clip.name);
             audioSfxPool[index].PlayOneShot(clip);
           index++;
           if (index>=audioSfxPool.Length)
@@ -186,13 +186,9 @@ namespace CihanAkpınar
         public void SetMusicVolume()
         {
             float volume = musicSlider.value;
-            audioMixer.SetFloat("musicVolumeSet", Mathf.Log10(volume) * 20);
+            audioMixer.SetFloat("musicVolumeSet", volume);
             PlayerPrefs.SetFloat("musicVolume",volume);
-            Debug.Log(PlayerPrefs.GetFloat("musicVolume"));
-            if (musicSlider.value==0.01)
-            {
-                volume = 0f;
-            }
+
         }
 
         private void LoadVolume()
@@ -203,13 +199,9 @@ namespace CihanAkpınar
         public void SetSfxVolume()
         {
             float volume = sfxSlider.value;
-            audioMixer.SetFloat("sfxVolumeSet", Mathf.Log10(volume) * 20);
+            audioMixer.SetFloat("sfxVolumeSet", volume);
             PlayerPrefs.SetFloat("sfxVolume",volume);
-            Debug.Log(PlayerPrefs.GetFloat("sfxVolume"));
-            if (musicSlider.value==0.01)
-            {
-                volume = 0f;
-            }
+
         }
 
         private void LoadSfxVolume()
