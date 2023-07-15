@@ -1,3 +1,4 @@
+using CameraSystem;
 using UnityEngine;
 
 namespace Shunrald
@@ -24,8 +25,12 @@ namespace Shunrald
         // Animate the character
         public void AnimateCharacter(Vector3 _input, float veloX, float veloZ, Animator _animator)
         {
-            veloX = Vector3.Dot(_input.normalized, transform.right);
-            veloZ = Vector3.Dot(_input.normalized, transform.forward);
+            Vector3 rotatedInput = _input.ToIso();
+            //Vector3 rotatedInput = _input;
+            veloX = Vector3.Dot(rotatedInput.normalized, transform.right);
+            veloZ = Vector3.Dot(rotatedInput.normalized, transform.forward);
+
+            
 
             _animator.SetFloat("VelocityX", veloX, .1f, Time.deltaTime);
             _animator.SetFloat("VelocityZ", veloZ, .1f, Time.deltaTime);
