@@ -27,7 +27,12 @@ namespace Shunrald
             GameManager.instance.Player.GetComponent<ShunraldController>().Particle.TriggerCircleParticle();
             yield return new WaitForSeconds(.1f);
 
-            GameManager.instance.GameState = GameManager.State.Hang;
+            //GameManager.instance.GameState = GameManager.State.Hang;
+            
+            // Freeze shunrald movement and animation
+            GameManager.instance.Player.GetComponent<ShunraldMovementController>().FreezeShunraldMovement();
+            //mouse input u kapat
+
 
             rb.isKinematic = true;
 
@@ -46,7 +51,9 @@ namespace Shunrald
             GameManager.instance.Player.GetComponent<ShunraldController>().Particle.StopAllParticles();
             yield return new WaitForSeconds(.5f);
 
-            GameManager.instance.GameState = GameManager.State.Playing;
+            //GameManager.instance.GameState = GameManager.State.Playing;
+           
+            GameManager.instance.Player.GetComponent<ShunraldMovementController>().FreeShunraldMovement();
 
             rb.isKinematic = false;
 

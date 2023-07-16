@@ -20,7 +20,7 @@ namespace Shunrald
         private Vector3 targetPosition, input;
 
         private float velocityX, velocityZ;
-        private bool isDashing, isUsingWeapon, isMovementFrozen = false, isDashCoolDown, isDeath, isUsingSkill;
+        private bool isDashing, isUsingWeapon, isMovementFrozen = false, isDashCoolDown, isDeath, isUsingSkill, isHang;
         public bool IsUsingWeapon
         {
             get { return isUsingWeapon; }
@@ -89,7 +89,7 @@ namespace Shunrald
         // Character always facing mouse cursor position
         private void AimTowardMouse()
         {
-            if (!IsDeath && GameManager.instance.GameState == GameManager.State.Playing)
+            if (!IsDeath && GameManager.instance.GameState == GameManager.State.Playing && !isHang)
             {
                 Ray ray = lensCam.ScreenPointToRay(Input.mousePosition);
 
@@ -134,9 +134,21 @@ namespace Shunrald
         // This method must be called when the Witch is killed and petrified by the Weeping angel.
         public void FreezeShunraldMovement()
         {
+            isHang = true;
+
             // Reset the character's speed
             isMovementFrozen = true;
             rb.velocity = Vector3.zero;
+
+            //GameManager.instance.Player.GetComponent<ShunraldAnimationController>().PetrificationByAngel();
+        }
+
+        public void FreeShunraldMovement()
+        {
+            isHang = false;
+            isMovementFrozen = false;
+
+            //GameManager.instance.Player.GetComponent<ShunraldAnimationController>().FreeWitchAnim();
         }
 
         private Vector3 RotateVector(Vector3 vector, float angle)
