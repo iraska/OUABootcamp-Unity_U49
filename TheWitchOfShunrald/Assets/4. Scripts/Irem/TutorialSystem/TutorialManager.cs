@@ -1,5 +1,4 @@
 using DG.Tweening;
-using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Video;
@@ -14,9 +13,9 @@ namespace TutorialSystem
         [SerializeField] private GameObject transparentPanel, wasdImg, gif, tutorialText;
         [SerializeField] private RectTransform tutorialPanel, hiddenTutorialPanel, okButton, hiddenTextPanel, textPanel;
 
-        private Vector3 initialOkButtonScale;
-
         private GameObject ui;
+
+        private Vector3 initialOkButtonScale;
 
         private void Awake()
         {
@@ -41,7 +40,6 @@ namespace TutorialSystem
         public void InitialTutorialPanel()
         {
             ToggleUIPanel(false);
-            //yield return new WaitForSeconds(waitTime);
 
             GameManager.instance.GameState = GameManager.State.Tutorial;
 
@@ -57,6 +55,7 @@ namespace TutorialSystem
 
         public void InvokeItialTutorial()
         {
+            // Ienumerator is not working with WEBGL
             Invoke("InitialTutorialPanel", 2f);
         }
 
@@ -66,9 +65,6 @@ namespace TutorialSystem
             ToggleUIPanel(false);
 
             if (wasdImg.activeSelf) { wasdImg.SetActive(false); }
-
-            
-            
 
             gif.SetActive(true);
             
