@@ -65,11 +65,14 @@ namespace TutorialSystem
 
             if (wasdImg.activeSelf) { wasdImg.SetActive(false); }
 
-            gif.GetComponent<VideoPlayer>().clip = gifClip;
-            gif.GetComponent<VideoPlayer>().Play();
+            
+            
 
             gif.SetActive(true);
+            
             transparentPanel.SetActive(true);
+            gif.GetComponent<VideoPlayer>().clip = gifClip;
+            gif.GetComponent<VideoPlayer>().Play();
 
             TutorialTween();
         }

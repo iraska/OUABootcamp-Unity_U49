@@ -39,7 +39,15 @@ namespace CihanAkpınar
        {
            if(currentEnemy.Count == 0)
            {
-               SpawnWave();
+                if (currentWave < waves.Length) 
+                {
+                    SpawnWave();
+                }
+                else
+                {
+                    Destroy(gameObject);
+                }
+               
            }
            
        }
@@ -77,11 +85,7 @@ namespace CihanAkpınar
 
        private IEnumerator SpawmDelay()
        {
-           if (currentWave==waves.Length)
-               
-           {
-               Destroy(gameObject);
-           }
+           
            for (int i = 0; i < waves[currentWave].GetEnemySpawnList().Length; i++)
            {
                
