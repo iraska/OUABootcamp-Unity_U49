@@ -27,25 +27,31 @@ MonoBehaviour:
   CustomArea: 
   gameKey:
   - 221465feaaa5dede1d66cc6d97064115
+  - 78868acd14c77356b70c30f174e1d2d7
   secretKey:
   - 32feb560db6d0d99def7bdb1f66a34f7fea4c171
+  - 0a838c688c2fe4b1c5bd9afa0d266fe4b134a8e2
   Build:
+  - 1.0
   - 1.0
   SelectedPlatformOrganization:
   - Raven Perception
+  - Raven Perception
   SelectedPlatformStudio:
+  - Main
   - Main
   SelectedPlatformGame:
   - TheWitchOfShunrald
-  SelectedPlatformGameID: eee50300
-  SelectedOrganization: 02000000
-  SelectedStudio: 01000000
-  SelectedGame: 01000000
+  - TheWitchOfShunrald
+  SelectedPlatformGameID: eee503001ce60300
+  SelectedOrganization: 0200000002000000
+  SelectedStudio: 0100000001000000
+  SelectedGame: 0100000002000000
   NewVersion: 
   Changes: 
   SignUpOpen: 0
   StudioName: 
-  GameName: 
+  GameName: witch
   OrganizationName: 
   OrganizationIdentifier: 
   EmailGA: yunus_kale_@hotmail.com
@@ -62,7 +68,7 @@ MonoBehaviour:
   ResourceItemTypes: []
   ResourceCurrencies: []
   LastCreatedGamePlatform: 0
-  Platforms: 02000000
+  Platforms: 0200000011000000
   CurrentInspectorState: 1
   ClosedHints: 
   DisplayHints: 0
@@ -90,7 +96,7 @@ MonoBehaviour:
   IncludeGooglePlay: 1
   FpsCriticalThreshold: 20
   FpsCirticalSubmitInterval: 1
-  PlatformFoldOut: 01
+  PlatformFoldOut: 0101
   CustomDimensions01FoldOut: 0
   CustomDimensions02FoldOut: 0
   CustomDimensions03FoldOut: 0
