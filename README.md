@@ -1,3 +1,5 @@
+![tws](https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/870d8700-6ec8-4224-87f2-0d899579931c)
+
 # İçindekiler
 * [Takım Adı](#takım-adı)
 * [Oyun ile İlgili Bilgiler](#oyun-ile-ilgili-bilgiler)
@@ -27,7 +29,10 @@ Takım Unity U-49
 * **Henric the Ghost:** *Ali Yağmur*
 
 ### Oyun Adı
-The Witch of Shunrald
+***The Witch of Shunrald***
+
+## Intro
+[Introduction Video](https://www.youtube.com/watch?v=qTqdF46e3lg&ab_channel=AliYagmurGames)
 
 ### Product Backlog URL
 [Product Backlog board](https://sharing.clickup.com/9009152983/b/h/8cftgyq-1160/925c305e7121a0b)
