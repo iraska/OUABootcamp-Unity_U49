@@ -12,7 +12,7 @@
 * [Kullanılan Assetler/Eklentiler](#kullanılan-assetlereklentiler)
 
 ## Takım Adı
-*Takım Unity U-49*
+**Takım Unity U-49**
 
 ## Website
 
@@ -201,31 +201,32 @@ tutorial ve diyalog sistemleri, GA kurulumu ve server üzerinden çekilen bilgil
 
 * **Sprint board update:** ***Sprint board screenshotları:***
 
-  ![ThirdSprint_1](https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/90a94d36-1e03-4bd5-add5-0b9c7de0322f)
+  ![ThirdSprint_1](https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/a84b3bf5-bbf0-4eb2-9d43-568daf794097)
 
-  ![ThirdSprint_2](https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/b3616494-f563-4c8a-bad1-2e6d40148db4)
+  ![ThirdSprint_2](https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/1216b314-ddd3-4c63-ad28-f04aa8a38ffa)
 
-  ![ThirdSprint_3](https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/93aa2432-2830-42f0-99a7-e51f2521f14d)
+  ![ThirdSprint_3](https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/710afd28-778d-4f6e-abc4-7fb5d7766842)
+  
+  ![ThirdSprint_4](https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/f6cfd855-bdff-495a-8649-6b8e772ecde6)
 
 * **Oyun Durumu:** Video:
-  
-  1. ***Tutorial:*** *WASD, asa hareketi (Lv1)*
+  * ***Tutorial:*** *WASD, asa hareketi (Lv1)*
   
      https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/9d5ba986-e027-4d87-8352-c51624cfd0e5
      
-  2.  ***Tutorial:*** *Dash, E skill (Lv1)*
+  * ***Tutorial:*** *Dash, E skill (Lv1)*
      
      https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/5a5f37dc-107f-4db3-ba9c-e6ca84b04241
   
-  3.  ***Tutorial:*** *Telekinezi, asa-kılıç değişimi (Lv2)*
+  * ***Tutorial:*** *Telekinezi, asa-kılıç değişimi (Lv2)*
  
      https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/ee18119e-dd20-4c84-bf29-edd79c612cf4
  
-  4. ***Diyalog:*** *The Witch, Henric The Ghost, The Necromancer (Lv3)*
+  * ***Diyalog:*** *The Witch, Henric The Ghost, The Necromancer (Lv3)*
  
      https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/0f992880-5f6d-4dd9-bcff-b47acd5fb928
      
-  5. ***MiniBoss:*** *Ağlayan Melekler (Lv4)*
+  * ***MiniBoss:*** *Ağlayan Melekler (Lv4)*
      * *Ağlayan Melek metaforu Doctor Who'dan alınmıştır. Heykeller sen onlara bakmadığın anda, yani yönün onlara dönük değilken seni takip eder ancak ona baktığında taşlaşır ve tek dokunuşuyla seni taşa döndürüp öldürür.*
 
        https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/b01bad92-4e99-4d52-97a8-7ba59c8ecab8
