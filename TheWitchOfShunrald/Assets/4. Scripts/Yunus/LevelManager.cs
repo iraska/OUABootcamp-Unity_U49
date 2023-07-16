@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Audio;
+
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] private Image loadingBar;
@@ -43,7 +45,7 @@ public class LevelManager : MonoBehaviour
         loadingCanvas.SetActive(false);
         gameCanvas.SetActive(true);
         GameManager.instance.GameStart();
-        if (sceneIndex!=5)
+        if (sceneIndex!=6)
         {
             AudioManager.Instance.PlayMusicWithFade(AudioManager.Instance.dungeonAtmosphereAudios);
         }
@@ -52,7 +54,6 @@ public class LevelManager : MonoBehaviour
         {
             AudioManager.Instance.PlayMusicWithFade(AudioManager.Instance.cemeteryAtmosphereAudios);
         }
-        
     }
     public void RestartLevel()
     {

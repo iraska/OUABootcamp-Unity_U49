@@ -48,6 +48,7 @@ namespace CihanAkpınar
         //Sources
         private AudioSource musicSource;
         private AudioSource musicSource2;
+        private AudioSource backgroundSource;
         private AudioSource sfxSource;
         private AudioSource dialogueSource;
         //Transation
@@ -110,11 +111,13 @@ namespace CihanAkpınar
 
             musicSource.outputAudioMixerGroup = musicGroups[0];
             musicSource2.outputAudioMixerGroup = musicGroups[0];
+            backgroundSource.outputAudioMixerGroup = musicGroups[0];
             sfxSource.outputAudioMixerGroup = sfxGroups[0];
             dialogueSource.outputAudioMixerGroup = sfxGroups[0];
 
             musicSource.loop = true;
             musicSource2.loop = true;
+            backgroundSource.loop = true;
         }
 
         public void PlayMusic(AudioClip musicClip)
@@ -130,12 +133,13 @@ namespace CihanAkpınar
             AudioSource activeSource = (firstMusicSourcePlayin) ? musicSource : musicSource2;
 
             StartCoroutine(UpdateMusicWithFade(activeSource, newClip, tranitionTime));
-        } 
+        }
+        
         
         IEnumerator UpdateMusicWithFade(AudioSource activeSource,AudioClip newClip,float transationTime)
         {
-            if (!activeSource.isPlaying)
-                activeSource.Play();
+            //if (!activeSource.isPlaying)
+                //activeSource.Play();
             
             float t = 0.0f;
 
@@ -186,7 +190,8 @@ namespace CihanAkpınar
         public void SetMusicVolume()
         {
             float volume = musicSlider.value;
-            audioMixer.SetFloat("musicVolumeSet", volume);
+            float calcuatedVolume = Mathf.Log10(volume) * 40;
+            audioMixer.SetFloat("musicVolumeSet", calcuatedVolume); 
             PlayerPrefs.SetFloat("musicVolume",volume);
 
         }
@@ -199,7 +204,8 @@ namespace CihanAkpınar
         public void SetSfxVolume()
         {
             float volume = sfxSlider.value;
-            audioMixer.SetFloat("sfxVolumeSet", volume);
+            float calcuatedVolume = Mathf.Log10(volume) * 40;
+            audioMixer.SetFloat("sfxVolumeSet", calcuatedVolume);
             PlayerPrefs.SetFloat("sfxVolume",volume);
 
         }
