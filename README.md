@@ -231,10 +231,16 @@ tutorial ve diyalog sistemleri, GA kurulumu ve server üzerinden çekilen bilgil
 
        https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/b01bad92-4e99-4d52-97a8-7ba59c8ecab8
 
-  7. ***BossFight:*** *The Necromancer (Lv5)*
+  * ***BossFight:*** *The Necromancer (Lv5)*
      * *Cadımız asırlar önceki bir savaşta ellerini hareket ettirme yatisini kaybetmiştir, o nedenle elleri fizik ile hareket etmekte/sallanmaktadır.*
 
        https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/2e87b3f4-4cac-4421-9688-792139a13019
+
+  * ***Arena:*** *(Server)*
+    
+       https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/4448b5d1-0b3e-4694-b1b3-aae325b39f4d
+
+       https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/2f5daccf-fb0f-4b9f-908f-754751ec310a
      
 * **Sprint Review:**
 
