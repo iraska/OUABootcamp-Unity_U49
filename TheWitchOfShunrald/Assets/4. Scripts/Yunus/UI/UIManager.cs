@@ -168,10 +168,10 @@ public class UIManager : MonoBehaviour
     {
         dashTween.Kill();
         dashSkillImage.fillAmount = 1;
-        dashSkillImage.transform.GetChild(0).localScale = Vector3.one;
+        dashSkillImage.transform.parent.localScale = Vector3.one;
         dashSkillImage.DOFillAmount(0, duration).SetEase(Ease.Linear);
         yield return new WaitForSeconds(duration);
-        dashTween = dashSkillImage.transform.GetChild(0).DOScale(1.2f, 1f).SetEase(Ease.Linear);
+        dashTween = dashSkillImage.transform.parent.DOScale(1.2f, 1f).SetEase(Ease.Linear);
         dashTween.SetLoops(-1, LoopType.Yoyo);
     }
     Tween fireTween;
@@ -179,10 +179,10 @@ public class UIManager : MonoBehaviour
     {
         fireTween.Kill();
         fireSkillImage.fillAmount = 1;
-        fireSkillImage.transform.GetChild(0).localScale = Vector3.one;
+        fireSkillImage.transform.parent.localScale = Vector3.one;
         fireSkillImage.DOFillAmount(0, duration).SetEase(Ease.Linear);
         yield return new WaitForSeconds(duration);
-        fireTween = fireSkillImage.transform.GetChild(0).DOScale(1.2f, 1f).SetEase(Ease.Linear);
+        fireTween = fireSkillImage.transform.parent.DOScale(1.2f, 1f).SetEase(Ease.Linear);
         fireTween.SetLoops(-1, LoopType.Yoyo);
     }
 
