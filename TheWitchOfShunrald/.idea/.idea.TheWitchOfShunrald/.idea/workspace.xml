@@ -6,29 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="2f9f027d-656a-44fe-9e27-4ace5e0b49b5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TheWitchOfShunrald/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TheWitchOfShunrald/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1. Scenes/LEVELS/LEVEL 4.1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. Scenes/LEVELS/LEVEL 4.1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/1. Scenes/LEVELS/LEVEL 5.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. Scenes/LEVELS/LEVEL 5.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/Necromancer@atack1.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/Necromancer@atack1.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/Necromancer@atack2.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/Necromancer@atack2.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/Necromancer@death.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/Necromancer@death.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/Necromancer@getgit.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/Necromancer@getgit.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/Necromancer@idle1.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/Necromancer@idle1.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/Necromancer@idle2.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/Necromancer@idle2.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/Necromancer@jump.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/Necromancer@jump.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/Necromancer@roar.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/Necromancer@roar.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/Necromancer@spellcast1.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/Necromancer@spellcast1.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/Necromancer@walk.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/Necromancer@walk.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/Necromancer@wound.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/Necromancer@wound.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Scripts/Irem/Shunrald/ShunraldHangInTheAir.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Scripts/Irem/Shunrald/ShunraldHangInTheAir.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Scripts/Sidar/NecroAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Scripts/Sidar/NecroAI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameAnalytics/Plugins/Playmaker/Examples/GameAnalyticsPlayMakerDemo.unitypackage.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
@@ -145,7 +126,7 @@
       <workItem from="1689270786881" duration="10969000" />
       <workItem from="1689360456118" duration="1119000" />
       <workItem from="1689423527800" duration="7843000" />
-      <workItem from="1689501406538" duration="6570000" />
+      <workItem from="1689501406538" duration="10503000" />
     </task>
     <servers />
   </component>

@@ -101,13 +101,13 @@ namespace Sidar
                                 break;
                             case 2:
                                 if(canCrSpawnMinions){
-                                    StartCoroutine(SpawnMinions());
+                                    StartCoroutine(SpawnMinions(false));
                                 }
                                 break;
                             case 3:
                                 if(canCrHealthRegen){
                                     if(currentHealth < 20){
-                                        StartCoroutine(SpawnMinions());
+                                        StartCoroutine(SpawnMinions(true));
                                         StartCoroutine(HealthRegen());
                                     }
                                     else if(currentHealth < 50){
@@ -145,7 +145,7 @@ namespace Sidar
                                 break;
                             case 4:
                                 if(canCrSpawnMinions){
-                                    StartCoroutine(SpawnMinions());
+                                    StartCoroutine(SpawnMinions(false));
                                 }
                                 break;
                             case 5:
@@ -312,20 +312,23 @@ namespace Sidar
         */
 
 
-        private IEnumerator SpawnMinions(){
+        private IEnumerator SpawnMinions(bool forHealth){
             LookAtPlayer();
             agent.SetDestination(transform.position);
             animator.SetBool("isChasing", false);
-            canCrSpawnMinions = false;
+            if(!forHealth)
+                canCrSpawnMinions = false;
             animator.SetBool("isSpawningMinions",true);
             isAttacking = true;
             yield return new WaitForSeconds(spawnAnimDelay);
             SpawnClone();
-            isAttacking = false;
+            if(!forHealth)
+                isAttacking = false;
             animator.SetBool("isSpawningMinions", false);
             yield return new WaitForSeconds(spawnCooldown);
             canCrSpawnMinions = true;
         }
+        
         private void SpawnClone()
         {
             Vector3 bossPosition = transform.position;
@@ -415,7 +418,7 @@ namespace Sidar
             float regenAmount = regenSpeed * Time.deltaTime;
             currentHealth += regenAmount;
             currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
-
+            UIManager.instance.BossHealthBar(maxHealth, currentHealth);
             UpdateRegenSpeed();
         }
 

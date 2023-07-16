@@ -2212,7 +2212,7 @@ PrefabInstance:
     - target: {fileID: 8645639842760587065, guid: 0c4c5165bd0d7f64fbf962d395bb5a91,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -124.600006
+      value: -18
       objectReference: {fileID: 0}
     - target: {fileID: 8645639842760587065, guid: 0c4c5165bd0d7f64fbf962d395bb5a91,
         type: 3}
@@ -4651,6 +4651,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 633565860914373600, guid: 36a145bb93624c94eb430ef608b41f2f,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.021577835
+      objectReference: {fileID: 0}
+    - target: {fileID: 633565860914373600, guid: 36a145bb93624c94eb430ef608b41f2f,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 633565860914373600, guid: 36a145bb93624c94eb430ef608b41f2f,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 699489163452667189, guid: 36a145bb93624c94eb430ef608b41f2f,
         type: 3}
       propertyPath: m_AdditionalLightsShadowResolutionTier

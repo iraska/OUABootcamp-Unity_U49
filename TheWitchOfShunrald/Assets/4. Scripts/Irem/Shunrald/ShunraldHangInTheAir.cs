@@ -42,7 +42,7 @@ namespace Shunrald
             GameManager.instance.Player.GetComponent<ShunraldController>().Particle.TriggerPortalParticle();
             yield return new WaitForSeconds(.3f);
 
-            DGMove(gameObject, 1.5f, .3f);
+            DGMove(gameObject, 0.6f, .3f);
         }
 
         // The Necromancer releases the Witch.
