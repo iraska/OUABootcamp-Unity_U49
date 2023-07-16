@@ -3848,7 +3848,7 @@ PrefabInstance:
         type: 3}
       propertyPath: firstSpawnerToCheck
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 184889387}
     - target: {fileID: 5163697799463066684, guid: 9f5c1878c62555c429cab8d9c352b81a,
         type: 3}
       propertyPath: m_Name

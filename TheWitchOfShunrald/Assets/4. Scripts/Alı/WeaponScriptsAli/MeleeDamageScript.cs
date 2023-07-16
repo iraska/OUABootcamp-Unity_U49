@@ -21,11 +21,11 @@ public class MeleeDamageScript : MonoBehaviour
         {
             if (isStaff)
             {
-                collision.gameObject.GetComponent<Enemy>().TakeDamage(rb.velocity * throwBackForce, playerDamage / 2 * rb.velocity.magnitude / 20);
+                collision.gameObject.GetComponent<Enemy>().TakeDamage(rb.velocity * throwBackForce, playerDamage / 8 * rb.velocity.magnitude / 20);
             }
             else
             {
-                collision.gameObject.GetComponent<Enemy>().TakeDamage(rb.velocity * throwBackForce, playerDamage * rb.velocity.magnitude / 20);
+                collision.gameObject.GetComponent<Enemy>().TakeDamage(rb.velocity * throwBackForce, playerDamage / 5 * rb.velocity.magnitude / 20);
             }
             
         }
