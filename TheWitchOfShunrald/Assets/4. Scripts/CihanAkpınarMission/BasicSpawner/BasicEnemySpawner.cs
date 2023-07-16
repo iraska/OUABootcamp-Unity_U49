@@ -52,22 +52,27 @@ namespace CihanAkpınar
    
        Vector3 FindSpawnLoc()
        {
-           Vector3 SpawnPos;
-   
+           Vector3 spawnPos;
+           Vector3 raycastPos;
+
            float xLoc = Random.Range(-spawnRange, spawnRange) + transform.position.x;
            float zLoc = Random.Range(-spawnRange, spawnRange) + transform.position.z;
            float yLoc = transform.position.y;
-   
-           SpawnPos = new Vector3(xLoc, yLoc, zLoc);
-   
-           if(Physics.Raycast(SpawnPos, Vector3.down,5))
+
+           spawnPos = new Vector3(xLoc, yLoc, zLoc);
+
+           raycastPos = spawnPos + (Vector3.up * 20f);
+
+           RaycastHit hit;
+           if (Physics.Raycast(raycastPos, Vector3.down, out hit, 30))
            {
-               return SpawnPos;
+               if (hit.collider.gameObject.layer!=10)
+               {
+                   return FindSpawnLoc();
+               }
            }
-           else
-           {
-               return FindSpawnLoc();
-           }
+
+           return spawnPos;
        }
 
        private IEnumerator SpawmDelay()

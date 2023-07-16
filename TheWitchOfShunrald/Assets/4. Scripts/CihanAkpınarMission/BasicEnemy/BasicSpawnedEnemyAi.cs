@@ -185,16 +185,13 @@ namespace CihanAkpınar
                 AudioManager.Instance.PlaySfx(AudioManager.Instance.basicSpawnedEnemyDieAudio,transform.position);
                 DropMath();
                 Instantiate(basicEnemyDiePart, new Vector3(transform.position.x, transform.position.y, transform.position.z),Quaternion.identity);
-                if (spawnerOfThisEnemy != null)
-                {
-                    spawnerOfThisEnemy.GetComponent<BasicEnemySpawner>().currentEnemy.Remove(this.gameObject);
-                }
+                
                 Destroy(gameObject);
             }
             lookSpawnedEnemyRadius = 50;
         }
-        
-        
+
+
         void DropMath()
         {
             mainProbability = UnityEngine.Random.Range(1, 101);
@@ -220,6 +217,10 @@ namespace CihanAkpınar
         }
         private void OnDestroy()
         {
+            if (spawnerOfThisEnemy != null)
+            {
+                spawnerOfThisEnemy.GetComponent<BasicEnemySpawner>().currentEnemy.Remove(this.gameObject);
+            }
             GameManager.instance.EnemyDestoyEvent();
         }
     }
