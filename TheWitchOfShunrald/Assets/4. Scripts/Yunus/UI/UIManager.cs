@@ -296,7 +296,7 @@ public class UIManager : MonoBehaviour
     {
         normalButtonImage.sprite = selectedSprite;
         normalButtonImage.gameObject.GetComponent<Button>().interactable = false;
-        if (PlayerPrefs.GetInt("difficulty") == 2)
+        if (PlayerPrefs.GetInt("difficulty") == 1)
         {
             easyButtonImage.sprite = unselectedSprite;
             easyButtonImage.gameObject.GetComponent<Button>().interactable = true;
