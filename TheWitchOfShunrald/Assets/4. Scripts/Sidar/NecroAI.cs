@@ -68,12 +68,12 @@ namespace Sidar
         
         private NecroUIHealthBarManager necroHealthBar;
 
-
- 
+        public bool isDead;
+        
 
         private void Start()
         {
-            
+            UIManager.instance.BossHealthBarPanel();
             currentHealth = maxHealth;
             player = GameObject.FindWithTag("Shunrald");
             agent = GetComponent<NavMeshAgent>();
@@ -85,42 +85,39 @@ namespace Sidar
             }
             angleIncrement = 360f / numClones;
             spawnTimer = spawnDelay;
-            necroHealthBar = FindObjectOfType<NecroUIHealthBarManager>();
-            necroHealthBar.SetBossMaxHeatlh(maxHealth);
-            necroHealthBar.SetUIHealthBartToActive();
-            
         }
 
         private void Update()
         {
-
-            distance = Vector3.Distance(transform.position, player.transform.position);
+            if (!isDead)
+            {
+                distance = Vector3.Distance(transform.position, player.transform.position);
                 if(!isAttacking){
                     if(distance > attackRange){
-                    random = Random.Range(1,4);
-                    switch(random){
-                        case 1:
-                            ChasePlayer();
-                            break;
-                        case 2:
-                            if(canCrSpawnMinions){
-                                StartCoroutine(SpawnMinions());
-                            }
-                            break;
-                        case 3:
-                            if(canCrHealthRegen){
-                                if(currentHealth < 20){
+                        random = Random.Range(1,4);
+                        switch(random){
+                            case 1:
+                                ChasePlayer();
+                                break;
+                            case 2:
+                                if(canCrSpawnMinions){
                                     StartCoroutine(SpawnMinions());
-                                    StartCoroutine(HealthRegen());
                                 }
-                                else if(currentHealth < 50){
-                                    StartCoroutine(HealthRegen());
+                                break;
+                            case 3:
+                                if(canCrHealthRegen){
+                                    if(currentHealth < 20){
+                                        StartCoroutine(SpawnMinions());
+                                        StartCoroutine(HealthRegen());
+                                    }
+                                    else if(currentHealth < 50){
+                                        StartCoroutine(HealthRegen());
+                                    }
                                 }
-                            }
-                            break;
+                                break;
+                        }
                     }
-                }
-                else{
+                    else{
                         if (isMultiProjectile)
                         {
                             ChasePlayer();
@@ -143,7 +140,6 @@ namespace Sidar
                                 break;
                             case 3:
                                 if(canCrStunPLayer){
-                                    break;
                                     StartCoroutine(StunPlayer());
                                 }
                                 break;
@@ -166,11 +162,9 @@ namespace Sidar
 
                                 break;
                         }
+                    }
                 }
             }
-            
-            
-
         }
 
         private void LookAtPlayer()
@@ -211,7 +205,7 @@ namespace Sidar
                     transform.LookAt(player.transform);
                     agent.SetDestination(transform.position);
                     animator.SetBool("isChasing", false);
-                }
+                }   
                     
                 if (canMultiProjectile)
                 {
@@ -221,7 +215,7 @@ namespace Sidar
                     Invoke(nameof(ResetMultiProjectile), multiProjectileTimeBetween);
                     count++;
                 }
-                if(count == 10)
+                if(count == 5)
                     break;
                 yield return null;
             }
@@ -242,7 +236,7 @@ namespace Sidar
             canCrSingleProjectile = false;
             isAttacking = true;
             animator.SetBool("isSingleProjectileAttack",true);
-            AudioManager.Instance.PlaySfx(AudioManager.Instance.necroWhisperAudio, transform.position);
+            AudioManager.Instance.PlaySfx(AudioManager.Instance.necroFollowBombAudio, transform.position);
             yield return new WaitForSeconds(2f);
             isAttacking = false;
             animator.SetBool("isSingleProjectileAttack", false);
@@ -434,6 +428,8 @@ namespace Sidar
 
         private void Die()
         {
+            DisableAnimatorParametersExcept("isDead");
+            isDead = true;
             Debug.Log("Boss defeated!");
         }
 
@@ -442,7 +438,7 @@ namespace Sidar
             isRegenInterrupt = true;
             currentHealth -= damage;
             
-            necroHealthBar.SetBossCurrentHealth(currentHealth);
+            UIManager.instance.BossHealthBar(maxHealth, currentHealth);
             if (currentHealth <= 0)
             {
                 Die();
@@ -457,6 +453,22 @@ namespace Sidar
         public void SetEnemyStats(float health, float damage)
         {
             currentHealth = health;
+        }
+        
+        void DisableAnimatorParametersExcept(string parameterName)
+        {
+            for (int i = 0; i < animator.parameters.Length; i++)
+            {
+                AnimatorControllerParameter parameter = animator.parameters[i];
+                if (parameter.name.Equals(parameterName))
+                {
+                    animator.SetBool(parameter.name, true);
+                }
+                else
+                {
+                    animator.SetBool(parameter.name, false);
+                }
+            }
         }
     }
 }

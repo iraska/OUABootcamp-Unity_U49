@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4721520182802442694}
   - component: {fileID: -2237137432514466575}
   - component: {fileID: -9001701483627691289}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: BossProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,6 +209,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5487171867648658081, guid: 982c2732d8a2f31458eafe4d3f5fd8be,
         type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487171867648658081, guid: 982c2732d8a2f31458eafe4d3f5fd8be,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -292,6 +297,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Charge Finish
+      objectReference: {fileID: 0}
+    - target: {fileID: 5741485018221383263, guid: 87f6c68d35956ef41a80b8f598e902bc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5741485018221383263, guid: 87f6c68d35956ef41a80b8f598e902bc,
         type: 3}

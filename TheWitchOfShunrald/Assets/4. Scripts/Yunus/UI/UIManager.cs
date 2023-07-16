@@ -10,9 +10,10 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
 
-    [SerializeField] private GameObject gamePanel, pausePanel, upgradePanel, dialogPanel, winPanel, losePanel, infoPanel, arenaWinPanel, gameLoadingPanel;
+    [SerializeField] private GameObject gamePanel, pausePanel, upgradePanel, dialogPanel, winPanel, losePanel, infoPanel, arenaWinPanel, gameLoadingPanel, bossHealthBarPanel;
     [SerializeField] private GameObject[] weaponImages;
     [SerializeField] private Image healthBar, healthBar1, manaBar, easyButtonImage, normalButtonImage, hardButtonImage, lowButtonImage, highButtonImage, mediumButtonImage, weaponUICircle, weaponUILine, fireSkillImage, dashSkillImage;
+    [SerializeField] private Slider bossHealthBar;
     [SerializeField] private Sprite selectedSprite, unselectedSprite;
     [SerializeField] private Text infoText;
     [SerializeField] private DialogSystem dialogSystem;
@@ -87,6 +88,7 @@ public class UIManager : MonoBehaviour
             StartCoroutine(GameLoadingPanel());
 
         currentPanel.SetActive(false);
+        bossHealthBarPanel.SetActive(false);
         gamePanel.SetActive(true);
         StartCoroutine(FireCoolDown(0));
         StartCoroutine(DashCoolDown(0));
@@ -205,9 +207,20 @@ public class UIManager : MonoBehaviour
         GameManager.instance.GameState = GameManager.State.Playing;
     }
 
-    //------------------- SETTÝNGS--------------------------
+    public void BossHealthBarPanel()
+    {
+        bossHealthBar.value = 1;
+        bossHealthBarPanel.SetActive(true);
+    }
 
-    // DÝFFÝCULTY
+    public void BossHealthBar(float maxHealth, float currentHealth)
+    {
+        bossHealthBar.value = currentHealth / maxHealth;
+    }
+
+    //------------------- SETTï¿½NGS--------------------------
+
+    // Dï¿½FFï¿½CULTY
     public void Easy()
     {
         easyButtonImage.sprite = selectedSprite;
