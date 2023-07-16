@@ -4171,6 +4171,75 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 25.1, y: 0.5, z: 12}
   m_Center: {x: 22, y: 0, z: -30.3}
+--- !u!1001 &2107387535
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5571505242566836237, guid: 8863d5baeca3d454fb81dec4d5db09ab,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571505242566836237, guid: 8863d5baeca3d454fb81dec4d5db09ab,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571505242566836237, guid: 8863d5baeca3d454fb81dec4d5db09ab,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571505242566836237, guid: 8863d5baeca3d454fb81dec4d5db09ab,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571505242566836237, guid: 8863d5baeca3d454fb81dec4d5db09ab,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571505242566836237, guid: 8863d5baeca3d454fb81dec4d5db09ab,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571505242566836237, guid: 8863d5baeca3d454fb81dec4d5db09ab,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571505242566836237, guid: 8863d5baeca3d454fb81dec4d5db09ab,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571505242566836237, guid: 8863d5baeca3d454fb81dec4d5db09ab,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571505242566836237, guid: 8863d5baeca3d454fb81dec4d5db09ab,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571505242566836237, guid: 8863d5baeca3d454fb81dec4d5db09ab,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657543807071407017, guid: 8863d5baeca3d454fb81dec4d5db09ab,
+        type: 3}
+      propertyPath: m_Name
+      value: FallDetector
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8863d5baeca3d454fb81dec4d5db09ab, type: 3}
 --- !u!1 &322028862400347725
 GameObject:
   m_ObjectHideFlags: 0
