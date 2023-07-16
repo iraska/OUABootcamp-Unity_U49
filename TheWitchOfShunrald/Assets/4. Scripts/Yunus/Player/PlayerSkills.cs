@@ -13,19 +13,20 @@ public class PlayerSkills : MonoBehaviour
     [SerializeField] private float mana;
     [SerializeField] private LayerMask aimLayerMask;
     private SpriteRenderer hexagonSprite;
-
+    private PlayerStats playerStats;
     private bool isActiveHexagon, isActiveSkill = true;
 
     private Color hexagonColor = new Color(0.5f, 0.06368f, 0.06368f, 0.7f);
     private void Start()
     {
         hexagonSprite= hexagon.GetComponent<SpriteRenderer>();
+        playerStats= GetComponent<PlayerStats>();
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && isActiveSkill)
+        if (Input.GetKeyDown(KeyCode.E) && isActiveSkill && GameManager.instance.GameState == GameManager.State.Playing)
         {
-            if (!isActiveHexagon)
+            if (!isActiveHexagon && playerStats.Mana > mana)
             {
                 isActiveHexagon = true;
                 hexagonSprite.color = Color.gray;
@@ -46,10 +47,10 @@ public class PlayerSkills : MonoBehaviour
             Vector3 mousePos = GetMouseWorldPosition();
             Vector3 hexagonPos = new Vector3(mousePos.x, hexagon.position.y, mousePos.z);
             hexagon.position = hexagonPos;
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && playerStats.Mana > mana)
             {
                 StartCoroutine(UIManager.instance.FireCoolDown(coolDown));
-                GameManager.instance.Player.GetComponent<PlayerStats>().SpendMana(mana);
+                playerStats.SpendMana(mana);
                 isActiveHexagon = false;
                 isActiveSkill = false;
                 GameManager.instance.Player.GetComponent<ShunraldMovementController>().StopedUsingSkill();

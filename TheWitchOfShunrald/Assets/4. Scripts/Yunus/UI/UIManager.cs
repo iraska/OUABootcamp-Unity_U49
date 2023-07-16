@@ -17,9 +17,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Sprite selectedSprite, unselectedSprite;
     [SerializeField] private Text infoText;
     [SerializeField] private DialogSystem dialogSystem;
-    [SerializeField] private TextMeshProUGUI badgeText, versionText;
+    [SerializeField] private TextMeshProUGUI badgeText, versionText, titleText;
     [SerializeField] private ArenaRewardPanel arenaRewardPanel;
-    private GameObject currentPanel;
+    [SerializeField] private RectTransform badgeTransform;
+    private GameObject currentGamePanel, currentMenuPanel;
 
     private void Awake()
     {
@@ -37,22 +38,22 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         versionText.text = 'v' + Application.version;
-        currentPanel = gamePanel;
-        if(!PlayerPrefs.HasKey("difficulty"))
+        currentGamePanel = gamePanel;
+        if (!PlayerPrefs.HasKey("difficulty"))
         {
-            PlayerPrefs.SetInt("difficulty", 1);
+            PlayerPrefs.SetInt("difficulty", 2);
         }
         switch (PlayerPrefs.GetInt("difficulty"))
         {
-            case 0:
+            case 1:
                 easyButtonImage.sprite = selectedSprite;
                 easyButtonImage.gameObject.GetComponent<Button>().interactable = false;
                 break;
-            case 1:
+            case 2:
                 normalButtonImage.sprite = selectedSprite;
                 normalButtonImage.gameObject.GetComponent<Button>().interactable = false;
                 break;
-            case 2:
+            case 3:
                 hardButtonImage.sprite = selectedSprite;
                 hardButtonImage.gameObject.GetComponent<Button>().interactable = false;
                 break;
@@ -80,51 +81,59 @@ public class UIManager : MonoBehaviour
                 QualitySettings.SetQualityLevel(3);
                 break;
         }
-
+        TitleColorAnim();
     }
     public void GamePanel()
     {
         if(GameManager.instance.isArena)
             StartCoroutine(GameLoadingPanel());
 
-        currentPanel.SetActive(false);
+        currentGamePanel.SetActive(false);
         bossHealthBarPanel.SetActive(false);
         gamePanel.SetActive(true);
         StartCoroutine(FireCoolDown(0));
         StartCoroutine(DashCoolDown(0));
-        currentPanel = gamePanel;
+        currentGamePanel = gamePanel;
     }
     public void UpgradePanel()
     {
-        currentPanel.SetActive(false);
+        currentGamePanel.SetActive(false);
         upgradePanel.SetActive(true);
-        currentPanel = upgradePanel;
+        currentGamePanel = upgradePanel;
     }
     public void DialogPanel(DialogSystem.DialogStruct[] dialog)
     {
-        currentPanel.SetActive(false);
+        currentGamePanel.SetActive(false);
         dialogPanel.SetActive(true);
-        currentPanel = dialogPanel;
+        currentGamePanel = dialogPanel;
         dialogSystem.DialogText(dialog);
         GameManager.instance.GameState = GameManager.State.Dialog;
     }
     public void PausePanel()
     {
-        currentPanel.SetActive(false);
+        currentGamePanel.SetActive(false);
         pausePanel.SetActive(true);
-        currentPanel = pausePanel;
+        currentGamePanel = pausePanel;
     }
     public void WinPanel()
     {
-        currentPanel.SetActive(false);
+        currentGamePanel.SetActive(false);
         winPanel.SetActive(true);
-        currentPanel = winPanel;
+        currentGamePanel = winPanel;
     }
     public void ArenaWinPanel(string name)
     {
-        currentPanel.SetActive(false);
+        badgeTransform.localScale = Vector3.zero;
+        currentGamePanel.SetActive(false);
         arenaWinPanel.SetActive(true);
-        currentPanel = arenaWinPanel;
+        badgeTransform.DOScale(2.5f, 1.5f).OnComplete(() =>
+        {
+            badgeTransform.DOScale(1, 3f).OnComplete(() =>
+            {
+                badgeTransform.DOShakeRotation(2, 5).SetLoops(3, LoopType.Restart);
+            });
+        });
+        currentGamePanel = arenaWinPanel;
         badgeText.text = name;
         StartCoroutine(arenaRewardPanel.Start());
     }
@@ -132,9 +141,9 @@ public class UIManager : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
 
-        currentPanel.SetActive(false);
+        currentGamePanel.SetActive(false);
         losePanel.SetActive(true);
-        currentPanel = losePanel;
+        currentGamePanel = losePanel;
     }
 
     public void HealthBar(float currentHealth, float maxHealth)
@@ -173,7 +182,7 @@ public class UIManager : MonoBehaviour
         dashSkillImage.transform.parent.localScale = Vector3.one;
         dashSkillImage.DOFillAmount(0, duration).SetEase(Ease.Linear);
         yield return new WaitForSeconds(duration);
-        dashTween = dashSkillImage.transform.parent.DOScale(1.2f, 1f).SetEase(Ease.Linear);
+        dashTween = dashSkillImage.transform.parent.DOScale(1.1f, 1f).SetEase(Ease.Linear);
         dashTween.SetLoops(-1, LoopType.Yoyo);
     }
     Tween fireTween;
@@ -184,7 +193,7 @@ public class UIManager : MonoBehaviour
         fireSkillImage.transform.parent.localScale = Vector3.one;
         fireSkillImage.DOFillAmount(0, duration).SetEase(Ease.Linear);
         yield return new WaitForSeconds(duration);
-        fireTween = fireSkillImage.transform.parent.DOScale(1.2f, 1f).SetEase(Ease.Linear);
+        fireTween = fireSkillImage.transform.parent.DOScale(1.1f, 1f).SetEase(Ease.Linear);
         fireTween.SetLoops(-1, LoopType.Yoyo);
     }
 
@@ -217,6 +226,52 @@ public class UIManager : MonoBehaviour
     {
         bossHealthBar.value = currentHealth / maxHealth;
     }
+    private void TitleColorAnim()
+    {
+        Color titleTopLeftColor = Color.white;
+        float value = 1;
+        DOTween.To(() => value, x => value = x, 0, 3)
+            .OnUpdate(() => {
+                titleTopLeftColor = new Color(1, value, value);
+                titleText.colorGradient = new VertexGradient(titleTopLeftColor, titleText.colorGradient.topRight, titleText.colorGradient.bottomLeft, titleText.colorGradient.bottomRight);
+            }).SetLoops(-1, LoopType.Yoyo);
+    }
+
+    public void OpenPanelAnim(Transform openPanel)
+    {
+        if(currentMenuPanel != null)
+        {
+            currentMenuPanel.transform.DOScale(0, 0.5f).OnComplete(() =>
+            {
+                currentMenuPanel.gameObject.SetActive(false);
+                openPanel.gameObject.SetActive(true);
+                currentMenuPanel = openPanel.gameObject;
+                openPanel.localScale = Vector3.zero;
+                openPanel.DOScale(1.2f, 0.5f).OnComplete(() =>
+                {
+                    openPanel.DOScale(1.0f, 0.2f);
+                });
+            });
+        }
+        else
+        {
+            openPanel.gameObject.SetActive(true);
+            currentMenuPanel = openPanel.gameObject;
+            openPanel.localScale = Vector3.zero;
+            openPanel.DOScale(1.2f, 0.5f).OnComplete(() =>
+            {
+                openPanel.DOScale(1.0f, 0.2f);
+            });
+        }
+    }
+    public void ClosePanelAnim()
+    {
+        currentMenuPanel.transform.DOScale(0, 0.5f).OnComplete(() =>
+        {
+            currentMenuPanel.gameObject.SetActive(false);
+            currentMenuPanel = null;
+        });
+    }
 
     //------------------- SETT�NGS--------------------------
 
@@ -225,7 +280,7 @@ public class UIManager : MonoBehaviour
     {
         easyButtonImage.sprite = selectedSprite;
         easyButtonImage.gameObject.GetComponent<Button>().interactable = false;
-        if(PlayerPrefs.GetInt("difficulty") == 1)
+        if(PlayerPrefs.GetInt("difficulty") == 2)
         {
             normalButtonImage.sprite = unselectedSprite;
             normalButtonImage.gameObject.GetComponent<Button>().interactable = true;
@@ -235,13 +290,13 @@ public class UIManager : MonoBehaviour
             hardButtonImage.sprite = unselectedSprite;
             hardButtonImage.gameObject.GetComponent<Button>().interactable = true;
         }
-        PlayerPrefs.SetInt("difficulty",0);
+        PlayerPrefs.SetInt("difficulty",1);
     }
     public void Normal()
     {
         normalButtonImage.sprite = selectedSprite;
         normalButtonImage.gameObject.GetComponent<Button>().interactable = false;
-        if (PlayerPrefs.GetInt("difficulty") == 0)
+        if (PlayerPrefs.GetInt("difficulty") == 2)
         {
             easyButtonImage.sprite = unselectedSprite;
             easyButtonImage.gameObject.GetComponent<Button>().interactable = true;
@@ -251,13 +306,13 @@ public class UIManager : MonoBehaviour
             hardButtonImage.sprite = unselectedSprite;
             hardButtonImage.gameObject.GetComponent<Button>().interactable = true;
         }
-        PlayerPrefs.SetInt("difficulty", 1);
+        PlayerPrefs.SetInt("difficulty", 2);
     }
     public void Hard()
     {
         hardButtonImage.sprite = selectedSprite;
         hardButtonImage.gameObject.GetComponent<Button>().interactable = false;
-        if (PlayerPrefs.GetInt("difficulty") == 1)
+        if (PlayerPrefs.GetInt("difficulty") == 2)
         {
             normalButtonImage.sprite = unselectedSprite;
             normalButtonImage.gameObject.GetComponent<Button>().interactable = true;
@@ -267,7 +322,7 @@ public class UIManager : MonoBehaviour
             easyButtonImage.sprite = unselectedSprite;
             easyButtonImage.gameObject.GetComponent<Button>().interactable = true;
         }
-        PlayerPrefs.SetInt("difficulty", 2);
+        PlayerPrefs.SetInt("difficulty", 3);
     }
     // Quality
     public void Low()

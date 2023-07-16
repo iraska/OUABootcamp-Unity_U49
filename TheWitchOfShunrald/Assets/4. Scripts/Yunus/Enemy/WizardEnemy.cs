@@ -25,7 +25,7 @@ public class WizardEnemy : MonoBehaviour, Enemy
     [SerializeField] private int healthPotProbability;
     [SerializeField] private int manaPotProbability;
     private int mainProbability;
-
+    [SerializeField] private GameObject destroyParticle;
     //Spawner entegration
     public GameObject spawnerOfThisEnemy;
 
@@ -174,6 +174,7 @@ public class WizardEnemy : MonoBehaviour, Enemy
         Vector3 jumpDirection = ((transform.position - exploLocation) + Vector3.up).normalized * 3;
         rb.AddForce(3 * jumpDirection, ForceMode.VelocityChange);
         health -= damage;
+        AudioManager.Instance.PlaySfx(AudioManager.Instance.basicSpawnedEnemyTakeDamageAudio, transform.position);
         if (health <= 0)
         {
             if (spawnerOfThisEnemy != null)
@@ -200,6 +201,9 @@ public class WizardEnemy : MonoBehaviour, Enemy
     }
     private void OnDestroy()
     {
+        GameObject particle = Instantiate(destroyParticle,transform.position+Vector3.up, Quaternion.identity);
+        Destroy(particle,2f);
         GameManager.instance.EnemyDestoyEvent();
+        transform.DOKill();
     }
 }

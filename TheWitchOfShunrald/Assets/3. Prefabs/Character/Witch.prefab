@@ -2832,9 +2832,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aac58be0693694f99ec2ec3ed05328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
-  startingDamage: 10
-  startingMana: 50
+  startingHealth: 200
+  startingDamage: 20
+  startingMana: 100
   healthMaxValue: 1000
   damageMaxValue: 100
   manaMaxValue: 500
@@ -3000,8 +3000,8 @@ MonoBehaviour:
   cam: {fileID: 0}
   projectile: {fileID: 3152197311611082539, guid: 6fd6f110f10414d498139c35e405043a,
     type: 3}
-  coolDown: 10
-  mana: 0
+  coolDown: 12
+  mana: 10
   aimLayerMask:
     serializedVersion: 2
     m_Bits: 1024

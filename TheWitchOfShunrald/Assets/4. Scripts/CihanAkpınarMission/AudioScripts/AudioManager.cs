@@ -191,12 +191,11 @@ namespace CihanAkpınar
             float calcuatedVolume = Mathf.Log10(volume) * 40;
             audioMixer.SetFloat("musicVolumeSet", calcuatedVolume); 
             PlayerPrefs.SetFloat("musicVolume",volume);
-
         }
 
         private void LoadVolume()
         {
-            musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
+            musicSlider.value = PlayerPrefs.GetFloat("musicVolume", 0.5f);
             SetMusicVolume();
         }
         public void SetSfxVolume()
@@ -210,7 +209,7 @@ namespace CihanAkpınar
 
         private void LoadSfxVolume()
         {
-            sfxSlider.value = PlayerPrefs.GetFloat("sfxVolume");
+            sfxSlider.value = PlayerPrefs.GetFloat("sfxVolume", 0.5f);
             SetSfxVolume();
         }
     }  

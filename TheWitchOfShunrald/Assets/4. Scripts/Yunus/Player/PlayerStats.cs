@@ -34,13 +34,13 @@ public class PlayerStats : MonoBehaviour
         if(PlayerPrefs.GetInt("lastGame") > 1)
         {
             health = PlayerPrefs.GetFloat("health");
-            damage = PlayerPrefs.GetFloat("damage");
+            damage = PlayerPrefs.GetFloat("damage") / PlayerPrefs.GetInt("difficulty");
             mana = PlayerPrefs.GetFloat("mana");
         }
         else
         {
             health = startingHealth;
-            damage = startingDamage;
+            damage = startingDamage * PlayerPrefs.GetInt("difficulty");
             mana = startingMana;
             PlayerPrefs.SetFloat("health", startingHealth);
             PlayerPrefs.SetFloat("mana", startingMana);
@@ -60,7 +60,7 @@ public class PlayerStats : MonoBehaviour
     }
     public void TakeDamage(float damage)
     {
-        health -= damage;
+        health -= damage * PlayerPrefs.GetInt("difficulty");
         if (health <= 0 && GameManager.instance.GameState == GameManager.State.Playing)
         {
             GameManager.instance.Lose();
@@ -123,14 +123,23 @@ public class PlayerStats : MonoBehaviour
     public void HealthPot(float health)
     {
         this.health += health;
-        if (this.health > PlayerPrefs.GetFloat("health"))
-        {
-            this.health = PlayerPrefs.GetFloat("health");
-        }
+
         if (!GameManager.instance.IsArena)
+        {
+            if (this.health > PlayerPrefs.GetFloat("health"))
+            {
+                this.health = PlayerPrefs.GetFloat("health");
+            }
             UIManager.instance.HealthBar(this.health, PlayerPrefs.GetFloat("health"));
+        }
         else
+        {
+            if (this.health > arenaStartingHealth)
+            {
+                this.health = arenaStartingHealth;
+            }
             UIManager.instance.HealthBar(this.health, arenaStartingHealth);
+        }
     }
     float arenaStartingHealth, arenaStartingMana;
     public void SetPlayerStats(float health, float damage, float mana)

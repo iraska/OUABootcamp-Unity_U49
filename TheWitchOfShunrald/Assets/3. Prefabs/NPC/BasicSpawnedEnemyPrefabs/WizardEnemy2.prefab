@@ -764,6 +764,8 @@ MonoBehaviour:
     type: 3}
   healthPotProbability: 10
   manaPotProbability: 10
+  destroyParticle: {fileID: 5130003127346239025, guid: 712fd7dc945d0b4429b07cd218760c64,
+    type: 3}
   spawnerOfThisEnemy: {fileID: 0}
 --- !u!1 &1251583507443948
 GameObject:
