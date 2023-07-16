@@ -2,6 +2,8 @@
 
 # İçindekiler
 * [Takım Adı](#takım-adı)
+* [Website](#website)
+* [Pazarlama Planı](#pazarlama-planı)
 * [Oyun ile İlgili Bilgiler](#oyun-ile-ilgili-bilgiler)
 * [Game Design Documantation](#game-design-documantation)
 * [Sprint 1](#sprint-1)
@@ -10,7 +12,15 @@
 * [Kullanılan Assetler/Eklentiler](#kullanılan-assetlereklentiler)
 
 ## Takım Adı
-Takım Unity U-49
+*Takım Unity U-49*
+
+## Website
+**[Raven Perception](https://ravenperception.com/)**
+
+## Pazarlama Planı
+* *Ekip dinamiğinden ve ortaya çıkan üründen ötürü oyunumuzun derece alacağına ve gelecek vaadettiğine inanıyoruz. Bu nedenle oyunumuza reklam eklemek yerine bir **Steam** sayfası oluşturduk ve **[The Witch of Shunrald](https://store.steampowered.com/app/2512730/The_Witch_of_Shunrald/)**'ı burada, gururla yayımladık.*
+* *Ürün değerlendirmesi sonrasında oyunumuzu geliştirmeye devam edip, downloadable content (DLC)'ler ile oyunumuzu güncel tutarak bir satış planı oluşturacağız.*
+* *Oyunumuzun başlangıç fiyatı 5-10$ aralığında belirlenmiş olup, DLC'ler için farklı ana düşmanlar ve birbiriyle bağlantılı yeni hikaye ve görevler işlemeye karar kıldık.*
 
 ## Oyun ile İlgili Bilgiler
 * ***İzometrik, Aksiyon-Macera***
