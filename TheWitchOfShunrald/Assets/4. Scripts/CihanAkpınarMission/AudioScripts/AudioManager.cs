@@ -111,13 +111,11 @@ namespace CihanAkpınar
 
             musicSource.outputAudioMixerGroup = musicGroups[0];
             musicSource2.outputAudioMixerGroup = musicGroups[0];
-            backgroundSource.outputAudioMixerGroup = musicGroups[0];
             sfxSource.outputAudioMixerGroup = sfxGroups[0];
             dialogueSource.outputAudioMixerGroup = sfxGroups[0];
 
             musicSource.loop = true;
             musicSource2.loop = true;
-            backgroundSource.loop = true;
         }
 
         public void PlayMusic(AudioClip musicClip)
