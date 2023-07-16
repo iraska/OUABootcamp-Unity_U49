@@ -1,14 +1,11 @@
 # İçindekiler
 * [Takım Adı](#takım-adı)
 * [Oyun ile İlgili Bilgiler](#oyun-ile-ilgili-bilgiler)
-* [GDD](#gdd)
+* [Game Design Documantation](#game-design-documantation)
 * [Sprint 1](#sprint-1)
 * [Sprint 2](#sprint-2)
 * [Sprint 3](#sprint-3)
 * [Kullanılan Assetler/Eklentiler](#kullanılan-assetlereklentiler)
-
-
-
 
 ## Takım Adı
 Takım Unity U-49
@@ -16,12 +13,18 @@ Takım Unity U-49
 ## Oyun ile İlgili Bilgiler
 * ***İzometrik, Aksiyon-Macera***
 * ***Windows (PC)***
+  
 ### Takım Elemanları
 * **Ali Yağmur:** *Product Owner - Developer*
 * **Safiye İrem Turna:** *Scrum Master - Developer*
-* **Nebi Cihan Akpınar:** *Developer*
+* **Nebi Cihan Akpınar:** *Developer - Sound Director*
 * **Sidar Aygaz:** *Developer - Art Director*
-* **Yunus Kale:** *Developer*
+* **Yunus Kale:** *Developer - UI Director*
+
+### Diyalog Seslendirmeleri
+* **The Witch:** *Safiye İrem Turna*
+* **The Necromancer:** *Sidar Aygaz*
+* **Henric the Ghost:** *Ali Yağmur*
 
 ### Oyun Adı
 The Witch of Shunrald
@@ -51,16 +54,18 @@ The Witch of Shunrald
 * *Ekibimiz beş developerdan oluşmaktadır ve aramızda herhangi bir designer/artist bulunmamaktadır. Bu nedenle 3D modellerde ücretsiz asset'lerden faydalandık. Kullanılan assetlere [Kullanılan Assetler/Eklentiler](#kullanılan-assetlereklentiler)'den ulaşılabilir.*
 * *İlk Sprint'te sınav haftasından dolayı daha çok pre-production kısmına yer verdik.*
 * *Sprint puanlamalarında belli bir yerden sonra Click-Up para talep ettiği için puanlamaları backlog'daki task'ların önünde belirtmek durumunda kaldık.*
+* *The Witch, asırlar önce yaptığı bir büyü savaşında kollarını/ellerini kullanma yetisini kaybetmiştir. O nedenle karakterimizin kolları rigidbody - fizik sayesinde hareket etmektedir. Oluşan görüntü animasyona bağlı bir bug olmamakla beraber Animation Rigging - Unity kullanılarak özenle yapılmıştır.*
+* *Aynı şekilde, Weeping Angel mini boss karakteri Doctor Who (DW)'deki Ağlayan Melek'lerden esinlenerek yapılmıştır. Melek heykelleri, göz kırptığımızda yani görüş alanımızdan çıktığında bize doğru hareket eder, onlara doğru döndüğümüzde ise (mouse imleci takibi) taşlaşırlar; tek dokunuşları bizi taşlaştırıp öldürmeye yetecek güçtedir.*
 
-## GDD
-[Game Design Documantation](https://doc.clickup.com/9009152983/d/h/8cftgyq-1720/77fc25bd1accf24)
+## Game Design Documantation
+[GDD](https://doc.clickup.com/9009152983/d/h/8cftgyq-1720/77fc25bd1accf24)
 
 ## Sprint 1
 * **Sprint Notları:** User Story'ler (description alanında) ve Kabul Kriterleri (subtask olarak) Product Backlog'ların içine yazılmıştır. Product backlog item'lara tıklandığında hikayelerin detayları ve kabul kriterleri okunabilir.
 
 * **Sprint içinde tamamlanması tahmin edilen puan:** 41 Puan
 
-* **Puan tamamlama mantığı:** Toplamda proje boyunca tamamlanması gereken 300 puanlık backlog bulunmaktadır. İlk Sprint'te daha çok pre-production kısmına yer verildiği için 41 puanlık bir hedef koymaya karar kıldık. 41 puana başarılı bir şekilde ulaştık ve geriye 259 puanımız kaldı.
+* **Puan tamamlama mantığı:** Toplamda proje boyunca tamamlanması gereken 356 puanlık backlog bulunmaktadır. İlk Sprint'te daha çok pre-production kısmına yer verildiği için 41 puanlık bir hedef koymaya karar kıldık. 41 puana başarılı bir şekilde ulaştık ve geriye 315 puanımız kaldı.
 
 * **Backlog düzeni ve Story seçimleri:** Backlog'umuz *"must have, should have, could have, would have"* şeklinde düzenlenmiştir. Sprint başına tahmin edilen puan sayısını geçmeyecek şekilde sıradan seçimler yapılmaktadır. Seçimlerimiz, ekip arasında alınan kararlar doğrultusunda pre-pruduction'u kapsayacak şekilde ayarlanmıştır.
 
@@ -110,7 +115,7 @@ The Witch of Shunrald
   
 * **Sprint içinde tamamlanması tahmin edilen puan:** 148 Puan
 
-* **Puan tamamlama mantığı:** Toplamda proje boyunca tamamlanması gereken 300 puanlık backlog bulunmaktadır. Bunun 41 puanlık kısmı İlk Sprint'te tamamlanmıştır. İkinci Sprint'te daha çok production kısmına yer verildiği için 148 puanlık bir hedef koymaya karar kılınmıştır. Production kısmında ana ve yan (side) mekanikler, level sistemleri, prefablemeler ve hatta post-production'dan AudioManager kısmı da başarılı bir şekilde tamamlanmıştır. 300 puanın 148'ine hedeflenen şekilde ulaşılmış olup, geriye Üçüncü Sprint'te tamamlanmak üzere 111 puan kalmıştır.
+* **Puan tamamlama mantığı:** Toplamda proje boyunca tamamlanması gereken 356 puanlık backlog bulunmaktadır. Bunun 41 puanlık kısmı İlk Sprint'te tamamlanmıştır. İkinci Sprint'te daha çok production kısmına yer verildiği için 148 puanlık bir hedef koymaya karar kılınmıştır. Production kısmında ana ve yan (side) mekanikler, level sistemleri, prefablemeler ve hatta post-production'dan AudioManager kısmı da başarılı bir şekilde tamamlanmıştır. 356 puanın 148'ine hedeflenen şekilde ulaşılmış olup, geriye Üçüncü Sprint'te tamamlanmak üzere 167 puan kalmıştır.
 
 * **Backlog düzeni:** Backlog'da yer alan task'lar daha çok production ve post-production'ı barındıracak şekilde oluşturuldu ve düzenlendi. Production'a ait task'lar ikinci sprinte atandı ve puanlamalar düzenlendi. Product Backlog task'ları sprintlere atandığından, gerekli detaylara eklerde sunulan sprint linkleri ve backlog url üzerinden ulaşılabilir.
 
@@ -159,10 +164,75 @@ The Witch of Shunrald
 ### Product Backlog URL
 [Second Sprint board](https://sharing.clickup.com/9009152983/b/h/6-900901695292-2/2dfa8afc30d6b3c)
 
-### Product Backlog URL
-
 ## Sprint 3
+* **Sprint Notları:** Son sprint'te daha çok bug-fix, tutorial paneli, diyalog sistemi, seslendirmeler, level'ları bağlama, Game Analytics (GA) kurulumu, server ile arena mücadelesi, artificial intelligence (AI) ile intro ve karakter görselleri oluşturulması, game play videosu ve webgl ile build alma üzerine çalışıldı. Görevler ekip üyeleri ile beraber başarılı bir şekilde tamamlandı ve ortaya oynanabilir bir oyuna ek olarak;
+tutorial ve diyalog sistemleri, GA kurulumu ve server üzerinden çekilen bilgiler ile bir arena mücadelesi oluşturulmuştur; serverda haftalık yapılacak değişiklikler ile her hafta farklı bir mücadele ortamı oluşturulacaktır, oyuncu bu mücadelelerde gösterdiği başarı ışığında farklı "Badge" göstergeleri kazanacaktır.
 
+* **Sprint içinde tamamlanması tahmin edilen puan:** 167 Puan
+
+* **Puan tamamlama mantığı:** Toplamda proje boyunca tamamlanması gereken 356 puanlık backlog bulunmaktadır. Bunun 41 puanlık kısmı İlk Sprint'te, 148 puanı ise İkinci Sprint'te tamamlanmıştır. Üçüncü Sprint daha çok post-production ile geçmiş olup; bug-fix, polish, diyalog-tutorial sistem, GA, arena sistemi ve intro hazırlıklarına ayrılmıştır. 356 puanın 167'sine hedeflenen şekilde ulaşılmış olup, geriye tamamlanmayan bir puan açığı kalmamıştır.
+
+* **Backlog düzeni:** Backlog'da yer alan task'lar daha çok post-production'ı barındıracak şekilde oluşturuldu ve düzenlendi. Post-production'a ait task'lar üçüncü sprinte atandı ve puanlamalar düzenlendi. Product Backlog task'ları sprintlere atandığından, gerekli detaylara eklerde sunulan sprint linkleri ve backlog url üzerinden ulaşılabilir.
+
+* **Daily Scrum:** Daily Scrum toplantıları "Daily Scrum - text" adlı Discord kanalımız üzerinden günlük olarak yapılmış, ekip üyelerinin gidişatı ve koordinasyonu sağlanmıştır. Conflict yaşamamak adına pull-push esnasında haberleşme sağlanmış olup, proje sorunsuz bir şekilde ilerletilmiştir. Scrum kapsamında herkes "dün ne yaptım ve bugün ne yapacağım" şeklinde bilgilendirme yapmış olup, diğer ekip üyelerini güncel bir şekilde haberdar etmişlerdir. Bu sayede her bir task zamanında ve sorunsuz bir şekilde tamamlanmıştır. Daily Scrum yazışmalarına ekte yer verilmiştir.
+
+   *[Sprint 3 Daily Scrum Chats](https://doc.clickup.com/9009152983/d/h/8cftgyq-2100/8e66c04ef1a670a)*
+
+* **Sprint board update:** ***Sprint board screenshotları:***
+
+  ![ThirdSprint_1](https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/90a94d36-1e03-4bd5-add5-0b9c7de0322f)
+
+  ![ThirdSprint_2](https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/b3616494-f563-4c8a-bad1-2e6d40148db4)
+
+  ![ThirdSprint_3](https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/93aa2432-2830-42f0-99a7-e51f2521f14d)
+
+* **Oyun Durumu:** Video:
+  
+  1. ***Tutorial:*** *WASD, asa hareketi (Lv1)*
+  
+     https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/9d5ba986-e027-4d87-8352-c51624cfd0e5
+     
+  2.  ***Tutorial:*** *Dash, E skill (Lv1)*
+     
+     https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/5a5f37dc-107f-4db3-ba9c-e6ca84b04241
+  
+  3.  ***Tutorial:*** *Telekinezi, asa-kılıç değişimi (Lv2)*
+ 
+     https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/ee18119e-dd20-4c84-bf29-edd79c612cf4
+ 
+  4. ***Diyalog:*** *The Witch, Henric The Ghost, The Necromancer (Lv3)*
+ 
+     https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/0f992880-5f6d-4dd9-bcff-b47acd5fb928
+     
+  5. ***MiniBoss:*** *Ağlayan Melekler (Lv4)*
+     * *Ağlayan Melek metaforu Doctor Who'dan alınmıştır. Heykeller sen onlara bakmadığın anda, yani yönün onlara dönük değilken seni takip eder ancak ona baktığında taşlaşır ve tek dokunuşuyla seni taşa döndürüp öldürür.*
+
+       https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/b01bad92-4e99-4d52-97a8-7ba59c8ecab8
+
+  7. ***BossFight:*** *The Necromancer (Lv5)*
+     * *Cadımız asırlar önceki bir savaşta ellerini hareket ettirme yatisini kaybetmiştir, o nedenle elleri fizik ile hareket etmekte/sallanmaktadır.*
+
+       https://github.com/iraska/OUABootcamp-Unity_U49/assets/105501017/2e87b3f4-4cac-4421-9688-792139a13019
+     
+* **Sprint Review:**
+
+    * Oyundaki ana ve side mekanikler polishlenmiştir.
+    * Görsel bütünlüğü sağlamak adına levellar revize edilmiştir.
+    * UI panele ek; tutorial panel, diyalog panel, arena - badges ve upgrade panel eklenmiştir.
+    * Oyununumuzun sesleri özenle seçilmiş ve diyalog seslendirmeleri ekip üyeleri tarafından yapılmıştır.
+    * Intro sahnesi ve karakter görselleri için AI'dan faydalanılmıştır.
+    * Hikaye ve olay örgüsü GDD'ye sadık kalınarak ilerletilmiştir.
+    * Gerekli GA kurulumları başarıyla yapılmıştır.
+    * Server üzerinden çekilen bilgiler ile bir arena mücadelesi oluşturulmuştur; serverda haftalık yapılacak değişiklikler ile her hafta farklı bir mücadele ortamı oluşturulacaktır, oyuncu bu mücadelelerde gösterdiği başarı ışığında farklı "Badge" göstergeleri kazanacaktır.
+    * Tüm bunların sonucunda oyunumuz, designer/artist eksiğimize rağmen görsel bütünlüğe sahip; oynanabilir ve eğlenceli bir hale getirilmiştir.
+
+* **Sprint Retrospective:**
+
+  * Son Sprint Retrospective'imizde ekip içi başarı ve birlik adına kutlama yapılmış olup, ekip üyeleri; uyum, bağlılık, çalışma azmi ve görev bilinci adına birbirlerine teşekkür etmişlerdir.
+  * Oyun başarıyla baştan sona oynanabilir ve keyifli bir hale büründürülmüş olup, ekip üyeleri ile beraber Discord üzerinden The Witch of Shunrald'ı oynama etkinliği yapılmıştır.
+    
 ### Product Backlog URL
+[Third Sprint board](https://sharing.clickup.com/9009152983/b/h/6-900901695294-2/3b36b46f61e3d56)
 
 ## Kullanılan Assetler/Eklentiler
+[Click-Up Documentation](https://doc.clickup.com/9009152983/d/h/8cftgyq-2040/5d75aed4012a6c9)
