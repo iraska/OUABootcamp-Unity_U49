@@ -21,7 +21,8 @@ namespace TutorialSystem
 
             if (other.gameObject.CompareTag(shunrald))
             {
-                TutorialManager.instance.GifTutorialPanel(gif);
+                //TutorialManager.instance.GifTutorialPanel(gif);
+                TutorialManager.instance.GifTutorialPanel(gameObject.tag);
 
                 tutorialInfoText = FindObjectOfType<TutorialInfo>().gameObject;
 

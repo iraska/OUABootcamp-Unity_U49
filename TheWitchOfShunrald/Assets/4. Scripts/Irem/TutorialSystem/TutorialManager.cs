@@ -9,6 +9,7 @@ namespace TutorialSystem
     public class TutorialManager : MonoBehaviour
     {
         public static TutorialManager instance;
+        string streamingAssetsPath;
 
         [SerializeField] private GameObject transparentPanel, wasdImg, gif, tutorialText;
         [SerializeField] private RectTransform tutorialPanel, hiddenTutorialPanel, okButton, hiddenTextPanel, textPanel;
@@ -34,6 +35,7 @@ namespace TutorialSystem
         private void Start()
         {
             ui = FindObjectOfType<UIManager>().gameObject;
+            streamingAssetsPath = Application.streamingAssetsPath;
         }
 
         public void InitialTutorialPanel()
@@ -58,7 +60,7 @@ namespace TutorialSystem
             Invoke("InitialTutorialPanel", 2f);
         }
 
-        public void GifTutorialPanel(VideoClip gifClip)
+        public void GifTutorialPanel(string gifClip)
         {
             GameManager.instance.GameState = GameManager.State.Tutorial;
             ToggleUIPanel(false);
@@ -71,7 +73,8 @@ namespace TutorialSystem
             gif.SetActive(true);
             
             transparentPanel.SetActive(true);
-            gif.GetComponent<VideoPlayer>().clip = gifClip;
+            
+            gif.GetComponent<VideoPlayer>().url = streamingAssetsPath + "/" + gifClip + ".mp4";
             gif.GetComponent<VideoPlayer>().Play();
 
             TutorialTween();
