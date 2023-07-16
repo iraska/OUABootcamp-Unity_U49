@@ -257,6 +257,8 @@ MonoBehaviour:
   playerDamage: 0
   objectDamage: 0
   speed: 0
+  isDead: 0
+  multiprojectileCooldown: 12
 --- !u!1 &625816260573410990
 GameObject:
   m_ObjectHideFlags: 0
@@ -2474,6 +2476,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 251356486387611238}
+  - {fileID: 713538308065863236}
   m_Father: {fileID: 8315765431805393881}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4223,6 +4226,141 @@ Transform:
   m_Father: {fileID: 5705125765990962930}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &937800647030376352
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6953250508061161471}
+    m_Modifications:
+    - target: {fileID: 352762877402587620, guid: 7932684738374c3459b621e0cbbf879b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 352762877402587620, guid: 7932684738374c3459b621e0cbbf879b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 65.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 352762877402587620, guid: 7932684738374c3459b621e0cbbf879b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 23.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 352762877402587620, guid: 7932684738374c3459b621e0cbbf879b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 117.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 352762877402587620, guid: 7932684738374c3459b621e0cbbf879b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 352762877402587620, guid: 7932684738374c3459b621e0cbbf879b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 352762877402587620, guid: 7932684738374c3459b621e0cbbf879b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 352762877402587620, guid: 7932684738374c3459b621e0cbbf879b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 352762877402587620, guid: 7932684738374c3459b621e0cbbf879b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 352762877402587620, guid: 7932684738374c3459b621e0cbbf879b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 352762877402587620, guid: 7932684738374c3459b621e0cbbf879b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 352762877402587621, guid: 7932684738374c3459b621e0cbbf879b,
+        type: 3}
+      propertyPath: m_Radius
+      value: 6.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 352762877402587622, guid: 7932684738374c3459b621e0cbbf879b,
+        type: 3}
+      propertyPath: generalUseTriggerEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 352762877402587622, guid: 7932684738374c3459b621e0cbbf879b,
+        type: 3}
+      propertyPath: generalUseTriggerEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 352762877402587622, guid: 7932684738374c3459b621e0cbbf879b,
+        type: 3}
+      propertyPath: generalUseTriggerEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 352762877402587622, guid: 7932684738374c3459b621e0cbbf879b,
+        type: 3}
+      propertyPath: generalUseTriggerEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 352762877402587622, guid: 7932684738374c3459b621e0cbbf879b,
+        type: 3}
+      propertyPath: generalUseTriggerEvent.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 352762877402587622, guid: 7932684738374c3459b621e0cbbf879b,
+        type: 3}
+      propertyPath: generalUseTriggerEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 352762877402587622, guid: 7932684738374c3459b621e0cbbf879b,
+        type: 3}
+      propertyPath: generalUseTriggerEvent.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: LetFakeEnemiesWalk
+      objectReference: {fileID: 0}
+    - target: {fileID: 352762877402587622, guid: 7932684738374c3459b621e0cbbf879b,
+        type: 3}
+      propertyPath: generalUseTriggerEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DialogueSetter, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 352762877402587622, guid: 7932684738374c3459b621e0cbbf879b,
+        type: 3}
+      propertyPath: generalUseTriggerEvent.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: DialogueSetter, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 352762877402587622, guid: 7932684738374c3459b621e0cbbf879b,
+        type: 3}
+      propertyPath: generalUseTriggerEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 352762877402587622, guid: 7932684738374c3459b621e0cbbf879b,
+        type: 3}
+      propertyPath: generalUseTriggerEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 352762877402587623, guid: 7932684738374c3459b621e0cbbf879b,
+        type: 3}
+      propertyPath: m_Name
+      value: HenricDialogueTrigger
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7932684738374c3459b621e0cbbf879b, type: 3}
+--- !u!4 &713538308065863236 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 352762877402587620, guid: 7932684738374c3459b621e0cbbf879b,
+    type: 3}
+  m_PrefabInstance: {fileID: 937800647030376352}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1255427763671754621
 PrefabInstance:
   m_ObjectHideFlags: 0

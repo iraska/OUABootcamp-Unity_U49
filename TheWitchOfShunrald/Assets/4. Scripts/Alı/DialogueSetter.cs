@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
+using Color = UnityEngine.Color;
 
 public class DialogueSetter : MonoBehaviour
 {
@@ -22,6 +24,8 @@ public class DialogueSetter : MonoBehaviour
     private Quaternion startRotation;
     private Quaternion targetRotation;
     private float timeElapsed = 0f;
+    private float spawnTime;
+    [SerializeField] private float fadeSpeed;
 
     [Header("Level 5 Objects")]
     [SerializeField] GameObject fakeEnemies;
@@ -29,6 +33,7 @@ public class DialogueSetter : MonoBehaviour
     [SerializeField] GameObject fakeNecromancer;
     [SerializeField] GameObject realNecromancer;
 
+    [SerializeField] Material henricMaterial;
 
     [SerializeField] private List<AudioClip> dialogues = new List<AudioClip>();
 
@@ -321,10 +326,49 @@ public class DialogueSetter : MonoBehaviour
 
         else if (levelNo == 6)
         {
-            StartCoroutine(WinTheGame());
+            //StartCoroutine(WinTheGame());
+
+
+            
+
+
+
+            
         }
 
     }
+
+    public void level6DialogueStarter() 
+    {
+        // hayaletin konumunu güncelle
+        transform.position = GameManager.instance.Player.transform.position + new Vector3(3f, 0, 2f);
+
+        //start dialogue
+        StartLevel6Dialogue();
+
+        // hayaleti coroutine ile görünür yap
+        StartCoroutine(henricFadeIn());
+    }
+
+    private IEnumerator henricFadeIn()
+    {
+        yield return new WaitForSeconds(2f);
+        float alpha;
+        spawnTime = Time.time;
+        while (true)
+        {
+            alpha = (Time.time - spawnTime) * fadeSpeed;
+            Color color = henricMaterial.color;
+            color.a = Mathf.Clamp(alpha, 0, 1);
+            henricMaterial.color = color;
+            if (color.a == 1)
+            {
+                break;
+            }
+            yield return null;
+        }
+    }
+
 
     private IEnumerator WinTheGame()
     {

@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using CihanAkpınar;
 using Shunrald;
 using UnityEngine;
@@ -67,6 +68,8 @@ namespace Sidar
         
         
         private NecroUIHealthBarManager necroHealthBar;
+
+        [SerializeField] private GameObject henricDialogueTrigger;
 
         public bool isDead;
         [SerializeField] private float multiprojectileCooldown = 12f;
@@ -442,7 +445,18 @@ namespace Sidar
             DisableAnimatorParametersExcept("isDead");
             isDead = true;
             Debug.Log("Boss defeated!");
+
+            //ölüm animasyonu bittiyse
+            if (true)
+            {
+                henricDialogueTrigger.SetActive(true);
+                henricDialogueTrigger.GetComponent<GeneralUseTrigger>().infoStarterForNecroDeath();
+            }
+            
+
         }
+
+        
 
         public void TakeDamage(Vector3 exploLocation, float damage)
         {
