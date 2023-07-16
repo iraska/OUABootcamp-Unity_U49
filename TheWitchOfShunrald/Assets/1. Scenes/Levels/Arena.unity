@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 88d1041458cf9bf45bb77b466fdf44e1,
+  m_LightingDataAsset: {fileID: 112000000, guid: 731ab0b6207bcd9478a6f1cd1f85641e,
     type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
@@ -318,6 +318,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1633147554}
     m_Modifications:
+    - target: {fileID: 3174678136061196976, guid: 91efdef70356e9142bd5e891f126969a,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5559974819544183514, guid: 91efdef70356e9142bd5e891f126969a,
         type: 3}
       propertyPath: m_RootOrder
@@ -1131,6 +1136,26 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3593527223368570784, guid: 4c4b1d536b1f78a4084f035a58c2cab1,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593527223368570784, guid: 4c4b1d536b1f78a4084f035a58c2cab1,
+        type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692587747143990635, guid: 4c4b1d536b1f78a4084f035a58c2cab1,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692587747143990635, guid: 4c4b1d536b1f78a4084f035a58c2cab1,
+        type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4761826568898589503, guid: 4c4b1d536b1f78a4084f035a58c2cab1,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -1467,6 +1492,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 754218418}
     m_Modifications:
+    - target: {fileID: 7076166781606332441, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076166781606332441, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7310485500465743156, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
         type: 3}
       propertyPath: m_Name
@@ -2172,6 +2207,11 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 7160476005192338714, guid: 4fc29b44cbd8a654fa085fbc52d83f52,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fc29b44cbd8a654fa085fbc52d83f52, type: 3}
 --- !u!4 &300579370 stripped
@@ -2187,6 +2227,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 754218418}
     m_Modifications:
+    - target: {fileID: 7076166781606332441, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076166781606332441, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7310485500465743156, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
         type: 3}
       propertyPath: m_Name
@@ -2283,6 +2333,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 754218418}
     m_Modifications:
+    - target: {fileID: 7076166781606332441, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076166781606332441, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7310485500465743156, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
         type: 3}
       propertyPath: m_Name
@@ -3643,6 +3703,11 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3174678136061196976, guid: 91efdef70356e9142bd5e891f126969a,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5559974819544183514, guid: 91efdef70356e9142bd5e891f126969a,
         type: 3}
       propertyPath: m_RootOrder
@@ -3981,6 +4046,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 754218418}
     m_Modifications:
+    - target: {fileID: 7076166781606332441, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076166781606332441, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7310485500465743156, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
         type: 3}
       propertyPath: m_Name
@@ -4342,6 +4417,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.g
       value: 0.6206023
+      objectReference: {fileID: 0}
+    - target: {fileID: 3174678136061196976, guid: 91efdef70356e9142bd5e891f126969a,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5559974819544183514, guid: 91efdef70356e9142bd5e891f126969a,
         type: 3}
@@ -5063,6 +5143,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 6569980945914396847, guid: 9af1805b194e03c4aa3f273b52d3dbca,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6569980945914396847, guid: 9af1805b194e03c4aa3f273b52d3dbca,
+        type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6601985221375527210, guid: 9af1805b194e03c4aa3f273b52d3dbca,
         type: 3}
       propertyPath: m_Layer
@@ -5316,7 +5406,7 @@ Light:
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
+  m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
@@ -6212,6 +6302,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 0.29712933
+      objectReference: {fileID: 0}
+    - target: {fileID: 3174678136061196976, guid: 91efdef70356e9142bd5e891f126969a,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5559974819544183514, guid: 91efdef70356e9142bd5e891f126969a,
         type: 3}
@@ -7425,6 +7520,11 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3174678136061196976, guid: 91efdef70356e9142bd5e891f126969a,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5559974819544183514, guid: 91efdef70356e9142bd5e891f126969a,
         type: 3}
       propertyPath: m_RootOrder
@@ -7744,6 +7844,11 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 7160476005192338714, guid: 4fc29b44cbd8a654fa085fbc52d83f52,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fc29b44cbd8a654fa085fbc52d83f52, type: 3}
 --- !u!4 &1068837178 stripped
@@ -8011,6 +8116,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1025116886}
     m_Modifications:
+    - target: {fileID: 3174678136061196976, guid: 91efdef70356e9142bd5e891f126969a,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5559974819544183514, guid: 91efdef70356e9142bd5e891f126969a,
         type: 3}
       propertyPath: m_RootOrder
@@ -8306,6 +8416,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 754218418}
     m_Modifications:
+    - target: {fileID: 7076166781606332441, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076166781606332441, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7310485500465743156, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
         type: 3}
       propertyPath: m_Name
@@ -8663,6 +8783,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Intensity
       value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160476005192338714, guid: 4fc29b44cbd8a654fa085fbc52d83f52,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fc29b44cbd8a654fa085fbc52d83f52, type: 3}
@@ -9630,6 +9755,11 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 7160476005192338714, guid: 4fc29b44cbd8a654fa085fbc52d83f52,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fc29b44cbd8a654fa085fbc52d83f52, type: 3}
 --- !u!4 &1366579610 stripped
@@ -10012,6 +10142,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 754218418}
     m_Modifications:
+    - target: {fileID: 7076166781606332441, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076166781606332441, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7310485500465743156, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
         type: 3}
       propertyPath: m_Name
@@ -10922,6 +11062,11 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 7160476005192338714, guid: 4fc29b44cbd8a654fa085fbc52d83f52,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fc29b44cbd8a654fa085fbc52d83f52, type: 3}
 --- !u!4 &1578717795 stripped
@@ -11678,6 +11823,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 754218418}
     m_Modifications:
+    - target: {fileID: 7076166781606332441, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076166781606332441, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7310485500465743156, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
         type: 3}
       propertyPath: m_Name
@@ -11869,6 +12024,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 0.11619357
+      objectReference: {fileID: 0}
+    - target: {fileID: 3174678136061196976, guid: 91efdef70356e9142bd5e891f126969a,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5559974819544183514, guid: 91efdef70356e9142bd5e891f126969a,
         type: 3}
@@ -12859,6 +13019,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 754218418}
     m_Modifications:
+    - target: {fileID: 7076166781606332441, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076166781606332441, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
+        type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7310485500465743156, guid: 827f6dbfc0a9fdd45b1ecd32880a27d3,
         type: 3}
       propertyPath: m_Name
@@ -14570,6 +14740,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1286896792}
     m_Modifications:
+    - target: {fileID: 3174678136061196976, guid: 91efdef70356e9142bd5e891f126969a,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5559974819544183514, guid: 91efdef70356e9142bd5e891f126969a,
         type: 3}
       propertyPath: m_RootOrder
@@ -16179,6 +16354,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 836921095}
     m_Modifications:
+    - target: {fileID: 1733611084662368462, guid: acf88991a2d5c40419da7d7c514a8da6,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1733611084662368462, guid: acf88991a2d5c40419da7d7c514a8da6,
+        type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1733611084811158482, guid: acf88991a2d5c40419da7d7c514a8da6,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1733611084811158482, guid: acf88991a2d5c40419da7d7c514a8da6,
+        type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1733611084822232571, guid: acf88991a2d5c40419da7d7c514a8da6,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1733611084822232571, guid: acf88991a2d5c40419da7d7c514a8da6,
+        type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1733611085483800466, guid: acf88991a2d5c40419da7d7c514a8da6,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1733611085483800466, guid: acf88991a2d5c40419da7d7c514a8da6,
+        type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1733611085655331432, guid: acf88991a2d5c40419da7d7c514a8da6,
         type: 3}
       propertyPath: m_RootOrder
@@ -16258,6 +16473,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Candeliers
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444661447415258060, guid: acf88991a2d5c40419da7d7c514a8da6,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444661447415258060, guid: acf88991a2d5c40419da7d7c514a8da6,
+        type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acf88991a2d5c40419da7d7c514a8da6, type: 3}
@@ -16600,6 +16825,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3827955337212380589, guid: 679e5dd88f3fb214f9191a3f9142fa9d,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4043562384586989249, guid: 679e5dd88f3fb214f9191a3f9142fa9d,
         type: 3}
@@ -16968,6 +17198,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cauldron_Small_Stand
       objectReference: {fileID: 0}
+    - target: {fileID: 6443376117825832178, guid: 5369749aa1351e041804252334ff23d3,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5369749aa1351e041804252334ff23d3, type: 3}
 --- !u!4 &4194089911553923721 stripped
@@ -17061,6 +17296,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 836921095}
     m_Modifications:
+    - target: {fileID: 3082441613272334070, guid: e20a0425531fd2942a54020db1099a66,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5303013496125748352, guid: e20a0425531fd2942a54020db1099a66,
         type: 3}
       propertyPath: m_RootOrder
@@ -17354,7 +17594,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 0.5, y: 0.5}
   m_BounceIntensity: 1
