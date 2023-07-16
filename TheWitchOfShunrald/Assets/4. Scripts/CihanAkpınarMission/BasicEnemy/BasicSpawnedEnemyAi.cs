@@ -189,7 +189,6 @@ namespace CihanAkpınar
                 {
                     spawnerOfThisEnemy.GetComponent<BasicEnemySpawner>().currentEnemy.Remove(this.gameObject);
                 }
-                GameManager.instance.EnemyDestoyEvent();
                 Destroy(gameObject);
             }
             lookSpawnedEnemyRadius = 50;
@@ -219,7 +218,11 @@ namespace CihanAkpınar
             this.health = health;
             GetComponentInChildren<BasicSpawnedEnemyDealDamage>().Damage = damage;
         }
+        private void OnDestroy()
+        {
+            GameManager.instance.EnemyDestoyEvent();
+        }
     }
- 
+
 }
 

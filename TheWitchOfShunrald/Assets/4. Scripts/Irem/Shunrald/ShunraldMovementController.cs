@@ -191,6 +191,7 @@ namespace Shunrald
 
         private IEnumerator DashCooldown()
         {
+            StartCoroutine(UIManager.instance.DashCoolDown(dashCoolDown));
             yield return new WaitForSeconds(dashCoolDown);
             isDashCoolDown = false;
         }

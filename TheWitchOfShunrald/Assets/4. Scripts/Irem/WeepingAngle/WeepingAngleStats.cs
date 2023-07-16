@@ -32,7 +32,6 @@ namespace WeepingAngle
             if (health < 0)
             {
                 AudioManager.Instance.PlaySfx(AudioManager.Instance.weepingAngleDieAudio,transform.position);
-                GameManager.instance.EnemyDestoyEvent();
                 Destroy(gameObject);
             }
         }
@@ -64,6 +63,9 @@ namespace WeepingAngle
                 GameManager.instance.Lose();
             }
         }
-
+        private void OnDestroy()
+        {
+            GameManager.instance.EnemyDestoyEvent();
+        }
     }
 }

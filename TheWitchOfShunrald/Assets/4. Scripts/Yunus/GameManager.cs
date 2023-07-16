@@ -96,7 +96,8 @@ public class GameManager : MonoBehaviour
         {
             GameState = State.Lose;
             StartCoroutine(UIManager.instance.LosePanel());
-            GameAnalyticsManager.instance.LevelFailed(PlayerPrefs.GetInt("lastGame"));
+            if(!isArena)
+                GameAnalyticsManager.instance.LevelFailed(PlayerPrefs.GetInt("lastGame"));
             IsArena = false;
         }
     }

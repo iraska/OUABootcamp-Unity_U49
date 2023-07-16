@@ -25,10 +25,21 @@ public class PlayerSkills : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && isActiveSkill)
         {
-            isActiveHexagon = !isActiveHexagon;
-            hexagonSprite.color = Color.gray;
-            hexagon.gameObject.SetActive(true);
-            GameManager.instance.Player.GetComponent<ShunraldMovementController>().IsUsingSkill = true;
+            if (!isActiveHexagon)
+            {
+                isActiveHexagon = true;
+                hexagonSprite.color = Color.gray;
+                hexagon.gameObject.SetActive(true);
+                GameManager.instance.Player.GetComponent<ShunraldMovementController>().IsUsingSkill = true;
+            }
+            else
+            {
+                isActiveHexagon = false;
+                hexagonSprite.color = Color.gray;
+                hexagon.gameObject.SetActive(false);
+                GameManager.instance.Player.GetComponent<ShunraldMovementController>().IsUsingSkill = false;
+            }
+            
         }
         if (isActiveHexagon)
         {
@@ -37,12 +48,13 @@ public class PlayerSkills : MonoBehaviour
             hexagon.position = hexagonPos;
             if (Input.GetMouseButtonDown(0))
             {
+                StartCoroutine(UIManager.instance.FireCoolDown(coolDown));
                 GameManager.instance.Player.GetComponent<PlayerStats>().SpendMana(mana);
                 isActiveHexagon = false;
                 isActiveSkill = false;
                 GameManager.instance.Player.GetComponent<ShunraldMovementController>().StopedUsingSkill();
                 Invoke(nameof(ActivateSkill), coolDown);
-                hexagonSprite.DOColor(hexagonColor, 3f).OnComplete(() =>
+                hexagonSprite.DOColor(hexagonColor, 1.5f).OnComplete(() =>
                 {
                     hexagon.gameObject.SetActive(false);
                 });

@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Video;
-using Unity.VisualScripting;
 
 public class UIManager : MonoBehaviour
 {
@@ -13,7 +12,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject gamePanel, pausePanel, upgradePanel, dialogPanel, winPanel, losePanel, infoPanel, arenaWinPanel, gameLoadingPanel;
     [SerializeField] private GameObject[] weaponImages;
-    [SerializeField] private Image healthBar, healthBar1, manaBar, easyButtonImage, normalButtonImage, hardButtonImage, lowButtonImage, highButtonImage, mediumButtonImage, weaponUICircle, weaponUILine;
+    [SerializeField] private Image healthBar, healthBar1, manaBar, easyButtonImage, normalButtonImage, hardButtonImage, lowButtonImage, highButtonImage, mediumButtonImage, weaponUICircle, weaponUILine, fireSkillImage, dashSkillImage;
     [SerializeField] private Sprite selectedSprite, unselectedSprite;
     [SerializeField] private Text infoText;
     [SerializeField] private DialogSystem dialogSystem;
@@ -80,13 +79,17 @@ public class UIManager : MonoBehaviour
                 QualitySettings.SetQualityLevel(3);
                 break;
         }
+
     }
     public void GamePanel()
     {
         if(GameManager.instance.isArena)
             StartCoroutine(GameLoadingPanel());
+
         currentPanel.SetActive(false);
         gamePanel.SetActive(true);
+        StartCoroutine(FireCoolDown(0));
+        StartCoroutine(DashCoolDown(0));
         currentPanel = gamePanel;
     }
     public void UpgradePanel()
@@ -159,6 +162,28 @@ public class UIManager : MonoBehaviour
             weaponImages[i].SetActive(false);
         }
         weaponImages[index].SetActive(true);
+    }
+    Tween dashTween;
+    public IEnumerator DashCoolDown(float duration)
+    {
+        dashTween.Kill();
+        dashSkillImage.fillAmount = 1;
+        dashSkillImage.transform.GetChild(0).localScale = Vector3.one;
+        dashSkillImage.DOFillAmount(0, duration).SetEase(Ease.Linear);
+        yield return new WaitForSeconds(duration);
+        dashTween = dashSkillImage.transform.GetChild(0).DOScale(1.2f, 1f).SetEase(Ease.Linear);
+        dashTween.SetLoops(-1, LoopType.Yoyo);
+    }
+    Tween fireTween;
+    public IEnumerator FireCoolDown(float duration)
+    {
+        fireTween.Kill();
+        fireSkillImage.fillAmount = 1;
+        fireSkillImage.transform.GetChild(0).localScale = Vector3.one;
+        fireSkillImage.DOFillAmount(0, duration).SetEase(Ease.Linear);
+        yield return new WaitForSeconds(duration);
+        fireTween = fireSkillImage.transform.GetChild(0).DOScale(1.2f, 1f).SetEase(Ease.Linear);
+        fireTween.SetLoops(-1, LoopType.Yoyo);
     }
 
     public Image WeaponUICircle

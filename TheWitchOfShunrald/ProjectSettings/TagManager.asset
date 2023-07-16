@@ -30,8 +30,8 @@ TagManager:
   - CanBeMoved
   - Player
   - FixedObjects
-  - 
-  - 
+  - Weapon
+  - Collider
   - 
   - 
   - 

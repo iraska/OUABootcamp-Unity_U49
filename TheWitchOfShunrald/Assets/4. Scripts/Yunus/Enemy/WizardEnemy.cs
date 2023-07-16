@@ -84,6 +84,8 @@ public class WizardEnemy : MonoBehaviour, Enemy
                             {
                                 break;
                             }
+                            else
+                                transform.Rotate(Vector3.up);
                             yield return null;
                         }
                         anim.SetBool("walk", true);
@@ -183,7 +185,6 @@ public class WizardEnemy : MonoBehaviour, Enemy
             Destroy(gameObject);
             Destroy(electric.gameObject);
             Destroy(explosion.gameObject);
-            GameManager.instance.EnemyDestoyEvent();
         }
     }
 
@@ -196,5 +197,9 @@ public class WizardEnemy : MonoBehaviour, Enemy
     {
         this.health = health;
         this.damage = damage;
+    }
+    private void OnDestroy()
+    {
+        GameManager.instance.EnemyDestoyEvent();
     }
 }
