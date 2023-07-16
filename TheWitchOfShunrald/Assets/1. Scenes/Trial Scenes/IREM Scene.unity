@@ -2190,11 +2190,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TutorialCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 4923129085637448711, guid: 6bda3e86428c4fc40bdcf4458502221f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4923129085637448715, guid: 6bda3e86428c4fc40bdcf4458502221f,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2882,7 +2877,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68fb68d6ba1fc0b4b9531a2d6427fc74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shunraldWitch: {fileID: 0}
   chaseSpeed: 2
   maxViewAngle: 45
 --- !u!114 &5398205243794034767

@@ -8,7 +8,7 @@ namespace TutorialSystem
     {
         private void Start()
         {
-            StartCoroutine(TutorialManager.instance.InitialTutorialPanel(2f));
+            TutorialManager.instance.InvokeItialTutorial();
             StartCoroutine(destroyAfterLoad());
         }
 
@@ -17,6 +17,7 @@ namespace TutorialSystem
         {
             
         }
+
         private IEnumerator destroyAfterLoad()
         {
             yield return new WaitForSeconds(3f);

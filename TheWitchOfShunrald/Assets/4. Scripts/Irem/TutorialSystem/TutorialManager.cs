@@ -36,10 +36,10 @@ namespace TutorialSystem
             ui = FindObjectOfType<UIManager>().gameObject;
         }
 
-        public IEnumerator InitialTutorialPanel(float waitTime)
+        public void InitialTutorialPanel()
         {
             ToggleUIPanel(false);
-            yield return new WaitForSeconds(waitTime);
+            //yield return new WaitForSeconds(waitTime);
 
             GameManager.instance.GameState = GameManager.State.Tutorial;
 
@@ -51,6 +51,11 @@ namespace TutorialSystem
             transparentPanel.SetActive(true);
 
             TutorialTween();
+        }
+
+        public void InvokeItialTutorial()
+        {
+            Invoke("InitialTutorialPanel", 2f);
         }
 
         public void GifTutorialPanel(VideoClip gifClip)
