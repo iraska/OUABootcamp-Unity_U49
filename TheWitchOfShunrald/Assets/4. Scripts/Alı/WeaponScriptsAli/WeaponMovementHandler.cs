@@ -98,8 +98,7 @@ namespace ali
                     shunraldMovementController.IsUsingWeapon = true;
 
                     //check mana
-                    if (playerStats.Mana > 0f)
-                    {
+                    
                         //Change the position of the weapon based on the input
                         mouseMovementVector = new Vector2(Input.mousePosition.x, Input.mousePosition.y) - initialMousePosition;
                         if (mouseMovementVector == Vector2.zero)
@@ -112,7 +111,7 @@ namespace ali
                         reverseGravityPoint.transform.localPosition = RotateVector(changedReverseGravityLocation, -1 * rotationValue);
                         weaponPivot.transform.localPosition = RotateVector(changedLocalPosition, -1 * rotationValue);
 
-                        if (manaSpend > 0.5)
+                        /*if (manaSpend > 0.5)
                         {
                             playerStats.SpendMana(manaSpend);
                             manaSpend = 0;
@@ -120,11 +119,11 @@ namespace ali
                         else
                         {
                             manaSpend = manaSpend + (manaSpendMultiplier / 10 * Vector3.Distance(lastStaffTopPoint, staffTopPoint.position));
-                        }
+                        }*/
 
 
                         //Track the movement of the wand for deciding its powerMagnitude for the ranged attack
-                        if (isStaffEquipped)
+                        if (isStaffEquipped && playerStats.Mana > 0f)
                         {
                             if (powerMagnitude > 100f)
                             {
@@ -145,7 +144,6 @@ namespace ali
                         }
                         lastStaffTopPoint = staffTopPoint.position;
 
-                    }
 
                     //WeaponUI
                     Vector2 currentMousePosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
