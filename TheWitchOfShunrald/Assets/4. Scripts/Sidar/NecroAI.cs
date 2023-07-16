@@ -34,14 +34,14 @@ namespace Sidar
         [SerializeField] private float stunAnimDelay = 6f;
         [SerializeField] private float spawnAnimDelay = 3.9f;
         [SerializeField] private float healthAnimDelay = 6.25f;  
-        [SerializeField] private float projectileCooldown = 5f;
+        [SerializeField] private float projectileCooldown = 3f;
         [SerializeField] private float stunCooldown = 30f;
         [SerializeField] private float healthCooldown = 40f;
         [SerializeField] private float spawnCooldown = 20f;
         [SerializeField] private int maxHealth = 100;
         [SerializeField] private float rotationSpeed = 3f;
-        [SerializeField] private float regenSpeedMin = 1f;
-        [SerializeField] private float regenSpeedMax = 5f;
+        [SerializeField] private float regenSpeedMin = 5f;
+        [SerializeField] private float regenSpeedMax = 100f;
         private float regenSpeed;
         [SerializeField] private ParticleSystem healthRegenParticle;
         
@@ -69,7 +69,8 @@ namespace Sidar
         private NecroUIHealthBarManager necroHealthBar;
 
         public bool isDead;
-        
+        [SerializeField] private float multiprojectileCooldown = 12f;
+
 
         private void Start()
         {
@@ -85,6 +86,8 @@ namespace Sidar
             }
             angleIncrement = 360f / numClones;
             spawnTimer = spawnDelay;
+            StartCoroutine(StunPlayer());
+
         }
 
         private void Update()
@@ -106,11 +109,11 @@ namespace Sidar
                                 break;
                             case 3:
                                 if(canCrHealthRegen){
-                                    if(currentHealth < 20){
+                                    if((currentHealth/maxHealth) * 100 < 20){
                                         StartCoroutine(SpawnMinions(true));
                                         StartCoroutine(HealthRegen());
                                     }
-                                    else if(currentHealth < 50){
+                                    else if((currentHealth/maxHealth) * 100 < 50){
                                         StartCoroutine(HealthRegen());
                                     }
                                 }
@@ -188,8 +191,9 @@ namespace Sidar
         private IEnumerator MutliProjectileAttack()
         {
             isMultiProjectile = true;
+            float attackRangeForProjectile = 16f;
             int count = 0;
-            LookAtPlayer();
+            
             agent.SetDestination(transform.position);
             canCrMultiProjectile = false;
             isAttacking = true;
@@ -198,14 +202,15 @@ namespace Sidar
             animator.SetBool("isMutliProjectileAttack", false);
             while (true)
             {
-                if(distance>attackRange)
+                LookAtPlayer();
+                /*if(distance>attackRange)
                     ChasePlayer();
                 else
                 {
                     transform.LookAt(player.transform);
                     agent.SetDestination(transform.position);
                     animator.SetBool("isChasing", false);
-                }   
+                }   */
                     
                 if (canMultiProjectile)
                 {
@@ -220,7 +225,7 @@ namespace Sidar
                 yield return null;
             }
             isAttacking = false;
-            yield return new WaitForSeconds(projectileCooldown);
+            yield return new WaitForSeconds(multiprojectileCooldown);
             canCrMultiProjectile = true;
         }
 
@@ -247,6 +252,7 @@ namespace Sidar
 
         private void SingleProjectile()
         {
+            speed = 5f;
             GameObject projectile = Instantiate(projectilePrefab, projectilePointParent.GetChild(4).position, Quaternion.identity);
             NecroProjectile projectileComponent = projectile.GetComponent<NecroProjectile>();
             projectileComponent.PlayerDamage = playerDamage;
@@ -355,11 +361,13 @@ namespace Sidar
             agent.SetDestination(transform.position);
             animator.SetBool("isChasing", false);
             canCrStunPLayer = false;
+            animator.SetBool("isStunDone", false);
             animator.SetBool("isStunPlayer",true);
             isAttacking = true;
             AudioManager.Instance.PlaySfx(AudioManager.Instance.necroStanCackleAudio, transform.position);
             StartCoroutine(player.GetComponent<ShunraldHangInTheAir>().HangInTheAir());
             yield return new WaitForSeconds(stunAnimDelay);
+            animator.SetBool("isStunDone", true);
             isAttacking = false;
             animator.SetBool("isStunPlayer", false);
             StartCoroutine(player.GetComponent<ShunraldHangInTheAir>().ReleasesTheWitch());
@@ -410,7 +418,7 @@ namespace Sidar
         {
             if (currentHealth >= maxHealth)
             {
-                currentHealth = 100;
+                currentHealth = maxHealth;
                 isRegenDone = true;
                 return;
             }

@@ -6,10 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="2f9f027d-656a-44fe-9e27-4ace5e0b49b5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TheWitchOfShunrald/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TheWitchOfShunrald/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. Scenes/LEVELS/LEVEL 4.1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. Scenes/LEVELS/LEVEL 4.1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. Scenes/LEVELS/LEVEL 5.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. Scenes/LEVELS/LEVEL 5.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Scripts/Irem/Shunrald/ShunraldHangInTheAir.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Scripts/Irem/Shunrald/ShunraldHangInTheAir.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/New Folder/Demon T Wiezzorek@Standing 2H Magic Attack 04.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/New Folder/Demon T Wiezzorek@Standing 2H Magic Attack 04.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animators &amp; Avatar Msks/Necromancer/Necromancer.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. Art/Animators &amp; Avatar Msks/Necromancer/Necromancer.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3. Prefabs/Boss/BossProjectile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Boss/BossProjectile.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/4. Scripts/Sidar/NecroAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Scripts/Sidar/NecroAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Scripts/Sidar/NecroProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Scripts/Sidar/NecroProjectile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameAnalytics/Plugins/Playmaker/Examples/GameAnalyticsPlayMakerDemo.unitypackage.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
@@ -22,6 +23,8 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/4. Scripts/Irem/Shunrald/ShunraldParticleController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/4. Scripts/Sidar/NecroUIHealthBarManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameAnalytics/Plugins/Scripts/GameAnalytics.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameAnalytics/Plugins/Scripts/Wrapper/GA_Wrapper.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -126,7 +129,7 @@
       <workItem from="1689270786881" duration="10969000" />
       <workItem from="1689360456118" duration="1119000" />
       <workItem from="1689423527800" duration="7843000" />
-      <workItem from="1689501406538" duration="10503000" />
+      <workItem from="1689501406538" duration="17963000" />
     </task>
     <servers />
   </component>

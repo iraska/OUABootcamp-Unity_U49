@@ -10,10 +10,10 @@ namespace Sidar
         private float speed;
         private float playerDamage;
         private float objectDamage;
-        [SerializeField] private float splashRadius = 5f;
+        [SerializeField] private float splashRadius = 0.5f;
         [SerializeField] private GameObject splashEffect;
 		[SerializeField] private ParticleSystem blood, hit;
-        [SerializeField] private float destroyDelay = 3f;
+        [SerializeField] private float destroyDelay = 6f;
         private Transform player;
         private bool isSingle = false;
         private float destroyTimer;
