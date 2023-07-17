@@ -2801,7 +2801,7 @@ MonoBehaviour:
   aimLayerMask:
     serializedVersion: 2
     m_Bits: 1024
-  speed: 3
+  speed: 3.2
   turnSpeed: 360
   dashSpeed: 20
   dashTime: 0.15
