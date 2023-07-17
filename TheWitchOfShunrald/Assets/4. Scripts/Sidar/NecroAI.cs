@@ -442,6 +442,7 @@ namespace Sidar
 
         private void Die()
         {
+            StopAllCoroutines();
             DisableAnimatorParametersExcept("isDead");
             isDead = true;
             Debug.Log("Boss defeated!");
