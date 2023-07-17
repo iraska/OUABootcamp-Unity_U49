@@ -2838,7 +2838,7 @@ MonoBehaviour:
   healthMaxValue: 1000
   damageMaxValue: 100
   manaMaxValue: 500
-  restoreMana: 0.2
+  restoreMana: 0.5
 --- !u!114 &7383257406533379729
 MonoBehaviour:
   m_ObjectHideFlags: 0

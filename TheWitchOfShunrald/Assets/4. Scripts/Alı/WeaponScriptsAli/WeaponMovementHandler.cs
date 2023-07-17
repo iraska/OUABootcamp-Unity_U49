@@ -32,7 +32,6 @@ namespace ali
         [SerializeField] private float powerMultiplier;
         [SerializeField] private float manaSpendMultiplier;
         private float powerMagnitude;
-        private float manaSpend;
         private Vector3 lastStaffTopPoint;
 
         [SerializeField] private Collider staffColider;
@@ -51,13 +50,14 @@ namespace ali
         private ShunraldMovementController shunraldMovementController;
         private PlayerStats playerStats;
 
+        private bool isLeftClickedBefore = false;
+
         void Start ()
         {
             playerGameObject = GameManager.instance.Player;
             circleImage = UIManager.instance.WeaponUICircle;
             lineRectTransform = UIManager.instance.WeaponUILine.rectTransform;
             powerMagnitude = 0;
-            manaSpend = 0;
             Physics.IgnoreCollision(staffColider, playerCollider, true);
             Physics.IgnoreCollision(staffTopSphereColider, playerCollider, true);
             shunraldMovementController = playerGameObject.GetComponent<ShunraldMovementController>();
@@ -72,6 +72,7 @@ namespace ali
             {
                 if (Input.GetMouseButtonDown(0))
                 {
+                    isLeftClickedBefore = true;
                     if (particleType == 0)
                     {
                         energyParticleObject.SetActive(true);
@@ -111,16 +112,6 @@ namespace ali
                         reverseGravityPoint.transform.localPosition = RotateVector(changedReverseGravityLocation, -1 * rotationValue);
                         weaponPivot.transform.localPosition = RotateVector(changedLocalPosition, -1 * rotationValue);
 
-                        /*if (manaSpend > 0.5)
-                        {
-                            playerStats.SpendMana(manaSpend);
-                            manaSpend = 0;
-                        }
-                        else
-                        {
-                            manaSpend = manaSpend + (manaSpendMultiplier / 10 * Vector3.Distance(lastStaffTopPoint, staffTopPoint.position));
-                        }*/
-
 
                         //Track the movement of the wand for deciding its powerMagnitude for the ranged attack
                         if (isStaffEquipped && playerStats.Mana > 0f)
@@ -156,8 +147,9 @@ namespace ali
 
                 }
 
-                else if (Input.GetMouseButtonUp(0))
+                else if (Input.GetMouseButtonUp(0) && isLeftClickedBefore)
                 {
+                    isLeftClickedBefore = false;
                     shunraldMovementController.IsUsingWeapon = false;
                     //launch the projectile if staff is equipped
                     if (isStaffEquipped)

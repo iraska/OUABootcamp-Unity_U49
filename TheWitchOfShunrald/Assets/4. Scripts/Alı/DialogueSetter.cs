@@ -37,6 +37,21 @@ public class DialogueSetter : MonoBehaviour
 
     [SerializeField] private List<AudioClip> dialogues = new List<AudioClip>();
 
+    Color henricColor;
+
+    private void Start()
+    {
+        if (levelNo == 6)
+        {
+            Color henricColor = henricMaterial.color;
+            henricColor.a = 0f;
+            henricColor.r = 1f;
+            henricColor.b = 1f;
+            henricColor.g = 1f;
+            henricMaterial.color = henricColor;
+        }
+    }
+
     public void StartLevel1Dialogue()
     {
         DialogSystem.DialogStruct [] level1Dialogue = new DialogSystem.DialogStruct[7];
@@ -48,12 +63,12 @@ public class DialogueSetter : MonoBehaviour
         level1Dialogue[0].audioClip = dialogues[0];
         level1Dialogue[0].dialogCaller = this.gameObject;
 
-        level1Dialogue[1].text = "Aren�t you a charming boy. I have to say, it�s a very unique place you have. A bit too crowded with the dead, but otherwise bearable.";
+        level1Dialogue[1].text = "Aren�t you a charming boy. I have to say, it's a very unique place you have. A bit too crowded with the dead, but otherwise bearable.";
         level1Dialogue[1].name = "The Witch of Shunrald";
         level1Dialogue[1].icon = witchSprite;
         level1Dialogue[1].audioClip = dialogues[1];
 
-        level1Dialogue[2].text = "Well, I always wanted a big family. Who would have known� My family was under my foot this whole time.";
+        level1Dialogue[2].text = "Well, I always wanted a big family. Who would have known! My family was under my foot this whole time.";
         level1Dialogue[2].name = "The Necromancer";
         level1Dialogue[2].icon = necromancerSprite;
         level1Dialogue[2].audioClip = dialogues[2];
@@ -63,7 +78,7 @@ public class DialogueSetter : MonoBehaviour
         level1Dialogue[3].icon = witchSprite;
         level1Dialogue[3].audioClip = dialogues[3];
 
-        level1Dialogue[4].text = "Witch! Your wicked mind tricks won�t affect me.";
+        level1Dialogue[4].text = "Witch! Your wicked mind tricks won't affect me.";
         level1Dialogue[4].name = "The Necromancer";
         level1Dialogue[4].icon = necromancerSprite;
         level1Dialogue[4].audioClip = dialogues[4];
@@ -102,7 +117,7 @@ public class DialogueSetter : MonoBehaviour
         level3Dialogue[2].icon = witchSprite;
         level3Dialogue[2].audioClip = dialogues[2];
         
-        level3Dialogue[3].text = "Oh� Run, you fool. Before they come, before he finds you� Run.";
+        level3Dialogue[3].text = "Oh! Run, you fool. Before they come, before he finds you! Run.";
         level3Dialogue[3].name = "The Old Man";
         level3Dialogue[3].icon = oldManSprite;
         level3Dialogue[3].audioClip = dialogues[3];
@@ -112,7 +127,7 @@ public class DialogueSetter : MonoBehaviour
         level3Dialogue[4].icon = witchSprite;
         level3Dialogue[4].audioClip = dialogues[4];
         
-        level3Dialogue[5].text = "Run? No! He does not run� He moves and the shadows move with him. He is the devil, he must be. I cannot be saved, justs run away.";
+        level3Dialogue[5].text = "Run? No! He does not run... He moves and the shadows move with him. He is the devil, he must be. I cannot be saved, justs run away.";
         level3Dialogue[5].name = "The Old Man";
         level3Dialogue[5].icon = oldManSprite;
         level3Dialogue[5].audioClip = dialogues[5];
@@ -122,7 +137,7 @@ public class DialogueSetter : MonoBehaviour
         level3Dialogue[6].icon = witchSprite;
         level3Dialogue[6].audioClip = dialogues[6];
         
-        level3Dialogue[7].text = "� He owns the dead. �";
+        level3Dialogue[7].text = "... He owns the dead...";
         level3Dialogue[7].name = "The Old Man";
         level3Dialogue[7].icon = oldManSprite;
         level3Dialogue[7].audioClip = dialogues[7];
@@ -174,13 +189,13 @@ public class DialogueSetter : MonoBehaviour
         DialogSystem.DialogStruct[] level5Dialogue = new DialogSystem.DialogStruct[6];
 
         //Dialogues
-        level5Dialogue[0].text = "Many souls you have poured upon me Necromancer. The statues were not a boy�s toy. Unveil your name? Who tought you such spells that should have been forgotten many ages ago.";
+        level5Dialogue[0].text = "Many souls you have poured upon me Necromancer. The statues were not a boy's toy. Unveil your name? Who tought you such spells that should have been forgotten many ages ago.";
         level5Dialogue[0].name = "The Witch of Shunrald";
         level5Dialogue[0].icon = witchSprite;
         level5Dialogue[0].audioClip = dialogues[0];
         level5Dialogue[0].dialogCaller = this.gameObject;
         
-        level5Dialogue[1].text = "I am flattered my lady witch, but I won�t speak my name if it is all the same for you. Names are known to have powers. As for my arcane source of instructions, let�s say I have met with a ghost.";
+        level5Dialogue[1].text = "I am flattered my lady witch, but I won't speak my name if it is all the same for you. Names are known to have powers. As for my arcane source of instructions, let's say I have met with a ghost.";
         level5Dialogue[1].name = "The Necromancer";
         level5Dialogue[1].icon = necromancerSprite;
         level5Dialogue[1].audioClip = dialogues[1];
@@ -255,7 +270,7 @@ public class DialogueSetter : MonoBehaviour
         level6Dialogue[7].icon = henricSprite;
         level6Dialogue[7].audioClip = dialogues[7];
         
-        level6Dialogue[8].text = "Damn you and your greater good. The soil belove is my bed and the night above is my cushion. I am the child of this earth, and this country is my creation. You don�t belong here Henric the bloody inquisitor. I banish you from this world. Go back to your damnation.";
+        level6Dialogue[8].text = "Damn you and your greater good. The soil belove is my bed and the night above is my cushion. I am the child of this earth, and this country is my creation. You don't belong here Henric the bloody inquisitor. I banish you from this world. Go back to your damnation.";
         level6Dialogue[8].name = "The Witch of Shunrald";
         level6Dialogue[8].icon = witchSprite;
         level6Dialogue[8].audioClip = dialogues[8];
@@ -265,7 +280,7 @@ public class DialogueSetter : MonoBehaviour
         level6Dialogue[9].icon = henricSprite;
         level6Dialogue[9].audioClip = dialogues[9];
         
-        level6Dialogue[10].text = "Bloody fool, can�t even manage to die properly. As if a witch would be troubled by a dense ghost.";
+        level6Dialogue[10].text = "Bloody fool, can't even manage to die properly. As if a witch would be troubled by a dense ghost.";
         level6Dialogue[10].name = "The Witch of Shunrald";
         level6Dialogue[10].icon = witchSprite;
         level6Dialogue[10].audioClip = dialogues[10];
@@ -326,14 +341,9 @@ public class DialogueSetter : MonoBehaviour
 
         else if (levelNo == 6)
         {
-            //StartCoroutine(WinTheGame());
+            StartCoroutine(henricFadeOut());
 
-
-            
-
-
-
-            
+            StartCoroutine(WinTheGame());
         }
 
     }
@@ -341,7 +351,7 @@ public class DialogueSetter : MonoBehaviour
     public void level6DialogueStarter() 
     {
         // hayaletin konumunu güncelle
-        transform.position = GameManager.instance.Player.transform.position + new Vector3(3f, 0, 2f);
+        transform.position = GameManager.instance.Player.transform.position + new Vector3(5f, 0, 4f);
 
         //start dialogue
         StartLevel6Dialogue();
@@ -352,16 +362,38 @@ public class DialogueSetter : MonoBehaviour
 
     private IEnumerator henricFadeIn()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         float alpha;
         spawnTime = Time.time;
         while (true)
         {
             alpha = (Time.time - spawnTime) * fadeSpeed;
-            Color color = henricMaterial.color;
-            color.a = Mathf.Clamp(alpha, 0, 1);
-            henricMaterial.color = color;
-            if (color.a == 1)
+
+            henricColor.a = Mathf.Clamp(alpha, 0, 1);
+            henricColor.r = 1f;
+            henricColor.b = 1f;
+            henricColor.g = 1f;
+            henricMaterial.color = henricColor;
+            if (henricColor.a == 1)
+            {
+                break;
+            }
+            yield return null;
+        }
+    }
+
+    private IEnumerator henricFadeOut()
+    {
+        yield return new WaitForSeconds(0.5f);
+        float alpha;
+        spawnTime = Time.time;
+        while (true)
+        {
+            alpha = 1 - (Time.time - spawnTime) * fadeSpeed;
+
+            henricColor.a = Mathf.Clamp(alpha, 0, 1);
+            henricMaterial.color = henricColor;
+            if (henricColor.a == 1)
             {
                 break;
             }
@@ -373,7 +405,7 @@ public class DialogueSetter : MonoBehaviour
     private IEnumerator WinTheGame()
     {
         //let the ghost dissappear
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.5f);
         GameManager.instance.Win();
     }
 
