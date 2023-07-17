@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 795178475}
   m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -99,7 +99,8 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 731ab0b6207bcd9478a6f1cd1f85641e,
     type: 2}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 01c03fb9bd5d3b8408f42a23ce762d84,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -222,6 +223,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: deco_skull_1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030156633227508332, guid: 184a80f9338bed04ab605bf95f8ef741,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6080004065956774882, guid: 184a80f9338bed04ab605bf95f8ef741,
         type: 3}
@@ -398,6 +404,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Point Light Musshy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7797229581844331609, guid: 91efdef70356e9142bd5e891f126969a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91efdef70356e9142bd5e891f126969a, type: 3}
 --- !u!1001 &53014649
@@ -416,6 +427,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317430030093470829, guid: 084a81683f8694f449c740e8198cb96b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7556364971650724184, guid: 084a81683f8694f449c740e8198cb96b,
         type: 3}
@@ -552,6 +568,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317430030093470829, guid: 084a81683f8694f449c740e8198cb96b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7556364971650724184, guid: 084a81683f8694f449c740e8198cb96b,
         type: 3}
@@ -959,6 +980,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4931795744453068013, guid: eed5d9a1a38a7274188bcccb26f8e9e5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7168369290262447448, guid: eed5d9a1a38a7274188bcccb26f8e9e5,
         type: 3}
       propertyPath: m_RootOrder
@@ -1340,6 +1366,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8052967801458140722, guid: 65602993dc37fdd4fbe7863ff205dc7d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5430169479673497077, guid: 65602993dc37fdd4fbe7863ff205dc7d, type: 3}
@@ -1736,6 +1767,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: candle-spine-unlit (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 9152745194250480759, guid: 4ec315b777f3b0943bc8e3e9f54ce26d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec315b777f3b0943bc8e3e9f54ce26d, type: 3}
 --- !u!4 &250902647 stripped
@@ -1846,6 +1882,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931795744453068013, guid: eed5d9a1a38a7274188bcccb26f8e9e5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7168369290262447448, guid: eed5d9a1a38a7274188bcccb26f8e9e5,
         type: 3}
@@ -2005,6 +2046,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: deco_skull_2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 206015706637411549, guid: 346844b434c158042b19b31e9cb8669b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 995763164706903730, guid: 346844b434c158042b19b31e9cb8669b,
         type: 3}
@@ -2455,6 +2501,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4931795744453068013, guid: eed5d9a1a38a7274188bcccb26f8e9e5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7168369290262447448, guid: eed5d9a1a38a7274188bcccb26f8e9e5,
         type: 3}
       propertyPath: m_RootOrder
@@ -2758,6 +2809,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865194863134654447, guid: f558d88d058d44d4393af042d841fca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4311263578597857251, guid: f558d88d058d44d4393af042d841fca7, type: 3}
@@ -3323,6 +3379,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: candle-spine-unlit (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 9152745194250480759, guid: 4ec315b777f3b0943bc8e3e9f54ce26d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec315b777f3b0943bc8e3e9f54ce26d, type: 3}
 --- !u!4 &483734876 stripped
@@ -3407,6 +3468,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: candle-spine-unlit (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9152745194250480759, guid: 4ec315b777f3b0943bc8e3e9f54ce26d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec315b777f3b0943bc8e3e9f54ce26d, type: 3}
@@ -3498,6 +3564,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8052967801458140722, guid: 65602993dc37fdd4fbe7863ff205dc7d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5430169479673497077, guid: 65602993dc37fdd4fbe7863ff205dc7d, type: 3}
@@ -3611,6 +3682,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317430030093470829, guid: 084a81683f8694f449c740e8198cb96b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7556364971650724184, guid: 084a81683f8694f449c740e8198cb96b,
         type: 3}
@@ -3782,6 +3858,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Point Light Musshy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797229581844331609, guid: 91efdef70356e9142bd5e891f126969a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91efdef70356e9142bd5e891f126969a, type: 3}
@@ -3969,6 +4050,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317430030093470829, guid: 084a81683f8694f449c740e8198cb96b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7556364971650724184, guid: 084a81683f8694f449c740e8198cb96b,
         type: 3}
@@ -4385,6 +4471,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4931795744453068013, guid: eed5d9a1a38a7274188bcccb26f8e9e5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7168369290262447448, guid: eed5d9a1a38a7274188bcccb26f8e9e5,
         type: 3}
       propertyPath: m_RootOrder
@@ -4465,6 +4556,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317430030093470829, guid: 084a81683f8694f449c740e8198cb96b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7556364971650724184, guid: 084a81683f8694f449c740e8198cb96b,
         type: 3}
@@ -4627,6 +4723,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Point Light Musshy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7797229581844331609, guid: 91efdef70356e9142bd5e891f126969a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91efdef70356e9142bd5e891f126969a, type: 3}
 --- !u!4 &687078507 stripped
@@ -4740,6 +4841,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: candle_holder_floor_4 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3149803094638380355, guid: d84e65edf2cd7bf478d83fbe7a6091df,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3726916748853356549, guid: d84e65edf2cd7bf478d83fbe7a6091df,
         type: 3}
@@ -4885,6 +4991,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8052967801458140722, guid: 65602993dc37fdd4fbe7863ff205dc7d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5430169479673497077, guid: 65602993dc37fdd4fbe7863ff205dc7d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 65602993dc37fdd4fbe7863ff205dc7d, type: 3}
@@ -4915,6 +5026,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931795744453068013, guid: eed5d9a1a38a7274188bcccb26f8e9e5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7168369290262447448, guid: eed5d9a1a38a7274188bcccb26f8e9e5,
         type: 3}
@@ -5141,6 +5257,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337324416741948738, guid: 9af1805b194e03c4aa3f273b52d3dbca,
+        type: 3}
+      propertyPath: m_UseColorTemperature
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4553287629904227512, guid: 9af1805b194e03c4aa3f273b52d3dbca,
         type: 3}
@@ -5490,7 +5611,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0, g: 0.91764706, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.61370534, b: 0.5990566, a: 1}
   m_Intensity: 0.1
   m_Range: 10
   m_SpotAngle: 30
@@ -5530,7 +5651,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -5808,6 +5929,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: candle_holder_floor_4 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3149803094638380355, guid: d84e65edf2cd7bf478d83fbe7a6091df,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3726916748853356549, guid: d84e65edf2cd7bf478d83fbe7a6091df,
         type: 3}
@@ -6163,6 +6289,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree-scary-dead (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 3358718393379557868, guid: a5faf8d1bad2e2344a2a442a1c6f64f1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4706502583696253550, guid: a5faf8d1bad2e2344a2a442a1c6f64f1,
         type: 3}
       propertyPath: m_RootOrder
@@ -6511,6 +6642,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Point Light Musshy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797229581844331609, guid: 91efdef70356e9142bd5e891f126969a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91efdef70356e9142bd5e891f126969a, type: 3}
@@ -7365,6 +7501,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 8865194863134654447, guid: f558d88d058d44d4393af042d841fca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4311263578597857251, guid: f558d88d058d44d4393af042d841fca7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f558d88d058d44d4393af042d841fca7, type: 3}
@@ -7539,6 +7680,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8052967801458140722, guid: 65602993dc37fdd4fbe7863ff205dc7d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5430169479673497077, guid: 65602993dc37fdd4fbe7863ff205dc7d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 65602993dc37fdd4fbe7863ff205dc7d, type: 3}
@@ -7624,6 +7770,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: candle-spine-unlit (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9152745194250480759, guid: 4ec315b777f3b0943bc8e3e9f54ce26d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec315b777f3b0943bc8e3e9f54ce26d, type: 3}
@@ -7728,6 +7879,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Point Light Musshy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797229581844331609, guid: 91efdef70356e9142bd5e891f126969a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91efdef70356e9142bd5e891f126969a, type: 3}
@@ -7998,6 +8154,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: candle_holder_floor_4 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3149803094638380355, guid: d84e65edf2cd7bf478d83fbe7a6091df,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3726916748853356549, guid: d84e65edf2cd7bf478d83fbe7a6091df,
         type: 3}
       propertyPath: m_RootOrder
@@ -8087,6 +8248,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317430030093470829, guid: 084a81683f8694f449c740e8198cb96b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7556364971650724184, guid: 084a81683f8694f449c740e8198cb96b,
         type: 3}
@@ -8325,6 +8491,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Point Light Musshy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7797229581844331609, guid: 91efdef70356e9142bd5e891f126969a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91efdef70356e9142bd5e891f126969a, type: 3}
 --- !u!4 &1144684485 stripped
@@ -8356,6 +8527,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: deco_skull_2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 206015706637411549, guid: 346844b434c158042b19b31e9cb8669b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 995763164706903730, guid: 346844b434c158042b19b31e9cb8669b,
         type: 3}
@@ -8516,6 +8692,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8052967801458140722, guid: 65602993dc37fdd4fbe7863ff205dc7d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5430169479673497077, guid: 65602993dc37fdd4fbe7863ff205dc7d, type: 3}
@@ -9171,6 +9352,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8052967801458140722, guid: 65602993dc37fdd4fbe7863ff205dc7d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5430169479673497077, guid: 65602993dc37fdd4fbe7863ff205dc7d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 65602993dc37fdd4fbe7863ff205dc7d, type: 3}
@@ -9294,6 +9480,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931795744453068013, guid: eed5d9a1a38a7274188bcccb26f8e9e5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7168369290262447448, guid: eed5d9a1a38a7274188bcccb26f8e9e5,
         type: 3}
@@ -9430,6 +9621,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865194863134654447, guid: f558d88d058d44d4393af042d841fca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4311263578597857251, guid: f558d88d058d44d4393af042d841fca7, type: 3}
@@ -9768,6 +9964,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8052967801458140722, guid: 65602993dc37fdd4fbe7863ff205dc7d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5430169479673497077, guid: 65602993dc37fdd4fbe7863ff205dc7d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 65602993dc37fdd4fbe7863ff205dc7d, type: 3}
@@ -9858,6 +10059,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Point Light Red (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550432612337142771, guid: 4fc29b44cbd8a654fa085fbc52d83f52,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7160476005192338714, guid: 4fc29b44cbd8a654fa085fbc52d83f52,
         type: 3}
@@ -10194,6 +10400,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4931795744453068013, guid: eed5d9a1a38a7274188bcccb26f8e9e5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7168369290262447448, guid: eed5d9a1a38a7274188bcccb26f8e9e5,
         type: 3}
       propertyPath: m_RootOrder
@@ -10388,6 +10599,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: candle_holder_floor_4 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3149803094638380355, guid: d84e65edf2cd7bf478d83fbe7a6091df,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3726916748853356549, guid: d84e65edf2cd7bf478d83fbe7a6091df,
         type: 3}
       propertyPath: m_RootOrder
@@ -10531,6 +10747,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: candle-spine-unlit (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9152745194250480759, guid: 4ec315b777f3b0943bc8e3e9f54ce26d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec315b777f3b0943bc8e3e9f54ce26d, type: 3}
@@ -10689,6 +10910,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317430030093470829, guid: 084a81683f8694f449c740e8198cb96b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7556364971650724184, guid: 084a81683f8694f449c740e8198cb96b,
         type: 3}
@@ -10913,6 +11139,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865194863134654447, guid: f558d88d058d44d4393af042d841fca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4311263578597857251, guid: f558d88d058d44d4393af042d841fca7, type: 3}
@@ -11491,6 +11722,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6317430030093470829, guid: 084a81683f8694f449c740e8198cb96b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7556364971650724184, guid: 084a81683f8694f449c740e8198cb96b,
         type: 3}
       propertyPath: m_Enabled
@@ -11614,6 +11850,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931795744453068013, guid: eed5d9a1a38a7274188bcccb26f8e9e5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7168369290262447448, guid: eed5d9a1a38a7274188bcccb26f8e9e5,
         type: 3}
@@ -11756,6 +11997,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8052967801458140722, guid: 65602993dc37fdd4fbe7863ff205dc7d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5430169479673497077, guid: 65602993dc37fdd4fbe7863ff205dc7d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 65602993dc37fdd4fbe7863ff205dc7d, type: 3}
@@ -11776,6 +12022,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: tree-scary-dead (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358718393379557868, guid: a5faf8d1bad2e2344a2a442a1c6f64f1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4706502583696253550, guid: a5faf8d1bad2e2344a2a442a1c6f64f1,
         type: 3}
@@ -11937,6 +12188,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: candle-spine-unlit (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 9152745194250480759, guid: 4ec315b777f3b0943bc8e3e9f54ce26d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec315b777f3b0943bc8e3e9f54ce26d, type: 3}
 --- !u!4 &1665213003 stripped
@@ -12067,6 +12323,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317430030093470829, guid: 084a81683f8694f449c740e8198cb96b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7556364971650724184, guid: 084a81683f8694f449c740e8198cb96b,
         type: 3}
@@ -12234,6 +12495,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Point Light Musshy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7797229581844331609, guid: 91efdef70356e9142bd5e891f126969a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91efdef70356e9142bd5e891f126969a, type: 3}
 --- !u!1001 &1690855514
@@ -12393,6 +12659,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: candle-spine-unlit (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9152745194250480759, guid: 4ec315b777f3b0943bc8e3e9f54ce26d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec315b777f3b0943bc8e3e9f54ce26d, type: 3}
@@ -12836,6 +13107,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4931795744453068013, guid: eed5d9a1a38a7274188bcccb26f8e9e5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7168369290262447448, guid: eed5d9a1a38a7274188bcccb26f8e9e5,
         type: 3}
       propertyPath: m_RootOrder
@@ -13051,6 +13327,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8052967801458140722, guid: 65602993dc37fdd4fbe7863ff205dc7d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5430169479673497077, guid: 65602993dc37fdd4fbe7863ff205dc7d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 65602993dc37fdd4fbe7863ff205dc7d, type: 3}
@@ -13076,6 +13357,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931795744453068013, guid: eed5d9a1a38a7274188bcccb26f8e9e5,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7168369290262447448, guid: eed5d9a1a38a7274188bcccb26f8e9e5,
         type: 3}
@@ -13258,6 +13544,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: candle_holder_floor_4 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3149803094638380355, guid: d84e65edf2cd7bf478d83fbe7a6091df,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3726916748853356549, guid: d84e65edf2cd7bf478d83fbe7a6091df,
         type: 3}
@@ -13516,6 +13807,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: candle-spine-unlit (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 9152745194250480759, guid: 4ec315b777f3b0943bc8e3e9f54ce26d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec315b777f3b0943bc8e3e9f54ce26d, type: 3}
 --- !u!4 &1876004746 stripped
@@ -13535,6 +13831,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: candle_holder_floor_4 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3149803094638380355, guid: d84e65edf2cd7bf478d83fbe7a6091df,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3726916748853356549, guid: d84e65edf2cd7bf478d83fbe7a6091df,
         type: 3}
@@ -14166,6 +14467,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8052967801458140722, guid: 65602993dc37fdd4fbe7863ff205dc7d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5430169479673497077, guid: 65602993dc37fdd4fbe7863ff205dc7d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 65602993dc37fdd4fbe7863ff205dc7d, type: 3}
@@ -14192,6 +14498,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: deco_skull_1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030156633227508332, guid: 184a80f9338bed04ab605bf95f8ef741,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6080004065956774882, guid: 184a80f9338bed04ab605bf95f8ef741,
         type: 3}
@@ -14379,6 +14690,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6317430030093470829, guid: 084a81683f8694f449c740e8198cb96b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7556364971650724184, guid: 084a81683f8694f449c740e8198cb96b,
         type: 3}
       propertyPath: m_Enabled
@@ -14524,6 +14840,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: candle-spine-unlit (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9152745194250480759, guid: 4ec315b777f3b0943bc8e3e9f54ce26d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec315b777f3b0943bc8e3e9f54ce26d, type: 3}
@@ -14719,6 +15040,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6317430030093470829, guid: 084a81683f8694f449c740e8198cb96b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8122257823620787772, guid: 084a81683f8694f449c740e8198cb96b,
         type: 3}
       propertyPath: m_RootOrder
@@ -14860,6 +15186,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: candle-spine-unlit (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 9152745194250480759, guid: 4ec315b777f3b0943bc8e3e9f54ce26d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec315b777f3b0943bc8e3e9f54ce26d, type: 3}
 --- !u!1001 &1961374472
@@ -14949,6 +15280,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Point Light Musshy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7797229581844331609, guid: 91efdef70356e9142bd5e891f126969a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91efdef70356e9142bd5e891f126969a, type: 3}
 --- !u!1001 &2019414041
@@ -14962,6 +15298,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: deco_skull_1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3030156633227508332, guid: 184a80f9338bed04ab605bf95f8ef741,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6080004065956774882, guid: 184a80f9338bed04ab605bf95f8ef741,
         type: 3}
@@ -15204,6 +15545,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 8865194863134654447, guid: f558d88d058d44d4393af042d841fca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4311263578597857251, guid: f558d88d058d44d4393af042d841fca7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f558d88d058d44d4393af042d841fca7, type: 3}
@@ -15229,6 +15575,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317430030093470829, guid: 084a81683f8694f449c740e8198cb96b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7556364971650724184, guid: 084a81683f8694f449c740e8198cb96b,
         type: 3}
@@ -15478,6 +15829,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 8865194863134654447, guid: f558d88d058d44d4393af042d841fca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4311263578597857251, guid: f558d88d058d44d4393af042d841fca7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f558d88d058d44d4393af042d841fca7, type: 3}
@@ -15678,6 +16034,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: deco_skull_2 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 206015706637411549, guid: 346844b434c158042b19b31e9cb8669b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 995763164706903730, guid: 346844b434c158042b19b31e9cb8669b,
         type: 3}
       propertyPath: m_Enabled
@@ -15777,6 +16138,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: tree-scary-dead (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3358718393379557868, guid: a5faf8d1bad2e2344a2a442a1c6f64f1,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4706502583696253550, guid: a5faf8d1bad2e2344a2a442a1c6f64f1,
         type: 3}
@@ -16108,6 +16474,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: candle_holder_floor_4
       objectReference: {fileID: 0}
+    - target: {fileID: 3149803094638380355, guid: d84e65edf2cd7bf478d83fbe7a6091df,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3726916748853356549, guid: d84e65edf2cd7bf478d83fbe7a6091df,
         type: 3}
       propertyPath: m_RootOrder
@@ -16376,6 +16747,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: deco_skull_1
       objectReference: {fileID: 0}
+    - target: {fileID: 3030156633227508332, guid: 184a80f9338bed04ab605bf95f8ef741,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6080004065956774882, guid: 184a80f9338bed04ab605bf95f8ef741,
         type: 3}
       propertyPath: m_RootOrder
@@ -16486,7 +16862,7 @@ PrefabInstance:
     - target: {fileID: 1733611084662368462, guid: acf88991a2d5c40419da7d7c514a8da6,
         type: 3}
       propertyPath: m_Lightmapping
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1733611084662368462, guid: acf88991a2d5c40419da7d7c514a8da6,
         type: 3}
@@ -16496,7 +16872,7 @@ PrefabInstance:
     - target: {fileID: 1733611084811158482, guid: acf88991a2d5c40419da7d7c514a8da6,
         type: 3}
       propertyPath: m_Lightmapping
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1733611084811158482, guid: acf88991a2d5c40419da7d7c514a8da6,
         type: 3}
@@ -16506,7 +16882,7 @@ PrefabInstance:
     - target: {fileID: 1733611084822232571, guid: acf88991a2d5c40419da7d7c514a8da6,
         type: 3}
       propertyPath: m_Lightmapping
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1733611084822232571, guid: acf88991a2d5c40419da7d7c514a8da6,
         type: 3}
@@ -16516,7 +16892,7 @@ PrefabInstance:
     - target: {fileID: 1733611085483800466, guid: acf88991a2d5c40419da7d7c514a8da6,
         type: 3}
       propertyPath: m_Lightmapping
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1733611085483800466, guid: acf88991a2d5c40419da7d7c514a8da6,
         type: 3}
@@ -16606,7 +16982,7 @@ PrefabInstance:
     - target: {fileID: 4444661447415258060, guid: acf88991a2d5c40419da7d7c514a8da6,
         type: 3}
       propertyPath: m_Lightmapping
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4444661447415258060, guid: acf88991a2d5c40419da7d7c514a8da6,
         type: 3}
@@ -16761,6 +17137,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: candle-spine-unlit
       objectReference: {fileID: 0}
+    - target: {fileID: 9152745194250480759, guid: 4ec315b777f3b0943bc8e3e9f54ce26d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec315b777f3b0943bc8e3e9f54ce26d, type: 3}
 --- !u!23 &2653299336713550152
@@ -16879,6 +17260,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 564492499605172801, guid: 679e5dd88f3fb214f9191a3f9142fa9d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1333343175753143932, guid: 679e5dd88f3fb214f9191a3f9142fa9d,
         type: 3}
@@ -17010,6 +17396,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6597218015319030714, guid: 679e5dd88f3fb214f9191a3f9142fa9d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6687760040595333327, guid: 679e5dd88f3fb214f9191a3f9142fa9d,
         type: 3}
       propertyPath: m_Layer
@@ -17124,6 +17515,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SummoningStone
       objectReference: {fileID: 0}
+    - target: {fileID: 7593721984340841148, guid: 34e8c24de32cb6b42b6d68cf66566113,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6651170391792834745, guid: 34e8c24de32cb6b42b6d68cf66566113, type: 3}
     - {fileID: 8366483249858465109, guid: 34e8c24de32cb6b42b6d68cf66566113, type: 3}
@@ -17215,6 +17611,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865194863134654447, guid: f558d88d058d44d4393af042d841fca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4311263578597857251, guid: f558d88d058d44d4393af042d841fca7, type: 3}
@@ -17356,7 +17757,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &4924367468100341437
 GameObject:
@@ -17574,6 +17975,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: deco_skull_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 206015706637411549, guid: 346844b434c158042b19b31e9cb8669b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 995763164706903730, guid: 346844b434c158042b19b31e9cb8669b,
         type: 3}
