@@ -59,7 +59,7 @@
 ### Oyun Özellikleri
 * İzometrik aksiyon macera oyunu
 * Fare girdilerini bire bir takip edebilen özgün bir saldırı mekaniği. Bu mekanik ile oyuncu savaşmak için kuşandığı silahı doğrudan kendisi kullanıyor gibi hissedecek.
-* Doğrudan fare girdileri ile manipule edilebilir çevre elementleri (Örneğin kapıların oyuncu tarafından tutulup sürüklenerek açılması.)
+* Doğrudan fare girdileri ile manipule edilebilir çevre elementleri
 * Sürükleyici ve merak uyandıran bir hikaye
 * Atmosfere uygun ses ve müzik
 * Zorlayıcı "Boss Fight" sahneleri
