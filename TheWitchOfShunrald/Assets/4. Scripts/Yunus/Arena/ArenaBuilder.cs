@@ -76,6 +76,7 @@ public class ArenaBuilder : MonoBehaviour
     {
         if(alignmentIndex == gameData.alignment.Length)
         {
+            GetComponent<AudioSource>().Play();
             GameManager.instance.ArenaWin(gameData.name);
             return;
         }
