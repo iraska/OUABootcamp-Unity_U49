@@ -1994,7 +1994,7 @@ PrefabInstance:
         type: 3}
       propertyPath: staffProjectileExplosionAudio
       value: 
-      objectReference: {fileID: 8300000, guid: a56e51209ffc653478a48374db0f7896, type: 3}
+      objectReference: {fileID: 8300000, guid: 34c305a4bd62ced4c8400ae48d1f390a, type: 3}
     - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
         type: 3}
       propertyPath: moveableObjectDestructionAudio
