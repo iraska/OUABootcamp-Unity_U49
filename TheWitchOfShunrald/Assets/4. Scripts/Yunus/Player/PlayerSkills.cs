@@ -60,7 +60,7 @@ public class PlayerSkills : MonoBehaviour
                     hexagon.gameObject.SetActive(false);
                 });
                 GameObject projectile = Instantiate(this.projectile, hexagonPos + Vector3.up * 10, Quaternion.identity);
-                projectile.GetComponent<SkillProjectile>().Damage = GetComponent<PlayerStats>().Damage;
+                projectile.GetComponent<SkillProjectile>().Damage = GetComponent<PlayerStats>().Damage / 2;
             }
         }
     }

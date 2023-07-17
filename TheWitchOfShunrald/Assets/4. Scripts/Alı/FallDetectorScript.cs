@@ -11,7 +11,7 @@ public class FallDetectorScript : MonoBehaviour
         {
             other.gameObject.GetComponent<Enemy>().TakeDamage(Vector3.zero, 10000);
         }
-        else if (other.gameObject.layer == 12)
+        else if (other.gameObject.layer == 14)
         {
             GameManager.instance.Player.GetComponent<PlayerStats>().TakeDamage(1000);
         }

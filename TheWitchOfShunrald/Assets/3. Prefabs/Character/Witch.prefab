@@ -1142,7 +1142,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1031223
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -3001,7 +3001,7 @@ MonoBehaviour:
   projectile: {fileID: 3152197311611082539, guid: 6fd6f110f10414d498139c35e405043a,
     type: 3}
   coolDown: 12
-  mana: 10
+  mana: 25
   aimLayerMask:
     serializedVersion: 2
     m_Bits: 1024

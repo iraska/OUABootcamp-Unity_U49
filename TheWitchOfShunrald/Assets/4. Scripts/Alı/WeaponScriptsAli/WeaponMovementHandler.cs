@@ -171,7 +171,7 @@ namespace ali
                             spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().ProjectilePowerMagnitude = powerMagnitude;
                             spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().ProjectilePlayerDamage = playerDamage;
                             spawnedPlayerProjectile.GetComponent<RangedAttackProjectileScript>().ProjecileType = particleType;
-                            playerStats.SpendMana(5f);
+                            playerStats.SpendMana(10f);
                         }
                         //reset the magnitude and the VFX
                         powerMagnitude = 0;
