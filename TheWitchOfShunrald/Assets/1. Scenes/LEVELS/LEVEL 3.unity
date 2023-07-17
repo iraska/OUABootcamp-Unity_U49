@@ -870,10 +870,12 @@ MonoBehaviour:
   doorToBeSlammed: {fileID: 0}
   fakeAngels: {fileID: 0}
   realAngels: {fileID: 0}
+  fadeSpeed: 0
   fakeEnemies: {fileID: 0}
   realEnemies: {fileID: 0}
   fakeNecromancer: {fileID: 0}
   realNecromancer: {fileID: 0}
+  henricMaterial: {fileID: 0}
   dialogues:
   - {fileID: 8300000, guid: 9d91ecfd31c64444697fff31c22eb985, type: 3}
   - {fileID: 8300000, guid: 347b8debcded41c4eb539371a9224d0d, type: 3}
@@ -2100,6 +2102,11 @@ PrefabInstance:
       propertyPath: m_CameraType
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8645639842838280287, guid: 0c4c5165bd0d7f64fbf962d395bb5a91,
+        type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9018791337371232788, guid: 0c4c5165bd0d7f64fbf962d395bb5a91,
         type: 3}
       propertyPath: maxZoom
@@ -2129,6 +2136,29 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 974479113}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &974479116 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8645639842838280283, guid: 0c4c5165bd0d7f64fbf962d395bb5a91,
+    type: 3}
+  m_PrefabInstance: {fileID: 974479113}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &974479117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974479116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 32c6211a0e7c82747b3984eb14dbdb1e, type: 2}
 --- !u!1001 &978980789
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2842,8 +2872,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.9528302, g: 0.93870974, b: 0.86743504, a: 1}
-  m_Intensity: 0.39
+  m_Color: {r: 0.990566, g: 0.71488965, b: 0.9401736, a: 1}
+  m_Intensity: 0.59
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -27419,6 +27449,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5320922623850960148, guid: e3723d0a7df8dc34c8428fc8ad9a9a53,
         type: 3}
+      propertyPath: m_Range
+      value: 7.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320922623850960148, guid: e3723d0a7df8dc34c8428fc8ad9a9a53,
+        type: 3}
       propertyPath: m_Color.b
       value: 0.84050083
       objectReference: {fileID: 0}
@@ -27434,8 +27469,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5320922623850960148, guid: e3723d0a7df8dc34c8428fc8ad9a9a53,
         type: 3}
+      propertyPath: m_Intensity
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320922623850960148, guid: e3723d0a7df8dc34c8428fc8ad9a9a53,
+        type: 3}
       propertyPath: m_Lightmapping
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320922623850960148, guid: e3723d0a7df8dc34c8428fc8ad9a9a53,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6839884615955203525, guid: e3723d0a7df8dc34c8428fc8ad9a9a53,
         type: 3}
@@ -32407,7 +32452,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9528302, g: 0.31011927, b: 0.9371902, a: 1}
-  m_Intensity: 51.73
+  m_Intensity: 30.4
   m_Range: 8.6
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -32444,7 +32489,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 522295
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
@@ -32483,7 +32528,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4642053663159923981}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.15, y: -14.6110115, z: 27.724966}
+  m_LocalPosition: {x: 9.57, y: -14.6110115, z: 27.724966}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44102,7 +44147,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0, g: 0.6886792, b: 0.06835524, a: 1}
-  m_Intensity: 10.8
+  m_Intensity: 16.2
   m_Range: 14
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208

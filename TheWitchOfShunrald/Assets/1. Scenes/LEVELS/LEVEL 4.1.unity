@@ -2259,6 +2259,11 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8645639842838280287, guid: 0c4c5165bd0d7f64fbf962d395bb5a91,
+        type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c4c5165bd0d7f64fbf962d395bb5a91, type: 3}
 --- !u!20 &529374494 stripped
@@ -2273,6 +2278,29 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 529374493}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &529374496 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8645639842838280283, guid: 0c4c5165bd0d7f64fbf962d395bb5a91,
+    type: 3}
+  m_PrefabInstance: {fileID: 529374493}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &529374497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529374496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 63a33ac9cacf9d246b31acd6c9830434, type: 2}
 --- !u!1001 &539829169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4653,6 +4681,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 633565860914373600, guid: 36a145bb93624c94eb430ef608b41f2f,
         type: 3}
+      propertyPath: m_Color.a
+      value: 0.34901962
+      objectReference: {fileID: 0}
+    - target: {fileID: 633565860914373600, guid: 36a145bb93624c94eb430ef608b41f2f,
+        type: 3}
       propertyPath: m_Color.b
       value: 0.021577835
       objectReference: {fileID: 0}
@@ -4665,6 +4698,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 633565860914373600, guid: 36a145bb93624c94eb430ef608b41f2f,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 33.3
       objectReference: {fileID: 0}
     - target: {fileID: 699489163452667189, guid: 36a145bb93624c94eb430ef608b41f2f,
         type: 3}
@@ -4940,6 +4978,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Lightmapping
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3910728502876467131, guid: 36a145bb93624c94eb430ef608b41f2f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.242
+      objectReference: {fileID: 0}
+    - target: {fileID: 3910728502876467131, guid: 36a145bb93624c94eb430ef608b41f2f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.275
       objectReference: {fileID: 0}
     - target: {fileID: 4533609455286229440, guid: 36a145bb93624c94eb430ef608b41f2f,
         type: 3}

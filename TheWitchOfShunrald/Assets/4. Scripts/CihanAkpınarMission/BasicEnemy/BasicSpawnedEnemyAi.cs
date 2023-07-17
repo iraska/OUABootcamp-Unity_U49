@@ -65,6 +65,11 @@ namespace CihanAkpınar
                     FindEnemyTarget();
                 }
             }
+            else
+            {
+                anim.SetBool("BasicEnemyAttacking",false);
+                StopAllCoroutines();
+            }
         }
         private void Update()
         {
