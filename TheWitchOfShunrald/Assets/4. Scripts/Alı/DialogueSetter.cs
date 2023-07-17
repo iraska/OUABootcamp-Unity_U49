@@ -35,6 +35,7 @@ public class DialogueSetter : MonoBehaviour
 
     [SerializeField] Material henricMaterial;
 
+
     [SerializeField] private List<AudioClip> dialogues = new List<AudioClip>();
 
     Color henricColor;
@@ -406,6 +407,7 @@ public class DialogueSetter : MonoBehaviour
     {
         //let the ghost dissappear
         yield return new WaitForSeconds(2.5f);
+        GetComponent<AudioSource>().Play();
         GameManager.instance.Win();
     }
 

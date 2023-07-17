@@ -231,8 +231,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.35478148, y: 0.1432144, z: 2.4526405}
-  m_Center: {x: -0.002689343, y: -0.0034736048, z: 1.0406529}
+  m_Size: {x: 0.35478148, y: 0.1432144, z: 3.2562487}
+  m_Center: {x: -0.002689343, y: -0.003473595, z: 0.63884836}
 --- !u!54 &1753612734497050373
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -418,8 +418,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.43061423, y: 0.08829281, z: 2.0136847}
-  m_Center: {x: -0.0024991855, y: -0.0074917185, z: -1.2525007}
+  m_Size: {x: 0.43061423, y: 0.08829281, z: 1.1852723}
+  m_Center: {x: -0.0024991855, y: -0.0074917087, z: -1.6667057}
 --- !u!1 &977940643098992530
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,7 +634,7 @@ SpringJoint:
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.4000001, z: 0}
+  m_ConnectedAnchor: {x: 0, y: 0.5, z: 0}
   serializedVersion: 2
   m_Spring: 80
   m_Damper: 0.2
