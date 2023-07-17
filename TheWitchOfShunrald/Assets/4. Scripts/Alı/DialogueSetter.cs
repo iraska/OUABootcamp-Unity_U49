@@ -63,7 +63,7 @@ public class DialogueSetter : MonoBehaviour
         level1Dialogue[0].audioClip = dialogues[0];
         level1Dialogue[0].dialogCaller = this.gameObject;
 
-        level1Dialogue[1].text = "Aren�t you a charming boy. I have to say, it's a very unique place you have. A bit too crowded with the dead, but otherwise bearable.";
+        level1Dialogue[1].text = "Aren't you a charming boy. I have to say, it's a very unique place you have. A bit too crowded with the dead, but otherwise bearable.";
         level1Dialogue[1].name = "The Witch of Shunrald";
         level1Dialogue[1].icon = witchSprite;
         level1Dialogue[1].audioClip = dialogues[1];
@@ -393,7 +393,7 @@ public class DialogueSetter : MonoBehaviour
 
             henricColor.a = Mathf.Clamp(alpha, 0, 1);
             henricMaterial.color = henricColor;
-            if (henricColor.a == 1)
+            if (henricColor.a == 0)
             {
                 break;
             }

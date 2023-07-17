@@ -85,6 +85,10 @@ namespace CihanAkpınar
 
        private IEnumerator SpawmDelay()
        {
+            if (currentWave >= waves.Length)
+            {
+                yield break;
+            }
            
            for (int i = 0; i < waves[currentWave].GetEnemySpawnList().Length; i++)
            {
@@ -105,11 +109,12 @@ namespace CihanAkpınar
 
                yield return new WaitForSeconds(spawnSecond);
            }
-           
-           
-           currentWave++;
-           
-           
+
+            if (currentWave < waves.Length)
+            {
+                currentWave++;
+            }
+            Debug.Log(currentWave);
            
        }
    } 

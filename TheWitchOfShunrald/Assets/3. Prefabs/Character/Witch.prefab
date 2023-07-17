@@ -2764,7 +2764,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7383257406533379693}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 150
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -2837,7 +2837,7 @@ MonoBehaviour:
   healthMaxValue: 1000
   damageMaxValue: 100
   manaMaxValue: 500
-  restoreMana: 0.5
+  restoreMana: 0.25
 --- !u!114 &7383257406533379729
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -28,19 +28,19 @@ namespace TutorialSystem
 
                 if (gameObject.CompareTag(verge)) 
                 {
-                    currentInfoText = "You can attack the enemy by turning your wand around, as in the gif.";
+                    currentInfoText = "Use your mouse, left click and drag for attack. Brighter the staff, greater the damage will be.";
                 }
                 else if (gameObject.CompareTag(dash))
                 {
-                    currentInfoText = "You can dash by pressing the space key as in the gif.";
+                    currentInfoText = "You can dash by pressing the space key.";
                 }
                 else if (gameObject.CompareTag(skill)) 
                 {
-                    currentInfoText = "By pressing the E key, you can throw a skill as in the gif.";
+                    currentInfoText = "By pressing the E key, you can throw a skill with area damage.";
                 }
                 else if (gameObject.CompareTag(destructible))
                 {
-                    currentInfoText = "Just like in the gif, you can put objects in front of the enemies by clicking the right button of your mouse and distract them.";
+                    currentInfoText = "Right click and drag objects to distract your enemies and find yourself a cover.";
                 }
                 else if (gameObject.CompareTag(sword))
                 {

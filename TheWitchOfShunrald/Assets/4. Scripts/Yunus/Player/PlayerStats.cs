@@ -84,10 +84,15 @@ public class PlayerStats : MonoBehaviour
         if (this.mana <= 0)
         {
             CancelInvoke(nameof(RestoreMana));
-            InvokeRepeating(nameof(RestoreMana), 2, 0.1f);
+            InvokeRepeating(nameof(RestoreMana), 5, 0.1f);
             return false;
         }
-        return true;
+        else
+        {
+            CancelInvoke(nameof(RestoreMana));
+            InvokeRepeating(nameof(RestoreMana), 3, 0.1f);
+            return true;
+        }
     }
     public void RestoreMana()
     {
