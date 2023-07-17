@@ -68,6 +68,7 @@ namespace CihanAkpınar
             else
             {
                 anim.SetBool("BasicEnemyAttacking",false);
+                anim.SetFloat("BasicEnemyMove", 0);
                 StopAllCoroutines();
             }
         }
