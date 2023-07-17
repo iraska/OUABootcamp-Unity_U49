@@ -424,7 +424,7 @@ PrefabInstance:
     - target: {fileID: 5033465211736786945, guid: 0bac83c0923de4d4b89947b124646b6a,
         type: 3}
       propertyPath: attackRange
-      value: 14
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5033465211736786945, guid: 0bac83c0923de4d4b89947b124646b6a,
         type: 3}
@@ -438,8 +438,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5033465211736786945, guid: 0bac83c0923de4d4b89947b124646b6a,
         type: 3}
+      propertyPath: stunCooldown
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033465211736786945, guid: 0bac83c0923de4d4b89947b124646b6a,
+        type: 3}
       propertyPath: spawnCooldown
-      value: 20
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033465211736786945, guid: 0bac83c0923de4d4b89947b124646b6a,
+        type: 3}
+      propertyPath: healthCooldown
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5033465211736786945, guid: 0bac83c0923de4d4b89947b124646b6a,
         type: 3}

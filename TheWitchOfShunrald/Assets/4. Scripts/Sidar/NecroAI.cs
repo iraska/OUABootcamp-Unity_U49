@@ -13,13 +13,19 @@ namespace Sidar
     {
         private GameObject player;
         private Animator animator;
-        [SerializeField] private float attackRange = 10f;
+        private NavMeshAgent agent;
+        private Transform[] projectilePoints;
+        public Transform projectilePointParent;
+        public GameObject projectilePrefab;
+        
+        
+        
+        [SerializeField] private float attackRange; //10
         [SerializeField] private int random;
         [SerializeField] private float distance;
-        private NavMeshAgent agent;
-        [SerializeField] private float delay = 10f;
         [SerializeField] private float currentHealth;
-        private bool canCrIdle = true; //You may remove this
+        
+        
         private bool canCrMultiProjectile = true;
         private bool canCrSpawnMinions = true;
         private bool canCrStunPLayer = true;
@@ -27,26 +33,29 @@ namespace Sidar
         private bool canCrSingleProjectile = true;
         private bool isAttacking;
         private bool canMultiProjectile = true;
-        public Transform projectilePointParent;
-        public GameObject projectilePrefab;
-        private Transform[] projectilePoints;
-        [SerializeField] private float projectileAnimDelay = 1f;
-        [SerializeField] private float multiProjectileTimeBetween = 1.1f;
-        [SerializeField] private float stunAnimDelay = 6f;
-        [SerializeField] private float spawnAnimDelay = 3.9f;
-        [SerializeField] private float healthAnimDelay = 6.25f;  
+        
+        
+        [SerializeField] private float projectileAnimDelay;
+        [SerializeField] private float stunAnimDelay; //6f
+        [SerializeField] private float spawnAnimDelay; //2
+        
+        [SerializeField] private float multiProjectileTimeBetween;
         [SerializeField] private float projectileCooldown = 3f;
         [SerializeField] private float stunCooldown = 30f;
         [SerializeField] private float healthCooldown = 40f;
         [SerializeField] private float spawnCooldown = 20f;
+        [SerializeField] private float multiprojectileCooldown; //12f
+        
         [SerializeField] private int maxHealth = 100;
-        [SerializeField] private float rotationSpeed = 3f;
+        
         [SerializeField] private float regenSpeedMin = 5f;
         [SerializeField] private float regenSpeedMax = 100f;
-        private float regenSpeed;
+        
         [SerializeField] private ParticleSystem healthRegenParticle;
         
-        
+        private float regenSpeed;
+        private float spawnTimer; // Timer to control spawn timing
+
         
         [SerializeField] private GameObject enemyClonePrefab; // The prefab for the enemy clone
         [SerializeField] private int numClones = 8; // Number of clones to spawn
@@ -54,12 +63,11 @@ namespace Sidar
         [SerializeField] private float spawnDelay = 1f; // Delay between each clone spawn
 
         private float angleIncrement; // Angle increment between clones
-        private float spawnTimer; // Timer to control spawn timing
-        private bool isRegenDone = false;
-        private bool isRegenInterrupt = false;
+        
+        
+        private bool isRegenDone;
+        private bool isRegenInterrupt;
         private int explosionsCount;
-        private int maxExplosions = 4;
-        private float explosionAttackDelay = 4f;
         private bool isMultiProjectile;
 
         [SerializeField] private float playerDamage;
@@ -71,8 +79,8 @@ namespace Sidar
 
         [SerializeField] private GameObject henricDialogueTrigger;
 
-        public bool isDead;
-        [SerializeField] private float multiprojectileCooldown = 12f;
+        private bool isDead;
+        
         private bool halfHealthFirstTime;
         private int halfHealthCount;
 
@@ -231,7 +239,6 @@ namespace Sidar
         private IEnumerator MutliProjectileAttack()
         {
             isMultiProjectile = true;
-            float attackRangeForProjectile = 16f;
             int count = 0;
             
             agent.SetDestination(transform.position);
