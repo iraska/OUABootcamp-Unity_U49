@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Image loadingBar;
     [SerializeField] private TextMeshProUGUI loadingText;
     [SerializeField] private Button continueGameButton;
-    [SerializeField] private GameObject loadingCanvas, gameCanvas;
+     public GameObject loadingCanvas, gameCanvas;
     public static LevelManager instance;
     private void Awake()
     {
@@ -35,21 +35,23 @@ public class LevelManager : MonoBehaviour
     }
     public IEnumerator LoadingGame(int sceneIndex)
     {
+        loadingCanvas.SetActive(true);
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
         while (!operation.isDone)
         {
+            Debug.Log("oyun başlıyor");
             loadingBar.fillAmount = operation.progress;
             loadingText.text = "Loading %" + ((int)(loadingBar.fillAmount * 100)).ToString();
             yield return null;
         }
+        Debug.Log("oyun başladı");
         loadingCanvas.SetActive(false);
         gameCanvas.SetActive(true);
         GameManager.instance.GameStart();
-        if (sceneIndex!=6)
+        if (sceneIndex!=7)
         {
             AudioManager.Instance.PlayMusicWithFade(AudioManager.Instance.dungeonAtmosphereAudios);
         }
-
         else
         {
             AudioManager.Instance.PlayMusicWithFade(AudioManager.Instance.cemeteryAtmosphereAudios);
@@ -63,14 +65,14 @@ public class LevelManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("lastGame", 1);
         PlayerPrefs.SetInt("balance", 0);
-        StartCoroutine(LoadingGame(2));
+        SceneManager.LoadScene(2);
     }
     public void ContinueGame()
     {
-        if(PlayerPrefs.GetInt("lastGame") + 1 < SceneManager.sceneCountInBuildSettings)
-            StartCoroutine(LoadingGame(PlayerPrefs.GetInt("lastGame")+1));
+        if(PlayerPrefs.GetInt("lastGame") + 2 < SceneManager.sceneCountInBuildSettings)
+            StartCoroutine(LoadingGame(PlayerPrefs.GetInt("lastGame")+2));
         else
-            StartCoroutine(LoadingGame(PlayerPrefs.GetInt("lastGame")));
+            StartCoroutine(LoadingGame(PlayerPrefs.GetInt("lastGame")+1));
     }
     public void LoadArena()
     {

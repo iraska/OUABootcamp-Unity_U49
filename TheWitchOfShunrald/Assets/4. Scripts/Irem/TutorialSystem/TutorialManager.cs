@@ -19,8 +19,6 @@ namespace TutorialSystem
 
         private void Awake()
         {
-            DontDestroyOnLoad(this.gameObject);
-
             if (instance == null)
             {
                 instance = this;
@@ -33,7 +31,7 @@ namespace TutorialSystem
 
         private void Start()
         {
-            ui = FindObjectOfType<UIManager>().gameObject;
+            ui = UIManager.instance.gameObject;
             streamingAssetsPath = Application.streamingAssetsPath;
         }
 

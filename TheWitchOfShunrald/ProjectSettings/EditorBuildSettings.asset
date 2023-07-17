@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/1. Scenes/Levels/Arena.unity
     guid: 3b11c7624dfbc754193ed2b21d3c5200
   - enabled: 1
+    path: Assets/1. Scenes/Levels/Introduction.unity
+    guid: c3a9041146f8d28459ebe32800b6666d
+  - enabled: 1
     path: Assets/1. Scenes/Levels/Level 1.unity
     guid: b98d16ae990291d47b057a10a8f5150f
   - enabled: 1

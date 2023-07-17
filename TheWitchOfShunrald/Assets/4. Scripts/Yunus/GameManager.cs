@@ -106,11 +106,11 @@ public class GameManager : MonoBehaviour
         if(GameState == State.Playing)
         {
             GameState = State.Upgrade;
-            PlayerPrefs.SetInt("lastGame", SceneManager.GetActiveScene().buildIndex);
+            PlayerPrefs.SetInt("lastGame", SceneManager.GetActiveScene().buildIndex-1);
             PlayerPrefs.SetInt("balance", PlayerPrefs.GetInt("balance") + balance);
             GameAnalyticsManager.instance.LevelCompleted(PlayerPrefs.GetInt("lastGame"));
 
-            if (PlayerPrefs.GetInt("lastGame") + 1 < SceneManager.sceneCountInBuildSettings)
+            if (PlayerPrefs.GetInt("lastGame") + 2 < SceneManager.sceneCountInBuildSettings)
                 UIManager.instance.UpgradePanel();
             else
                 Win();
