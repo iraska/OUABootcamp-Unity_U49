@@ -214,6 +214,8 @@ namespace Sidar
                 {
                     StopAllCoroutines();
                     animator.Play("BossIdle");
+                    agent.SetDestination(transform.position);
+
                 }
             }
         }
