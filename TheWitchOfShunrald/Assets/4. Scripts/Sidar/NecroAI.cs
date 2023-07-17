@@ -31,7 +31,7 @@ namespace Sidar
         public GameObject projectilePrefab;
         private Transform[] projectilePoints;
         [SerializeField] private float projectileAnimDelay = 1f;
-        [SerializeField] private float multiProjectileTimeBetween = 1f;
+        [SerializeField] private float multiProjectileTimeBetween = 1.1f;
         [SerializeField] private float stunAnimDelay = 6f;
         [SerializeField] private float spawnAnimDelay = 3.9f;
         [SerializeField] private float healthAnimDelay = 6.25f;  
@@ -73,6 +73,8 @@ namespace Sidar
 
         public bool isDead;
         [SerializeField] private float multiprojectileCooldown = 12f;
+        private bool halfHealthFirstTime;
+        private int halfHealthCount;
 
 
         private void Start()
@@ -97,78 +99,113 @@ namespace Sidar
         {
             if (!isDead)
             {
-                distance = Vector3.Distance(transform.position, player.transform.position);
-                if(!isAttacking){
-                    if(distance > attackRange){
-                        random = Random.Range(1,4);
-                        switch(random){
-                            case 1:
-                                ChasePlayer();
-                                break;
-                            case 2:
-                                if(canCrSpawnMinions){
-                                    StartCoroutine(SpawnMinions(false));
-                                }
-                                break;
-                            case 3:
-                                if(canCrHealthRegen){
-                                    if((currentHealth/maxHealth) * 100 < 20){
-                                        StartCoroutine(SpawnMinions(true));
-                                        StartCoroutine(HealthRegen());
-                                    }
-                                    else if((currentHealth/maxHealth) * 100 < 50){
-                                        StartCoroutine(HealthRegen());
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                    else{
-                        if (isMultiProjectile)
-                        {
-                            ChasePlayer();
-                        }
-                        agent.SetDestination(transform.position);
-                        animator.SetBool("isChasing", false);
-                        random = Random.Range(1,6);
-                        switch(random){
-                            case 1:
-                                if(canCrMultiProjectile){
-                                
-                                    StartCoroutine(MutliProjectileAttack());
-                                }
-                                break;
-                            case 2:
-                                if(canCrSingleProjectile){
-                                
-                                    StartCoroutine(SingleProjectileAttack());
-                                }
-                                break;
-                            case 3:
-                                if(canCrStunPLayer){
-                                    StartCoroutine(StunPlayer());
-                                }
-                                break;
-                            case 4:
-                                if(canCrSpawnMinions){
-                                    StartCoroutine(SpawnMinions(false));
-                                }
-                                break;
-                            case 5:
-                                if(canCrHealthRegen){
-                                    if(currentHealth < 20)
-                                    {
-                                        SpawnClone();
-                                        StartCoroutine(HealthRegen());
-                                    }
-                                    else if(currentHealth < 50){
-                                        StartCoroutine(HealthRegen());
-                                    }
-                                }
+                if (GameManager.instance.GameState == GameManager.State.Playing)
+                {
+                    
 
-                                break;
+                    distance = Vector3.Distance(transform.position, player.transform.position);
+                    if (!isAttacking)
+                    {
+                        if (halfHealthFirstTime)
+                        {
+                            AudioManager.Instance.PlaySfx(AudioManager.Instance.necroHalfHealthAudio, transform.position);
+                            StartCoroutine(HealthRegen());
+                            halfHealthFirstTime = false;
+                        }
+                        if (distance > attackRange)
+                        {
+                            random = Random.Range(1, 4);
+                            switch (random)
+                            {
+                                case 1:
+                                    ChasePlayer();
+                                    break;
+                                case 2:
+                                    if (canCrSpawnMinions)
+                                    {
+                                        StartCoroutine(SpawnMinions(false));
+                                    }
+
+                                    break;
+                                case 3:
+                                    if (canCrHealthRegen)
+                                    {
+                                        if (currentHealth <= 100)
+                                        {
+                                            StartCoroutine(SpawnMinions(true));
+                                            StartCoroutine(HealthRegen());
+                                        }
+                                        else if (currentHealth <= 250)
+                                        {
+                                            StartCoroutine(HealthRegen());
+                                        }
+                                    }
+
+                                    break;
+                            }
+                        }
+                        else
+                        {
+                            if (isMultiProjectile)
+                            {
+                                ChasePlayer();
+                            }
+
+                            agent.SetDestination(transform.position);
+                            animator.SetBool("isChasing", false);
+                            random = Random.Range(1, 6);
+                            switch (random)
+                            {
+                                case 1:
+                                    if (canCrMultiProjectile)
+                                    {
+                                        StartCoroutine(MutliProjectileAttack());
+                                    }
+
+                                    break;
+                                case 2:
+                                    if (canCrSingleProjectile)
+                                    {
+                                        StartCoroutine(SingleProjectileAttack());
+                                    }
+
+                                    break;
+                                case 3:
+                                    if (canCrStunPLayer)
+                                    {
+                                        StartCoroutine(StunPlayer());
+                                    }
+
+                                    break;
+                                case 4:
+                                    if (canCrSpawnMinions)
+                                    {
+                                        StartCoroutine(SpawnMinions(false));
+                                    }
+
+                                    break;
+                                case 5:
+                                    if (canCrHealthRegen)
+                                    {
+                                        if (currentHealth <= 100)
+                                        {
+                                            SpawnClone();
+                                            StartCoroutine(HealthRegen());
+                                        }
+                                        else if (currentHealth <= 250)
+                                        {
+                                            StartCoroutine(HealthRegen());
+                                        }
+                                    }
+                                    break;
+                            }
                         }
                     }
+                }
+                else
+                {
+                    StopAllCoroutines();
+                    animator.Play("BossIdle");
                 }
             }
         }
@@ -248,15 +285,15 @@ namespace Sidar
             yield return new WaitForSeconds(2f);
             isAttacking = false;
             animator.SetBool("isSingleProjectileAttack", false);
-            SingleProjectile();
+            //SingleProjectile();
             yield return new WaitForSeconds(projectileCooldown);
             canCrSingleProjectile = true;
         }
 
         private void SingleProjectile()
         {
-            speed = 5f;
-            GameObject projectile = Instantiate(projectilePrefab, projectilePointParent.GetChild(4).position, Quaternion.identity);
+            speed = 8f;
+            GameObject projectile = Instantiate(projectilePrefab, projectilePointParent.GetChild(3).position, Quaternion.identity);
             NecroProjectile projectileComponent = projectile.GetComponent<NecroProjectile>();
             projectileComponent.PlayerDamage = playerDamage;
             projectileComponent.ObjectDamage = objectDamage;
@@ -274,6 +311,8 @@ namespace Sidar
                 GameObject projectile = Instantiate(projectilePrefab, pj.position, Quaternion.identity);
                 NecroProjectile projectileComponent = projectile.GetComponent<NecroProjectile>();
                 speed = 10f;
+                playerDamage = 25;
+                objectDamage = 40;
                 projectileComponent.PlayerDamage = playerDamage;
                 projectileComponent.ObjectDamage = objectDamage;
                 projectileComponent.Speed = speed;
@@ -328,6 +367,7 @@ namespace Sidar
             if(!forHealth)
                 canCrSpawnMinions = false;
             animator.SetBool("isSpawningMinions",true);
+            AudioManager.Instance.PlaySfx(AudioManager.Instance.bossSpawnerAudio, transform.position);
             isAttacking = true;
             yield return new WaitForSeconds(spawnAnimDelay);
             SpawnClone();
@@ -368,6 +408,7 @@ namespace Sidar
             animator.SetBool("isStunPlayer",true);
             isAttacking = true;
             AudioManager.Instance.PlaySfx(AudioManager.Instance.necroStanCackleAudio, transform.position);
+            AudioManager.Instance.PlaySfx(AudioManager.Instance.necroStun, transform.position);
             StartCoroutine(player.GetComponent<ShunraldHangInTheAir>().HangInTheAir());
             yield return new WaitForSeconds(stunAnimDelay);
             animator.SetBool("isStunDone", true);
@@ -442,27 +483,30 @@ namespace Sidar
 
         private void Die()
         {
-            StopAllCoroutines();
-            DisableAnimatorParametersExcept("isDead");
             isDead = true;
+            UIManager.instance.BossHealthBarDeactivate();
             Debug.Log("Boss defeated!");
-
-            //ölüm animasyonu bittiyse
-            if (true)
-            {
-                henricDialogueTrigger.SetActive(true);
-                henricDialogueTrigger.GetComponent<GeneralUseTrigger>().infoStarterForNecroDeath();
-            }
-            
-
+            StopAllCoroutines();
+            animator.Play("BossDeath");
+            DisableAnimatorParametersExcept("isDead");
         }
 
-        
+        public void TriggerHenric()
+        {
+            henricDialogueTrigger.SetActive(true);
+            henricDialogueTrigger.GetComponent<GeneralUseTrigger>().infoStarterForNecroDeath();
+        }
 
         public void TakeDamage(Vector3 exploLocation, float damage)
         {
             isRegenInterrupt = true;
             currentHealth -= damage;
+            AudioManager.Instance.PlaySfx(AudioManager.Instance.necroHealthRejDamageAudio, transform.position);
+            if (currentHealth <= 250 && halfHealthCount == 0)
+            {
+                halfHealthFirstTime = true;
+                halfHealthCount += 1;
+            }
             
             UIManager.instance.BossHealthBar(maxHealth, currentHealth);
             if (currentHealth <= 0)

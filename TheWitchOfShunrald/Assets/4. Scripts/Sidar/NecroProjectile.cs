@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using ali;
+using CihanAkpınar;
 
 namespace Sidar
 {
@@ -87,6 +88,7 @@ namespace Sidar
                 {
                     if (collider.gameObject.CompareTag("Shunrald"))
                     {
+                        AudioManager.Instance.PlaySfx(AudioManager.Instance.splash, player.transform.position);
                         player.GetComponent<PlayerStats>().TakeDamage(playerDamage);
                     }
                     else if (collider.gameObject.layer == 13)

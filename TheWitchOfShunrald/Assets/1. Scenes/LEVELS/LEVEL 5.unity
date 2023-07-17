@@ -294,6 +294,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5033465211736786945, guid: 0bac83c0923de4d4b89947b124646b6a,
         type: 3}
+      propertyPath: projectileAnimDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033465211736786945, guid: 0bac83c0923de4d4b89947b124646b6a,
+        type: 3}
       propertyPath: henricDialogueTrigger
       value: 
       objectReference: {fileID: 57711043}

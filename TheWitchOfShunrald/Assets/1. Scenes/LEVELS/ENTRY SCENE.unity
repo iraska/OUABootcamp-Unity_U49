@@ -1782,6 +1782,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
         type: 3}
+      propertyPath: splash
+      value: 
+      objectReference: {fileID: 8300000, guid: 8d83403246323b24c9cd497b959572f7, type: 3}
+    - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
+        type: 3}
+      propertyPath: necroStun
+      value: 
+      objectReference: {fileID: 8300000, guid: d601344e3c9fede43b4a0ecc55dfd464, type: 3}
+    - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
+        type: 3}
       propertyPath: sfxSlider
       value: 
       objectReference: {fileID: 168185946}
@@ -1807,6 +1817,11 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: fbb10e343c3933049826610edaa083e9, type: 3}
     - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
         type: 3}
+      propertyPath: bossSpawnerAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: ffb4735a8d8287c4b97be00a5542fa52, type: 3}
+    - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
+        type: 3}
       propertyPath: buttonClickAudio
       value: 
       objectReference: {fileID: 8300000, guid: ddf0169a406841b4a9de46a4a0e7bf08, type: 3}
@@ -1814,7 +1829,7 @@ PrefabInstance:
         type: 3}
       propertyPath: necroWhisperAudio
       value: 
-      objectReference: {fileID: 8300000, guid: 643e2a7a435397545b0d694a9bca3fff, type: 3}
+      objectReference: {fileID: 8300000, guid: e3f95f33fbed6bf4fad5b9663b28a26c, type: 3}
     - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
         type: 3}
       propertyPath: rangedEnemyDieAudio
@@ -1864,7 +1879,7 @@ PrefabInstance:
         type: 3}
       propertyPath: necroHealthRejStartAudio
       value: 
-      objectReference: {fileID: 8300000, guid: d16e2170a3f04564480d31d0fa02d80b, type: 3}
+      objectReference: {fileID: 8300000, guid: 640e74d73d1ddc348b13de8669319c33, type: 3}
     - target: {fileID: 3049475838542401412, guid: a4d2234813093a64aa0b7952181e1eef,
         type: 3}
       propertyPath: basicSpawnedEnemyDieAudio

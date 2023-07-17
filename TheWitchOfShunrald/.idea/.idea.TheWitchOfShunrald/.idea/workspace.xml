@@ -5,16 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f9f027d-656a-44fe-9e27-4ace5e0b49b5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/1. Scenes/LEVELS/LEVEL 3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. Scenes/LEVELS/LEVEL 3.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/1. Scenes/LEVELS/LEVEL 4.1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. Scenes/LEVELS/LEVEL 4.1.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Audio/Sfx/NecromancerSxf/Bloody punch.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Audio/Sfx/NecromancerSxf/Bloody punch.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Audio/Sfx/NecromancerSxf/multi.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Audio/Sfx/NecromancerSxf/multi.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Audio/Sfx/NecromancerSxf/spawn.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Audio/Sfx/NecromancerSxf/spawn.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Audio/Sfx/NecromancerSxf/spawner.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Audio/Sfx/NecromancerSxf/spawner.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Audio/Sfx/NecromancerSxf/stun.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Audio/Sfx/NecromancerSxf/stun.wav.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TheWitchOfShunrald/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TheWitchOfShunrald/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/1. Scenes/LEVELS/ENTRY SCENE.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. Scenes/LEVELS/ENTRY SCENE.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/1. Scenes/LEVELS/LEVEL 5.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/1. Scenes/LEVELS/LEVEL 5.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Materials/Created_Mat/Lv2 krystal-bloom.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. Art/Materials/Created_Mat/Lv2 krystal-bloom.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Materials/Created_Mat/krystal-bloom.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. Art/Materials/Created_Mat/krystal-bloom.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Scripts/CihanAkpınarMission/BasicEnemy/BasicSpawnedEnemyAi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Scripts/CihanAkpınarMission/BasicEnemy/BasicSpawnedEnemyAi.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/New Folder/Demon T Wiezzorek@Standing 1H Magic Attack 01.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/New Folder/Demon T Wiezzorek@Standing 1H Magic Attack 01.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/New Folder/Demon T Wiezzorek@Standing React Death Backward.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. Art/Animations/Necromancer/New Folder/Demon T Wiezzorek@Standing React Death Backward.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/2. Art/Animators &amp; Avatar Msks/Necromancer/Necromancer.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2. Art/Animators &amp; Avatar Msks/Necromancer/Necromancer.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3. Prefabs/Boss/BossProjectile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. Prefabs/Boss/BossProjectile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Scripts/CihanAkpınarMission/AudioScripts/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Scripts/CihanAkpınarMission/AudioScripts/AudioManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Scripts/Sidar/NecroAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Scripts/Sidar/NecroAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Scripts/Sidar/NecroProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Scripts/Sidar/NecroProjectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Scripts/Yunus/UI/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Scripts/Yunus/UI/UIManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/5. External Packages/HalloweenMonstersGhost/Models/Materials/Halloween.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/5. External Packages/HalloweenMonstersGhost/Models/Materials/Halloween.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/5. External Packages/IgniteCoders/Simple Water Shader/Resources/Water_mat_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/5. External Packages/IgniteCoders/Simple Water Shader/Resources/Water_mat_01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameAnalytics/Plugins/Playmaker/Examples/GameAnalyticsPlayMakerDemo.unitypackage.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +38,8 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/4. Scripts/Irem/Shunrald/ShunraldParticleController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/4. Scripts/Sidar/NecroUIHealthBarManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/GameAnalytics/Plugins/Scripts/GameAnalytics.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/GameAnalytics/Plugins/Scripts/Wrapper/GA_Wrapper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameAnalytics/Plugins/Scripts/GameAnalytics.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameAnalytics/Plugins/Scripts/Wrapper/GA_Wrapper.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -131,6 +145,7 @@
       <workItem from="1689360456118" duration="1119000" />
       <workItem from="1689423527800" duration="7843000" />
       <workItem from="1689501406538" duration="17963000" />
+      <workItem from="1689592331498" duration="4775000" />
     </task>
     <servers />
   </component>

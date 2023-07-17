@@ -222,6 +222,11 @@ public class UIManager : MonoBehaviour
         bossHealthBarPanel.SetActive(true);
     }
 
+    public void BossHealthBarDeactivate()
+    {
+        bossHealthBarPanel.SetActive(false);
+    }
+
     public void BossHealthBar(float maxHealth, float currentHealth)
     {
         bossHealthBar.value = currentHealth / maxHealth;

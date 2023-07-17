@@ -79,6 +79,9 @@ namespace CihanAkpınar
         public AudioClip necroHealthRejDamageAudio;
         public AudioClip necroHealthRejFinishAudio;
         public AudioClip necroHalfHealthAudio;
+        public AudioClip necroStun;
+        public AudioClip splash;
+        
         //RangedEnemyYunus
         public AudioClip rangedEnemyRangeAttackAudio;
         public AudioClip rangedEnemyDieAudio;

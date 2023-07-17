@@ -129,12 +129,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89c007d19d197d145b1643ffaf1008e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splashRadius: 5
+  splashRadius: 2
   splashEffect: {fileID: 4553287630450876385, guid: 15483e51212e3d74886ea57291f4639a,
     type: 3}
   blood: {fileID: 2954499336998236364}
   hit: {fileID: 5763457373621644179}
-  destroyDelay: 3
+  destroyDelay: 15
 --- !u!1001 &1088475802231685735
 PrefabInstance:
   m_ObjectHideFlags: 0
