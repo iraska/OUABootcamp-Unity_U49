@@ -110,7 +110,12 @@ namespace ali
 
         private void TrackTheEnemy()
         {
-            Vector3 direction = enemyToBeTracked.transform.position - transform.position;
+            Vector3 direction = transform.position;
+            if (enemyToBeTracked != null)
+            {
+                direction = enemyToBeTracked.transform.position - transform.position;
+            }
+            
             Vector3 desiredVelocity = direction.normalized * (rb.velocity.magnitude + 5f);
 
             float adjustmentSpeed = 5f;
