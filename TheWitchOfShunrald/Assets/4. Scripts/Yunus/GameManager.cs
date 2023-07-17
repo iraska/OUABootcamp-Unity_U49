@@ -128,6 +128,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
         LevelManager.instance.Start();
         Time.timeScale = 1;
+        IsArena = false;
     }
     public void ResumeClicked()
     {

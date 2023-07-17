@@ -63,9 +63,18 @@ namespace Shunrald
 
             if (Input.GetKeyDown(KeyCode.Space) && GameManager.instance.GameState == GameManager.State.Playing)
             {
-                if (!isDashing && rb.velocity.magnitude <= 0.01f && !isDashCoolDown)
+                if (!isDashing && rb.velocity.magnitude <= 0.01f && !isDashCoolDown && !GameManager.instance.isArena)
                 {
                     //GameManager.instance.Player.GetComponent<PlayerStats>().SpendMana(dashManaburn);
+                   
+                    isDashCoolDown = true;
+                    StartCoroutine(Dash());
+                    StartCoroutine(DashCooldown());
+                }
+                else if (!isDashCoolDown && GameManager.instance.isArena)
+                {
+                    //GameManager.instance.Player.GetComponent<PlayerStats>().SpendMana(dashManaburn);
+
                     isDashCoolDown = true;
                     StartCoroutine(Dash());
                     StartCoroutine(DashCooldown());
