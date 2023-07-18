@@ -212,7 +212,7 @@ namespace CihanAkpınar
 
         private void LoadSfxVolume()
         {
-            sfxSlider.value = PlayerPrefs.GetFloat("sfxVolume", 0.5f);
+            sfxSlider.value = PlayerPrefs.GetFloat("sfxVolume", 0.8f);
             SetSfxVolume();
         }
     }  

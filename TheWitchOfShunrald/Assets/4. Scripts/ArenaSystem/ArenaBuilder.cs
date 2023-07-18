@@ -68,10 +68,18 @@ public class ArenaBuilder : MonoBehaviour
             GameManager.instance.GameState = GameManager.State.Paused;
             LoadPlayer();
             LoadEnemies();
+            StartCoroutine(ResumeGameAfterLoad());
         }
     }
     int alignmentIndex=0;
     int enemyIndex=0;
+
+    private IEnumerator ResumeGameAfterLoad()
+    {
+        yield return new WaitForSeconds(3f);
+        GameManager.instance.GameState = GameManager.State.Playing;
+    }
+
     private void LoadEnemies()
     {
         if(alignmentIndex == gameData.alignment.Length)
