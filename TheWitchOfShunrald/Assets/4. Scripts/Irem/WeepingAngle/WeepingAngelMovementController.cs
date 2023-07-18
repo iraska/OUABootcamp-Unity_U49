@@ -69,7 +69,7 @@ namespace WeepingAngle
                 {
                     isWalkingAudioPlaying = true;
                     
-                    PlayWalkSFX();
+                    //PlayWalkSFX();
                 }
             }
         }
